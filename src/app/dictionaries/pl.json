@@ -1,0 +1,13 @@
+{
+  "page": {
+    "wellcome": "Witamy"
+  },
+  "header": {
+    "support": "Wesprzeć projekt",
+    "blog": "Blogu",
+    "contacts": "Łączność",
+    "main": "Dom",
+    "projects": "Projektowanie",
+    "trainees": "Praktyka"
+  }
+}

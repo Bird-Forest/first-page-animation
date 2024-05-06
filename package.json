@@ -1,0 +1,27 @@
+{
+  "name": "first-page-layout",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "accept-language": "^3.0.18",
+    "i18next": "^23.11.3",
+    "i18next-resources-to-backend": "^1.2.1",
+    "next": "14.2.3",
+    "next-i18n-router": "^5.4.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-i18next": "^14.1.1",
+    "react-icons": "^5.1.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3"
+  }
+}

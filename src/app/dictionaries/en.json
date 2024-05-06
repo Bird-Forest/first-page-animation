@@ -1,0 +1,13 @@
+{
+  "page": {
+    "wellcome": "Welcome"
+  },
+  "header": {
+    "support": "Support the project",
+    "blog": "Blog",
+    "contacts": "Contacts",
+    "main": "Home",
+    "projects": "Projects",
+    "trainees": "Trainees"
+  }
+}
