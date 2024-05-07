@@ -1,0 +1,61 @@
+.hiroSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.bgWrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(420px, 1920px);
+  grid-template-rows: minmax(478px, 860px);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  block-size: auto;
+  aspect-ratio: 1/0.5;
+  z-index: 0;
+}
+.hiroWrap {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: minmax(380px, 880px);
+  grid-template-rows: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 0;
+  margin: 0 auto;
+}
+.hiroTitle {
+  display: grid;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  background: linear-gradient(
+    140.24deg,
+    rgb(227, 124, 193),
+    rgb(226, 49, 168),
+    rgb(140, 46, 109),
+    rgb(116, 30, 88)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 auto;
+}
+.hiroText {
+  display: grid;
+  color: rgb(252, 252, 252);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+}

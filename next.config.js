@@ -1,11 +1,21 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   async redirects() {
+//     return [
+//       {
+//         source: "/uk/home",
+//         destination: "/",
+//         permanent: true,
+//       },
+//     ];
+//   },
+// };
+
+// export default nextConfig;
+
+// @ts-check
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
-  swcMinify: true,
-  // experimental: {
-  //   // Required: for next 13
-  //   appDir: true
-  // }
-};
+const nextConfig = {};
 
 module.exports = nextConfig;

@@ -5,23 +5,44 @@ import styles from "./Header.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
+import { motion } from "framer-motion";
 
 export default function Navigate({ links }) {
   const pathname = usePathname();
+  const arrVariants = {
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 2,
+        duration: 2,
+      },
+    }),
+    hidden: {
+      opacity: 0,
+      x: -1200,
+    },
+  };
 
   return (
     <ul className={styles.navigate}>
-      {links.map((link) => {
+      {links.map((link, i) => {
         const isActive = pathname === link.href;
         return (
-          <li key={uuidv4()}>
+          <motion.li
+            key={uuidv4()}
+            variants={arrVariants}
+            initial="hidden"
+            animate="visible"
+            custom={i}
+          >
             <Link
               href={link.href}
               className={isActive ? styles.active : styles.link}
             >
               {link.label}
             </Link>
-          </li>
+          </motion.li>
         );
       })}
     </ul>

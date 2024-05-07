@@ -9,7 +9,7 @@ import { languages } from "../../i18n/settings";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function LanguageBtn() {
+export default function LanguageBtn({ lng }) {
   const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(true);
   const [newLng, setNewLng] = useState("");
@@ -31,9 +31,8 @@ export default function LanguageBtn() {
           type="text"
           id="lng"
           name="lng"
-          value={newLng.toUpperCase()}
-          readOnly={newLng}
-          // onChange={newLng.toUpperCase()}
+          value={lng.toUpperCase()}
+          readOnly={lng}
         />
         <ul
           className={styles.lnglist}

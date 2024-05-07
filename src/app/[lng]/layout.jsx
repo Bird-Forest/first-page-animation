@@ -35,7 +35,7 @@ export default function RootLayout({ children, params: { lng } }) {
     >
       <body>
         <BazaHeader lng={lng} />
-        <main className={styles.main}>{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );

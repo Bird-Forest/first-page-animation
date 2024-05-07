@@ -1,5 +1,5 @@
 {
-  "name": "first-page-layout",
+  "name": "first-page-animation",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "accept-language": "^3.0.18",
+    "framer-motion": "^11.1.8",
     "i18next": "^23.11.3",
     "i18next-resources-to-backend": "^1.2.1",
     "next": "14.2.3",
@@ -18,6 +19,8 @@
     "react-dom": "^18",
     "react-i18next": "^14.1.1",
     "react-icons": "^5.1.0",
+    "react-scripts": "^5.0.1",
+    "sharp": "^0.33.3",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
