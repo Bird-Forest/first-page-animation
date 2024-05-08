@@ -2,7 +2,8 @@
 import styles from "../page.module.css";
 import { useTranslation } from "../../i18n/server";
 import { languages, fallbackLng } from "../../i18n/settings";
-import Hiro from "./components/Hiro";
+import Hero from "./components/Hero";
+import History from "./components/History";
 
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";
@@ -23,7 +24,8 @@ export default async function Home({ params: { lng } }) {
 
   return (
     <div className={styles.container}>
-      <Hiro />
+      <Hero />
+      <History />
     </div>
   );
 }

@@ -35,34 +35,34 @@
 }
 .container {
   display: grid;
-  grid-template-columns: minmax(404px, 1680px);
+  grid-template-columns: minmax(420px, 1920px);
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
-  padding: 0 8px;
+  padding: 0;
   background-color: aqua;
   margin: 0 auto;
 }
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .container {
     padding: 0 40px;
   }
-}
-@media (min-width: 1280px) {
+} */
+/* @media (min-width: 1280px) {
   .container {
     padding: 0 64px;
   }
-}
-@media (min-width: 1440px) {
+} */
+/* @media (min-width: 1440px) {
   .container {
     padding: 0 80px;
   }
-}
-@media (min-width: 1920px) {
+} */
+/* @media (min-width: 1920px) {
   .container {
     padding: 0 120px;
   }
-}
+} */
 
 /* .description {
   display: inherit;
