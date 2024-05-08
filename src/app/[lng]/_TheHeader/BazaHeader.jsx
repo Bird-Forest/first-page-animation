@@ -29,7 +29,7 @@ export default async function BazaHeader({ lng }) {
       <header className={styles.header}>
         <div className={styles.wrap}>
           <BazaLogo />
-          <Navigate links={navLink} />
+          <Navigate links={navLink} lng={lng} />
           <AidButton />
           <LanguageBtn lng={lng} />
         </div>

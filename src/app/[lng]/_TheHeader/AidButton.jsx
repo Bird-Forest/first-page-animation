@@ -22,7 +22,7 @@ export default function AidButton() {
       className={styles.button}
       initial={"hidden"}
       animate={"visible"}
-      transition={{ delay: 3, duration: 1.5 }}
+      transition={{ delay: 2.5, duration: 2 }}
       variants={btnVariants}
     >
       Hello

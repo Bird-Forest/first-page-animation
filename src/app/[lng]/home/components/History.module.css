@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(15, 3, 31);
+  padding: 20px 0;
 }
 @media (min-width: 768px) {
   .history {
@@ -22,7 +23,7 @@
 .histTitle {
   color: rgb(252, 252, 252);
   font-size: clamp(32px 1.397rem + 2.3vw, 40px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
   text-align: center;
 }
@@ -43,7 +44,6 @@
 }
 .blockTitle {
   color: rgb(252, 252, 252);
-  /* font-size: clamp(20px, 0.948rem + 1.15vw, 24px); */
   font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
   font-weight: 700;
   line-height: 1.5;

@@ -4,6 +4,7 @@ import { useTranslation } from "../../i18n/server";
 import { languages, fallbackLng } from "../../i18n/settings";
 import Hero from "./components/Hero";
 import History from "./components/History";
+import Counter from "./components/Counter";
 
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";
@@ -26,6 +27,7 @@ export default async function Home({ params: { lng } }) {
     <div className={styles.container}>
       <Hero />
       <History />
+      <Counter />
     </div>
   );
 }

@@ -20,24 +20,24 @@ const pictures = [
 ];
 
 export default function Hero() {
-  const blurVariants = {
-    start: {
-      backdropFilter: "blur(2px)",
-    },
-    end: {
-      backdropFilter: [
-        "blur(2px)",
-        "blur(1px)",
-        "blur(1px)",
-        "blur(1px)",
-        "blur(1px)",
-        "blur(1px)",
-        "blur(1px)",
-        "blur(1px)",
-        "blur(2px)",
-      ],
-    },
-  };
+  // const blurVariants = {
+  //   start: {
+  //     backdropFilter: "blur(2px)",
+  //   },
+  //   end: {
+  //     backdropFilter: [
+  //       "blur(2px)",
+  //       "blur(1px)",
+  //       "blur(1px)",
+  //       "blur(1px)",
+  //       "blur(1px)",
+  //       "blur(1px)",
+  //       "blur(1px)",
+  //       "blur(1px)",
+  //       "blur(2px)",
+  //     ],
+  //   },
+  // };
 
   const imgVariants = {
     visible: (i) => ({
@@ -82,10 +82,13 @@ export default function Hero() {
       </ul>
       <motion.div
         className={styles.hiroBlur}
-        initial={"start"}
-        animate={"end"}
-        transition={{ delay: 5, duration: 10, repeat: 4 }}
-        variants={blurVariants}
+        // initial={"start"}
+        // animate={"end"}
+        initial={{ backdropFilter: "blur(2px)" }}
+        animate={{ backdropFilter: "blur(1px)" }}
+        exit={{ backdropFilter: "blur(2px)" }}
+        transition={{ delay: 5, duration: 10, repeat: 4, times: [0, 0.2, 1] }}
+        // variants={blurVariants}
       >
         <div className={styles.hiroWrap}>
           <h1 className={styles.hiroTitle}>Baza Trainee Ukraine</h1>
@@ -98,3 +101,23 @@ export default function Hero() {
     </section>
   );
 }
+
+{
+  /* <AnimatePresence>
+  {isVisible && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    />
+  )}
+</AnimatePresence>; */
+}
+{
+  /* <motion.circle
+  cx={500}
+  animate={{ cx: [null, 100, 200] }}
+  transition={{ duration: 3, times: [0, 0.2, 1] }}
+/>; */
+}
+//  whileInView={{ opacity: 1 }}

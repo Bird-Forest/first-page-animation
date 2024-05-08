@@ -1,0 +1,58 @@
+.counter {
+  display: grid;
+  grid-template-columns: minmax(420px, 767px);
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  background: linear-gradient(
+    138.78deg,
+    rgb(219, 151, 197) -13.723%,
+    rgb(204, 79, 163) 5.792%,
+    rgb(160, 58, 126) 31.964%,
+    rgb(109, 38, 86) 76.848%,
+    rgb(73, 7, 53) 101.654%
+  );
+}
+@media (min-width: 768px) {
+  .counter {
+    grid-template-columns: minmax(768px, 1920px);
+  }
+}
+.countWrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  justify-content: center;
+  gap: 4px;
+}
+.number {
+  display: grid;
+  grid-template-columns: 100px 30px;
+  grid-template-rows: 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.item {
+  display: grid;
+  grid-template-rows: 60px;
+  justify-content: end;
+  align-items: center;
+  color: rgb(252, 252, 252);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.icon {
+  fill: rgb(252, 252, 252);
+  width: 28px;
+  height: 28px;
+}
+.countTitle {
+  color: rgb(252, 252, 252);
+  font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: left;
+}
