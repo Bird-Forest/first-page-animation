@@ -1,11 +1,11 @@
 .counter {
   display: grid;
-  grid-template-columns: minmax(420px, 767px);
-  grid-template-rows: 1fr;
+  grid-template-columns: minmax(340px, 647px);
+  grid-template-rows: repeat(3, 80px);
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  padding: 20px 0;
+  gap: 8px;
+  padding: 20px;
   background: linear-gradient(
     138.78deg,
     rgb(219, 151, 197) -13.723%,
@@ -17,30 +17,54 @@
 }
 @media (min-width: 768px) {
   .counter {
-    grid-template-columns: minmax(768px, 1920px);
+    grid-template-columns: repeat(3, minmax(180px, 280px));
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    align-items: start;
+    padding: 60px 40px;
+  }
+}
+@media (min-width: 1440px) {
+  .counter {
+    /* grid-template-columns: minmax(1280px, 1680px); */
+    padding: 60px 80px;
+  }
+}
+@media (min-width: 1920px) {
+  .counter {
+    /* grid-template-columns: 1680px; */
+    padding: 72px 120px;
   }
 }
 .countWrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(2, minmax(180px, 280px));
+  grid-template-rows: 1fr;
   justify-content: center;
-  gap: 4px;
+  align-items: center;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .countWrap {
+    grid-template-columns: minmax(200px, 280px);
+    grid-template-rows: auto auto;
+  }
 }
 .number {
   display: grid;
-  grid-template-columns: 100px 30px;
-  grid-template-rows: 60px;
+  grid-template-columns: 120px 30px;
+  grid-template-rows: 84px;
   justify-content: center;
   align-items: center;
   gap: 8px;
 }
 .item {
   display: grid;
-  grid-template-rows: 60px;
+  /* grid-template-rows: 60px; */
   justify-content: end;
   align-items: center;
   color: rgb(252, 252, 252);
-  font-size: 56px;
+  font-size: clamp(48px, 2.397rem + 2.3vw, 56px);
   font-weight: 600;
   line-height: 1.5;
 }
@@ -50,9 +74,13 @@
   height: 28px;
 }
 .countTitle {
+  display: grid;
+  /* grid-template-columns: minmax(200px, 280px); */
+  grid-template-rows: 1fr;
   color: rgb(252, 252, 252);
-  font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
+  font-size: clamp(16px, 0.397rem + 2.3vw, 24px);
   font-weight: 700;
   line-height: 1.5;
-  text-align: left;
+  text-align: center;
+  overflow-wrap: anywhere;
 }

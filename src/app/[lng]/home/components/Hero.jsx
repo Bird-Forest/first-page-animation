@@ -20,25 +20,6 @@ const pictures = [
 ];
 
 export default function Hero() {
-  // const blurVariants = {
-  //   start: {
-  //     backdropFilter: "blur(2px)",
-  //   },
-  //   end: {
-  //     backdropFilter: [
-  //       "blur(2px)",
-  //       "blur(1px)",
-  //       "blur(1px)",
-  //       "blur(1px)",
-  //       "blur(1px)",
-  //       "blur(1px)",
-  //       "blur(1px)",
-  //       "blur(1px)",
-  //       "blur(2px)",
-  //     ],
-  //   },
-  // };
-
   const imgVariants = {
     visible: (i) => ({
       opacity: 1,
@@ -82,20 +63,18 @@ export default function Hero() {
       </ul>
       <motion.div
         className={styles.hiroBlur}
-        // initial={"start"}
-        // animate={"end"}
-        initial={{ backdropFilter: "blur(2px)" }}
+        initial={{ backdropFilter: "blur(1px)" }}
         animate={{ backdropFilter: "blur(1px)" }}
-        exit={{ backdropFilter: "blur(2px)" }}
         transition={{ delay: 5, duration: 10, repeat: 4, times: [0, 0.2, 1] }}
-        // variants={blurVariants}
       >
-        <div className={styles.hiroWrap}>
-          <h1 className={styles.hiroTitle}>Baza Trainee Ukraine</h1>
-          <p className={styles.hiroText}>
-            Громадська організація,яка має на меті отримання першого досвіду
-            роботи тими, хто починає свій шлях в ІТ
-          </p>
+        <div className={styles.container}>
+          <div className={styles.hiroWrap}>
+            <h1 className={styles.hiroTitle}>Baza Trainee Ukraine</h1>
+            <p className={styles.hiroText}>
+              Громадська організація,яка має на меті отримання першого досвіду
+              роботи тими, хто починає свій шлях в ІТ
+            </p>
+          </div>
         </div>
       </motion.div>
     </section>

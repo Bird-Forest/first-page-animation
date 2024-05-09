@@ -24,7 +24,7 @@ export default async function Home({ params: { lng } }) {
   const { t } = await useTranslation(lng);
 
   return (
-    <div className={styles.container}>
+    <div>
       <Hero />
       <History />
       <Counter />
