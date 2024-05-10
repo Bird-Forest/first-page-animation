@@ -2,49 +2,47 @@
 
 import React from "react";
 import styles from "./Counter.module.css";
-import { FaPlus } from "react-icons/fa6";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
+import { MCount } from "./CountItem";
+import { motion } from "framer-motion";
 
 export default function Counter() {
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, Math.round);
-  // const a = useMotionValue(0);
-  // const b = useMotionValue(0);
-  //  const c = useMotionValue(0);
+  const countAnimation = {
+    start: {
+      x: 0,
+    },
+    middle: {
+      x: 5,
+      transition: { duration: 0.3, repeat: 6 },
+    },
+    end: {
+      x: 0,
+      transition: { duration: 0.3, repeat: 6 },
+    },
+  };
 
-  //  whileInView={{ opacity: 1 }}
-
-  //   animate(x, 200, { duration: 0.5 });
-
-  useEffect(() => {
-    const animation = animate(count, 41, { duration: 10 });
-
-    return animation.stop;
-  }, [count]);
   return (
-    <section className={styles.counter}>
-      <div className={styles.countWrap}>
-        <div className={styles.number}>
-          <motion.div className={styles.item}>{rounded}</motion.div>
-          <FaPlus className={styles.icon} />
-        </div>
+    <motion.section
+      initial="start"
+      animate="middle"
+      whileInView="end"
+      viewport={{ margin: "200px", amount: 0.3 }}
+      className={styles.counter}
+    >
+      <motion.div className={styles.countWrap}>
+        <MCount item={41} time={5} variants={countAnimation} />
+
         <h4 className={styles.countTitle}>активних проєктів</h4>
-      </div>
-      <div className={styles.countWrap}>
-        <div className={styles.number}>
-          <span className={styles.item}>371</span>
-          <FaPlus className={styles.icon} />
-        </div>
+      </motion.div>
+      <motion.div className={styles.countWrap} variants={countAnimation}>
+        <MCount item={371} time={20} />
+
         <h4 className={styles.countTitle}>залучених учасників</h4>
-      </div>
-      <div className={styles.countWrap}>
-        <div className={styles.number}>
-          <span className={styles.item}>87</span>
-          <FaPlus className={styles.icon} />
-        </div>
-        <h4 className={styles.countTitle}>працевлаштовано</h4>
-      </div>
-    </section>
+      </motion.div>
+      <motion.div className={styles.countWrap}>
+        <MCount item={87} time={10} />
+
+        <h4 className={styles.countTitle}>отримали роботу</h4>
+      </motion.div>
+    </motion.section>
   );
 }

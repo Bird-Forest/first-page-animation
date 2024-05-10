@@ -25,11 +25,10 @@
   left: 0;
   display: grid;
   grid-template-columns: minmax(420px, 767px);
-  /* grid-template-rows: minmax(420px, 480px); */
   grid-template-rows: auto;
   justify-items: center;
   align-items: center;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
   background-color: rgba(189, 189, 189, 0.5);
   block-size: auto;
   aspect-ratio: 1/1;
