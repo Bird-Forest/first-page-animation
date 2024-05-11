@@ -5,6 +5,7 @@ import { languages, fallbackLng } from "../../i18n/settings";
 import Hero from "./components/Hero";
 import History from "./components/History";
 import Counter from "./components/Counter";
+import Mentor from "./components/Mentor";
 
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";
@@ -28,6 +29,7 @@ export default async function Home({ params: { lng } }) {
       <Hero />
       <History />
       <Counter />
+      <Mentor />
     </div>
   );
 }
