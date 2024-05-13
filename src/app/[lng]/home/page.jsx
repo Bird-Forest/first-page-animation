@@ -6,6 +6,8 @@ import Hero from "./components/Hero";
 import History from "./components/History";
 import Counter from "./components/Counter";
 import Mentor from "./components/Mentor";
+import Structure from "./components/Structure";
+import Questions from "./components/Questions";
 
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";
@@ -28,7 +30,9 @@ export default async function Home({ params: { lng } }) {
     <div>
       <Hero />
       <History />
+      <Structure />
       <Counter />
+      <Questions />
       <Mentor />
     </div>
   );
