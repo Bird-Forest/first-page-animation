@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import styles from "./Header.module.css";
 import { motion } from "framer-motion";
@@ -25,7 +23,7 @@ export default function AidButton() {
       transition={{ delay: 2.5, duration: 2 }}
       variants={btnVariants}
     >
-      Hello
+      Підтримати проєкт
     </motion.button>
   );
 }

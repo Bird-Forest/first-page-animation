@@ -24,8 +24,8 @@ export default function Hero() {
     visible: (i) => ({
       opacity: 1,
       transition: {
-        delay: i * 10,
-        duration: 5,
+        delay: i * 3,
+        duration: 3,
       },
     }),
     hidden: {
@@ -35,39 +35,34 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      <ul className={styles.bgWrap}>
-        {pictures.map((el, i) => {
-          return (
-            <motion.li
-              key={uuidv4()}
-              variants={imgVariants}
-              initial="hidden"
-              animate="visible"
-              custom={i}
-            >
-              <Image
-                alt="section hero"
-                src={el.path}
-                placeholder="blur"
-                quality={100}
-                fill
-                style={{
-                  objectFit: "cover",
-                  width: "100%",
-                }}
-                priority
-              />
-            </motion.li>
-          );
-        })}
-      </ul>
-      <motion.div
-        className={styles.hiroBlur}
-        initial={{ backdropFilter: "blur(1px)" }}
-        animate={{ backdropFilter: "blur(1px)" }}
-        transition={{ delay: 5, duration: 10, repeat: 4, times: [0, 0.2, 1] }}
-      >
-        <div className={styles.container}>
+      <div className={styles.wrap}>
+        <ul className={styles.bgWrap}>
+          {pictures.map((el, i) => {
+            return (
+              <motion.li
+                key={uuidv4()}
+                variants={imgVariants}
+                initial="hidden"
+                animate="visible"
+                custom={i}
+              >
+                <Image
+                  alt="section hero"
+                  src={el.path}
+                  placeholder="blur"
+                  quality={100}
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                  }}
+                  priority
+                />
+              </motion.li>
+            );
+          })}
+        </ul>
+        <div className={styles.hiroBlur}>
           <div className={styles.hiroWrap}>
             <h1 className={styles.hiroTitle}>Baza Trainee Ukraine</h1>
             <p className={styles.hiroText}>
@@ -76,27 +71,7 @@ export default function Hero() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
-
-{
-  /* <AnimatePresence>
-  {isVisible && (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    />
-  )}
-</AnimatePresence>; */
-}
-{
-  /* <motion.circle
-  cx={500}
-  animate={{ cx: [null, 100, 200] }}
-  transition={{ duration: 3, times: [0, 0.2, 1] }}
-/>; */
-}
-//  whileInView={{ opacity: 1 }}

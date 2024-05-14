@@ -8,14 +8,10 @@ import { motion } from "framer-motion";
 export default function Counter() {
   const countAnimation = {
     start: {
-      x: 0,
-    },
-    middle: {
-      x: 5,
-      transition: { duration: 0.3, repeat: 6 },
+      color: "rgb(252, 252, 252)",
     },
     end: {
-      x: 0,
+      color: "rgb(219, 151, 197)",
       transition: { duration: 0.3, repeat: 6 },
     },
   };
@@ -23,7 +19,6 @@ export default function Counter() {
   return (
     <motion.section
       initial="start"
-      animate="middle"
       whileInView="end"
       viewport={{ margin: "200px", amount: 0.3 }}
       className={styles.counter}

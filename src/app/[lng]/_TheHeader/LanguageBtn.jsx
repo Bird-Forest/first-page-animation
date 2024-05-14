@@ -21,8 +21,6 @@ export default function LanguageBtn({ lng }) {
     return segments.join("/");
   };
 
-  console.log(newLng);
-
   return (
     <div className={styles.lngwrap}>
       <div className={styles.lngselect}>
@@ -37,18 +35,21 @@ export default function LanguageBtn({ lng }) {
         <ul
           className={styles.lnglist}
           style={{
-            display: isOpen ? "none" : "block",
+            zIndex: isOpen ? "-1" : "2",
           }}
         >
-          {languages.map((lng) => {
-            return (
-              <li key={lng} value={lng} onClick={() => setNewLng(lng)}>
-                <Link href={redirectedPathName(lng)} className={styles.lnglink}>
-                  {lng.toUpperCase()}
+          {languages.map((item) =>
+            item !== lng ? (
+              <li key={item} value={item} onClick={() => setNewLng(item)}>
+                <Link
+                  href={redirectedPathName(item)}
+                  className={styles.lnglink}
+                >
+                  {item.toUpperCase()}
                 </Link>
               </li>
-            );
-          })}
+            ) : null
+          )}
         </ul>
       </div>
       <button onClick={() => setIsOpen(!isOpen)} className={styles.btnicon}>
@@ -61,38 +62,3 @@ export default function LanguageBtn({ lng }) {
     </div>
   );
 }
-
-// onClick={() => setIsOpen(!isOpen)}
-
-// import React from "react";
-// import styles from "./Header.module.css";
-// import { FaChevronDown } from "react-icons/fa";
-// import { usePathname } from "next/navigation";
-// import Link from "next/link";
-
-// export default function LanguageBtn() {
-//   const pathName = usePathname();
-//   const redirectedPathName = (locale) => {
-//     if (!pathName) return "/";
-//     const segments = pathName.split("/");
-//     segments[1] = locale;
-//     return segments.join("/");
-//   };
-
-//   const locales = ["uk", "en", "pl"];
-
-//   return (
-//     <div className={styles.language}>
-//       <ul>
-//         {locales.map((locale) => {
-//           return (
-//             <li key={locale}>
-//               <Link href={redirectedPathName(locale)}>{locale}</Link>
-//             </li>
-//           );
-//         })}
-//       </ul>
-//       <FaChevronDown className={styles.icon} />
-//     </div>
-//   );
-// }

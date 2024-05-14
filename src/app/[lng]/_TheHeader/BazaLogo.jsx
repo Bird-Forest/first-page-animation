@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import logo from "../../../image/logo.svg";
 import styles from "./Header.module.css";

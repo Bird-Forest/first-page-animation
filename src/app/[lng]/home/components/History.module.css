@@ -14,7 +14,7 @@
     rgb(109, 38, 86) 76.848%,
     rgb(73, 7, 53) 101.654%
   );
-  padding: 40px 20px;
+  padding: 20px;
 }
 @media (min-width: 768px) {
   .history {
@@ -112,7 +112,7 @@
     grid-template-columns: 20px;
     grid-template-rows: 20px;
     border-radius: 50%;
-    background-color: rgb(15, 3, 31);
+    background-color: rgb(46, 5, 53);
     /* background: linear-gradient(
       138.78deg,
       rgb(219, 151, 197) -15.619%,
@@ -126,7 +126,7 @@
     display: grid;
     width: 2px;
     height: 162px;
-    background-color: rgb(15, 3, 31);
+    background-color: rgb(46, 5, 53);
     /* background: linear-gradient(
       138.78deg,
       rgb(219, 151, 197) -15.619%,

@@ -7,21 +7,6 @@ import questions from "./data/questions.json";
 import QuestionItem from "./QuestionItem";
 
 export default function Questions() {
-  // const [isShow, setIsShow] = useState(false);
-
-  // const [indx, setIndx] = useState(null);
-
-  // const handleChange = (evt) => {
-  //   console.log(evt.currentTarget.name);
-  //   let id = evt.currentTarget.name;
-  //   // setIsShow(!isShow);
-  //   if (id === indx) {
-  //     setIndx(null), setIsShow(false);
-  //   } else {
-  //     setIndx(id), setIsShow(true);
-  //   }
-  // };
-
   return (
     <section className={styles.question}>
       <h2 className={styles.questTitle}>FAQ</h2>

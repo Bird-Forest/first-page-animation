@@ -1,11 +1,12 @@
 .counter {
   display: grid;
-  grid-template-columns: minmax(340px, 647px);
+  grid-template-columns: minmax(380px, 1680px);
   grid-template-rows: repeat(3, 80px);
   justify-content: center;
   align-items: center;
   gap: 8px;
   padding: 20px;
+  margin: 0 auto;
   /* background-color: rgb(15, 3, 31); */
   background: linear-gradient(
     138.78deg,
@@ -16,7 +17,7 @@
     rgb(73, 7, 53) 101.654%
   );
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .counter {
     grid-template-columns: repeat(3, minmax(180px, 280px));
     grid-template-rows: 1fr;
@@ -25,16 +26,22 @@
     padding: 60px 40px;
   }
 }
-@media (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
   .counter {
-    padding: 60px 80px;
+    padding: 60px 40px;
   }
 }
-@media (min-width: 1920px) {
+@media screen and (min-width: 1440px) {
   .counter {
-    padding: 72px 120px;
+    padding: 60px 40px;
   }
 }
+@media screen and (min-width: 1920px) {
+  .counter {
+    padding: 72px 40px;
+  }
+}
+
 .countWrap {
   display: grid;
   grid-template-columns: 180px 1fr;
@@ -45,7 +52,6 @@
 }
 @media (min-width: 768px) {
   .countWrap {
-    /* grid-template-columns: minmax(180px, 300px); */
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }

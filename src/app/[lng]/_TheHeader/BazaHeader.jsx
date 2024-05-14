@@ -5,10 +5,11 @@ import BazaLogo from "./BazaLogo";
 import AidButton from "./AidButton";
 import LanguageBtn from "./LanguageBtn";
 import { useTranslation } from "../../i18n/server";
+import Menu from "./Menu";
 
 export default async function BazaHeader({ lng }) {
   const { t } = await useTranslation(lng);
-  const navLink = [
+  const links = [
     { label: "Головна", href: `/${lng}/home` },
     { label: "Стажування", href: `/${lng}/trainees` },
     { label: "Проекти", href: `/${lng}/projects` },
@@ -25,15 +26,15 @@ export default async function BazaHeader({ lng }) {
   // ];
 
   return (
-    <div className={styles.topbg}>
-      <header className={styles.header}>
+    <header className={styles.topbg}>
+      <div className={styles.header}>
         <div className={styles.wrap}>
           <BazaLogo />
-          <Navigate links={navLink} lng={lng} />
+          <Menu links={links} lng={lng} />
           <AidButton />
           <LanguageBtn lng={lng} />
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }
