@@ -14,7 +14,7 @@ const itemAnimation = {
   },
   visible: (custom) => ({
     opacity: 1,
-    transition: { delay: custom * 2, duration: 1 },
+    transition: { delay: custom * 1, duration: 1 },
   }),
 };
 
@@ -23,7 +23,7 @@ export default function Structure() {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ margin: "200px", amount: 0.3 }}
+      viewport={{ margin: "200px", amount: 0.3, once: true }}
       className={styles.structure}
     >
       <motion.h2
@@ -37,7 +37,7 @@ export default function Structure() {
         <div className={styles.wrapItem}>
           <motion.div
             variants={itemAnimation}
-            cuctom={2}
+            custom={3}
             className={styles.imgWrap}
           >
             <Image
@@ -49,22 +49,28 @@ export default function Structure() {
               priority
             />
           </motion.div>
-          <motion.div
-            variants={itemAnimation}
-            custom={3}
-            className={styles.itemInfo}
-          >
-            <h4 className={styles.itemTitle}>BAZA TRAINEE UKRAINE</h4>
-            <p className={styles.itemText}>
+          <motion.div className={styles.itemInfo}>
+            <motion.h4
+              variants={itemAnimation}
+              custom={4}
+              className={styles.itemTitle}
+            >
+              BAZA TRAINEE UKRAINE
+            </motion.h4>
+            <motion.p
+              variants={itemAnimation}
+              custom={5}
+              className={styles.itemText}
+            >
               Громадський проєкт для джуніорів і світчерів ІТ, який побудований
               на створенні цифрових проєктів для соціальної сфери України
-            </p>
+            </motion.p>
           </motion.div>
         </div>
         <div className={styles.wrapItem}>
           <motion.div
             variants={itemAnimation}
-            custom={2}
+            custom={6}
             className={styles.imgWrap}
           >
             <Image
@@ -76,22 +82,28 @@ export default function Structure() {
               priority
             />
           </motion.div>
-          <motion.div
-            variants={itemAnimation}
-            cuctom={3}
-            className={styles.itemInfo}
-          >
-            <h4 className={styles.itemTitle}>BAZA SKILL</h4>
-            <p className={styles.itemText}>
+          <motion.div className={styles.itemInfo}>
+            <motion.h4
+              variants={itemAnimation}
+              custom={7}
+              className={styles.itemTitle}
+            >
+              BAZA SKILL
+            </motion.h4>
+            <motion.p
+              variants={itemAnimation}
+              custom={8}
+              className={styles.itemText}
+            >
               Власна рекрутингова агенція для наших випускників. База даних
               перевірених джунів з досвідом командної розробки
-            </p>
+            </motion.p>
           </motion.div>
         </div>
         <div className={styles.wrapItem}>
           <motion.div
             variants={itemAnimation}
-            custom={4}
+            custom={9}
             className={styles.imgWrap}
           >
             <Image
@@ -103,23 +115,29 @@ export default function Structure() {
               priority
             />
           </motion.div>
-          <motion.div
-            variants={itemAnimation}
-            cuctom={5}
-            className={styles.itemInfo}
-          >
-            <h4 className={styles.itemTitle}>BAZA EDUCAT</h4>
-            <p className={styles.itemText}>
+          <motion.div className={styles.itemInfo}>
+            <motion.h4
+              variants={itemAnimation}
+              custom={10}
+              className={styles.itemTitle}
+            >
+              BAZA EDUCAT
+            </motion.h4>
+            <motion.p
+              variants={itemAnimation}
+              custom={11}
+              className={styles.itemText}
+            >
               Учбові курси різних рівнів складності для розробників, де навчають
               спільній роботі і командній розробці. Додай софт скіли до
               технічних знань і отримай додаткову підтримку на ринку праці
-            </p>
+            </motion.p>
           </motion.div>
         </div>
         <div className={styles.wrapItem}>
           <motion.div
             variants={itemAnimation}
-            custom={4}
+            custom={12}
             className={styles.imgWrap}
           >
             <Image
@@ -131,16 +149,22 @@ export default function Structure() {
               priority
             />
           </motion.div>
-          <motion.div
-            variants={itemAnimation}
-            custom={5}
-            className={styles.itemInfo}
-          >
-            <h4 className={styles.itemTitle}>BAZA POLIGON</h4>
-            <p className={styles.itemText}>
+          <motion.div className={styles.itemInfo}>
+            <motion.h4
+              variants={itemAnimation}
+              custom={13}
+              className={styles.itemTitle}
+            >
+              BAZA POLIGON
+            </motion.h4>
+            <motion.p
+              variants={itemAnimation}
+              custom={14}
+              className={styles.itemText}
+            >
               Веб агенція для малого і середнього бізнесу. Створені в 2023 в
               Україні і для України.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </div>

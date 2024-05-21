@@ -1,21 +1,17 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   async redirects() {
-//     return [
-//       {
-//         source: "/uk/home",
-//         destination: "/",
-//         permanent: true,
-//       },
-//     ];
-//   },
-// };
-
-// export default nextConfig;
-
-// @ts-check
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = nextConfig;
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost:3000",
+        port: "",
+        // pathname: "",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.pixabay.com",
+        port: "",
+      },
+    ],
+  },
+};

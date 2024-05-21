@@ -1,0 +1,133 @@
+.press {
+  display: grid;
+  grid-template-columns: minmax(380px, 1680px);
+  grid-template-rows: 60px 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 20px;
+  background: linear-gradient(
+    138.78deg,
+    rgb(219, 151, 197) -13.415%,
+    rgb(204, 79, 163) 5.93%,
+    rgb(160, 58, 126) 31.873%,
+    rgb(109, 38, 86) 76.365%,
+    rgb(73, 7, 53) 100.954%
+  );
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .press {
+    gap: 38px;
+    padding: 60px 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .press {
+    gap: 58px;
+    padding: 60px 40px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .press {
+    grid-template-columns: minmax(1280px, 1320px);
+    padding: 60px 40px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .press {
+    padding: 72px 40px;
+  }
+}
+.pressTitle {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px;
+  justify-content: center;
+  color: rgb(252, 252, 252);
+  font-size: clamp(32px, 1.397rem + 2.3vw, 40px);
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.pressList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 0 0 40px 0;
+  margin: 0 auto;
+}
+.pressItem {
+  position: relative;
+  display: flex;
+  width: 380px;
+  height: 248px;
+  gap: 32px;
+}
+.front {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 380px;
+  height: 248px;
+  border: 2px solid rgb(255, 98, 206);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.imgWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.back {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 380px;
+  height: 248px;
+  border: 2px solid rgb(255, 98, 206);
+  border-radius: 10px;
+  background-color: rgb(24, 5, 48);
+  overflow: hidden;
+  padding: 0;
+}
+.infoWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+.title {
+  display: flex;
+  color: rgb(252, 252, 252);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+.text {
+  display: flex;
+  color: rgb(252, 252, 252);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+.link {
+  display: flex;
+  color: rgb(252, 252, 252);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}

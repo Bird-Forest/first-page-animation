@@ -43,7 +43,7 @@ export default function History() {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ margin: "200px", amount: 0.3 }}
+      viewport={{ margin: "200px", amount: 0.3, once: true }}
       className={styles.history}
     >
       <div className={styles.wrapTitle}>
