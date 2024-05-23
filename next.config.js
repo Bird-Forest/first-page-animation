@@ -5,7 +5,7 @@ module.exports = {
         protocol: "http",
         hostname: "localhost:3000",
         port: "",
-        // pathname: "",
+        pathname: "public",
       },
       {
         protocol: "https",

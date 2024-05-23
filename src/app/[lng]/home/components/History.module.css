@@ -113,28 +113,12 @@
     grid-template-rows: 20px;
     border-radius: 50%;
     background-color: rgb(46, 5, 53);
-    /* background: linear-gradient(
-      138.78deg,
-      rgb(219, 151, 197) -15.619%,
-      rgb(204, 79, 163) 4.945%,
-      rgb(160, 58, 126) 32.522%,
-      rgb(109, 38, 86) 79.816%,
-      rgb(73, 7, 53) 105.954%
-    ); */
   }
   .line {
     display: grid;
     width: 2px;
     height: 162px;
     background-color: rgb(46, 5, 53);
-    /* background: linear-gradient(
-      138.78deg,
-      rgb(219, 151, 197) -15.619%,
-      rgb(204, 79, 163) 4.945%,
-      rgb(160, 58, 126) 32.522%,
-      rgb(109, 38, 86) 79.816%,
-      rgb(73, 7, 53) 105.954%
-    ); */
   }
   .itemA {
     grid-area: a;

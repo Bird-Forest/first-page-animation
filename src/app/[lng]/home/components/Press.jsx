@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./Press.module.css";
-import presslist from "./data/presslist.json";
+import { presslist } from "./data/presslist";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import { MPressItem } from "./PressItem";
@@ -13,7 +13,7 @@ const pressAnimation = {
   },
   end: (custom) => ({
     opacity: 1,
-    transition: { delay: custom * 2, duration: 2 },
+    transition: { delay: custom * 1, duration: 2 },
   }),
 };
 
@@ -27,10 +27,10 @@ export default function Press() {
     >
       <h2 className={styles.pressTitle}>Преса про нас</h2>
       <motion.ul className={styles.pressList}>
-        {presslist.map((item, idx) => (
+        {presslist.map((item) => (
           <MPressItem
             variants={pressAnimation}
-            custom={idx}
+            custom={item.id}
             key={uuidv4()}
             item={item}
           />

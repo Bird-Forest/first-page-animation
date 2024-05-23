@@ -9,6 +9,8 @@ import Mentor from "./components/Mentor";
 import Structure from "./components/Structure";
 import Questions from "./components/Questions";
 import Press from "./components/Press";
+import Partners from "./components/Partners";
+import Reviews from "./components/Reviews";
 
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";
@@ -36,6 +38,8 @@ export default async function Home({ params: { lng } }) {
       <Questions />
       <Press />
       <Mentor />
+      <Partners />
+      <Reviews />
     </div>
   );
 }

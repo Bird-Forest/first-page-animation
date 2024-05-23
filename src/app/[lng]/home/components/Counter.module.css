@@ -1,13 +1,12 @@
 .counter {
   display: grid;
   grid-template-columns: minmax(380px, 1680px);
-  grid-template-rows: repeat(3, 80px);
+  grid-template-rows: auto;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  /* gap: 8px; */
   padding: 20px;
   margin: 0 auto;
-  /* background-color: rgb(15, 3, 31); */
   background: linear-gradient(
     138.78deg,
     rgb(219, 151, 197) -13.723%,
@@ -19,10 +18,10 @@
 }
 @media screen and (min-width: 768px) {
   .counter {
-    grid-template-columns: repeat(3, minmax(180px, 280px));
+    /* grid-template-columns: repeat(3, minmax(180px, 280px));
     grid-template-rows: 1fr;
     justify-content: space-between;
-    align-items: start;
+    align-items: start; */
     padding: 60px 40px;
   }
 }
@@ -38,10 +37,30 @@
 }
 @media screen and (min-width: 1920px) {
   .counter {
+    /* grid-template-columns: 1680px; */
     padding: 72px 40px;
   }
 }
-
+.wrapList {
+  display: grid;
+  grid-template-columns: minmax(380px, 724px);
+  grid-template-rows: repeat(3, 80px);
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .wrapList {
+    /* grid-template-columns: repeat(3, minmax(180px, 280px)); */
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto;
+    justify-content: space-between;
+    align-items: start;
+    /* padding: 60px 40px; */
+  }
+}
 .countWrap {
   display: grid;
   grid-template-columns: 180px 1fr;

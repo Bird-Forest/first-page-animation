@@ -16,7 +16,7 @@ const imgAnimation = {
     opacity: 0,
     perspective: "380px",
     rotateY: 180,
-    transition: { duration: 2, delay: custom * 2 },
+    transition: { duration: 2, delay: custom * 3 },
   }),
 };
 const textAnimation = {
@@ -29,7 +29,7 @@ const textAnimation = {
     opacity: 1,
     perspective: 0,
     rotateY: 0,
-    transition: { duration: 2, delay: custom * 2 },
+    transition: { duration: 2, delay: custom * 3 },
   }),
 };
 

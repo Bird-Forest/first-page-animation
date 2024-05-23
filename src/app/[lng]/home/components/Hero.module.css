@@ -49,7 +49,8 @@
   }
 
   .hiroBlur {
-    grid-template-columns: minmax(768px, 1920px);
+    grid-template-columns: minmax(768px, 100vw);
+    grid-template-rows: auto;
     aspect-ratio: 1/0.6;
   }
 }
