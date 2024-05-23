@@ -11,6 +11,7 @@ import Questions from "./components/Questions";
 import Press from "./components/Press";
 import Partners from "./components/Partners";
 import Reviews from "./components/Reviews";
+import FormFeedback from "./components/FormFeedback";
 
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";
@@ -40,6 +41,7 @@ export default async function Home({ params: { lng } }) {
       <Mentor />
       <Partners />
       <Reviews />
+      <FormFeedback />
     </div>
   );
 }

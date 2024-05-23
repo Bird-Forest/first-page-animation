@@ -30,7 +30,6 @@
 }
 @media screen and (min-width: 1440px) {
   .partners {
-    /* grid-template-columns: minmax(1280px, 1320px); */
     padding: 60px 40px;
   }
 }
