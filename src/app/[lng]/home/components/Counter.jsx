@@ -23,23 +23,23 @@ export default function Counter() {
       viewport={{ margin: "200px", amount: 0.3 }}
       className={styles.counter}
     >
-      <div className={styles.wrapList}>
-        <motion.div className={styles.countWrap}>
+      <motion.ul className={styles.wrapList}>
+        <motion.li className={styles.countWrap}>
           <MCount item={41} time={5} variants={countAnimation} />
 
           <h4 className={styles.countTitle}>активних проєктів</h4>
-        </motion.div>
-        <motion.div className={styles.countWrap} variants={countAnimation}>
+        </motion.li>
+        <motion.li className={styles.countWrap} variants={countAnimation}>
           <MCount item={371} time={20} />
 
           <h4 className={styles.countTitle}>залучених учасників</h4>
-        </motion.div>
-        <motion.div className={styles.countWrap}>
+        </motion.li>
+        <motion.li className={styles.countWrap}>
           <MCount item={87} time={10} />
 
           <h4 className={styles.countTitle}>отримали роботу</h4>
-        </motion.div>
-      </div>
+        </motion.li>
+      </motion.ul>
     </motion.section>
   );
 }

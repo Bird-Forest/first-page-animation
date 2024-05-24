@@ -4,8 +4,7 @@
   grid-template-rows: auto auto;
   justify-content: center;
   align-items: start;
-  gap: 32px;
-  /* background-color: rgb(15, 3, 31); */
+  gap: 28px;
   background: linear-gradient(
     138.78deg,
     rgb(219, 151, 197) -13.723%,
@@ -19,12 +18,14 @@
 @media (min-width: 768px) {
   .history {
     grid-template-columns: minmax(688px, 1200px);
+    gap: 38px;
     padding: 60px 40px;
   }
 }
 @media (min-width: 1440px) {
   .history {
     grid-template-columns: minmax(1280px, 1680px);
+    gap: 58px;
     padding: 60px 80px;
   }
 }
@@ -38,8 +39,7 @@
   display: grid;
   grid-template-columns: minmax(380px, 680px);
   grid-template-rows: 44px 1fr;
-  gap: 58px;
-  padding: 20px;
+  gap: 28px;
   margin: 0 auto;
 }
 .histTitle {

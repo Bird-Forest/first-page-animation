@@ -7,14 +7,6 @@
   gap: 28px;
   padding: 20px;
   background-color: rgb(15, 3, 31);
-  /* background: linear-gradient(
-    138.78deg,
-    rgb(219, 151, 197) -16.41%,
-    rgb(204, 79, 163) 4.591%,
-    rgb(160, 58, 126) 32.754%,
-    rgb(109, 38, 86) 81.055%,
-    rgb(73, 7, 53) 107.749%
-  ); */
 }
 
 @media screen and (min-width: 768px) {

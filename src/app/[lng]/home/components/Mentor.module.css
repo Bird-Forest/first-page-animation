@@ -5,31 +5,33 @@
   grid-template-rows: 1fr 100px;
   justify-content: center;
   align-items: center;
-  gap: 48px;
+  gap: 28px;
   padding: 20px;
   background-color: rgb(15, 3, 31);
 }
 @media (min-width: 768px) {
   .mentor {
+    gap: 38px;
     grid-template-columns: minmax(688px, 1160px);
     padding: 60px 40px;
   }
 }
 @media (min-width: 1280px) {
   .mentor {
+    gap: 58px;
     grid-template-columns: minmax(1160px, 1320px);
-    padding: 60px 60px;
+    padding: 60px 40px;
   }
 }
 @media (min-width: 1440px) {
   .mentor {
-    padding: 60px 80px;
+    padding: 60px 40px;
   }
 }
 @media (min-width: 1920px) {
   .mentor {
     grid-template-columns: 1320px;
-    padding: 72px 120px;
+    padding: 72px 40px;
   }
 }
 .wrapMain {

@@ -15,10 +15,10 @@ export const Count = forwardRef(function Count({ item, time }, ref) {
   };
 
   return (
-    <div ref={ref} className={styles.number} onClick={onCounter}>
+    <motion.div ref={ref} className={styles.number} onClick={onCounter}>
       <motion.div className={styles.items}>{rounded}</motion.div>
       <FaPlus className={styles.icon} />
-    </div>
+    </motion.div>
   );
 });
 export const MCount = motion(Count);
