@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { delay, motion } from "framer-motion";
 
-export default function Navigate({ lng }) {
+export default function NavHeader({ lng }) {
   const pathname = usePathname();
   const segments = pathname.split("/");
   const page = segments[2];

@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import React from "react";
-import logo from "../../../image/logo.svg";
+import logo from "../../../../public/baza/logo.svg";
 import styles from "./Header.module.css";
 import { motion } from "framer-motion";
 
-export default function BazaLogo() {
+export default function HeaderLogo() {
   return (
     <motion.div
       className={styles.logo}

@@ -5,11 +5,11 @@ import Image from "next/image";
 import styles from "./Hero.module.css";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
-import hiro1 from "../../../../image/hiro-1.jpg";
-import hiro2 from "../../../../image/hiro-2.jpg";
-import hiro3 from "../../../../image/hiro-3.jpg";
-import hiro4 from "../../../../image/hiro-4.jpg";
-import hiro5 from "../../../../image/hiro-5.jpg";
+import hiro1 from "../../../../../public/images/hero/hiro-1.jpg";
+import hiro2 from "../../../../../public/images/hero/hiro-2.jpg";
+import hiro3 from "../../../../../public/images/hero/hiro-3.jpg";
+import hiro4 from "../../../../../public/images/hero/hiro-4.jpg";
+import hiro5 from "../../../../../public/images/hero/hiro-5.jpg";
 
 const pictures = [
   { path: hiro1 },

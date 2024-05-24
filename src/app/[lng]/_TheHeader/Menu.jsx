@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { TfiMenu } from "react-icons/tfi";
 import styles from "./Header.module.css";
-import Navigate from "./Navigate";
+import NavHeader from "./NavHeader";
 
 export default function Menu({ links, lng }) {
   const [isMenu, setIsMenu] = useState(false);
@@ -23,7 +23,7 @@ export default function Menu({ links, lng }) {
           zIndex: isMenu ? "2" : "0",
         }}
       >
-        <Navigate links={links} lng={lng} />
+        <NavHeader links={links} lng={lng} />
       </div>
     </div>
   );

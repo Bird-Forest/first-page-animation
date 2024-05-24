@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "./Mentor.module.css";
 import Image from "next/image";
-import mentor from "../../../../image/mentor.jpg";
+import mentor from "../../../../../public/images/mentor/mentor.jpg";
 
 export default function Mentor() {
   return (

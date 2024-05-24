@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
-import Navigate from "./Navigate";
-import BazaLogo from "./BazaLogo";
+import HeaderLogo from "./HeaderLogo";
 import AidButton from "./AidButton";
 import LanguageBtn from "./LanguageBtn";
 import { useTranslation } from "../../i18n/server";
@@ -17,19 +16,11 @@ export default async function BazaHeader({ lng }) {
     { label: "Контакти", href: `/${lng}/contacts` },
   ];
 
-  // const navLink = [
-  //   { label: `${t("home")}`, href: `/${lng}` },
-  //   { label: `${t("trainees")}`, href: `/${lng}/trainees` },
-  //   { label: `${t("projects")}`, href: `/${lng}/projects` },
-  //   { label: `${t("blog")}`, href: `/${lng}/blog` },
-  //   { label: `${t("contacts")}`, href: `/${lng}/contacts` },
-  // ];
-
   return (
     <header className={styles.topbg}>
       <div className={styles.header}>
         <div className={styles.wrap}>
-          <BazaLogo />
+          <HeaderLogo />
           <Menu links={links} lng={lng} />
           <AidButton />
           <LanguageBtn lng={lng} />

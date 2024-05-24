@@ -3,9 +3,9 @@
 import React from "react";
 import styles from "./Structure.module.css";
 import Image from "next/image";
-import logo from "../../../../image/logo.svg";
-import skill from "../../../../image/skill.svg";
-import educate from "../../../../image/educate.svg";
+import logo from "../../../../../public/baza/logo.svg";
+import skill from "../../../../../public/baza/skill.svg";
+import educate from "../../../../../public/baza/educate.svg";
 import { delay, motion } from "framer-motion";
 
 const itemAnimation = {
