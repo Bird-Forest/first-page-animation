@@ -6,7 +6,8 @@
   align-items: center;
   gap: 28px;
   padding: 20px;
-  background-color: rgb(15, 3, 31);
+  background-color: rgb(46, 5, 53);
+  /* background-color: rgb(15, 3, 31); */
 }
 
 @media screen and (min-width: 768px) {
@@ -59,7 +60,8 @@
   grid-template-rows: 120px 1fr;
   justify-items: start;
   padding: 8px 0;
-  border-bottom: 1px solid rgb(46, 5, 53);
+  /* border-bottom: 1px solid rgb(46, 5, 53); */
+  border-bottom: 1px solid rgb(109, 38, 86);
 }
 @media screen and (min-width: 1280px) {
   .wrapItem {

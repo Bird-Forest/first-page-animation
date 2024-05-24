@@ -95,7 +95,8 @@
   height: 248px;
   border: 2px solid rgb(255, 98, 206);
   border-radius: 10px;
-  background-color: rgb(24, 5, 48);
+  /* background-color: rgb(24, 5, 48); */
+  background-color: rgb(46, 5, 53);
   overflow: hidden;
   padding: 0;
 }

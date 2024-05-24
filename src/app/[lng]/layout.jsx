@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { languages } from "../i18n/settings";
 import { dir } from "i18next";
 import "../globals.css";
+import BazaFooter from "./_TheFooter/BazaFooter";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({ children, params: { lng } }) {
       <body>
         <BazaHeader lng={lng} />
         <main>{children}</main>
+        <BazaFooter lng={lng} />
       </body>
     </html>
   );

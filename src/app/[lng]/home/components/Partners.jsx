@@ -60,6 +60,7 @@ export default function Partners() {
               width={360}
               height={180}
               quality={100}
+              style={{ borderRadius: "10px" }}
               priority
             />
           </motion.li>

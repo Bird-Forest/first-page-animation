@@ -43,7 +43,8 @@
   align-items: center;
   gap: 40px;
   border-radius: 12px;
-  background-color: rgb(154, 154, 154);
+  /* background-color: rgb(154, 154, 154); */
+  background-color: rgba(210, 210, 210, 0.5);
   padding: 16px;
   margin: 0 auto;
 }

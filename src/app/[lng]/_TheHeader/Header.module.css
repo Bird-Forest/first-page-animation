@@ -87,7 +87,7 @@
   grid-template-rows: auto;
   background-color: rgb(46, 5, 53);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 8px;
 }
 @media screen and (min-width: 820px) {
   .wrapNav {
@@ -96,8 +96,8 @@
     top: 0;
     display: grid;
     background-color: transparent;
-    padding: 0;
-    margin: 0;
+    padding: 0 20px;
+    margin: 0 auto;
   }
 }
 .navigate {

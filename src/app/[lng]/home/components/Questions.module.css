@@ -6,7 +6,8 @@
   align-items: center;
   gap: 28px;
   padding: 20px;
-  background-color: rgb(15, 3, 31);
+  /* background-color: rgb(15, 3, 31); */
+  background-color: rgb(46, 5, 53);
   margin: 0 auto;
 }
 
@@ -70,7 +71,8 @@
   line-height: 1.4;
   text-align: left;
   outline: none;
-  background-color: rgb(15, 3, 31);
+  background-color: rgb(46, 5, 53);
+  /* background-color: rgb(15, 3, 31); */
   border-left: none;
   border-top: none;
   border-right: none;

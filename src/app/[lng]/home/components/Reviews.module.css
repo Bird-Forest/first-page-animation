@@ -7,7 +7,8 @@
   gap: 28px;
   padding: 20px;
   margin: 0 auto;
-  background-color: rgb(15, 3, 31);
+  /* background-color: rgb(15, 3, 31); */
+  background-color: rgb(46, 5, 53);
 }
 @media screen and (min-width: 768px) {
   .reviews {
