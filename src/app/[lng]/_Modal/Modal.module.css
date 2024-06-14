@@ -227,3 +227,21 @@
   );
   padding: 0;
 }
+/* *** MODAL MENTOR *** */
+.titleModal {
+  color: rgb(252, 252, 252);
+  font-family: Open Sans;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+.modalForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 340px;
+  gap: 16px;
+  padding: 0;
+}

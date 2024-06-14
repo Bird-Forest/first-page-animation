@@ -14,8 +14,7 @@ import Reviews from "./components/Reviews";
 import FormFeedback from "./components/FormFeedback";
 
 import { Suspense } from "react";
-import Loading from "../_Helper/loading";
-// import ModalThank from "../_Modal/ModalThank";
+import Loading from "../_Helper/Loading";
 
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";
@@ -36,7 +35,7 @@ export default async function Home({ params: { lng } }) {
 
   return (
     <>
-      <Suspense fallback={Loading}>
+      <Suspense fallback={<Loading />}>
         <Hero />
         <History />
         <Structure />
