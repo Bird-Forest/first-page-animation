@@ -13,6 +13,10 @@ import Partners from "./components/Partners";
 import Reviews from "./components/Reviews";
 import FormFeedback from "./components/FormFeedback";
 
+import { Suspense } from "react";
+import Loading from "../_Helper/loading";
+// import ModalThank from "../_Modal/ModalThank";
+
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";
 
@@ -31,17 +35,19 @@ export default async function Home({ params: { lng } }) {
   const { t } = await useTranslation(lng);
 
   return (
-    <div>
-      <Hero />
-      <History />
-      <Structure />
-      <Counter />
-      <Questions />
-      <Press />
-      <Mentor />
-      <Partners />
-      <Reviews />
-      <FormFeedback />
-    </div>
+    <>
+      <Suspense fallback={Loading}>
+        <Hero />
+        <History />
+        <Structure />
+        <Counter />
+        <Questions />
+        <Press />
+        <Mentor />
+        <Partners />
+        <Reviews />
+        <FormFeedback />
+      </Suspense>
+    </>
   );
 }

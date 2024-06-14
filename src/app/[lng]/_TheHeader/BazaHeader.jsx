@@ -17,7 +17,7 @@ export default async function BazaHeader({ lng }) {
   ];
 
   return (
-    <header className={styles.topbg}>
+    <header id="top" className={styles.topbg}>
       <div className={styles.header}>
         <div className={styles.wrap}>
           <HeaderLogo />

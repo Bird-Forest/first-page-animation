@@ -157,8 +157,19 @@
     rgb(93, 68, 124) 92.453%
   );
   padding: 14px 16px 14px 16px;
+  cursor: pointer;
 }
-
+.button:hover,
+.button:focus {
+  background: linear-gradient(
+    138.78deg,
+    rgb(219, 151, 197) -13.723%,
+    rgb(204, 79, 163) 5.792%,
+    rgb(160, 58, 126) 31.964%,
+    rgb(109, 38, 86) 76.848%,
+    rgb(73, 7, 53) 101.654%
+  );
+}
 @media screen and (min-width: 1440px) {
   .button {
     padding: 14px 24px 14px 24px;

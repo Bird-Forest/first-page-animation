@@ -48,7 +48,7 @@
     grid-template-rows: auto;
   }
 }
-.countWrap {
+.wrapItem {
   display: grid;
   grid-template-columns: 180px 1fr;
   grid-template-rows: auto;
@@ -57,18 +57,24 @@
   gap: 10px;
 }
 @media (min-width: 768px) {
-  .countWrap {
+  .wrapItem {
     grid-template-columns: minmax(220px, 560px);
     grid-template-rows: auto auto;
   }
 }
 @media screen and (min-width: 1280px) {
-  .countWrap {
+  .wrapItem {
     align-items: center;
     justify-items: center;
   }
 }
-.number {
+.wrapTotal {
+  display: grid;
+  grid-template-columns: auto 48px;
+  grid-template-rows: auto;
+  gap: 16px;
+}
+.wrapAmount {
   display: grid;
   grid-template-columns: 120px 30px;
   grid-template-rows: 84px;
@@ -76,8 +82,9 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  color: antiquewhite;
 }
-.items {
+.amount {
   display: grid;
   justify-content: flex-end;
   align-items: center;
@@ -86,10 +93,22 @@
   font-weight: 600;
   line-height: 1.5;
 }
-.icon {
+.plus {
   fill: rgb(252, 252, 252);
   width: 28px;
   height: 28px;
+}
+.wrapClick {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  transform: rotate(320deg);
+}
+.click {
+  fill: rgb(46, 5, 53);
+  width: 48px;
+  height: 56px;
 }
 .countTitle {
   display: grid;

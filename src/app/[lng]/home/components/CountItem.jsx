@@ -15,9 +15,9 @@ export const Count = forwardRef(function Count({ item, time }, ref) {
   };
 
   return (
-    <motion.div ref={ref} className={styles.number} onClick={onCounter}>
-      <motion.div className={styles.items}>{rounded}</motion.div>
-      <FaPlus className={styles.icon} />
+    <motion.div ref={ref} className={styles.wrapAmount} onClick={onCounter}>
+      <motion.div className={styles.amount}>{rounded}</motion.div>
+      <FaPlus className={styles.plus} />
     </motion.div>
   );
 });

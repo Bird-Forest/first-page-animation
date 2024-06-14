@@ -1,0 +1,229 @@
+.overlay {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+.wrapModal {
+  position: relative;
+  display: flex;
+  width: 380px;
+  border-radius: 16px;
+  background-color: rgb(24, 5, 48);
+  border: 2px solid rgb(255, 98, 206);
+  padding: 44px 18px 32px 18px;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .wrapModal {
+    width: 684px;
+    padding: 44px 32px 32px 32px;
+  }
+}
+.closeBtn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.close {
+  width: 44px;
+  height: 44px;
+  fill: rgb(255, 255, 255);
+}
+/* ***   MODAL DONATE   *** */
+.wrapDonate {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 340px;
+  gap: 16px;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .wrapDonate {
+    width: 620px;
+    gap: 32px;
+  }
+}
+.title {
+  display: flex;
+  color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+.wrapSum {
+  display: flex;
+  width: 340px;
+  height: 96px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .wrapSum {
+    width: 616px;
+    height: 112px;
+    gap: 12px;
+  }
+}
+.sum {
+  position: relative;
+  display: flex;
+  width: 240px;
+  justify-content: flex-end;
+  color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: right;
+  background-color: rgb(24, 5, 48);
+  outline: rgb(24, 5, 48);
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .sum {
+    width: 380px;
+    font-size: 100px;
+  }
+}
+.hrn {
+  position: relative;
+  display: flex;
+  width: 32px;
+  height: 38px;
+  stroke: rgb(252, 252, 252);
+}
+.wrapBtn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .wrapBtn {
+    flex-direction: row;
+  }
+}
+.btnSum {
+  display: flex;
+  width: 120px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 4px 12px 4px;
+  box-sizing: border-box;
+  border: 1px solid rgb(252, 252, 252);
+  background-color: rgb(24, 5, 48);
+  border-radius: 8px;
+  color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .btnSum {
+    width: 140px;
+    height: 52px;
+    font-size: 18px;
+  }
+}
+.btnPay {
+  display: flex;
+  width: 240px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: rgb(252, 252, 252);
+  font-family: var(--font-open-sans);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+  outline: transparent;
+  border: none;
+}
+.btnPay.disabled {
+  background-color: rgba(210, 210, 210, 0.3);
+}
+
+.btnPay.active {
+  background: linear-gradient(
+    130.79deg,
+    rgb(108, 34, 118) 1.102%,
+    rgb(104, 45, 120) 33.541%,
+    rgb(100, 53, 121) 57.629%,
+    rgb(97, 59, 122) 76.625%,
+    rgb(93, 68, 124) 92.429%
+  );
+}
+
+/*  *** MODAL THANK  *** */
+.wrapThank {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  gap: 24px;
+  /* width: 288px;
+  height: 274px; */
+}
+.btnThank {
+  display: grid;
+  grid-template-columns: 248px;
+  grid-template-rows: 48px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: rgb(252, 252, 252);
+  font-family: var(--font-open-sans);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(
+    130.79deg,
+    rgb(108, 34, 118) 1.102%,
+    rgb(104, 45, 120) 33.541%,
+    rgb(100, 53, 121) 57.629%,
+    rgb(97, 59, 122) 76.625%,
+    rgb(93, 68, 124) 92.429%
+  );
+  padding: 0;
+}
