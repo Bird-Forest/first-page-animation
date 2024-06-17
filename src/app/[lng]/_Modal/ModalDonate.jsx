@@ -23,7 +23,7 @@ export default function ModalDonate({ closeModal }) {
       <button type="button" onClick={closeModal} className={styles.closeBtn}>
         <IoClose className={styles.close} />
       </button>
-      <form onSubmit={onPayment} className={styles.wrapDonate}>
+      <form onSubmit={onPayment} className={styles.modalDonate}>
         <h4 className={styles.title}>Сума поповнення</h4>
         <div className={styles.wrapSum}>
           <input

@@ -1,4 +1,4 @@
-import { Inter, Open_Sans, Montserrat } from "next/font/google";
+import { Open_Sans, Montserrat } from "next/font/google";
 import BazaHeader from "./_TheHeader/BazaHeader";
 import styles from "./page.module.css";
 import { languages } from "../i18n/settings";
@@ -7,20 +7,20 @@ import "../globals.css";
 import BazaFooter from "./_TheFooter/BazaFooter";
 import { IoMdRocket } from "react-icons/io";
 
-const inter = Inter({
+// const inter = Inter({
+//   subsets: ["latin"],
+//   variable: "--font-inter",
+//   display: "swap",
+// });
+
+const open_sans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-open-sans",
   display: "swap",
 });
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  display: "swap",
-});
-
-const open_sans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
   display: "swap",
 });
 
@@ -38,16 +38,14 @@ export default function RootLayout({ children, params: { lng } }) {
     <html
       lang={lng}
       dir={dir(lng)}
-      className={` ${inter.variable} ${montserrat.variable} ${open_sans.variable}`}
+      className={` ${open_sans.variable} ${montserrat.variable}`}
     >
       <body>
         <BazaHeader lng={lng} id="search-form" />
         <main>{children}</main>
-
         <a href="#top" className={styles.anchor}>
           <IoMdRocket className={styles.iconTop} />
         </a>
-
         <BazaFooter lng={lng} />
       </body>
     </html>

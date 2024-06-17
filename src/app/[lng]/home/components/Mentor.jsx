@@ -1,11 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Mentor.module.css";
 import Image from "next/image";
 import mentor from "../../../../../public/images/mentor/mentor.jpg";
+import OverlayModal from "../../_Modal/OverlayModal";
+import { createPortal } from "react-dom";
+import ModalMentor from "../../_Modal/ModalMentor";
 
 export default function Mentor() {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
   return (
     <section className={styles.mentor}>
       <div className={styles.wrapMain}>
@@ -42,7 +54,17 @@ export default function Mentor() {
         </div>
       </div>
       <div className={styles.wrapBtn}>
-        <button className={styles.mentBtn}>Стати ментором</button>
+        <button onClick={openModal} className={styles.mentBtn}>
+          Стати ментором
+        </button>
+        {showModal &&
+          createPortal(
+            <OverlayModal
+              closeModal={closeModal}
+              content={<ModalMentor closeModal={closeModal} />}
+            />,
+            document.body
+          )}
       </div>
     </section>
   );
