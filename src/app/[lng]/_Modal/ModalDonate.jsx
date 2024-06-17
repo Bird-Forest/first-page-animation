@@ -19,7 +19,10 @@ export default function ModalDonate({ closeModal }) {
     console.log("Submit");
   };
   return (
-    <div className={styles.wrapModal} onClick={(e) => e.stopPropagation()}>
+    <div
+      className={styles.wrapModalDonate}
+      onClick={(e) => e.stopPropagation()}
+    >
       <button type="button" onClick={closeModal} className={styles.closeBtn}>
         <IoClose className={styles.close} />
       </button>
@@ -37,7 +40,7 @@ export default function ModalDonate({ closeModal }) {
             <Image alt="гриивня" src={hrn} quality={100} fill priority />
           </div>
         </div>
-        <div className={styles.wrapBtn}>
+        <div className={styles.wrapBtnSum}>
           <button
             type="button"
             onClick={() => setSum(100)}

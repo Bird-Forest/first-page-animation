@@ -102,6 +102,7 @@ export default function ModalMentor({ closeModal }) {
                       value={item}
                       type="checkbox"
                       multiple={true}
+                      checked={false}
                     >
                       {item}
                     </InputCheckbox>
@@ -143,6 +144,7 @@ export default function ModalMentor({ closeModal }) {
                       value={item}
                       type="checkbox"
                       multiple={true}
+                      checked={false}
                     >
                       {item}
                     </InputCheckbox>
@@ -150,11 +152,11 @@ export default function ModalMentor({ closeModal }) {
                 </ul>
               </div>
               <div className={styles.wrapAgree}>
-                <InputCheckAgree name="agree" type="checkbox">
+                <InputCheckAgree name="agree" type="checkbox" checked={false}>
                   Надаю згоду на обробку персональних даних
                 </InputCheckAgree>
               </div>
-              <div className={styles.wrapBtn}>
+              <div className={styles.wrapBtnForm}>
                 <button
                   type="submit"
                   className={`${styles.btnPay} ${styles.active}`}
