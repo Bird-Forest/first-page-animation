@@ -7,29 +7,29 @@
   gap: 28px;
   background: linear-gradient(
     138.78deg,
-    rgb(219, 151, 197) -13.723%,
-    rgb(204, 79, 163) 5.792%,
-    rgb(160, 58, 126) 31.964%,
-    rgb(109, 38, 86) 76.848%,
-    rgb(73, 7, 53) 101.654%
+    rgb(219, 151, 197) -13.14%,
+    rgb(204, 79, 163) 6.053%,
+    rgb(160, 58, 126) 31.792%,
+    rgb(109, 38, 86) 75.935%,
+    rgb(73, 7, 53) 100.331%
   );
   padding: 20px;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .history {
     grid-template-columns: minmax(688px, 1200px);
     gap: 38px;
-    padding: 60px 40px;
+    padding: 48px 40px;
   }
 }
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .history {
     grid-template-columns: minmax(1280px, 1680px);
     gap: 58px;
     padding: 60px 80px;
   }
 }
-@media (min-width: 1920px) {
+@media screen and (min-width: 1920px) {
   .history {
     grid-template-columns: 1680px;
     padding: 72px 120px;
@@ -55,22 +55,22 @@
   grid-template-rows: 1fr;
   justify-content: center;
   color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
   font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
   padding: 20px;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .histText {
     grid-template-columns: 566px;
   }
 }
-
 .wrapInfo {
   display: grid;
   grid-template-columns: 1fr;
-  justify-content: start;
+  justify-content: center;
   align-items: start;
   grid-template-areas:
     "a "
@@ -83,13 +83,13 @@
 .empty {
   display: none;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .empty {
     display: block;
   }
   .wrapInfo {
     grid-template-columns: 1fr 20px 1fr;
-    grid-template-rows: repeat(5, 184px);
+    grid-template-rows: repeat(5, 164px);
     justify-content: center;
     align-items: start;
     grid-template-areas:
@@ -102,7 +102,7 @@
   .wrapLine {
     display: grid;
     grid-template-columns: minmax(2px, 20px);
-    grid-template-rows: 20px 162px;
+    grid-template-rows: 20px 142px;
     justify-items: center;
     gap: 1px;
     padding: 40px 0 0 0;
@@ -117,7 +117,7 @@
   .line {
     display: grid;
     width: 2px;
-    height: 162px;
+    height: 142px;
     background-color: rgb(46, 5, 53);
   }
   .itemA {
@@ -157,7 +157,7 @@
   grid-template-rows: 28px 1fr;
   padding: 10px 24px;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .block {
     grid-template-columns: minmax(280px, 420px);
     grid-template-rows: 28px 1fr;
@@ -169,6 +169,7 @@
 .titleRight {
   display: grid;
   color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
   font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
   font-weight: 700;
   line-height: 1.5;
@@ -177,6 +178,7 @@
 .titleLeft {
   display: grid;
   color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
   font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
   font-weight: 700;
   line-height: 1.5;
@@ -185,6 +187,7 @@
 .textRight {
   display: grid;
   color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
   font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
   font-weight: 400;
   line-height: 1.5;
@@ -193,12 +196,13 @@
 .textLeft {
   display: grid;
   color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
   font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .titleLeft {
     text-align: end;
   }

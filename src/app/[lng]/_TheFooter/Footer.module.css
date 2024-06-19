@@ -52,7 +52,7 @@
   height: 120px;
 }
 /* *** NAVFOOTER */
-.wrapLink {
+/* .wrapLink {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -78,8 +78,8 @@
 }
 .active {
   text-decoration: none;
-  color: rgb(227, 124, 193);
-}
+  color: rgb(226, 49, 168);
+} */
 /* *** DOCUMENT */
 .wrapDoc {
   display: flex;
@@ -98,7 +98,8 @@
 }
 @media screen and (min-width: 1280px) {
   .wrapDoc {
-    height: 172px;
+    width: 300px;
+    height: 160px;
   }
 }
 /* *** CONTACTS */
@@ -150,14 +151,37 @@
   align-items: center;
   border-radius: 50%;
   background-color: rgb(252, 252, 252);
+  box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+    inset -3px -3px 3px rgba(88, 4, 70, 0.532);
+  background: linear-gradient(
+    130.79deg,
+    rgb(108, 34, 118) 0.554%,
+    rgb(104, 45, 120) 33.196%,
+    rgb(100, 53, 121) 57.436%,
+    rgb(97, 59, 122) 76.551%,
+    rgb(93, 68, 124) 92.454%
+  );
+}
+.wrapSocial:hover,
+.wrapSocial:focus {
+  box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+    inset -3px -3px 3px rgba(88, 4, 70, 0.532);
+  background: linear-gradient(
+    135deg,
+    rgb(227, 124, 193),
+    rgb(226, 49, 168) 43.573%,
+    rgb(157, 47, 121) 90.728%,
+    rgb(133, 26, 98) 119.379%
+  );
 }
 .socIcon {
   width: 24px;
   height: 24px;
-  fill: rgb(46, 5, 53);
+  /* fill: rgb(46, 5, 53); */
+  fill: rgb(252, 252, 252);
 }
 .rull {
-  font-size: clamp(16px, 0.839rem + 0.33vw, 18px);
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.5;
   text-align: center;

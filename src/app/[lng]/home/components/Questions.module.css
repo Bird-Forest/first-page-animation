@@ -6,7 +6,6 @@
   align-items: center;
   gap: 28px;
   padding: 20px;
-  /* background-color: rgb(15, 3, 31); */
   background-color: rgb(46, 5, 53);
   margin: 0 auto;
 }
@@ -72,14 +71,12 @@
   text-align: left;
   outline: none;
   background-color: rgb(46, 5, 53);
-  /* background-color: rgb(15, 3, 31); */
   border-left: none;
   border-top: none;
   border-right: none;
   border-bottom: 2px solid rgb(109, 38, 86);
   cursor: pointer;
 }
-
 .icon {
   fill: rgb(252, 252, 252);
 }
@@ -121,23 +118,26 @@
   line-height: 1.5;
   text-align: center;
   cursor: pointer;
+  box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+    inset -3px -3px 3px rgba(88, 4, 70, 0.532);
   background: linear-gradient(
     130.79deg,
-    rgb(108, 34, 118) 0.715%,
-    rgb(104, 45, 120) 33.297%,
-    rgb(100, 53, 121) 57.493%,
-    rgb(97, 59, 122) 76.572%,
-    rgb(93, 68, 124) 92.446%
+    rgb(108, 34, 118) 0.554%,
+    rgb(104, 45, 120) 33.196%,
+    rgb(100, 53, 121) 57.436%,
+    rgb(97, 59, 122) 76.551%,
+    rgb(93, 68, 124) 92.454%
   );
 }
 .questBtn:hover,
 .questBtn:focus {
+  box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+    inset -3px -3px 3px rgba(88, 4, 70, 0.532);
   background: linear-gradient(
-    138.78deg,
-    rgb(219, 151, 197) -13.723%,
-    rgb(204, 79, 163) 5.792%,
-    rgb(160, 58, 126) 31.964%,
-    rgb(109, 38, 86) 76.848%,
-    rgb(73, 7, 53) 101.654%
+    135deg,
+    rgb(227, 124, 193),
+    rgb(226, 49, 168) 43.573%,
+    rgb(157, 47, 121) 90.728%,
+    rgb(133, 26, 98) 119.379%
   );
 }

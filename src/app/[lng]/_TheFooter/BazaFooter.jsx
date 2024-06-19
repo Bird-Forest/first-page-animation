@@ -10,11 +10,10 @@ export default function BazaFooter({ lng }) {
     <footer className={styles.bottom}>
       <div className={styles.wrapper}>
         <FooterLogo />
-        <NavFooter lng={lng} />
         <Documents />
         <Contacts />
       </div>
-      <p className={styles.text}>
+      <p className={styles.rull}>
         Розробка Baza Trainee Ukraine 2024 © Усі права захищені
       </p>
     </footer>

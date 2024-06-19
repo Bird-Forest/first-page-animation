@@ -8,11 +8,11 @@
   margin: 0 auto;
   background: linear-gradient(
     138.78deg,
-    rgb(219, 151, 197) -13.723%,
-    rgb(204, 79, 163) 5.792%,
-    rgb(160, 58, 126) 31.964%,
-    rgb(109, 38, 86) 76.848%,
-    rgb(73, 7, 53) 101.654%
+    rgb(219, 151, 197) -13.14%,
+    rgb(204, 79, 163) 6.053%,
+    rgb(160, 58, 126) 31.792%,
+    rgb(109, 38, 86) 75.935%,
+    rgb(73, 7, 53) 100.331%
   );
 }
 @media screen and (min-width: 768px) {
@@ -50,13 +50,13 @@
 }
 .wrapItem {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 160px 1fr;
   grid-template-rows: auto;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .wrapItem {
     grid-template-columns: minmax(220px, 560px);
     grid-template-rows: auto auto;
@@ -70,9 +70,8 @@
 }
 .wrapTotal {
   display: grid;
-  grid-template-columns: auto 48px;
+  grid-template-columns: 156px 28px;
   grid-template-rows: auto;
-  gap: 16px;
 }
 .wrapAmount {
   display: grid;
@@ -101,13 +100,12 @@
 .wrapClick {
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   padding: 0;
-  transform: rotate(320deg);
 }
 .click {
   fill: rgb(46, 5, 53);
-  width: 48px;
+  width: 28px;
   height: 56px;
 }
 .countTitle {

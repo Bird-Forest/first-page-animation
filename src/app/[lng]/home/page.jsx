@@ -1,5 +1,3 @@
-// import Image from "next/image";
-import styles from "../page.module.css";
 import { useTranslation } from "../../i18n/server";
 import { languages, fallbackLng } from "../../i18n/settings";
 import Hero from "./components/Hero";

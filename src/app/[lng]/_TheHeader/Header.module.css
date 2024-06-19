@@ -107,7 +107,7 @@
   grid-template-rows: 54px;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   list-style: none;
   font-size: clamp(16px, 0.839rem + 0.33vw, 18px);
   font-weight: 600;
@@ -133,12 +133,12 @@
 }
 .active {
   text-decoration: none;
-  color: rgb(227, 124, 193);
+  color: rgb(226, 49, 168);
 }
 .button {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 28px;
+  grid-template-rows: 20px;
   justify-content: center;
   align-items: center;
   font-size: clamp(16px, 0.839rem + 0.33vw, 18px);
@@ -148,26 +148,29 @@
   outline: none;
   border: none;
   color: rgb(252, 252, 252);
+  box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+    inset -3px -3px 3px rgba(88, 4, 70, 0.532);
   background: linear-gradient(
     130.79deg,
-    rgb(108, 34, 118) 0.568%,
-    rgb(104, 45, 120) 33.205%,
-    rgb(100, 53, 121) 57.441%,
-    rgb(97, 59, 122) 76.552%,
-    rgb(93, 68, 124) 92.453%
+    rgb(108, 34, 118) 0.554%,
+    rgb(104, 45, 120) 33.196%,
+    rgb(100, 53, 121) 57.436%,
+    rgb(97, 59, 122) 76.551%,
+    rgb(93, 68, 124) 92.454%
   );
-  padding: 14px 16px 14px 16px;
+  padding: 14px 16px;
   cursor: pointer;
 }
 .button:hover,
 .button:focus {
+  box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+    inset -3px -3px 3px rgba(88, 4, 70, 0.532);
   background: linear-gradient(
-    138.78deg,
-    rgb(219, 151, 197) -13.723%,
-    rgb(204, 79, 163) 5.792%,
-    rgb(160, 58, 126) 31.964%,
-    rgb(109, 38, 86) 76.848%,
-    rgb(73, 7, 53) 101.654%
+    135deg,
+    rgb(227, 124, 193),
+    rgb(226, 49, 168) 43.573%,
+    rgb(157, 47, 121) 90.728%,
+    rgb(133, 26, 98) 119.379%
   );
 }
 @media screen and (min-width: 1440px) {

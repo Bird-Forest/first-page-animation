@@ -7,15 +7,6 @@ import { motion } from "framer-motion";
 import { MdAdsClick } from "react-icons/md";
 
 export default function Counter() {
-  // const countAnimation = {
-  //   start: {
-  //     color: "rgb(252, 252, 252)",
-  //   },
-  //   end: {
-  //     color: "rgb(219, 151, 197)",
-  //     transition: { duration: 0.3, repeat: 6 },
-  //   },
-  // };
   const itemAnimation = {
     hidden: {
       opacity: 1,

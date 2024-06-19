@@ -10,7 +10,10 @@ export default function InputUserData({ label, ...props }) {
   return (
     <div className={styles.wrapInput}>
       <label htmlFor={props.id || props.name} className={styles.labelData}>
-        {label} <span className={styles.red}>{"  *"}</span>
+        <p>
+          {label}
+          <span className={styles.red}>{" *"}</span>
+        </p>
       </label>
       <input
         className={
