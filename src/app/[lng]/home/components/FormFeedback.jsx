@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import styles from "./Form.module.css";
 import FormInputInfo from "./FormInputInfo";
 import FormInputMess from "./FormInputMess";
+import Spinner from "../../_Helper/Spinner";
 
 const initialValues = {
   name: "",
@@ -52,7 +53,7 @@ export default function FormFeedback() {
               <FormInputMess label="Повідомлення" name="message" type="text" />
               <div className={styles.wrapBtn}>
                 <button type="submit" className={styles.formBtn}>
-                  {props.isSubmitting ? "loading..." : " Відправити"}
+                  {props.isSubmitting ? <Spinner /> : " Відправити"}
                 </button>
               </div>
             </Form>
@@ -62,44 +63,3 @@ export default function FormFeedback() {
     </section>
   );
 }
-
-//  <form className={styles.form} onSubmit={handleForm}>
-//    <label className={styles.label}>
-//      <p>
-//        Ім`я<span className={styles.red}>{" *"}</span>
-//      </p>
-
-//      <input
-//        type="name"
-//        name="name"
-//        placeholder="Ім'я"
-//        required
-//        className={styles.info}
-//      />
-//    </label>
-//    <label className={styles.label}>
-//      <p>
-//        Електронна пошта<span className={styles.red}>{" *"}</span>
-//      </p>
-
-//      <input
-//        type="email"
-//        name="email"
-//        placeholder="email@gmail.com"
-//        required
-//        className={styles.info}
-//      />
-//    </label>
-
-//    <label className={styles.label}>
-//      <p>
-//        Повідомлення<span className={styles.red}>{" *"}</span>
-//      </p>
-//      <input type="text" name="message" required className={styles.message} />
-//    </label>
-//    <div className={styles.wrapBtn}>
-//      <button type="submit" className={styles.formBtn}>
-//        Відправити
-//      </button>
-//    </div>
-//  </form>;

@@ -1,14 +1,16 @@
 "use client";
 
 import React from "react";
-import { Formik, Form, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { IoClose } from "react-icons/io5";
 import styles from "./Modal.module.css";
 import InputCheckbox from "./forma/InputCheckbox";
 import InputUserData from "./forma/InputUserData";
 import InputCheckAgree from "./forma/InputCheckAgree";
-import ListCheckBox from "./forma/ListCheckBox";
+import Spinner from "../_Helper/Spinner";
+
+// import ListCheckBox from "./forma/ListCheckBox";
 
 const specialties = [
   "UI/UX designer",
@@ -72,8 +74,6 @@ export default function ModalMentor({ closeModal }) {
               alert(JSON.stringify(values, null, 2));
               setSubmitting(true);
               console.log(values);
-              console.log(ErrorMessage);
-              console.log(meta);
               resetForm();
             }, 400);
           }}
@@ -164,7 +164,7 @@ export default function ModalMentor({ closeModal }) {
                   type="submit"
                   className={`${styles.btnPay} ${styles.active}`}
                 >
-                  {props.isSubmitting ? "loading..." : " Відправити"}
+                  {props.isSubmitting ? <Spinner /> : " Відправити"}
                 </button>
               </div>
             </Form>
