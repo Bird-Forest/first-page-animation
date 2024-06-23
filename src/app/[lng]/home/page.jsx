@@ -1,23 +1,25 @@
-import { useTranslation } from "../../i18n/server";
-import { languages, fallbackLng } from "../../i18n/settings";
-import Hero from "./components/Hero";
-import History from "./components/History";
-import Counter from "./components/Counter";
-import Mentor from "./components/Mentor";
-import Structure from "./components/Structure";
-import Questions from "./components/Questions";
-import Press from "./components/Press";
-import Partners from "./components/Partners";
-import Reviews from "./components/Reviews";
-import FormFeedback from "./components/FormFeedback";
+import Hero from "./_components/Hero";
+import History from "./_components/History";
+import Counter from "./_components/Counter";
+import Mentor from "./_components/Mentor";
+import Structure from "./_components/Structure";
+import Questions from "./_components/Questions";
+import Press from "./_components/Press";
+import Partners from "./_components/Partners";
+import Reviews from "./_components/Reviews";
+import FormFeedback from "./_components/FormFeedback";
 
 import { Suspense } from "react";
 import Loading from "../_Helper/Loading";
 
+// import { getTranslation } from "../../i18n/server";
+import { languages, fallbackLng } from "../../i18n/settings";
+import { useTranslation } from "@/app/i18n/server";
+
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";
 
-// const i18nNamespaces = ["home"];
+// const i18nNamespaces = "home";
 // console.log("18", i18nNamespaces);
 
 // export function generateStaticParams() {
@@ -29,21 +31,21 @@ export function generateStaticParams() {
 
 export default async function Home({ params: { lng } }) {
   if (languages.indexOf(lng) < 0) lng = fallbackLng;
-  const { t } = await useTranslation(lng);
+  const { t } = await useTranslation(lng, "home");
 
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <Hero />
-        <History />
-        <Structure />
-        <Counter />
-        <Questions />
-        <Press />
-        <Mentor />
-        <Partners />
-        <Reviews />
-        <FormFeedback />
+        <Hero lng={lng} />
+        <History lng={lng} />
+        <Structure lng={lng} />
+        <Counter lng={lng} />
+        <Questions lng={lng} />
+        <Press lng={lng} />
+        <Mentor lng={lng} />
+        <Partners lng={lng} />
+        <Reviews lng={lng} />
+        <FormFeedback lng={lng} />
       </Suspense>
     </>
   );

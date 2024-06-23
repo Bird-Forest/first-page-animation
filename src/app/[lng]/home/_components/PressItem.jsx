@@ -5,6 +5,7 @@ import styles from "./Press.module.css";
 import Image from "next/image";
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/app/i18n/client";
 
 const imgAnimation = {
   start: {
@@ -33,7 +34,8 @@ const textAnimation = {
   }),
 };
 
-export const PressItem = forwardRef(function PressItem({ item }, ref) {
+export const PressItem = forwardRef(function PressItem({ item, lng }, ref) {
+  const { t } = useTranslation(lng);
   return (
     <li ref={ref} className={styles.pressItem}>
       <motion.div
@@ -61,19 +63,19 @@ export const PressItem = forwardRef(function PressItem({ item }, ref) {
         className={styles.back}
       >
         <div className={styles.infoWrap}>
-          <h4 className={styles.title}>{item.title}</h4>
-          <p className={styles.text}>{item.text}</p>
+          <h4 className={styles.title}>{t(item.title)}</h4>
+          <p className={styles.text}>{t(item.text)}</p>
           <a
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
           >
-            Читати матеріал
+            {t("press_link")}
           </a>
         </div>
       </motion.div>
     </li>
   );
 });
-export const MPressItem = motion(PressItem);
+// export const MPressItem = motion(PressItem);

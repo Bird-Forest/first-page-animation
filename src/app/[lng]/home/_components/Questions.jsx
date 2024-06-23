@@ -3,13 +3,16 @@
 import React, { useState } from "react";
 import styles from "./Questions.module.css";
 import { v4 as uuidv4 } from "uuid";
-import questions from "./data/questions.json";
+// import questions from "./data/questions";
 import QuestionItem from "./QuestionItem";
 import { createPortal } from "react-dom";
 import OverlayModal from "../../_Modal/OverlayModal";
 import ModalDonate from "../../_Modal/ModalDonate";
+import { useTranslation } from "@/app/i18n/client";
+import { questions } from "./data/questions";
 
-export default function Questions() {
+export default function Questions({ lng }) {
+  const { t } = useTranslation(lng);
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
@@ -24,12 +27,12 @@ export default function Questions() {
       <h2 className={styles.questTitle}>FAQ</h2>
       <ul className={styles.wrapQuestions}>
         {questions.map((item) => {
-          return <QuestionItem key={uuidv4()} item={item} />;
+          return <QuestionItem key={uuidv4()} item={item} lng={lng} />;
         })}
       </ul>
       <div className={styles.wrapBtn}>
         <button onClick={openModal} className={styles.questBtn}>
-          Підтримати проєкт
+          {t("quest_btn")}
         </button>
       </div>
       {showModal &&

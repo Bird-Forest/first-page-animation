@@ -1,3 +1,78 @@
 {
-  "wellcome": "Witamy"
+  "hero_text1": "Organizacja publiczna, która może uczestniczyć w pierwszej wiadomości pracę dla osób rozpoczynających swoją drogę w IT",
+
+  "HISTOPY": "",
+
+  "history_title": "Historia projektu",
+  "history_subtitle": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży",
+
+  "history_date1": "Kwiecień 2023:",
+  "history_text1": "Start projektu Baza Trainee Ukraine",
+  "history_date2": "Sierpień 2023:",
+  "history_text2": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów",
+  "history_date3": "Listopad 2023:",
+  "history_text3": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów",
+  "history_date4": "Grudzień 2023:",
+  "history_text4": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów",
+  "history_date5": "Marzec 2024:",
+  "history_text5": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron docelowych do tworzenia pełnoprawnych stron internetowych",
+
+  "STRUCTURE": "",
+
+  "struct_title": "Nasza struktura",
+
+  "struct_text1": "Projekt publiczny dla juniorów IT i swetrów, który opiera się na tworzeniu projektów cyfrowych dla sfery społecznej Ukrainy.",
+  "struct_text2": "Własna agencja rekrutacyjna dla naszych absolwentów. Baza sprawdzonych junów z doświadczeniem w rozwoju zespołu.",
+  "struct_text3": "Kursy edukacyjne o różnym stopniu trudności dla programistów, uczące pracy zespołowej i rozwoju zespołu. Dodaj umiejętności oprogramowania do wiedzy technicznej i uzyskaj dodatkowe wsparcie na rynku pracy.",
+  "struct_text4": "Agencja internetowa dla małych i średnich firm. Stworzony w 2023 roku na Ukrainie i dla Ukrainy.",
+
+  "COUNTER": "",
+
+  "count_title": "Nasze postępy",
+
+  "count_item1": "aktywnych projektów",
+  "count_item2": "zaangażowanych uczestników",
+  "count_item3": "dostali pracę",
+
+  "FAQ": "",
+
+  "quest_title1": "Jakie projekty realizujemy?",
+  "quest_text1": "Tworzymy prawdziwe projekty cyfrowe o tematyce społecznościowej dla konkretnych klientów lub wewnętrznie. Wszystkie będą dostępne online przez cały rok i możesz je zaprezentować w swoim portfolio. To nie są abstrakcyjne bloki, ale realne produkty, które mają wpływ społeczny.",
+  "quest_title2": "Jak aplikować?",
+  "quest_text2": "Na naszej stronie internetowej, w zakładce Staże, pod przyciskiem Dołącz do społeczności, znajduje się ankieta dotycząca udziału w pracach organizacji. Aby wziąć udział, potrzebujesz konta w sieci społecznościowej Discord. Jeśli go tam nie ma, otwórz go i skontaktuj się z nami.",
+  "quest_title3": "Gdzie mogę zapoznać się z warunkami uczestnictwa?",
+  "quest_text3": "Szczegóły na stronie Staż",
+  "quest_title4": "Czy można zobaczyć projekty organizacji?",
+  "quest_text4": "Wszystkie projekty, na etapie kompletowania zespołu, w trakcie realizacji lub wydane, umieszczane są na stronie Projekty. Tam też możesz zobaczyć skład zespołu, który go wykonał.",
+  "quest_title5": "Czy mogę wybrać język programowania, w którym chcę uczestniczyć?",
+  "quest_text5": "Więc. Jeśli jest dwóch lub więcej programistów chcących poćwiczyć Vue.js, Angular lub Flask, wybierzemy projekt dla wybranej technologii. Przyjdźcie ze znajomymi, będzie fajnie!",
+  "quest_btn": "Wesprzyj projekt",
+
+  "PRESS": "",
+
+  "press_title": "Prasa o nas",
+
+  "press_title1": "Jesteśmy na MC Today",
+  "press_text1": "O rozpoczęciu projektu, jego rozwoju, wynikach i statystykach, o planach i celach – w materiale publikacji internetowej MC Today",
+  "press_title2": "Jesteśmy na Dev ua",
+  "press_text2": "Ukraiński Juns z Baza Trainee stworzył stronę docelową Cats-law.site dotyczącą ukraińskiej ustawy 2351 „O okrucieństwie wobec zwierząt”",
+  "press_title3": "Jesteśmy na Hostiq.ua",
+  "press_text3": "Jak Baza Trainee Ukraine produkuje swoje produkty i dlaczego odpowiedzialny dostawca jest obowiązkowym elementem każdego projektu",
+  "press_link": "Przeczytaj materiał",
+
+  "MENTOR": "",
+
+  "mentor_title": "Mentorowi",
+  "mentor_text1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji.",
+  "mentor_text2": "Nasi mentorzy to praktycy wiodących ukraińskich firm IT, którzy starają się wspierać nowicjuszy wiedzą i poszerzać własne umiejętności menadżerskie.",
+  "mentor_text3": "W Baza Trainee Ukraina mentor kieruje kilkuosobowym zespołem jednocześnie przyczyniając się do ich rozwoju zawodowego.",
+  "mentor_btn": "Zostać mentorem",
+
+  "PARTNER": "",
+
+  "partner_title": "Partnerzy",
+
+  "REVIEW": "",
+
+  "review_title": "Opinie"
 }

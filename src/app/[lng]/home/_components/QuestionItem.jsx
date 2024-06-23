@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import styles from "./Questions.module.css";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/app/i18n/client";
 
 const staggerVariants = {
   hidden: { opacity: 0 },
@@ -15,15 +16,16 @@ const wordVariants = {
   visible: { opacity: 1 },
 };
 
-export default function QuestionItem({ item }) {
+export default function QuestionItem({ item, lng }) {
+  const { t } = useTranslation(lng);
   const [isOpen, setIsOpen] = useState(false);
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen);
+    // console.log(isOpen);
   };
 
-  const sentence = item.text;
-  const words = sentence.split(" ");
+  // let sentence = item.text;
+  // let words = sentence.split(" ");
 
   return (
     <li className={styles.wrapItem}>
@@ -33,7 +35,7 @@ export default function QuestionItem({ item }) {
         onClick={toggleAccordion}
         className={styles.wrapTitle}
       >
-        {item.title}
+        {t(item.title)}
         {isOpen ? (
           <FaMinus className={styles.icon} />
         ) : (
@@ -47,15 +49,17 @@ export default function QuestionItem({ item }) {
           animate="visible"
           className={styles.wrapText}
         >
-          {words.map((word, index) => (
-            <motion.span
-              key={index}
-              variants={wordVariants}
-              className={styles.text}
-            >
-              {word}
-            </motion.span>
-          ))}
+          {t(item.text)
+            .split(" ")
+            .map((word, index) => (
+              <motion.span
+                key={index}
+                variants={wordVariants}
+                className={styles.text}
+              >
+                {word}
+              </motion.span>
+            ))}
         </motion.div>
       )}
     </li>

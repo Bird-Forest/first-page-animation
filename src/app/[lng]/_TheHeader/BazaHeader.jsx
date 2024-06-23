@@ -3,11 +3,9 @@ import styles from "./Header.module.css";
 import HeaderLogo from "./HeaderLogo";
 import AidButton from "./AidButton";
 import LanguageBtn from "./LanguageBtn";
-import { useTranslation } from "../../i18n/server";
 import Menu from "./Menu";
 
 export default async function BazaHeader({ lng }) {
-  const { t } = await useTranslation(lng);
   const links = [
     { label: "Головна", href: `/${lng}/home` },
     { label: "Стажування", href: `/${lng}/trainees` },

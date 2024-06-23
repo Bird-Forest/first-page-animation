@@ -1,3 +1,78 @@
 {
-  "wellcome": "Welcome"
+  "hero_text1": "A public organization that can participate in the first message work for those who are starting their way in IT",
+
+  "HISTOPY": "",
+
+  "history_title": "Project history",
+  "history_subtitle": "Our project started in April 2023 with the aim of supporting and providing professional development for juniors and career switchers in the IT field",
+
+  "history_date1": "April 2023:",
+  "history_text1": "Project launch of Baza Trainee Ukraine",
+  "history_date2": "August 2023:",
+  "history_text2": "The first thousand applications from participants for a total of 17 different projects, with 8 mentors",
+  "history_date3": "November 2023:",
+  "history_text3": "Four landing pages for military fundraising accumulated over 200,000 UAH, and more than 50 juniors were employed",
+  "history_date4": "December 2023:",
+  "history_text4": "The number of participants has increased to 1700. 35 projects have been successfully completed",
+  "history_date5": "March 2024:",
+  "history_text5": "During our work, we observe an increase in project complexity from simple landing pages to full-fledged websites",
+
+  "STRUCTURE": "",
+
+  "struct_title": "Our structure",
+
+  "struct_text1": "A public project for juniors and IT switchers, focused on creating digital projects for the social sphere of Ukraine.",
+  "struct_text2": "Our own recruiting agency for our graduates. A database of verified juniors with team development experience.",
+  "struct_text3": "Educational courses of various difficulty levels for developers, teaching teamwork and collaborative development. Enhance your technical skills with soft skills and receive additional support in the job market.",
+  "struct_text4": "A web agency for small and medium-sized businesses. Established in 2023 in Ukraine and for Ukraine.",
+
+  "COUNTER": "",
+
+  "count_title": "Our progress",
+
+  "count_item1": "active projects",
+  "count_item2": "involved participants",
+  "count_item3": "received a job",
+
+  "FAQ": "",
+
+  "quest_title1": "What projects are we executing?",
+  "quest_text1": "We create genuine digital projects on social topics for specific clients or internal purposes. All of them will be available online within a year, allowing you to showcase them in your portfolio. These are not abstract blocks but real products with social impact.",
+  "quest_title2": "How to submit an application?",
+  "quest_text2": "On our website, on the Internship page, under the 'Join the Community' button, there is a form to apply for participation in the organization's work. To participate, you will need an account on the Discord social network. If you don't have one, please open one and stay in touch with us.",
+  "quest_title3": "Where can I find the participation terms?",
+  "quest_text3": "The details are on the Internship page",
+  "quest_title4": "Can one see the organization's projects?",
+  "quest_text4": "All projects, whether in the team formation stage, in progress, or completed, are listed on the Projects page. You can also see the team composition responsible for each project there.",
+  "quest_title5": "Can I choose the programming language I want to participate in?",
+  "quest_text5": "Yes. If there are two or more programmers who want to practice Vue.js or Angular or Flask, we will select a project for the chosen technology. Come with your friends, it will be fun!",
+  "quest_btn": "Donate",
+
+  "PRESS": "",
+
+  "press_title": "Press about us",
+
+  "press_title1": "We're at MC Today",
+  "press_text1": "About the start of the project, its development, results and statistics, about plans and goals - in the material of the online publication MC Today",
+  "press_title2": "We're on Dev ua",
+  "press_text2": "Ukrainian Juns from Baza Trainee created the Cats-law.site landing page about the Law of Ukraine 2351 \"On Cruelty to Animals\".",
+  "press_title3": "We're Hostiq.ua",
+  "press_text3": "How Baza Trainee Ukraine produces its products and why a responsible provider is a mandatory part of every project",
+  "press_link": "Read the material",
+
+  "MENTOR": "",
+
+  "mentor_title": "Mentor",
+  "mentor_text1": "A mentor is a colleague two levels above the mentee who oversees task execution and provides guidance or clarification when the participant is unsure about a decision.",
+  "mentor_text2": "Our mentors are practitioners from leading IT companies in Ukraine who aim to support newcomers with knowledge and enhance their own managerial skills.",
+  "mentor_text3": "At Baza Trainee Ukraine, a mentor directs a team of several people at once, contributing to their professional development.",
+  "mentor_btn": "Become a mentor",
+
+  "PARTNER": "",
+
+  "partner_title": "Partners",
+
+  "REVIEW": "",
+
+  "review_title": "Reviews"
 }

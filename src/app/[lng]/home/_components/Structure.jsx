@@ -7,6 +7,7 @@ import logo from "../../../../../public/baza/logo.svg";
 import skill from "../../../../../public/baza/skill.svg";
 import educate from "../../../../../public/baza/educate.svg";
 import { delay, motion } from "framer-motion";
+import { useTranslation } from "@/app/i18n/client";
 
 const itemAnimation = {
   hidden: {
@@ -18,7 +19,8 @@ const itemAnimation = {
   }),
 };
 
-export default function Structure() {
+export default function Structure({ lng }) {
+  const { t } = useTranslation(lng);
   return (
     <motion.section
       initial="hidden"
@@ -31,7 +33,7 @@ export default function Structure() {
         custom={1}
         className={styles.structTitle}
       >
-        Наша структура
+        {t("struct_title")}
       </motion.h2>
       <div className={styles.structWrap}>
         <div className={styles.wrapItem}>
@@ -62,8 +64,9 @@ export default function Structure() {
               custom={5}
               className={styles.itemText}
             >
-              Громадський проєкт для джуніорів і світчерів ІТ, який побудований
-              на створенні цифрових проєктів для соціальної сфери України
+              {t("struct_text1")}
+              {/* Громадський проєкт для джуніорів і світчерів ІТ, який побудований
+              на створенні цифрових проєктів для соціальної сфери України */}
             </motion.p>
           </motion.div>
         </div>
@@ -95,8 +98,9 @@ export default function Structure() {
               custom={8}
               className={styles.itemText}
             >
-              Власна рекрутингова агенція для наших випускників. База даних
-              перевірених джунів з досвідом командної розробки
+              {t("struct_text2")}
+              {/* Власна рекрутингова агенція для наших випускників. База даних
+              перевірених джунів з досвідом командної розробки */}
             </motion.p>
           </motion.div>
         </div>
@@ -128,9 +132,10 @@ export default function Structure() {
               custom={11}
               className={styles.itemText}
             >
-              Учбові курси різних рівнів складності для розробників, де навчають
+              {t("struct_text3")}
+              {/* Учбові курси різних рівнів складності для розробників, де навчають
               спільній роботі і командній розробці. Додай софт скіли до
-              технічних знань і отримай додаткову підтримку на ринку праці
+              технічних знань і отримай додаткову підтримку на ринку праці */}
             </motion.p>
           </motion.div>
         </div>
@@ -162,8 +167,9 @@ export default function Structure() {
               custom={14}
               className={styles.itemText}
             >
-              Веб агенція для малого і середнього бізнесу. Створені в 2023 в
-              Україні і для України.
+              {t("struct_text4")}
+              {/* Веб агенція для малого і середнього бізнесу. Створені в 2023 в
+              Україні і для України. */}
             </motion.p>
           </motion.div>
         </div>

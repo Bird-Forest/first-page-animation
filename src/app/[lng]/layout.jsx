@@ -2,7 +2,7 @@ import { Open_Sans, Montserrat } from "next/font/google";
 import BazaHeader from "./_TheHeader/BazaHeader";
 import styles from "./page.module.css";
 import { languages } from "../i18n/settings";
-import { dir } from "i18next";
+// import { dir } from "i18next";
 import "../globals.css";
 import BazaFooter from "./_TheFooter/BazaFooter";
 import { IoMdRocket } from "react-icons/io";
@@ -37,7 +37,7 @@ export default function RootLayout({ children, params: { lng } }) {
   return (
     <html
       lang={lng}
-      dir={dir(lng)}
+      // dir={dir(lng)}
       className={` ${open_sans.variable} ${montserrat.variable}`}
     >
       <body>
@@ -46,7 +46,7 @@ export default function RootLayout({ children, params: { lng } }) {
         <a href="#top" className={styles.anchor}>
           <IoMdRocket className={styles.iconTop} />
         </a>
-        <BazaFooter lng={lng} />
+        <BazaFooter />
       </body>
     </html>
   );

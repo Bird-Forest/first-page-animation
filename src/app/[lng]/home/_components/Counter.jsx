@@ -5,8 +5,10 @@ import styles from "./Counter.module.css";
 import { MCount } from "./CountItem";
 import { motion } from "framer-motion";
 import { MdAdsClick } from "react-icons/md";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function Counter() {
+export default function Counter({ lng }) {
+  const { t } = useTranslation(lng);
   const itemAnimation = {
     hidden: {
       opacity: 1,
@@ -24,6 +26,7 @@ export default function Counter() {
       viewport={{ margin: "200px", amount: 0.3, once: true }}
       className={styles.counter}
     >
+      <h2 className={styles.countTitle}>{t("count_title")}</h2>
       <motion.ul className={styles.wrapList}>
         <motion.li className={styles.wrapItem}>
           <div className={styles.wrapTotal}>
@@ -32,7 +35,7 @@ export default function Counter() {
               <MdAdsClick className={styles.click} />
             </motion.div>
           </div>
-          <h4 className={styles.countTitle}>активних проєктів</h4>
+          <h4 className={styles.countText}>{t("count_item1")}</h4>
         </motion.li>
         <motion.li className={styles.wrapItem}>
           <div className={styles.wrapTotal}>
@@ -41,7 +44,7 @@ export default function Counter() {
               <MdAdsClick className={styles.click} />
             </motion.div>
           </div>
-          <h4 className={styles.countTitle}>залучених учасників</h4>
+          <h4 className={styles.countText}>{t("count_item2")}</h4>
         </motion.li>
         <motion.li className={styles.wrapItem}>
           <div className={styles.wrapTotal}>
@@ -50,7 +53,7 @@ export default function Counter() {
               <MdAdsClick className={styles.click} />
             </motion.div>
           </div>
-          <h4 className={styles.countTitle}>отримали роботу</h4>
+          <h4 className={styles.countText}>{t("count_item3")}</h4>
         </motion.li>
       </motion.ul>
     </motion.section>

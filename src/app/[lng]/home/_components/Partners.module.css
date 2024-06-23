@@ -1,11 +1,11 @@
 .partners {
   display: grid;
   grid-template-columns: minmax(380px, 1320px);
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: auto 1fr;
   justify-content: center;
   align-items: center;
-  gap: 28px;
-  padding: 20px;
+  gap: 20px;
+  padding: 32px 16px;
   margin: 0 auto;
   background: linear-gradient(
     138.78deg,
@@ -18,19 +18,19 @@
 }
 @media screen and (min-width: 768px) {
   .partners {
-    gap: 38px;
-    padding: 60px 40px;
+    gap: 48px;
+    padding: 48px 40px;
   }
 }
 @media screen and (min-width: 1280px) {
   .partners {
-    gap: 58px;
-    padding: 60px 40px;
+    gap: 68px;
+    padding: 68px 60px;
   }
 }
 @media screen and (min-width: 1440px) {
   .partners {
-    padding: 60px 40px;
+    padding: 68px 80px;
   }
 }
 @media screen and (min-width: 1920px) {
@@ -41,15 +41,25 @@
 .partnerTitle {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px;
+  grid-template-rows: auto;
   justify-content: center;
   color: rgb(252, 252, 252);
-  font-size: clamp(32px, 1.397rem + 2.3vw, 40px);
+  font-size: 24px;
   font-weight: 600;
   line-height: 1.5;
   text-align: center;
   padding: 0;
   margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .partnerTitle {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .partnerTitle {
+    font-size: 40px;
+  }
 }
 .partnersList {
   display: flex;

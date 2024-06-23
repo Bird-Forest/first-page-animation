@@ -3,6 +3,7 @@
 import React from "react";
 import styles from "./History.module.css";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/app/i18n/client";
 
 const leftAnimation = {
   hidden: {
@@ -38,7 +39,8 @@ const lineAnimation = {
   }),
 };
 
-export default function History() {
+export default function History({ lng }) {
+  const { t } = useTranslation(lng);
   return (
     <motion.section
       initial="hidden"
@@ -52,16 +54,14 @@ export default function History() {
           custom={1}
           className={styles.histTitle}
         >
-          Історія проєкту
+          {t("history_title")}
         </motion.h2>
         <motion.p
           variants={rightAnimation}
           custom={2}
           className={styles.histText}
         >
-          Наш проєкт розпочався у квітні 2023 року з метою підтримки та
-          професійного розвитку джунів та світчерів до сфери ІТ. За рік ми
-          досягли значних успіхів:
+          {t("history_subtitle")}
         </motion.p>
       </div>
       <div className={styles.wrapInfo}>
@@ -71,14 +71,14 @@ export default function History() {
             custom={3}
             className={styles.titleLeft}
           >
-            Квітень 2023:
+            {t("history_date1")}
           </motion.h4>
           <motion.p
             variants={leftAnimation}
             custom={4}
             className={styles.textLeft}
           >
-            Старт проєкту Baza Trainee Ukraine
+            {t("history_text1")}
           </motion.p>
         </div>
         <div className={`${styles.wrapLine} itemS`}>
@@ -106,15 +106,14 @@ export default function History() {
             custom={5}
             className={styles.titleRight}
           >
-            Серпень 2023:
+            {t("history_date2")}
           </motion.h4>
           <motion.p
             variants={rightAnimation}
             custom={6}
             className={styles.textRight}
           >
-            Перша тисяча заявок від учасників загалом на 17 різноманітних
-            проєктів, 8 менторів
+            {t("history_text2")}
           </motion.p>
         </div>
 
@@ -124,15 +123,14 @@ export default function History() {
             custom={7}
             className={styles.titleLeft}
           >
-            Листопад 2023:
+            {t("history_date3")}
           </motion.h4>
           <motion.p
             variants={leftAnimation}
             custom={8}
             className={styles.textLeft}
           >
-            Чотири лендінги з військових зборів закумулювали понад 200 тис грн,
-            більше 50 працевлаштованих джунів
+            {t("history_text3")}
           </motion.p>
         </div>
         <div className={`${styles.wrapLine} itemR`}>
@@ -160,14 +158,14 @@ export default function History() {
             custom={9}
             className={styles.titleRight}
           >
-            Грудень 2023:
+            {t("history_date4")}
           </motion.h4>
           <motion.p
             variants={rightAnimation}
             custom={10}
             className={styles.textRight}
           >
-            Кількість учасників зросла до 1700. Успішно завершено 35 проєктів.
+            {t("history_text4")}
           </motion.p>
         </div>
 
@@ -177,15 +175,14 @@ export default function History() {
             custom={11}
             className={styles.titleLeft}
           >
-            Березень 2024:
+            {t("history_date5")}
           </motion.h4>
           <motion.p
             variants={leftAnimation}
             custom={12}
             className={styles.textLeft}
           >
-            Під час нашої роботи ми спостерігаємо ускладнення рівню проєктів —
-            від простих лендінгів до повноцінних сайтів
+            {t("history_text5")}
           </motion.p>
         </div>
         <div className={`${styles.wrapLine} itemY`}>

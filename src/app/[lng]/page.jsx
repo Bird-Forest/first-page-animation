@@ -6,5 +6,7 @@ export function generateStaticParams() {
 }
 
 export default function navigate({ params: { lng } }) {
+  // console.log(languages);
+  // console.log(lng);
   redirect(`/${lng}/home`);
 }

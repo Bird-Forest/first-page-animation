@@ -1,60 +1,72 @@
 .mentor {
   display: grid;
   grid-template-columns: minmax(380px, 688px);
-  grid-template-rows: 1fr 60px;
+  grid-template-rows: auto 1fr 60px;
   justify-content: center;
   justify-items: center;
   gap: 20px;
-  padding: 32px 20px;
+  padding: 32px 16px;
   background-color: #2e0535;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .mentor {
-    gap: 38px;
+    gap: 48px;
     grid-template-columns: minmax(688px, 1160px);
-    padding: 60px 40px;
+    padding: 48px 40px;
   }
 }
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
   .mentor {
-    gap: 58px;
+    gap: 68px;
     grid-template-columns: minmax(1160px, 1320px);
-    padding: 60px 40px;
+    padding: 68px 60px;
   }
 }
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .mentor {
-    padding: 60px 40px;
+    padding: 68px 80px;
   }
 }
-@media (min-width: 1920px) {
+/* @media screen and (min-width: 1920px) {
   .mentor {
     grid-template-columns: 1320px;
     padding: 72px 40px;
   }
-}
-.wrapMentor {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 40px 1fr;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  padding: 0;
-  margin: 0;
-}
+} */
+
 .mentTitle {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: auto;
   justify-content: center;
   color: rgb(252, 252, 252);
-  font-size: clamp(32px, 1.397rem + 2.3vw, 40px);
+  font-size: 24px;
   font-weight: 600;
   line-height: 1.5;
   text-align: center;
   padding: 0;
   margin: 0;
 }
+@media screen and (min-width: 768px) {
+  .mentTitle {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .mentTitle {
+    font-size: 40px;
+  }
+}
+.wrapMentor {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
 .wrap {
   position: relative;
   display: flex;
@@ -150,16 +162,26 @@
   justify-content: center;
   color: rgb(252, 252, 252);
   font-family: var(--font-montserrat);
-  font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
 }
+@media screen and (min-width: 768px) {
+  .mentText {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .mentText {
+    font-size: 20px;
+  }
+}
 .wrapBtn {
-  position: relative;
+  /* position: relative; */
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px;
+  grid-template-rows: auto;
   justify-items: center;
   align-items: center;
   padding: 0;

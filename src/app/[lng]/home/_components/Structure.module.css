@@ -4,32 +4,32 @@
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
-  gap: 28px;
-  padding: 20px;
+  gap: 20px;
+  padding: 32px 16px;
   background-color: rgb(46, 5, 53);
 }
 
 @media screen and (min-width: 768px) {
   .structure {
     gap: 48px;
-    padding: 60px 40px;
+    padding: 48px 40px;
   }
 }
 @media screen and (min-width: 1280px) {
   .structure {
-    gap: 58px;
-    padding: 60px 60px;
+    gap: 68px;
+    padding: 68px 60px;
   }
 }
 @media screen and (min-width: 1440px) {
   .structure {
     grid-template-columns: minmax(1280px, 1320px);
-    padding: 60px 80px;
+    padding: 68px 80px;
   }
 }
 @media screen and (min-width: 1920px) {
   .structure {
-    padding: 72px 120px;
+    padding: 68px 120px;
   }
 }
 .structTitle {
@@ -38,12 +38,22 @@
   grid-template-rows: 60px;
   justify-content: center;
   color: rgb(252, 252, 252);
-  font-size: clamp(32px, 1.397rem + 2.3vw, 40px);
+  font-size: 24px;
   font-weight: 600;
   line-height: 1.5;
   text-align: center;
   padding: 0;
   margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .structTitle {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .structTitle {
+    font-size: 40px;
+  }
 }
 .structWrap {
   display: grid;
@@ -65,6 +75,7 @@
   .wrapItem {
     grid-template-columns: 300px 1fr;
     grid-template-rows: 1fr;
+    gap: 20px;
     align-items: center;
     padding: 8px;
   }
@@ -83,11 +94,11 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 40px 1fr;
-  padding: 8px;
+  padding: 0;
 }
 @media (min-width: 1280px) {
   .itemInfo {
-    padding: 8px 20px;
+    padding: 0;
   }
 }
 .itemTitle {
@@ -95,10 +106,20 @@
   align-items: center;
   color: rgb(252, 252, 252);
   font-family: var(--font-montserrat);
-  font-size: clamp(20px, 0.948rem + 1.15vw, 24px);
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.5;
   text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .itemTitle {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .itemTitle {
+    font-size: 28px;
+  }
 }
 .itemText {
   display: grid;
@@ -106,10 +127,22 @@
   grid-template-rows: 1fr;
   color: rgb(252, 252, 252);
   font-family: var(--font-montserrat);
-  font-size: clamp(16px, 0.698rem + 1.15vw, 20px);
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
   padding: 0;
   margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .itemText {
+    font-size: 20px;
+    grid-template-columns: 566px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .itemText {
+    font-size: 24px;
+    grid-template-columns: 1fr;
+  }
 }

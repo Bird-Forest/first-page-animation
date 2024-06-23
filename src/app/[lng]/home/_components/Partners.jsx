@@ -6,6 +6,7 @@ import { partners } from "./data/partners";
 import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/app/i18n/client";
 
 const titlelAnimation = {
   hidden: {
@@ -31,7 +32,8 @@ const cardlAnimation = {
   }),
 };
 
-export default function Partners() {
+export default function Partners({ lng }) {
+  const { t } = useTranslation(lng);
   return (
     <motion.section
       initial="hidden"
@@ -44,7 +46,7 @@ export default function Partners() {
         variants={titlelAnimation}
         className={styles.partnerTitle}
       >
-        Партнери
+        {t("partner_title")}
       </motion.h3>
       <ul className={styles.partnersList}>
         {partners.map((item) => (

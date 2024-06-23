@@ -8,6 +8,7 @@ import ReviewItem from "./ReviewItem";
 import { useState } from "react";
 import { motion, AnimatePresence, wrap } from "framer-motion";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { useTranslation } from "@/app/i18n/client";
 
 const variants = {
   enter: (direction) => {
@@ -34,7 +35,8 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-export default function Reviews() {
+export default function Reviews({ lng }) {
+  const { t } = useTranslation(lng);
   const [[page, direction], setPage] = useState([0, 0]);
   const item = wrap(0, reviews.length, page);
   const totalPage = reviews.length;
@@ -46,7 +48,7 @@ export default function Reviews() {
 
   return (
     <section className={styles.reviews}>
-      <h3 className={styles.reviewTitle}>Учасники про нас</h3>
+      <h3 className={styles.reviewTitle}>{t("review_title")}</h3>
 
       <motion.div
         key={page}

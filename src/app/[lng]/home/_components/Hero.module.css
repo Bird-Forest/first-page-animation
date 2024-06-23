@@ -42,7 +42,7 @@
   padding: 0;
   margin: 0 auto;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .bgWrap {
     grid-template-columns: minmax(768px, 1920px);
     aspect-ratio: 1/0.6;
@@ -57,16 +57,21 @@
 .hiroWrap {
   display: grid;
   grid-template-columns: minmax(380px, 840px);
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: auto auto;
   align-content: center;
   gap: 40px;
   padding: 16px;
+}
+@media screen and (min-width: 768px) {
+  .hiroWrap {
+    gap: 60px;
+  }
 }
 .hiroTitle {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  font-size: clamp(32px, 1.44rem + 2.13vw, 64px);
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.5;
   text-align: center;
@@ -77,17 +82,27 @@
     rgb(140, 46, 109),
     rgb(116, 30, 88)
   );
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .hiroTitle {
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hiroTitle {
+    font-size: 64px;
+  }
 }
 .hiroText {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
   color: rgb(252, 252, 252);
-  font-size: clamp(18px, 0.88rem + 0.93vw, 32px);
+  font-size: 18px;
   font-family: var(--font-montserrat);
   font-weight: 600;
   line-height: 1.5;
@@ -95,14 +110,13 @@
   padding: 0 16px;
   margin: 0 auto;
 }
-@media (min-width: 768px) {
-  .hiroWrap {
-    gap: 60px;
-  }
-  .hiroTitle {
-    font-size: 54px;
-  }
+@media screen and (min-width: 768px) {
   .hiroText {
-    font-size: 28px;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hiroText {
+    font-size: 32px;
   }
 }

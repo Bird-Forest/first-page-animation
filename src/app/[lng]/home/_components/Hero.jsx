@@ -6,8 +6,10 @@ import styles from "./Hero.module.css";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import { pictures } from "./data/hero";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function Hero() {
+export default function Hero({ lng }) {
+  const { t } = useTranslation(lng);
   const imgVariants = {
     visible: (i) => ({
       opacity: 1,
@@ -20,7 +22,6 @@ export default function Hero() {
       opacity: 0,
     },
   };
-
   return (
     <section className={styles.hero}>
       <div className={styles.wrap}>
@@ -53,10 +54,7 @@ export default function Hero() {
         <div className={styles.hiroBlur}>
           <div className={styles.hiroWrap}>
             <h1 className={styles.hiroTitle}>Baza Trainee Ukraine</h1>
-            <p className={styles.hiroText}>
-              Громадська організація,яка має на меті отримання першого досвіду
-              роботи тими, хто починає свій шлях в ІТ
-            </p>
+            <p className={styles.hiroText}>{t("hero_text1")}</p>
           </div>
         </div>
       </div>
