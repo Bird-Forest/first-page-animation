@@ -28,7 +28,7 @@ export default function Mentor({ lng }) {
     },
     visible: {
       opacity: 1,
-      transition: { delay: 3, duration: 5 },
+      transition: { delay: 1, duration: 3 },
     },
   };
 
@@ -36,7 +36,7 @@ export default function Mentor({ lng }) {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ margin: "400px", amount: 0.3 }}
+      viewport={{ amount: 0.3 }}
       className={styles.mentor}
     >
       <h2 className={styles.mentTitle}>{t("mentor_title")}</h2>
