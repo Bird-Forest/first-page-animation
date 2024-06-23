@@ -7,23 +7,29 @@ import styles from "./Form.module.css";
 import FormInputInfo from "./FormInputInfo";
 import FormInputMess from "./FormInputMess";
 import Spinner from "../../_Helper/Spinner";
+import { useTranslation } from "@/app/i18n/client";
 
 const initialValues = {
   name: "",
   email: "",
   message: "",
 };
-const validationSchema = Yup.object({
-  name: Yup.string().required("Введіть своє ім’я"),
-  email: Yup.string().email("відсутній @").required("Введіть електронну пошту"),
-  message: Yup.string().required("Введіть своє повідомлення"),
-});
 
-export default function FormFeedback() {
+export default function FormFeedback({ lng }) {
+  const { t } = useTranslation(lng);
+
+  const validationSchema = Yup.object({
+    name: Yup.string().required(`${t("form_error1")}`),
+    email: Yup.string()
+      .email("відсутній @")
+      .required(`${t("form_error2")}`),
+    message: Yup.string().required(`${t("form_error3")}`),
+  });
+
   return (
     <section className={styles.feedback}>
       <div className={styles.wrapForm}>
-        <h3 className={styles.formTitle}>Форма зворотного зв’язку</h3>
+        <h3 className={styles.formTitle}>{t("form_title")}</h3>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -39,21 +45,25 @@ export default function FormFeedback() {
           {(props) => (
             <Form className={styles.form} autoComplete="on">
               <FormInputInfo
-                label="Ім’я"
+                label={t("form_name")}
                 name="name"
                 type="text"
-                placeholder="Iм’я"
+                placeholder={t("form_name")}
               />
               <FormInputInfo
-                label="Електронна пошта"
+                label={t("form_email")}
                 name="email"
                 type="email"
                 placeholder="email@gmail.com"
               />
-              <FormInputMess label="Повідомлення" name="message" type="text" />
+              <FormInputMess
+                label={t("form_mess")}
+                name="message"
+                type="text"
+              />
               <div className={styles.wrapBtn}>
                 <button type="submit" className={styles.formBtn}>
-                  {props.isSubmitting ? <Spinner /> : " Відправити"}
+                  {props.isSubmitting ? <Spinner /> : `${t("form_btn")}`}
                 </button>
               </div>
             </Form>

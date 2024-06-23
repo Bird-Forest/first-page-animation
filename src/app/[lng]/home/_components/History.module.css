@@ -75,13 +75,13 @@
 }
 @media screen and (min-width: 768px) {
   .histText {
-    font-size: 20px;
+    font-size: 18px;
     grid-template-columns: 566px;
   }
 }
 @media screen and (min-width: 1280px) {
   .histText {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .wrapInfo {

@@ -28,11 +28,6 @@
     padding: 68px 60px;
   }
 }
-/* @media screen and (min-width: 1440px) {
-  .counter {
-    padding: 60px 40px;
-  }
-} */
 @media screen and (min-width: 1920px) {
   .counter {
     padding: 68px 120px;

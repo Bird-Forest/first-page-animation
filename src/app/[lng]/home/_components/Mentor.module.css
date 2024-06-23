@@ -20,6 +20,8 @@
     gap: 68px;
     grid-template-columns: minmax(1160px, 1320px);
     grid-template-rows: auto auto 60px;
+    align-items: center;
+    justify-content: center;
     padding: 68px 60px;
   }
 }
@@ -60,11 +62,8 @@
 }
 
 .wrap {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end;
-  align-items: center; */
   min-width: 380px;
   padding: 0;
   margin: 0;
@@ -74,7 +73,6 @@
     flex-direction: row-reverse;
     align-items: flex-start;
     width: 1200px;
-    /* padding: 0 20px; */
   }
 }
 .wrapImg {
@@ -93,11 +91,9 @@
   }
 }
 .imgEllips {
-  /* top: 0; */
   position: relative;
   display: grid;
   grid-template-columns: minmax(380px, 550px);
-  /* grid-template-rows: auto; */
   justify-items: center;
   align-items: start;
   aspect-ratio: 1/1;
@@ -121,8 +117,6 @@
   }
 }
 .imgWoman {
-  /* top: -380px; */
-
   position: absolute;
   display: grid;
   grid-template-columns: minmax(380px, 520px);
@@ -136,7 +130,6 @@
 }
 @media screen and (min-width: 768px) {
   .imgWoman {
-    /* top: -550px; */
     position: relative;
     grid-template-columns: 574px;
     grid-template-rows: 550px;
@@ -144,7 +137,6 @@
 }
 @media screen and (min-width: 1280px) {
   .imgWoman {
-    /* top: -550px; */
     left: -20px;
     grid-template-columns: 574px;
     grid-template-rows: 550px;
@@ -169,11 +161,9 @@
     object-fit: cover;
   }
 }
-
 .shadow {
   position: relative;
   z-index: 1;
-  /* top: -36px; */
   display: grid;
   grid-template-columns: minmax(320px, 520px);
   grid-template-rows: auto;
@@ -220,7 +210,6 @@
   }
 }
 .wrapBtn {
-  /* position: relative; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;

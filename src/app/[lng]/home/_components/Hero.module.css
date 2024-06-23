@@ -1,62 +1,77 @@
 .hero {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 1fr;
+  grid-template-rows: auto;
   justify-content: center;
   align-items: center;
 }
 .wrap {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
 }
 .bgWrap {
   position: relative;
   z-index: 0;
-  display: grid;
-  grid-template-columns: minmax(420px, 767px);
-  grid-template-rows: auto;
+  display: flex;
+  width: 100%;
+  height: 480px;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  block-size: auto;
-  aspect-ratio: 1/1;
-  padding: 0;
-  margin: 0 auto;
-}
-
-.hiroBlur {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  display: grid;
-  grid-template-columns: minmax(420px, 767px);
-  grid-template-rows: 1fr;
-  justify-items: center;
-  align-items: center;
-  backdrop-filter: blur(1px);
-  background-color: rgba(189, 189, 189, 0.5);
-  block-size: auto;
   aspect-ratio: 1/1;
   padding: 0;
   margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   .bgWrap {
-    grid-template-columns: minmax(768px, 1920px);
-    aspect-ratio: 1/0.6;
+    height: 600px;
   }
-
+}
+@media screen and (min-width: 1280px) {
+  .bgWrap {
+    height: 800px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .bgWrap {
+    height: 860px;
+  }
+}
+.hiroBlur {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 480px;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(1px);
+  background-color: rgba(189, 189, 189, 0.5);
+  aspect-ratio: 1/1;
+  padding: 0;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
   .hiroBlur {
-    grid-template-columns: minmax(768px, 100vw);
-    grid-template-rows: auto;
-    aspect-ratio: 1/0.6;
+    height: 600px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hiroBlur {
+    height: 800px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hiroBlur {
+    height: 860px;
   }
 }
 .hiroWrap {
   display: grid;
-  grid-template-columns: minmax(380px, 840px);
+  grid-template-columns: auto;
   grid-template-rows: auto auto;
   align-content: center;
   gap: 40px;
@@ -64,7 +79,13 @@
 }
 @media screen and (min-width: 768px) {
   .hiroWrap {
+    grid-template-columns: 680px;
     gap: 60px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hiroWrap {
+    grid-template-columns: 760px;
   }
 }
 .hiroTitle {
