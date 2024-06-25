@@ -448,7 +448,7 @@
 .stateTrue {
   background-position: center;
   background-size: 20px 20px;
-  background-image: url("../../../../public/images/modal/check.svg");
+  background-image: url("../../../../public/imghome/modal/check.svg");
   background-color: rgb(46, 5, 53);
 }
 .checkText {

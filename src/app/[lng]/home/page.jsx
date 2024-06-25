@@ -8,11 +8,8 @@ import Press from "./_components/Press";
 import Partners from "./_components/Partners";
 import Reviews from "./_components/Reviews";
 import FormFeedback from "./_components/FormFeedback";
-
 import { Suspense } from "react";
 import Loading from "../_Helper/Loading";
-
-// import { getTranslation } from "../../i18n/server";
 import { languages, fallbackLng } from "../../i18n/settings";
 import { useTranslation } from "@/app/i18n/server";
 

@@ -1,0 +1,153 @@
+.stages {
+  display: grid;
+  grid-template-columns: minmax(380px, 1280px);
+  grid-template-rows: auto auto;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding: 32px 16px;
+  margin: 0 auto;
+  /* background-color: #2e0535; */
+  /* Gradient fon */
+  background: linear-gradient(
+    138.78deg,
+    rgb(219, 151, 197) -17.779%,
+    rgb(204, 79, 163) 3.979%,
+    rgb(160, 58, 126) 33.157%,
+    rgb(109, 38, 86) 83.198%,
+    rgb(73, 7, 53) 110.854%
+  );
+}
+@media screen and (min-width: 768px) {
+  .stages {
+    gap: 48px;
+    padding: 48px 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .stages {
+    gap: 68px;
+    padding: 68px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .stages {
+    gap: 68px;
+    padding: 68px 80px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .stages {
+    padding: 68px 120px;
+  }
+}
+.stageTitle {
+  display: flex;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: auto; */
+  justify-content: center;
+  color: rgb(252, 252, 252);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .stageTitle {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .stageTitle {
+    font-size: 40px;
+  }
+}
+.wrapList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 0 40px 0;
+  margin: 0 auto;
+}
+
+.wrapItem {
+  display: flex;
+  flex-direction: column;
+  width: 388px;
+  height: 365px;
+  border-radius: 24px;
+  border: 2px solid rgb(226, 49, 168);
+  background-color: rgb(46, 5, 53);
+  gap: 24px;
+  padding: 32px 20px 20px 20px;
+  background-repeat: no-repeat;
+  background-size: 120px 240px;
+  background-position: 16px center;
+}
+.bg1 {
+  background-image: url("../../../../../public/imgtrainee/stages/num1.svg");
+}
+
+.bg2 {
+  background-image: url("../../../../../public/imgtrainee/stages/num2.svg");
+}
+
+.bg3 {
+  background-image: url("../../../../../public/imgtrainee/stages/num3.svg");
+}
+
+.bg4 {
+  background-image: url("../../../../../public/imgtrainee/stages/num4.svg");
+}
+.wrapTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 52px;
+  padding: 14px;
+  border-bottom: 2px solid rgb(226, 49, 168);
+}
+.itemTitle {
+  color: rgb(252, 252, 252);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+.wrapImg {
+  position: relative;
+  display: flex;
+}
+.wrapInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.wrapText {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+.wrapIcon {
+  width: 28px;
+  height: 28px;
+}
+.icon {
+  stroke: rgb(252, 252, 252);
+  width: 28px;
+  height: 28px;
+}
+.itemText {
+  color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}

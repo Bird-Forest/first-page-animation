@@ -1,0 +1,104 @@
+.advant {
+  /* position: relative; */
+  display: grid;
+  grid-template-columns: minmax(380px, 1280px);
+  grid-template-rows: auto 1fr;
+  /* flex-direction: column;
+  width: 100%;
+  height: 100%; */
+  justify-content: centers;
+  align-items: start;
+  gap: 20px;
+  padding: 32px 16px;
+  margin: 0 auto;
+  /* background-color: rgb(46, 5, 53); */
+  background-color: rgb(67, 4, 78);
+  border-top: 2px solid rgb(226, 49, 168);
+  border-bottom: 2px solid rgb(226, 49, 168);
+}
+@media screen and (min-width: 768px) {
+  .advant {
+    gap: 48px;
+    padding: 48px 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .advant {
+    gap: 68px;
+    padding: 68px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .advant {
+    gap: 68px;
+    padding: 68px 80px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .advant {
+    padding: 68px 120px;
+  }
+}
+.advantTitle {
+  display: flex;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: auto; */
+  justify-content: center;
+  color: rgb(252, 252, 252);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .advantTitle {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .advantTitle {
+    font-size: 40px;
+  }
+}
+.wrapList {
+  /* position: relative; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0 0 40px 0;
+  margin: 0 auto;
+}
+.wrapItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 388px;
+  height: 240px;
+  padding: 0;
+}
+.wrapImg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-image: url("../../../../../public/imgtrainee//advant/ellipse.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120px 120px;
+  object-fit: cover;
+}
+.text {
+  color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+}

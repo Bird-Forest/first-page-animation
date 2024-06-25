@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import styles from "./Mentor.module.css";
 import Image from "next/image";
-import ellipse from "../../../../../public/images/mentor/ellipse-svg.svg";
-import mentorMob from "../../../../../public/images/mentor/female-1w.webp";
-import mentorDeck from "../../../../../public/images/mentor/female-2w.webp";
+import ellipse from "../../../../../public/imghome/mentor/ellipse-svg.svg";
+import mentorMob from "../../../../../public/imghome/mentor/female-1w.webp";
+import mentorDeck from "../../../../../public/imghome/mentor/female-2w.webp";
 import OverlayModal from "../../_Modal/OverlayModal";
 import { createPortal } from "react-dom";
 import ModalMentor from "../../_Modal/ModalMentor";

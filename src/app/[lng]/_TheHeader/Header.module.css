@@ -52,6 +52,7 @@
 }
 @media screen and (min-width: 820px) {
   .wrapMenu {
+    z-index: 0;
     grid-template-columns: auto;
     grid-template-rows: auto;
     padding: 0;
@@ -79,8 +80,8 @@
 }
 .wrapNav {
   position: absolute;
-  z-index: 0;
-  top: 80px;
+  z-index: -1;
+  top: 0;
   left: 0;
   display: grid;
   grid-template-columns: auto;
@@ -92,16 +93,14 @@
 @media screen and (min-width: 820px) {
   .wrapNav {
     position: relative;
-    z-index: 0;
     top: 0;
     display: grid;
     background-color: transparent;
     padding: 0 20px;
-    margin: 0 auto;
+    margin: 0;
   }
 }
 .navigate {
-  background-color: rgb(46, 5, 53);
   display: grid;
   grid-template-columns: repeat(5, minmax(auto, 150px));
   grid-template-rows: 54px;
@@ -109,6 +108,7 @@
   align-items: center;
   gap: 8px;
   list-style: none;
+  background-color: rgb(46, 5, 53);
   font-size: clamp(16px, 0.839rem + 0.33vw, 18px);
   font-weight: 600;
   line-height: 1.5;
@@ -141,7 +141,7 @@
   grid-template-rows: 20px;
   justify-content: center;
   align-items: center;
-  font-size: clamp(16px, 0.839rem + 0.33vw, 18px);
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
   border-radius: 8px;

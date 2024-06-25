@@ -20,7 +20,8 @@ export default function Menu({ links, lng }) {
       <div
         className={styles.wrapNav}
         style={{
-          zIndex: isMenu ? "2" : "0",
+          zIndex: isMenu ? "0" : "-1",
+          top: isMenu ? "80px" : "0",
         }}
       >
         <NavHeader links={links} lng={lng} />

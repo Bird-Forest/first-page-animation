@@ -1,6 +1,6 @@
-import review1 from "../../../../../../public/images/reviews/review1.png";
-import review2 from "../../../../../../public/images/reviews/review2.png";
-import review3 from "../../../../../../public/images/reviews/review3.png";
+import review1 from "../../../../../../public/imghome/reviews/review1.png";
+import review2 from "../../../../../../public/imghome/reviews/review2.png";
+import review3 from "../../../../../../public/imghome/reviews/review3.png";
 
 export const reviews = [
   {

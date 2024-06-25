@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import styles from "./Press.module.css";
+import styles from "./Speciality.module.css";
 import Image from "next/image";
+import { TbArrowBigLeftLines, TbArrowBigRightLines } from "react-icons/tb";
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import { useTranslation } from "@/app/i18n/client";
 
 const imgAnimation = {
   start: {
@@ -33,48 +33,46 @@ const textAnimation = {
     transition: { duration: 2, delay: custom * 3 },
   }),
 };
-const PressItem = forwardRef(function PressItem({ item, lng }, ref) {
-  const { t } = useTranslation(lng);
+
+const SpecialityItem = forwardRef(function SpecialityItem({ item }, ref) {
   return (
-    <li ref={ref} className={styles.pressItem}>
+    <li ref={ref} className={styles.wrapItem}>
       <motion.div
         custom={item.id}
         variants={imgAnimation}
-        className={styles.front}
+        className={styles.wrapFront}
       >
-        <div className={styles.imgWrap}>
+        <div className={styles.wrapImg}>
           <Image
-            alt="logo baza trainee"
+            alt={item.title}
             src={item.img}
-            width={376}
-            height={244}
+            width={384}
+            height={274}
             quality={100}
             style={{
-              borderRadius: "10px",
+              borderTopLeftRadius: "10px",
+              borderTopRightRadius: "10px",
             }}
             priority
           />
+        </div>
+        <div className={styles.wrapTitle}>
+          <h4 className={styles.itemTitle}>{item.title}</h4>
+          <TbArrowBigRightLines className={styles.icon} />
         </div>
       </motion.div>
       <motion.div
         custom={item.id}
         variants={textAnimation}
-        className={styles.back}
+        className={styles.wrapBack}
       >
-        <div className={styles.infoWrap}>
-          <h4 className={styles.title}>{t(item.title)}</h4>
-          <p className={styles.text}>{t(item.text)}</p>
-          <a
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.link}
-          >
-            {t("press_link")}
-          </a>
+        <TbArrowBigLeftLines className={styles.icon} />
+        <div className={styles.wrapInfo}>
+          <p className={styles.itemText}>{item.text1}</p>
+          <p className={styles.itemText}>{item.text2}</p>
         </div>
       </motion.div>
     </li>
   );
 });
-export const MPressItem = motion(PressItem);
+export const MSpecialityItem = motion(SpecialityItem);
