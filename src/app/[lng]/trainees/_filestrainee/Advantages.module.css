@@ -1,17 +1,12 @@
 .advant {
-  /* position: relative; */
   display: grid;
   grid-template-columns: minmax(380px, 1280px);
-  grid-template-rows: auto 1fr;
-  /* flex-direction: column;
-  width: 100%;
-  height: 100%; */
-  justify-content: centers;
+  grid-template-rows: auto 1fr auto;
+  justify-content: center;
   align-items: start;
   gap: 20px;
   padding: 32px 16px;
   margin: 0 auto;
-  /* background-color: rgb(46, 5, 53); */
   background-color: rgb(67, 4, 78);
   border-top: 2px solid rgb(226, 49, 168);
   border-bottom: 2px solid rgb(226, 49, 168);
@@ -41,8 +36,6 @@
 }
 .advantTitle {
   display: flex;
-  /* grid-template-columns: 1fr;
-  grid-template-rows: auto; */
   justify-content: center;
   color: rgb(252, 252, 252);
   font-size: 24px;
@@ -69,16 +62,18 @@
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  padding: 0 0 40px 0;
+  padding: 0;
   margin: 0 auto;
 }
 .wrapItem {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 320px;
+  height: 260px;
   gap: 16px;
-  width: 388px;
-  height: 240px;
   padding: 0;
 }
 .wrapImg {
@@ -86,19 +81,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   background-image: url("../../../../../public/imgtrainee//advant/ellipse.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 120px 120px;
+  background-size: 160px 160px;
   object-fit: cover;
 }
 .text {
+  display: flex;
+  width: 260px;
   color: rgb(252, 252, 252);
   font-family: var(--font-montserrat);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .wrapList {
+    gap: 20px;
+  }
+  .text {
+    width: 300px;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wrapList {
+    row-gap: 20px;
+    column-gap: 40px;
+  }
+  .text {
+    width: 300px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .wrapList {
+    gap: 40px;
+  }
+  .wrapItem {
+    width: 360px;
+    height: 320px;
+  }
+  .text {
+    width: 360px;
+    font-size: 22px;
+  }
 }

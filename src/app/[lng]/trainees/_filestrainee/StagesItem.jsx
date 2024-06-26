@@ -5,15 +5,12 @@ import { FiCheckSquare } from "react-icons/fi";
 
 export default function StagesItem({ item }) {
   return (
-    <li
-      // className={styles.wrapItem}
-      className={`${styles.wrapItem} ${item.bg}`}
-    >
+    <li className={`${styles.wrapItem} ${item.bg}`}>
       <div className={styles.wrapTitle}>
         <h4 className={styles.itemTitle}>{item.title}</h4>
         <div className={styles.wrapImg}>
           <Image
-            alt="icon"
+            alt="Baza Trainee entry stage icon"
             src={item.img}
             width={40}
             height={40}

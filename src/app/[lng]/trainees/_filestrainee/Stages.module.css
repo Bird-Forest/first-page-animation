@@ -7,16 +7,7 @@
   gap: 20px;
   padding: 32px 16px;
   margin: 0 auto;
-  /* background-color: #2e0535; */
-  /* Gradient fon */
-  background: linear-gradient(
-    138.78deg,
-    rgb(219, 151, 197) -17.779%,
-    rgb(204, 79, 163) 3.979%,
-    rgb(160, 58, 126) 33.157%,
-    rgb(109, 38, 86) 83.198%,
-    rgb(73, 7, 53) 110.854%
-  );
+  background-color: rgb(160, 58, 126);
 }
 @media screen and (min-width: 768px) {
   .stages {
@@ -66,21 +57,28 @@
 }
 .wrapList {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 8px;
-  padding: 0 0 40px 0;
+  gap: 12px;
+  padding: 0;
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .wrapList {
+    gap: 32px;
+  }
 }
 
 .wrapItem {
   display: flex;
   flex-direction: column;
-  width: 388px;
-  height: 365px;
+  justify-content: flex-start;
+  width: 380px;
+  height: 360px;
   border-radius: 24px;
-  border: 2px solid rgb(226, 49, 168);
+  box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+    inset -3px -3px 3px rgba(88, 4, 70, 0.532);
   background-color: rgb(46, 5, 53);
   gap: 24px;
   padding: 32px 20px 20px 20px;
@@ -103,6 +101,22 @@
 .bg4 {
   background-image: url("../../../../../public/imgtrainee/stages/num4.svg");
 }
+@media screen and (min-width: 768px) {
+  .wrapItem {
+    width: 688px;
+    height: 400px;
+    background-size: 136px 324px;
+    padding: 48px 20px 48px 140px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wrapItem {
+    width: 1160px;
+    gap: 40px;
+    background-position: 32px center;
+    padding: 48px 60px 48px 240px;
+  }
+}
 .wrapTitle {
   display: flex;
   justify-content: center;
@@ -113,11 +127,28 @@
   border-bottom: 2px solid rgb(226, 49, 168);
 }
 .itemTitle {
+  font-family: var(--font-montserrat);
   color: rgb(252, 252, 252);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .wrapTitle {
+    gap: 32px;
+  }
+  .itemTitle {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wrapTitle {
+    gap: 40px;
+  }
+  .itemTitle {
+    font-size: 32px;
+  }
 }
 .wrapImg {
   position: relative;
@@ -127,6 +158,11 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+@media screen and (min-width: 1280px) {
+  .wrapInfo {
+    gap: 24px;
+  }
 }
 .wrapText {
   display: flex;
@@ -150,4 +186,30 @@
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .itemText {
+    font-size: 18px;
+  }
+  .wrapIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .itemText {
+    font-size: 20px;
+  }
+  .wrapIcon {
+    width: 32px;
+    height: 32px;
+  }
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
 }
