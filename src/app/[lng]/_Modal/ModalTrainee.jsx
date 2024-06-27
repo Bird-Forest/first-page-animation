@@ -10,13 +10,14 @@ import InputUserData from "./forma/InputUserData";
 import InputCheckAgree from "./forma/InputCheckAgree";
 import Spinner from "../_Helper/Spinner";
 import { specialties } from "./ModalMentor";
+import InputRadio from "./forma/InputRadio";
 
 const resources = [
-  "На сайті Baza Trainee Ukraine",
-  "На сторінці Baza Educat в Instagram",
-  "На сторінці Baza Educat в Facebook",
-  "в каналі Baza Go в Telegram",
-  "в пості на LinkedIn",
+  "сайт Baza Trainee Ukraine",
+  "сторінка Baza Educat в Instagram",
+  "сторінка Baza Educat в Facebook",
+  "канал Baza Go в Telegram",
+  "пост на LinkedIn",
 ];
 
 const initialValues = {
@@ -40,22 +41,22 @@ const initialValues = {
 // https://www.linkedin.com/in/maria-barvinok/
 
 const validationSchema = Yup.object({
-  name: Yup.string().required("Введіть своє ім’я"),
-  surname: Yup.string().required("Введіть своє прізвище"),
-  email: Yup.string().email("відсутній @").required("Введіть електронну пошту"),
-  city: Yup.string().required("Введіть місто"),
-  country: Yup.string().required("Введіть країну"),
+  name: Yup.string().required("Вкажіть своє ім’я"),
+  surname: Yup.string().required("Вкажіть своє прізвище"),
+  email: Yup.string().email("відсутній @").required("Вкажіть електронну пошту"),
+  city: Yup.string().required("Вкажіть місто"),
+  country: Yup.string().required("Вкажіть країну"),
   // tel: Yup.string()
   //   .matches(regexp, "10 цифр, починаючи з 0")
   //   .required("Введіть номер телефону"),
-  nick: Yup.string().required("Введіть нік в Discord"),
-  link: Yup.string().url().required("Введіть профіль в Linkedin"),
-  course: Yup.string().required("Введіть назву курсу"),
-  experience: Yup.boolean().required("Оберіть наявність досвіду"),
+  nick: Yup.string().required("Вкажіть нік в Discord"),
+  link: Yup.string().url().required("Вкажіть профіль в Linkedin"),
+  course: Yup.string().required("Вкажіть назву курсу"),
+  experience: Yup.string()
+    .oneOf(["так", "ні"])
+    .required("Оберіть наявність досвіду"),
   motivation: Yup.string().required("Вкажіть вашу мотивацію"),
-  resource: Yup.array()
-    .of(Yup.string())
-    .min(1, "Оберіть де побачив/побачила анкету"),
+  resource: Yup.string().oneOf(resources).required("Вкажіть ресурс"),
   agree: Yup.boolean().required("Надайте згоду"),
   rule: Yup.boolean().required("Ознайомтесь з умовами участі"),
   speciality: Yup.array().of(Yup.string()).min(1, "Оберіть спецілізацію"),
@@ -73,7 +74,7 @@ export default function ModalTrainee({ closeModal }) {
       </button>
       <div className={styles.modalMentor}>
         <h4 className={styles.titleModal}>
-          Реєстрація ментора <br /> на Baza Trainee Ukraine
+          Реєстрація на участь <br />в проєкті Baza Trainee Ukraine
         </h4>
         <Formik
           initialValues={initialValues}
@@ -88,7 +89,7 @@ export default function ModalTrainee({ closeModal }) {
           }}
         >
           {(props) => (
-            <Form className={styles.mentorForm} autoComplete="off">
+            <Form className={styles.wrapForm} autoComplete="off">
               <div className={styles.wrapData}>
                 <InputUserData
                   label="Ім’я"
@@ -102,6 +103,9 @@ export default function ModalTrainee({ closeModal }) {
                   type="text"
                   placeholder="Прізвище"
                 />
+                <h4 className={styles.subtitle}>
+                  Спеціалізація<span className={styles.red}>{" *"}</span>
+                </h4>
                 <ul
                   className={styles.wrapCheck}
                   role="group"
@@ -121,6 +125,38 @@ export default function ModalTrainee({ closeModal }) {
                   ))}
                 </ul>
                 <InputUserData
+                  label="Дата закінчення курсу, якщо курс триває, зазначити - поточний"
+                  name="course"
+                  type="text"
+                />
+                <h4 className={styles.subtitle}>
+                  Наявність досвіду<span className={styles.red}>{" *"}</span>
+                </h4>
+                <div
+                  role="group"
+                  aria-labelledby="radio-group"
+                  className={styles.wrapRow}
+                >
+                  <InputRadio
+                    label="experience"
+                    name="experience"
+                    type="radio"
+                    value="Так"
+                    checked={false}
+                  >
+                    Tak
+                  </InputRadio>
+                  <InputRadio
+                    label="experience"
+                    name="experience"
+                    type="radio"
+                    value="Ні"
+                    checked={false}
+                  >
+                    Ні
+                  </InputRadio>
+                </div>
+                <InputUserData
                   label="Електронна пошта"
                   name="email"
                   type="email"
@@ -128,12 +164,6 @@ export default function ModalTrainee({ closeModal }) {
                 />
                 <InputUserData label="Місто" name="city" type="text" />
                 <InputUserData label="Країна" name="country" type="text" />
-                {/* <InputUserData
-                  label="Телефон"
-                  name="tel"
-                  type="tel"
-                  placeholder="+38 XXX XXX XX XX"
-                /> */}
                 <InputUserData
                   label="Нік в Discord"
                   name="nick"
@@ -146,47 +176,40 @@ export default function ModalTrainee({ closeModal }) {
                   type="url"
                   placeholder="Лінк на профіль"
                 />
+
                 <InputUserData
-                  label="Назва пройденого курсу по спеціальності і термін закінчення (якщо курс іде зараз, зазначте, що поточний)"
-                  name="course"
-                  type="text"
-                />
-                <InputCheckAgree
-                  label="Наявність досвіду*"
-                  name="experience"
-                  type="checkbox"
-                  checked={false}
-                />
-                <InputUserData
-                  label="В чому мотивація створити продукт?"
+                  label="Ваша мотивація створення продукту"
                   name="motivation"
                   type="text"
                   //   placeholder="Discord"
                 />
-                <h4>Я побачив/побачила анкету: *</h4>
+                <h4 className={styles.subtitle}>
+                  Джерело отримання анкети
+                  <span className={styles.red}>{" *"}</span>
+                </h4>
                 <ul
-                  className={styles.wrapCheck}
+                  className={styles.wrapColumn}
                   role="group"
-                  aria-labelledby="checkbox-group"
+                  aria-labelledby="radio-group"
                 >
                   {resources.map((item, i) => (
-                    <InputCheckbox
+                    <InputRadio
                       name="resource"
                       key={i}
                       value={item}
-                      type="checkbox"
-                      //   multiple={true}
+                      type="radio"
+                      multiple={false}
                       checked={false}
                     >
                       {item}
-                    </InputCheckbox>
+                    </InputRadio>
                   ))}
                 </ul>
               </div>
-              <h4>Ознайомлений/ознайомлена з умовами участі в проєкті *</h4>
+
               <div className={styles.wrapAgree}>
                 <InputCheckAgree name="rule" type="checkbox" checked={false}>
-                  Погоджуюсь
+                  Ознайомлений/ознайомлена з умовами участі в проєкті
                 </InputCheckAgree>
               </div>
               <div className={styles.wrapAgree}>
@@ -209,3 +232,5 @@ export default function ModalTrainee({ closeModal }) {
     </div>
   );
 }
+
+// <a class="fancybox" href="doc.pdf" data-fancybox-type="iframe">просмотр файла</a>
