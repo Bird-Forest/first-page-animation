@@ -215,7 +215,7 @@
 .lnglist {
   position: absolute;
   z-index: -1;
-  top: 28px;
+  top: 0;
   display: grid;
   grid-template-columns: 60px;
   grid-template-rows: 20px 20px;

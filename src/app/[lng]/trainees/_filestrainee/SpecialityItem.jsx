@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import styles from "./Speciality.module.css";
 import Image from "next/image";
 import { TbDots } from "react-icons/tb";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function SpecialityItem({ item }) {
+export default function SpecialityItem({ item, lng }) {
+  const { t } = useTranslation(lng, "trainees");
   const [more, setMore] = useState(false);
 
   return (
@@ -25,8 +27,8 @@ export default function SpecialityItem({ item }) {
         />
       </div>
       <div className={`${styles.wrapInfo} ${more ? styles.show : ""}`}>
-        <p className={styles.itemText}>{item.text1}</p>
-        <p className={styles.itemText}>{item.text2}</p>
+        <p className={styles.itemText}>{t(item.text1)}</p>
+        <p className={styles.itemText}>{t(item.text2)}</p>
       </div>
       <button className={styles.wrapIcon} onClick={() => setMore(!more)}>
         <TbDots className={styles.icon} />

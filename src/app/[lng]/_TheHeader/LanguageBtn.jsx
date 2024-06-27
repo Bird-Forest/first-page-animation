@@ -11,7 +11,7 @@ import { useState } from "react";
 
 export default function LanguageBtn({ lng }) {
   const pathName = usePathname();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [newLng, setNewLng] = useState("");
 
   const redirectedPathName = (lng) => {
@@ -35,7 +35,8 @@ export default function LanguageBtn({ lng }) {
         <ul
           className={styles.lnglist}
           style={{
-            zIndex: isOpen ? "-1" : "2",
+            zIndex: isOpen ? "2" : "-1",
+            top: isOpen ? "28px" : "0",
           }}
         >
           {languages.map((item) =>

@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./Advantages.module.css";
 import Image from "next/image";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function AdvantItem({ item }) {
+export default function AdvantItem({ item, lng }) {
+  const { t } = useTranslation(lng, "trainees");
   return (
     <li className={styles.wrapItem}>
       <div className={styles.wrapImg}>
@@ -14,7 +16,7 @@ export default function AdvantItem({ item }) {
           quality={100}
         />
       </div>
-      <p className={styles.text}>{item.text}</p>
+      <p className={styles.text}>{t(item.text)}</p>
     </li>
   );
 }

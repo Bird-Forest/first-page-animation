@@ -7,7 +7,8 @@
   gap: 20px;
   padding: 32px 16px;
   margin: 0 auto;
-  background-color: rgb(160, 58, 126);
+  /* background-color: rgb(160, 58, 126); */
+  background-color: rgb(138, 26, 102);
 }
 @media screen and (min-width: 768px) {
   .stages {
@@ -87,19 +88,19 @@
   background-position: 16px center;
 }
 .bg1 {
-  background-image: url("../../../../../public/imgtrainee/stages/num1.svg");
+  background-image: url("../../../../../public/images/stages/num1.svg");
 }
 
 .bg2 {
-  background-image: url("../../../../../public/imgtrainee/stages/num2.svg");
+  background-image: url("../../../../../public/images/stages/num2.svg");
 }
 
 .bg3 {
-  background-image: url("../../../../../public/imgtrainee/stages/num3.svg");
+  background-image: url("../../../../../public/images/stages/num3.svg");
 }
 
 .bg4 {
-  background-image: url("../../../../../public/imgtrainee/stages/num4.svg");
+  background-image: url("../../../../../public/images/stages/num4.svg");
 }
 @media screen and (min-width: 768px) {
   .wrapItem {

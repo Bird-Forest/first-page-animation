@@ -3,14 +3,15 @@
 import React, { useState } from "react";
 import styles from "./Mentor.module.css";
 import Image from "next/image";
-import ellipse from "../../../../../public/imghome/mentor/ellipse-svg.svg";
-import mentorMob from "../../../../../public/imghome/mentor/female-1w.webp";
-import mentorDeck from "../../../../../public/imghome/mentor/female-2w.webp";
+import ellipse from "../../../../../public/images/mentor/ellipse-svg.svg";
+import mentorMob from "../../../../../public/images/mentor/female-1w.webp";
+import mentorDeck from "../../../../../public/images/mentor/female-2w.webp";
 import OverlayModal from "../../_Modal/OverlayModal";
 import { createPortal } from "react-dom";
 import ModalMentor from "../../_Modal/ModalMentor";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/app/i18n/client";
+import MainButton from "../../_Helper/MainButton";
 
 export default function Mentor({ lng }) {
   const { t } = useTranslation(lng);
@@ -49,14 +50,7 @@ export default function Mentor({ lng }) {
               src={ellipse}
               quality={100}
               fill={true}
-              // height={"90%"}
               priority
-              // style={{
-              //   // objectFit: "cover",
-              //   width: "100%",
-              //   height: "90%",
-              //   top: "0",
-              // }}
             />
           </motion.div>
           <div className={styles.imgWoman}>
@@ -65,8 +59,6 @@ export default function Mentor({ lng }) {
               src={mentorMob}
               className={styles.imgMob}
               quality={100}
-              // fill={true}
-              // style={{ padding: "40px" }}
               style={{
                 objectFit: "cover",
                 width: "80%",
@@ -98,20 +90,15 @@ export default function Mentor({ lng }) {
           </p>
         </div>
       </div>
-
-      <div className={styles.wrapBtn}>
-        <button onClick={openModal} className={styles.mentBtn}>
-          {t("mentor_btn")}
-        </button>
-        {showModal &&
-          createPortal(
-            <OverlayModal
-              closeModal={closeModal}
-              content={<ModalMentor closeModal={closeModal} />}
-            />,
-            document.body
-          )}
-      </div>
+      <MainButton onClick={openModal}>{t("mentor_btn")}</MainButton>
+      {showModal &&
+        createPortal(
+          <OverlayModal
+            closeModal={closeModal}
+            content={<ModalMentor closeModal={closeModal} />}
+          />,
+          document.body
+        )}
     </motion.section>
   );
 }

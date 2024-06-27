@@ -1,13 +1,17 @@
+// "use client";
+
 import React from "react";
 import styles from "./Stages.module.css";
 import Image from "next/image";
 import { FiCheckSquare } from "react-icons/fi";
+import { useTranslation } from "../../../i18n/server";
 
-export default function StagesItem({ item }) {
+export default async function StagesItem({ item, lng }) {
+  const { t } = await useTranslation(lng, "trainees");
   return (
     <li className={`${styles.wrapItem} ${item.bg}`}>
       <div className={styles.wrapTitle}>
-        <h4 className={styles.itemTitle}>{item.title}</h4>
+        <h4 className={styles.itemTitle}>{t(item.title)}</h4>
         <div className={styles.wrapImg}>
           <Image
             alt="Baza Trainee entry stage icon"
@@ -23,19 +27,19 @@ export default function StagesItem({ item }) {
           <div className={styles.wrapIcon}>
             <FiCheckSquare className={styles.icon} />
           </div>
-          <p className={styles.itemText}>{item.text1}</p>
+          <p className={styles.itemText}>{t(item.text1)}</p>
         </div>
         <div className={styles.wrapText}>
           <div className={styles.wrapIcon}>
             <FiCheckSquare className={styles.icon} />
           </div>
-          <p className={styles.itemText}>{item.text2}</p>
+          <p className={styles.itemText}>{t(item.text2)}</p>
         </div>
         <div className={styles.wrapText}>
           <div className={styles.wrapIcon}>
             <FiCheckSquare className={styles.icon} />
           </div>
-          <p className={styles.itemText}>{item.text3}</p>
+          <p className={styles.itemText}>{t(item.text3)}</p>
         </div>
       </div>
     </li>

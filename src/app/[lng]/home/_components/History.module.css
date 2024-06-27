@@ -13,7 +13,7 @@
     rgb(109, 38, 86) 83.198%,
     rgb(73, 7, 53) 110.854%
   ); */
-  background-color: rgb(160, 58, 126);
+  background-color: rgb(138, 26, 102);
   padding: 32px 16px;
 }
 @media screen and (min-width: 768px) {
@@ -255,4 +255,13 @@
   .textLeft {
     font-size: 24px;
   }
+}
+/* *************************************** */
+.wrapMain {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-template-rows: repeat(5, auto);
+}
+.wrapStrnig {
+  display: grid;
 }

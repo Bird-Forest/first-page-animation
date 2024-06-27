@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styles from "./Modal.module.css";
 import { IoClose } from "react-icons/io5";
-import hrn from "../../../../public/imghome/modal/hrn.svg";
+import hrn from "../../../../public/images/modal/hrn.svg";
 import Image from "next/image";
 
 export default function ModalDonate({ closeModal }) {

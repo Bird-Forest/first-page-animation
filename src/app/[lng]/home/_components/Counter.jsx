@@ -9,6 +9,7 @@ import { useTranslation } from "@/app/i18n/client";
 
 export default function Counter({ lng }) {
   const { t } = useTranslation(lng);
+  // console.log("Count", t);
   const itemAnimation = {
     hidden: {
       opacity: 1,

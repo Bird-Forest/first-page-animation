@@ -10,6 +10,7 @@ import OverlayModal from "../../_Modal/OverlayModal";
 import ModalDonate from "../../_Modal/ModalDonate";
 import { useTranslation } from "@/app/i18n/client";
 import { questions } from "./data/questions";
+import MainButton from "../../_Helper/MainButton";
 
 export default function Questions({ lng }) {
   const { t } = useTranslation(lng);
@@ -30,11 +31,7 @@ export default function Questions({ lng }) {
           return <QuestionItem key={uuidv4()} item={item} lng={lng} />;
         })}
       </ul>
-      <div className={styles.wrapBtn}>
-        <button onClick={openModal} className={styles.questBtn}>
-          {t("quest_btn")}
-        </button>
-      </div>
+      <MainButton onClick={openModal}>{t("quest_btn")}</MainButton>
       {showModal &&
         createPortal(
           <OverlayModal
