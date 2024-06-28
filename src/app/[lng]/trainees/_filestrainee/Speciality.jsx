@@ -10,6 +10,7 @@ import SpecialityItem from "./SpecialityItem";
 // import { createPortal } from "react-dom";
 import MainButton from "../../_Helper/MainButton";
 import { useTranslation } from "@/src/app/i18n/client";
+// import PDFfile from "../../_Helper/PDFfile";
 // import downloadPdf from "@/src/app/hooks/downloadPdf";
 // import PDFfile from "../../_Helper/PDFfile";
 
@@ -33,15 +34,7 @@ export default function Speciality({ lng }) {
           <SpecialityItem key={uuidv4()} item={item} lng={lng} />
         ))}
       </ul>
-      <MainButton
-        type="button"
-        // onClick={openModal}
-        // onClick={() => {
-        //   downloadPdf("/documents/rules_participant.pdf");
-        // }}
-      >
-        {t("special_btn")}
-      </MainButton>
+      <MainButton type="button">{t("special_btn")}</MainButton>
 
       {/* {showModal &&
         createPortal(

@@ -3,7 +3,6 @@ import { languages, fallbackLng } from "../../i18n/settings";
 import Speciality from "./_filestrainee/Speciality";
 import Stages from "./_filestrainee/Stages";
 import Advantages from "./_filestrainee/Advantages";
-
 import Loading from "../_Helper/Loading";
 import { useTranslation } from "../../i18n/server";
 
