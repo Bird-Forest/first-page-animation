@@ -61,10 +61,10 @@ export default function NavHeader({ lng }) {
       </motion.li>
       <motion.li variants={item} transition={{ delay: 4, duration: 2 }}>
         <Link
-          href={`/${lng}/contacts`}
-          className={page === "contacts" ? styles.active : styles.link}
+          href={`/${lng}/about`}
+          className={page === "about" ? styles.active : styles.link}
         >
-          Контакти
+          Про нас
         </Link>
       </motion.li>
     </motion.ul>

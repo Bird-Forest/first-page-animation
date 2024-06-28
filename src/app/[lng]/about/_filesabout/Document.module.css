@@ -1,0 +1,25 @@
+.contain {
+  .mentor {
+    display: grid;
+    grid-template-columns: minmax(380px, 1fr);
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    justify-items: center;
+    gap: 20px;
+    padding: 32px 16px;
+    background-color: rgb(46, 5, 53);
+  }
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+}
+.doc {
+  display: flex;
+  width: 800px;
+  height: 1200px;
+}
