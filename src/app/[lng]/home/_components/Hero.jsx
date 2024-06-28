@@ -6,7 +6,7 @@ import styles from "./Hero.module.css";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import { pictures } from "./data/hero";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 export default function Hero({ lng }) {
   const { t } = useTranslation(lng);

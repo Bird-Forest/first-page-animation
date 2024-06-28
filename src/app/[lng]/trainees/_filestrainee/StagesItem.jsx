@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./Stages.module.css";
 import Image from "next/image";
 import { FiCheckSquare } from "react-icons/fi";
-import { useTranslation } from "../../../i18n/server";
+import { useTranslation } from "@/src/app/i18n/server";
 
 export default async function StagesItem({ item, lng }) {
   const { t } = await useTranslation(lng, "trainees");

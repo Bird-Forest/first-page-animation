@@ -5,17 +5,17 @@ import styles from "./Speciality.module.css";
 import { specialities } from "./data/specialities";
 import { v4 as uuidv4 } from "uuid";
 import SpecialityItem from "./SpecialityItem";
-import OverlayModal from "../../_Modal/OverlayModal";
-import ModalTrainee from "../../_Modal/ModalTrainee";
-import { createPortal } from "react-dom";
+// import OverlayModal from "../../_Modal/OverlayModal";
+// import ModalTrainee from "../../_Modal/ModalTrainee";
+// import { createPortal } from "react-dom";
 import MainButton from "../../_Helper/MainButton";
-import { useTranslation } from "@/app/i18n/client";
-import downloadPdf from "@/src/app/hooks/downloadPdf";
+import { useTranslation } from "@/src/app/i18n/client";
+// import downloadPdf from "@/src/app/hooks/downloadPdf";
 // import PDFfile from "../../_Helper/PDFfile";
 
 export default function Speciality({ lng }) {
   const { t } = useTranslation(lng, "trainees");
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   // const openModal = () => {
   //   setShowModal(true);

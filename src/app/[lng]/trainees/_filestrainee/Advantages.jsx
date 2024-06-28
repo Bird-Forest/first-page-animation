@@ -9,7 +9,7 @@ import ModalTrainee from "../../_Modal/ModalTrainee";
 import { createPortal } from "react-dom";
 import { advantages } from "./data/advantages";
 import MainButton from "../../_Helper/MainButton";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 export default function Advantages({ lng }) {
   const { t } = useTranslation(lng, "trainees");

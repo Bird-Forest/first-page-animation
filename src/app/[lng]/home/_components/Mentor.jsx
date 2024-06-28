@@ -10,8 +10,9 @@ import OverlayModal from "../../_Modal/OverlayModal";
 import { createPortal } from "react-dom";
 import ModalMentor from "../../_Modal/ModalMentor";
 import { motion } from "framer-motion";
-import { useTranslation } from "@/app/i18n/client";
+
 import MainButton from "../../_Helper/MainButton";
+import { useTranslation } from "@/src/app/i18n/client";
 
 export default function Mentor({ lng }) {
   const { t } = useTranslation(lng);

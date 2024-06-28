@@ -11,7 +11,7 @@ import FormFeedback from "./_components/FormFeedback";
 import { Suspense } from "react";
 import Loading from "../_Helper/Loading";
 import { languages, fallbackLng } from "../../i18n/settings";
-import { useTranslation } from "@/app/i18n/server";
+import { useTranslation } from "../../i18n/server";
 
 // import initTranslations from "../i18n";
 // import TranslationsProvider from "../components/TranslationsProvider";

@@ -7,7 +7,7 @@ import styles from "./Form.module.css";
 import FormInputInfo from "./FormInputInfo";
 import FormInputMess from "./FormInputMess";
 import Spinner from "../../_Helper/Spinner";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 const initialValues = {
   name: "",

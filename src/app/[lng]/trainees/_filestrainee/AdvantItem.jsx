@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Advantages.module.css";
 import Image from "next/image";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 export default function AdvantItem({ item, lng }) {
   const { t } = useTranslation(lng, "trainees");

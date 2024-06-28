@@ -3,7 +3,8 @@ import styles from "./Stages.module.css";
 import { stages } from "./data/stages";
 import StagesItem from "./StagesItem";
 import { v4 as uuidv4 } from "uuid";
-import { useTranslation } from "../../../i18n/server";
+import { useTranslation } from "@/src/app/i18n/server";
+
 // import { languages, fallbackLng } from "../../../i18n/settings";
 // import { useTranslation } from "@/app/i18n/client";
 

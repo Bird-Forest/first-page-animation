@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import styles from "./Questions.module.css";
 import { motion } from "framer-motion";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 const staggerVariants = {
   hidden: { opacity: 0 },

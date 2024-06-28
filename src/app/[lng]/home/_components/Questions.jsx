@@ -8,9 +8,10 @@ import QuestionItem from "./QuestionItem";
 import { createPortal } from "react-dom";
 import OverlayModal from "../../_Modal/OverlayModal";
 import ModalDonate from "../../_Modal/ModalDonate";
-import { useTranslation } from "@/app/i18n/client";
+
 import { questions } from "./data/questions";
 import MainButton from "../../_Helper/MainButton";
+import { useTranslation } from "@/src/app/i18n/client";
 
 export default function Questions({ lng }) {
   const { t } = useTranslation(lng);

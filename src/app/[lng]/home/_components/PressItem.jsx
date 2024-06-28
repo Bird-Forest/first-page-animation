@@ -5,7 +5,7 @@ import styles from "./Press.module.css";
 import Image from "next/image";
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 const imgAnimation = {
   start: {

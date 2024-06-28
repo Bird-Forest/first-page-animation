@@ -8,7 +8,7 @@ import ReviewItem from "./ReviewItem";
 import { useState } from "react";
 import { motion, AnimatePresence, wrap } from "framer-motion";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 const variants = {
   enter: (direction) => {

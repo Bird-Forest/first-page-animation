@@ -5,9 +5,9 @@ import styles from "./Structure.module.css";
 import Image from "next/image";
 import logo from "../../../../../public/baza/logo.svg";
 import skill from "../../../../../public/baza/skill.svg";
-import educate from "../../../../../public/baza/educate.svg";
+import educate from "@/public/baza/educate.svg";
 import { delay, motion } from "framer-motion";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 const itemAnimation = {
   hidden: {

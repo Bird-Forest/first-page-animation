@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "./History.module.css";
 import { motion } from "framer-motion";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 const leftAnimation = {
   hidden: {

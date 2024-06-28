@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styles from "./Speciality.module.css";
 import Image from "next/image";
 import { TbDots } from "react-icons/tb";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslation } from "@/src/app/i18n/client";
 
 export default function SpecialityItem({ item, lng }) {
   const { t } = useTranslation(lng, "trainees");
