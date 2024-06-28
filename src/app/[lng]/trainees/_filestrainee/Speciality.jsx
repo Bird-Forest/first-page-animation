@@ -10,19 +10,21 @@ import ModalTrainee from "../../_Modal/ModalTrainee";
 import { createPortal } from "react-dom";
 import MainButton from "../../_Helper/MainButton";
 import { useTranslation } from "@/app/i18n/client";
+import downloadPdf from "@/src/app/hooks/downloadPdf";
+// import PDFfile from "../../_Helper/PDFfile";
 
 export default function Speciality({ lng }) {
   const { t } = useTranslation(lng, "trainees");
-  // console.log("Special", t);
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {
-    setShowModal(true);
-  };
+  // const openModal = () => {
+  //   setShowModal(true);
+  // };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
+  // const closeModal = () => {
+  //   setShowModal(false);
+  // };
+
   return (
     <section className={styles.speciality}>
       <h2 className={styles.specialTitle}>{t("special_title")}</h2>
@@ -31,14 +33,19 @@ export default function Speciality({ lng }) {
           <SpecialityItem key={uuidv4()} item={item} lng={lng} />
         ))}
       </ul>
-      <MainButton onClick={openModal}>{t("special_btn")}</MainButton>
+      <MainButton
+        type="button"
+        // onClick={openModal}
+        onClick={() => {
+          downloadPdf("/documents/rules_participant.pdf");
+        }}
+      >
+        {t("special_btn")}
+      </MainButton>
 
       {/* {showModal &&
         createPortal(
-          <OverlayModal
-            closeModal={closeModal}
-            content={<ModalTrainee closeModal={closeModal} />}
-          />,
+          <OverlayModal closeModal={closeModal} content={<PDFfile />} />,
           document.body
         )} */}
     </section>
