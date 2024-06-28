@@ -36,9 +36,9 @@ export default function Speciality({ lng }) {
       <MainButton
         type="button"
         // onClick={openModal}
-        onClick={() => {
-          downloadPdf("/documents/rules_participant.pdf");
-        }}
+        // onClick={() => {
+        //   downloadPdf("/documents/rules_participant.pdf");
+        // }}
       >
         {t("special_btn")}
       </MainButton>
