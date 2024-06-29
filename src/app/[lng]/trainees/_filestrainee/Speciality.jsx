@@ -5,26 +5,23 @@ import styles from "./Speciality.module.css";
 import { specialities } from "./data/specialities";
 import { v4 as uuidv4 } from "uuid";
 import SpecialityItem from "./SpecialityItem";
-// import OverlayModal from "../../_Modal/OverlayModal";
-// import ModalTrainee from "../../_Modal/ModalTrainee";
-// import { createPortal } from "react-dom";
+import OverlayModal from "../../_Modal/OverlayModal";
+import { createPortal } from "react-dom";
 import MainButton from "../../_Helper/MainButton";
 import { useTranslation } from "@/src/app/i18n/client";
-// import PDFfile from "../../_Helper/PDFfile";
-// import downloadPdf from "@/src/app/hooks/downloadPdf";
-// import PDFfile from "../../_Helper/PDFfile";
+import RulesParticipant from "./RulesParticipant";
 
 export default function Speciality({ lng }) {
   const { t } = useTranslation(lng, "trainees");
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  // const openModal = () => {
-  //   setShowModal(true);
-  // };
+  const openModal = () => {
+    setShowModal(true);
+  };
 
-  // const closeModal = () => {
-  //   setShowModal(false);
-  // };
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <section className={styles.speciality}>
@@ -34,13 +31,17 @@ export default function Speciality({ lng }) {
           <SpecialityItem key={uuidv4()} item={item} lng={lng} />
         ))}
       </ul>
-      <MainButton type="button">{t("special_btn")}</MainButton>
-
-      {/* {showModal &&
+      <MainButton type="button" onClick={openModal}>
+        {t("special_btn")}
+      </MainButton>
+      {showModal &&
         createPortal(
-          <OverlayModal closeModal={closeModal} content={<PDFfile />} />,
+          <OverlayModal
+            closeModal={closeModal}
+            content={<RulesParticipant closeModal={closeModal} />}
+          />,
           document.body
-        )} */}
+        )}
     </section>
   );
 }

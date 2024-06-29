@@ -10,7 +10,7 @@ export default function InputRadio({ children, ...props }) {
   const state = field.checked;
 
   return (
-    <>
+    <div className={styles.wrapRadio}>
       <div className={styles.radioItem}>
         <input
           className={
@@ -21,6 +21,7 @@ export default function InputRadio({ children, ...props }) {
           name={props.id || props.name}
           {...field}
           {...props}
+          type="radio"
         />
         <label htmlFor={props.id || props.name} className={styles.checkText}>
           {children}
@@ -29,6 +30,6 @@ export default function InputRadio({ children, ...props }) {
       {meta.touched && meta.error ? (
         <p className={styles.errorMess}>{meta.error}</p>
       ) : null}
-    </>
+    </div>
   );
 }

@@ -26,13 +26,12 @@ const initialValues = {
   email: "",
   city: "",
   country: "",
-  // tel: "",
   nick: "",
   link: "",
   course: "",
   experience: "",
   motivation: "",
-  resource: [],
+  resource: "",
   rule: "",
   agree: "",
   speciality: [],
@@ -46,33 +45,24 @@ const validationSchema = Yup.object({
   email: Yup.string().email("відсутній @").required("Вкажіть електронну пошту"),
   city: Yup.string().required("Вкажіть місто"),
   country: Yup.string().required("Вкажіть країну"),
-  // tel: Yup.string()
-  //   .matches(regexp, "10 цифр, починаючи з 0")
-  //   .required("Введіть номер телефону"),
   nick: Yup.string().required("Вкажіть нік в Discord"),
   link: Yup.string().url().required("Вкажіть профіль в Linkedin"),
   course: Yup.string().required("Вкажіть назву курсу"),
-  experience: Yup.string()
-    .oneOf(["так", "ні"])
-    .required("Оберіть наявність досвіду"),
+  experience: Yup.string().required("Зробіть вибір"),
   motivation: Yup.string().required("Вкажіть вашу мотивацію"),
   resource: Yup.string().oneOf(resources).required("Вкажіть ресурс"),
   agree: Yup.boolean().required("Надайте згоду"),
   rule: Yup.boolean().required("Ознайомтесь з умовами участі"),
   speciality: Yup.array().of(Yup.string()).min(1, "Оберіть спецілізацію"),
-  //   time: Yup.array().of(Yup.string()).min(1, "Оберіть зручний час"),
 });
 
 export default function ModalTrainee({ closeModal }) {
   return (
-    <div
-      className={styles.wrapModalMentor}
-      onClick={(e) => e.stopPropagation()}
-    >
+    <div className={styles.wrapModalForm} onClick={(e) => e.stopPropagation()}>
       <button type="button" onClick={closeModal} className={styles.closeBtn}>
         <IoClose className={styles.close} />
       </button>
-      <div className={styles.modalMentor}>
+      <div className={styles.modalForm}>
         <h4 className={styles.titleModal}>
           Реєстрація на участь <br />в проєкті Baza Trainee Ukraine
         </h4>
@@ -142,6 +132,7 @@ export default function ModalTrainee({ closeModal }) {
                     name="experience"
                     type="radio"
                     value="Так"
+                    multiple={false}
                     checked={false}
                   >
                     Tak
@@ -151,6 +142,7 @@ export default function ModalTrainee({ closeModal }) {
                     name="experience"
                     type="radio"
                     value="Ні"
+                    multiple={false}
                     checked={false}
                   >
                     Ні
@@ -176,7 +168,6 @@ export default function ModalTrainee({ closeModal }) {
                   type="url"
                   placeholder="Лінк на профіль"
                 />
-
                 <InputUserData
                   label="Ваша мотивація створення продукту"
                   name="motivation"
@@ -206,7 +197,6 @@ export default function ModalTrainee({ closeModal }) {
                   ))}
                 </ul>
               </div>
-
               <div className={styles.wrapAgree}>
                 <InputCheckAgree name="rule" type="checkbox" checked={false}>
                   Ознайомлений/ознайомлена з умовами участі в проєкті

@@ -13,6 +13,12 @@
   background-color: rgba(15, 3, 31, 0.5);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow: auto;
+  padding: 20px 8px;
+}
+@media screen and (min-width: 768px) {
+  .overlay {
+    padding: 32px;
+  }
 }
 .wrapModal {
   position: relative;
@@ -272,8 +278,8 @@
     rgb(133, 26, 98) 119.379%
   );
 }
-/* *** MODAL MENTOR *** */
-.wrapModalMentor {
+/* *** MODAL REGISTER *** */
+.wrapModalForm {
   position: relative;
   display: flex;
   justify-content: center;
@@ -286,12 +292,12 @@
   margin: 20px;
 }
 @media screen and (min-width: 768px) {
-  .wrapModalMentor {
+  .wrapModalForm {
     width: 524px;
     padding: 44px 32px 32px 32px;
   }
 }
-.modalMentor {
+.modalForm {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -302,7 +308,7 @@
   padding: 0;
 }
 @media screen and (min-width: 768px) {
-  .modalMentor {
+  .modalForm {
     width: 456px;
   }
 }
@@ -352,11 +358,16 @@
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
+  padding: 0;
 }
+
+/* ***** INPUT RADIO **** */
 .wrapRow {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  width: 300px;
+  padding: 0;
 }
 .wrapColumn {
   display: flex;
@@ -365,14 +376,21 @@
   align-items: flex-start;
   gap: 12px;
   list-style: none;
+  padding: 0;
+}
+.wrapRadio {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 .radioItem {
-  position: relative;
+  /* position: relative; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 340px;
+  /* width: 340px; */
   gap: 12px;
+  padding: 0;
 }
 /* ***** INPUT TEXT **** */
 .wrapInput {

@@ -1,6 +1,6 @@
 export const fallbackLng = "uk";
 export const languages = [fallbackLng, "en", "pl"];
-export const ns = ["home", "trainees", "projects", "blog", "about"];
+export const ns = ["home", "trainees", "projects", "blog", "about", "modal"];
 export const defaultNS = "home";
 export const cookieName = "i18next";
 

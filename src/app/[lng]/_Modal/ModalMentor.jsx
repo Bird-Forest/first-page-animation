@@ -55,14 +55,11 @@ const validationSchema = Yup.object({
 
 export default function ModalMentor({ closeModal }) {
   return (
-    <div
-      className={styles.wrapModalMentor}
-      onClick={(e) => e.stopPropagation()}
-    >
+    <div className={styles.wrapModalForm} onClick={(e) => e.stopPropagation()}>
       <button type="button" onClick={closeModal} className={styles.closeBtn}>
         <IoClose className={styles.close} />
       </button>
-      <div className={styles.modalMentor}>
+      <div className={styles.modalForm}>
         <h4 className={styles.titleModal}>
           Реєстрація ментора <br /> на Baza Trainee Ukraine
         </h4>
