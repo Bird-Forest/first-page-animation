@@ -1,6 +1,34 @@
 {
   "FORM": "",
-  "name": "name",
-  "surname": "surname",
-  "email": "email"
+  "trainee_title": "Registration for participation in the Baza Trainee Ukraine project",
+  "mentor_title": "Mentor registration on Baza Trainee Ukraine",
+  "name": "First Name",
+  "surname": "Last Name",
+  "email": "Email",
+  "special_title": "Specialization",
+  "discord": "Nick on Discord",
+  "linkedin": "Linkedin profile",
+  "agree": "I consent to the processing of personal data",
+  "btn_send": "Send",
+
+  "MENTOR": "",
+  "phone": "Phone",
+  "time_title": "A convenient time for consultation",
+  "anytime": "anytime",
+
+  "TRAINEE": "",
+  "city": "City",
+  "country": "Country",
+  "course": "The end date of the course, if the course is ongoing, indicate the current one",
+  "experience": "Availability of experience",
+  "yes": "Yes",
+  "no": "No",
+  "motivation": "Your motivation for creating the product",
+  "resourse": "The source of the questionnaire",
+  "sourse1": "the Baza Trainee Ukraine website",
+  "sourse2": "the Baza Educat Instagram page",
+  "sourse3": "the Baza Educat Facebook page",
+  "sourse4": "the Baza Go Telegram channel",
+  "sourse5": "a LinkedIn post",
+  "rules": "Familiarized with the conditions of participation in the project"
 }

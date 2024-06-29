@@ -1,6 +1,34 @@
 {
   "FORM": "",
-  "name": "name",
-  "surname": "surname",
-  "email": "email"
+  "trainee_title": "Реєстрація на участь в проєкті Baza Trainee Ukraine",
+  "mentor_title": "Реєстрація ментора на Baza Trainee Ukraine",
+  "name": "Ім’я",
+  "surname": "Прізвище",
+  "email": "Електронна пошта",
+  "special_title": "Спеціалізація",
+  "discord": "Нік в Discord",
+  "linkedin": "Профіль в Linkedin",
+  "agree": " Надаю згоду на обробку персональних даних",
+  "btn_send": "Відправити",
+
+  "MENTOR": "",
+  "phone": "Телефон",
+  "time_title": "Зручний час для консультації",
+  "anytime": "будь-який",
+
+  "TRAINEE": "",
+  "city": "Місто",
+  "country": "Країна",
+  "course": "Дата закінчення курсу, якщо курс триває, зазначити - поточний",
+  "experience": "Наявність досвіду",
+  "yes": "Так",
+  "no": "Ні",
+  "motivation": "Ваша мотивація створення продукту",
+  "resourse": " Джерело отримання анкети",
+  "sourse1": "сайт Baza Trainee Ukraine",
+  "sourse2": "сторінка Baza Educat в Instagram",
+  "sourse3": "сторінка Baza Educat в Facebook",
+  "sourse4": "канал Baza Go в Telegram",
+  "sourse5": "пост на LinkedIn",
+  "rules": "Ознайомлений/ознайомлена з умовами участі в проєкті"
 }

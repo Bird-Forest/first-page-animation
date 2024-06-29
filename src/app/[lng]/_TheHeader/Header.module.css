@@ -112,6 +112,7 @@
   font-size: clamp(16px, 0.839rem + 0.33vw, 18px);
   font-weight: 600;
   line-height: 1.5;
+  text-wrap: nowrap;
   text-align: center;
   padding: 0;
   margin: 0 auto;
@@ -141,7 +142,7 @@
   grid-template-rows: 20px;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
   border-radius: 8px;
@@ -176,6 +177,7 @@
 @media screen and (min-width: 1440px) {
   .button {
     padding: 14px 24px 14px 24px;
+    font-size: 16px;
   }
 }
 .lngwrap {

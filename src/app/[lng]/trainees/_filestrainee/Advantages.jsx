@@ -39,7 +39,7 @@ export default function Advantages({ lng }) {
         createPortal(
           <OverlayModal
             closeModal={closeModal}
-            content={<ModalTrainee closeModal={closeModal} />}
+            content={<ModalTrainee closeModal={closeModal} lng={lng} />}
           />,
           document.body
         )}

@@ -96,7 +96,7 @@ export default function Mentor({ lng }) {
         createPortal(
           <OverlayModal
             closeModal={closeModal}
-            content={<ModalMentor closeModal={closeModal} />}
+            content={<ModalMentor closeModal={closeModal} lng={lng} />}
           />,
           document.body
         )}

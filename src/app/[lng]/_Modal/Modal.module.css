@@ -366,7 +366,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  width: 240px;
   padding: 0;
 }
 .wrapColumn {
@@ -517,8 +517,8 @@
 .wrapAgree {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   width: 340px;
   padding: 0;
   margin: 0;
@@ -561,7 +561,7 @@
   justify-content: center;
   align-items: center;
   width: 340px;
-  padding: 0;
+  padding: 16px 0;
   margin: 0;
 }
 @media screen and (min-width: 768px) {

@@ -11,14 +11,17 @@ import InputCheckAgree from "./forma/InputCheckAgree";
 import Spinner from "../_Helper/Spinner";
 import { specialties } from "./ModalMentor";
 import InputRadio from "./forma/InputRadio";
+import { useTranslation } from "@/src/app/i18n/client";
 
-const resources = [
-  "сайт Baza Trainee Ukraine",
-  "сторінка Baza Educat в Instagram",
-  "сторінка Baza Educat в Facebook",
-  "канал Baza Go в Telegram",
-  "пост на LinkedIn",
-];
+// const resources = [
+//   "сайт Baza Trainee Ukraine",
+//   "сторінка Baza Educat в Instagram",
+//   "сторінка Baza Educat в Facebook",
+//   "канал Baza Go в Telegram",
+//   "пост на LinkedIn",
+// ];
+
+const resources = ["sourse1", "sourse2", "sourse3", "sourse4", "sourse5"];
 
 const initialValues = {
   name: "",
@@ -56,16 +59,15 @@ const validationSchema = Yup.object({
   speciality: Yup.array().of(Yup.string()).min(1, "Оберіть спецілізацію"),
 });
 
-export default function ModalTrainee({ closeModal }) {
+export default function ModalTrainee({ closeModal, lng }) {
+  const { t } = useTranslation(lng, "modal");
   return (
     <div className={styles.wrapModalForm} onClick={(e) => e.stopPropagation()}>
       <button type="button" onClick={closeModal} className={styles.closeBtn}>
         <IoClose className={styles.close} />
       </button>
       <div className={styles.modalForm}>
-        <h4 className={styles.titleModal}>
-          Реєстрація на участь <br />в проєкті Baza Trainee Ukraine
-        </h4>
+        <h4 className={styles.titleModal}>{t("trainee_title")}</h4>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -82,19 +84,20 @@ export default function ModalTrainee({ closeModal }) {
             <Form className={styles.wrapForm} autoComplete="off">
               <div className={styles.wrapData}>
                 <InputUserData
-                  label="Ім’я"
+                  label={t("name")}
                   name="name"
                   type="text"
-                  placeholder="Iм’я"
+                  // placeholder="Iм’я"
                 />
                 <InputUserData
-                  label="Прізвище"
+                  label={t("surname")}
                   name="surname"
                   type="text"
-                  placeholder="Прізвище"
+                  // placeholder="Прізвище"
                 />
                 <h4 className={styles.subtitle}>
-                  Спеціалізація<span className={styles.red}>{" *"}</span>
+                  {t("special_title")}
+                  <span className={styles.red}>{" *"}</span>
                 </h4>
                 <ul
                   className={styles.wrapCheck}
@@ -114,13 +117,10 @@ export default function ModalTrainee({ closeModal }) {
                     </InputCheckbox>
                   ))}
                 </ul>
-                <InputUserData
-                  label="Дата закінчення курсу, якщо курс триває, зазначити - поточний"
-                  name="course"
-                  type="text"
-                />
+                <InputUserData label={t("course")} name="course" type="text" />
                 <h4 className={styles.subtitle}>
-                  Наявність досвіду<span className={styles.red}>{" *"}</span>
+                  {t("experience")}
+                  <span className={styles.red}>{" *"}</span>
                 </h4>
                 <div
                   role="group"
@@ -131,51 +131,55 @@ export default function ModalTrainee({ closeModal }) {
                     label="experience"
                     name="experience"
                     type="radio"
-                    value="Так"
+                    value={t("yes")}
                     multiple={false}
                     checked={false}
                   >
-                    Tak
+                    {t("yes")}
                   </InputRadio>
                   <InputRadio
                     label="experience"
                     name="experience"
                     type="radio"
-                    value="Ні"
+                    value={t("no")}
                     multiple={false}
                     checked={false}
                   >
-                    Ні
+                    {t("no")}
                   </InputRadio>
                 </div>
                 <InputUserData
-                  label="Електронна пошта"
+                  label={t("email")}
                   name="email"
                   type="email"
-                  placeholder="email@gmail.com"
+                  // placeholder="email@gmail.com"
                 />
-                <InputUserData label="Місто" name="city" type="text" />
-                <InputUserData label="Країна" name="country" type="text" />
+                <InputUserData label={t("city")} name="city" type="text" />
                 <InputUserData
-                  label="Нік в Discord"
+                  label={t("country")}
+                  name="country"
+                  type="text"
+                />
+                <InputUserData
+                  label={t("discord")}
                   name="nick"
                   type="text"
-                  placeholder="Discord"
+                  // placeholder="Discord"
                 />
                 <InputUserData
-                  label=" Профіль в Linkedin"
+                  label={t("linkedin")}
                   name="link"
                   type="url"
-                  placeholder="Лінк на профіль"
+                  // placeholder="Лінк на профіль"
                 />
                 <InputUserData
-                  label="Ваша мотивація створення продукту"
+                  label={t("motivation")}
                   name="motivation"
                   type="text"
                   //   placeholder="Discord"
                 />
                 <h4 className={styles.subtitle}>
-                  Джерело отримання анкети
+                  {t("resourse")}
                   <span className={styles.red}>{" *"}</span>
                 </h4>
                 <ul
@@ -187,24 +191,24 @@ export default function ModalTrainee({ closeModal }) {
                     <InputRadio
                       name="resource"
                       key={i}
-                      value={item}
+                      value={t(item)}
                       type="radio"
                       multiple={false}
                       checked={false}
                     >
-                      {item}
+                      {t(item)}
                     </InputRadio>
                   ))}
                 </ul>
               </div>
               <div className={styles.wrapAgree}>
                 <InputCheckAgree name="rule" type="checkbox" checked={false}>
-                  Ознайомлений/ознайомлена з умовами участі в проєкті
+                  {t("rules")}
                 </InputCheckAgree>
               </div>
               <div className={styles.wrapAgree}>
                 <InputCheckAgree name="agree" type="checkbox" checked={false}>
-                  Надаю згоду на обробку персональних даних
+                  {t("agree")}
                 </InputCheckAgree>
               </div>
               <div className={styles.wrapBtnForm}>
@@ -212,7 +216,7 @@ export default function ModalTrainee({ closeModal }) {
                   type="submit"
                   className={`${styles.btnPay} ${styles.active}`}
                 >
-                  {props.isSubmitting ? <Spinner /> : " Відправити"}
+                  {props.isSubmitting ? <Spinner /> : `${t("btn_send")}`}
                 </button>
               </div>
             </Form>

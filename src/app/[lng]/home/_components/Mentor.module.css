@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: minmax(380px, 688px);
   grid-template-rows: auto 1fr auto;
-  align-items: start;
   justify-items: center;
+  justify-content: center;
   gap: 20px;
   padding: 32px 16px;
   background-color: rgb(46, 5, 53);
