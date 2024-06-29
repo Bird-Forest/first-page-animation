@@ -40,22 +40,44 @@ const initialValues = {
 
 // https://www.linkedin.com/in/maria-barvinok/
 
-const validationSchema = Yup.object({
-  name: Yup.string().required("Введіть своє ім’я"),
-  surname: Yup.string().required("Введіть своє прізвище"),
-  email: Yup.string().email("відсутній @").required("Введіть електронну пошту"),
-  tel: Yup.string()
-    .matches(regexp, "10 цифр, починаючи з 0")
-    .required("Введіть номер телефону"),
-  nick: Yup.string().required("Введіть нік в Discord"),
-  link: Yup.string().url().required("Введіть профіль в Linkedin"),
-  agree: Yup.boolean().required("Надайте згоду"),
-  speciality: Yup.array().of(Yup.string()).min(1, "Оберіть спеціалізацію"),
-  time: Yup.array().of(Yup.string()).min(1, "Оберіть зручний час"),
-});
+// const validationSchema = Yup.object({
+//   name: Yup.string().required({t("error_name")}),
+//   surname: Yup.string().required("Вкажіть прізвище"),
+//   email: Yup.string().email("відсутній @").required("Вкажіть електронну пошту"),
+//   tel: Yup.string()
+//     .matches(regexp, "10 цифр, починаючи з 0")
+//     .required("Вкажіть номер телефону"),
+//   nick: Yup.string().required("Вкажіть нік в Discord"),
+//   link: Yup.string().url().required("Вкажіть профіль в Linkedin"),
+//   agree: Yup.boolean().required("Надайте згоду"),
+//   speciality: Yup.array().of(Yup.string()).min(1, "Зробіть вибір"),
+//   time: Yup.array().of(Yup.string()).min(1, "Зробіть вибір"),
+// });
 
 export default function ModalMentor({ closeModal, lng }) {
   const { t } = useTranslation(lng, "modal");
+
+  const validationSchema = Yup.object({
+    name: Yup.string().required(`${t("error_name")}`),
+    surname: Yup.string().required(`${t("error_surname")}`),
+    email: Yup.string()
+      .email("відсутній @")
+      .required(`${t("error_email")}`),
+    tel: Yup.string()
+      .matches(regexp, "10 цифр, починаючи з 0")
+      .required(`${t("error_tel")}`),
+    nick: Yup.string().required(`${t("error_nick")}`),
+    link: Yup.string()
+      .url()
+      .required(`${t("error_link")}`),
+    agree: Yup.boolean().required(`${t("error_agree")}`),
+    speciality: Yup.array()
+      .of(Yup.string())
+      .min(1, `${t("error_select")}`),
+    time: Yup.array()
+      .of(Yup.string())
+      .min(1, `${t("error_select")}`),
+  });
   return (
     <div className={styles.wrapModalForm} onClick={(e) => e.stopPropagation()}>
       <button type="button" onClick={closeModal} className={styles.closeBtn}>

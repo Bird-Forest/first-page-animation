@@ -30,5 +30,19 @@
   "sourse3": "the Baza Educat Facebook page",
   "sourse4": "the Baza Go Telegram channel",
   "sourse5": "a LinkedIn post",
-  "rules": "Familiarized with the conditions of participation in the project"
+  "rules": "Familiarized with the conditions of participation in the project",
+
+  "ERROR": "",
+  "error_name": "Enter a name",
+  "error_surname": "Enter the last name",
+  "error_email": "Enter your e-mail address",
+  "error_tel": "Enter a phone number",
+  "error_nick": "Enter a nickname in Discord",
+  "error_link": "Enter your Linkedin profile",
+  "error_agree": "Give consent",
+  "error_select": "Make a choice",
+  "error_city": "Specify the city",
+  "error_country": "Specify the country",
+  "error_course": "Enter the name of the course",
+  "error_motivation": "State your motivation"
 }

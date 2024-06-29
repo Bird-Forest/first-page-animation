@@ -30,5 +30,19 @@
   "sourse3": "stronie Bazy Edukacyjnej na Facebooku",
   "sourse4": "kanał Baza Go Telegram",
   "sourse5": "post na LinkedIn",
-  "rules": "Zapoznano się z warunkami udziału w projekcie"
+  "rules": "Zapoznano się z warunkami udziału w projekcie",
+
+  "ERROR": "",
+  "error_name": "Wpisz imię",
+  "error_surname": "Wpisz nazwisko",
+  "error_email": "Wpisz adres e-mail",
+  "error_tel": "Wprowadź numer telefonu",
+  "error_nick": "Wpisz pseudonim na Discordzie",
+  "error_link": "Wprowadź profil na Linkedin",
+  "error_agree": "Wyraź zgodę",
+  "error_select": "Dokonać wyboru",
+  "error_city": "Podaj miasto",
+  "error_country": "Określ kraj",
+  "error_course": "Wpisz nazwę kursu",
+  "error_motivation": "Podaj swoją motywację"
 }

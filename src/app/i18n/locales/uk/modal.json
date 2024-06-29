@@ -30,5 +30,19 @@
   "sourse3": "сторінка Baza Educat в Facebook",
   "sourse4": "канал Baza Go в Telegram",
   "sourse5": "пост на LinkedIn",
-  "rules": "Ознайомлений/ознайомлена з умовами участі в проєкті"
+  "rules": "Ознайомлений/ознайомлена з умовами участі в проєкті",
+
+  "ERROR": "",
+  "error_name": "Вкажіть ім’я",
+  "error_surname": "Вкажіть прізвище",
+  "error_email": "Вкажіть електронну пошту",
+  "error_tel": "Вкажіть номер телефону",
+  "error_nick": "Вкажіть нік в Discord",
+  "error_link": "Вкажіть профіль в Linkedin",
+  "error_agree": "Надайте згоду",
+  "error_select": "Зробіть вибір",
+  "error_city": "Вкажіть місто",
+  "error_country": "Вкажіть країну",
+  "error_course": "Вкажіть назву курсу",
+  "error_motivation": "Вкажіть мотивацію"
 }
