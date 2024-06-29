@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./Footer.module.css";
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
 import { FaLinkedinIn, FaFacebookF, FaTelegramPlane } from "react-icons/fa";
+import FooterLogo from "./FooterLogo";
 
 export default function Contacts() {
   return (
     <div className={styles.wrapContact}>
+      <FooterLogo />
       <div className={styles.contacts}>
         <div className={styles.wrapItem}>
           <BsTelephone className={styles.icon} />
@@ -19,14 +21,13 @@ export default function Contacts() {
             +380 67 568 1788
           </a>
         </div>
-        <div className={styles.wrapItem}>
-          <BsEnvelope className={styles.icon} />
-          <a className={styles.text} href="mailto:info@baza-trainee.tech">
-            info@baza-trainee.tech
-          </a>
-        </div>
       </div>
-
+      <div className={styles.wrapEmail}>
+        <BsEnvelope className={styles.icon} />
+        <a className={styles.text} href="mailto:info@baza-trainee.tech">
+          info@baza-trainee.tech
+        </a>
+      </div>
       <div className={styles.wrapNetwork}>
         <a
           href="https://www.facebook.com/"

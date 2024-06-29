@@ -18,6 +18,7 @@ export default async function AboutPage({ params: { lng } }) {
     <Suspense fallback={<Loading />}>
       <div className={styles.contain}>
         <h1>About</h1>
+        {/* <Loading /> */}
         {/* <DocumentPDF doc={document} /> */}
       </div>
     </Suspense>

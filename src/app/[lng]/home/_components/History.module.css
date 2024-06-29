@@ -228,31 +228,31 @@
 }
 @media screen and (min-width: 768px) {
   .titleRight {
-    font-size: 20px;
+    font-size: 18px;
   }
   .titleLeft {
-    font-size: 20px;
+    font-size: 18px;
     text-align: end;
   }
   .textRight {
-    font-size: 20px;
+    font-size: 18px;
   }
   .textLeft {
-    font-size: 20px;
+    font-size: 18px;
     text-align: end;
   }
 }
 @media screen and (min-width: 1280px) {
   .titleRight {
-    font-size: 24px;
+    font-size: 20px;
   }
   .titleLeft {
-    font-size: 24px;
+    font-size: 20px;
   }
   .textRight {
-    font-size: 24px;
+    font-size: 20px;
   }
   .textLeft {
-    font-size: 24px;
+    font-size: 20px;
   }
 }

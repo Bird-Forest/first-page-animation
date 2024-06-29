@@ -69,13 +69,92 @@
   }
 }
 
+.wrapLoading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  /* backdrop-filter: blur(2px); */
+  /* background-color: rgba(255, 255, 255, 0.4); */
+  background-color: rgba(255, 255, 255);
+}
+
+.wrapLogo {
+  position: relative;
+  display: flex;
+}
+/* *** BTN ANCHOR *** */
+.anchor {
+  position: fixed;
+  z-index: 2;
+  bottom: 100px;
+  right: 20px;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+.iconTop {
+  width: 60px;
+  height: 60px;
+  fill: rgba(255, 255, 255, 0.5);
+}
+/* **** ERROR ***** */
+.wrapError {
+  display: flex;
+  width: 100vw;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 0 auto;
+  background-color: rgb(46, 5, 53);
+  border-top: 2px solid rgb(226, 49, 168);
+  border-bottom: 2px solid rgb(226, 49, 168);
+}
+.errorTitle {
+  font-family: var(--font-montserrat);
+  font-size: 28px;
+  font-weight: 400;
+  color: rgb(252, 252, 252);
+}
+.wrapQuest {
+  display: flex;
+  width: 60px;
+  height: 40px;
+  gap: 8px;
+}
+.errorQuest {
+  width: 60px;
+  height: 40px;
+  fill: rgb(252, 252, 252);
+}
+.wrapIcon {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  gap: 8px;
+}
+.errorIcon {
+  width: 60px;
+  height: 60px;
+  fill: rgb(252, 252, 252);
+}
 .wrapBtn {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   justify-items: center;
   align-items: end;
-  padding: 0;
+  padding: 20px 0;
   margin: 0;
 }
 .mainBtn {
@@ -115,40 +194,4 @@
     rgb(157, 47, 121) 90.728%,
     rgb(133, 26, 98) 119.379%
   );
-}
-
-.wrapLoading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(2px);
-  background-color: rgba(255, 255, 255, 0.4);
-}
-.wrapLogo {
-  position: relative;
-  display: flex;
-}
-
-.anchor {
-  position: fixed;
-  z-index: 2;
-  bottom: 100px;
-  right: 20px;
-  display: flex;
-  width: 60px;
-  height: 60px;
-  background-color: transparent;
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
-}
-.iconTop {
-  width: 60px;
-  height: 60px;
-  fill: rgba(255, 255, 255, 0.5);
 }

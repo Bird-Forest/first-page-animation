@@ -6,7 +6,7 @@ import styles from "./Footer.module.css";
 export default function FooterLogo() {
   return (
     <div className={styles.wrapImg}>
-      <Image src={logo} alt="logo" width={120} height={120} priority />
+      <Image src={logo} alt="logo" width={60} height={60} priority />
     </div>
   );
 }
