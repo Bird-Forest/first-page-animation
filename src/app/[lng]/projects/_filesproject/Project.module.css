@@ -1,0 +1,125 @@
+.wrapList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: rgb(67, 4, 78);
+}
+.wrapItem {
+  position: relative;
+  display: flex;
+  width: 396px;
+  height: 460px;
+  padding: 0;
+  border-radius: 12px;
+  border: 2px solid rgb(226, 49, 168);
+  background-repeat: no-repeat;
+  /* background-size: 396px 460px; */
+  background-position: center;
+  object-fit: cover;
+}
+.wrapInfo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+.statusWrap {
+  display: flex;
+  gap: 16px;
+  /* backdrop-filter: blur(2px); */
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.statusIcon {
+  width: 20px;
+  height: 20px;
+}
+.statusText {
+  font-size: 16px;
+}
+.itemTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  /* backdrop-filter: blur(2px); */
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  border-radius: 20px;
+  text-align: center;
+  width: auto;
+}
+.wrapElements {
+  display: flex;
+  flex-direction: column;
+  width: 356px;
+  gap: 8px;
+  margin-bottom: 0;
+}
+.wrapLink {
+  display: flex;
+  padding: 8px;
+  /* backdrop-filter: blur(2px); */
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  width: fit-content;
+}
+.itemLink {
+  display: flex;
+  font-size: 16px;
+
+  border-radius: 20px;
+}
+.wrapElem {
+  display: flex;
+  justify-content: space-between;
+  width: 356px;
+}
+.elem {
+  display: flex;
+
+  gap: 8px;
+  /* backdrop-filter: blur(2px); */
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  border-radius: 20px;
+}
+.itemText {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.wrapText {
+  font-size: 16px;
+  /* backdrop-filter: blur(2px); */
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  border-radius: 20px;
+}
+.itemIcon {
+  width: 24px;
+  height: 24px;
+  fill: rgb(255, 255, 255);
+}
+/* .diffWrap {
+  display: flex;
+  justify-content: space-between;
+} */
+/* .diffList {
+  display: flex;
+  gap: 8px;
+} */
+.diffIcon {
+  width: 24px;
+  height: 24px;
+  fill: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+.bg {
+  background: rgb(255, 255, 255);
+}

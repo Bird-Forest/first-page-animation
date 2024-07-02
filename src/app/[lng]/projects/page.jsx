@@ -2,6 +2,7 @@ import React from "react";
 import { languages } from "../../i18n/settings";
 import styles from "../page.module.css";
 import Error from "../home/error";
+import Projects from "./_filesproject/Projects";
 // import { getDictionary } from "../dictionaries";
 
 export function generateStaticParams() {
@@ -11,7 +12,7 @@ export function generateStaticParams() {
 export default async function ProjectsPage({ params: { lng } }) {
   return (
     <div className={styles.center}>
-      <Error />
+      <Projects />
     </div>
   );
 }
