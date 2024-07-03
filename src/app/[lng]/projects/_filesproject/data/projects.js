@@ -1,12 +1,14 @@
 import donate52 from "@/public/images/projects/donate57.webp";
 import songs from "@/public/images/projects/1001songs.webp";
-import balacun from "@/public/images/projects/balacun.webp";
-import clown from "@/public/images/projects/clown.webp";
+import balakun from "@/public/images/projects/balakun.webp";
+import dev from "@/public/images/projects/dev.webp";
 import book from "@/public/images/projects/book.webp";
 import lapa from "@/public/images/projects/lapa.webp";
 import lule from "@/public/images/projects/lule.webp";
 import murr from "@/public/images/projects/murrfecto.webp";
 import zavr from "@/public/images/projects/zavr.webp";
+import hvost from "@/public/images/projects/hvost.webp";
+import team from "@/public/images/projects/team.webp";
 
 export const projects = [
   {
@@ -52,6 +54,46 @@ export const projects = [
   {
     id: "2",
     status: "Завершено",
+    title: "Платформа Balakun для комунікації англійською",
+    web: "https://balakun-fia4.vercel.app/",
+    start: "5 лютого 2024",
+    duration: "17 тижнів",
+    difficult: "5",
+    team: [
+      { title: "Project Manager", developers: ["Зоря Ілля"] },
+      { title: "Design UX/UI", developers: ["Калинка Марія", "Творча Аліна"] },
+      {
+        title: "Front-end",
+        developers: [
+          "Спокійний Іван",
+          "Кмітлива Настя",
+          "Роботящий Андрій",
+          "Розумна Олена",
+        ],
+      },
+      {
+        title: "Back-end",
+        developers: ["Веселий Олександр", "Розважливий Василь"],
+      },
+      {
+        title: "Quality Assurance",
+        developers: ["Уважна Ольга", "Працелюбна Оксана"],
+      },
+      {
+        title: "Full Stack",
+        developers: [
+          "Непоседючий Максим",
+          "Зорепад Остап",
+          "Круглий Сергій",
+          "Непитущий Віктор",
+        ],
+      },
+    ],
+    img: balakun,
+  },
+  {
+    id: "3",
+    status: "Завершено",
     title: "1000 і 1 пісня - платформа українського фольклору",
     web: "https://1000and1songs.com/",
     start: "25 жовтня 2023",
@@ -88,46 +130,6 @@ export const projects = [
       },
     ],
     img: songs,
-  },
-  {
-    id: "3",
-    status: "Завершено",
-    title: "Платформа Balakun для комунікації англійською",
-    web: "https://balakun-fia4.vercel.app/",
-    start: "5 лютого 2024",
-    duration: "17 тижнів",
-    difficult: "5",
-    team: [
-      { title: "Project Manager", developers: ["Зоря Ілля"] },
-      { title: "Design UX/UI", developers: ["Калинка Марія", "Творча Аліна"] },
-      {
-        title: "Front-end",
-        developers: [
-          "Спокійний Іван",
-          "Кмітлива Настя",
-          "Роботящий Андрій",
-          "Розумна Олена",
-        ],
-      },
-      {
-        title: "Back-end",
-        developers: ["Веселий Олександр", "Розважливий Василь"],
-      },
-      {
-        title: "Quality Assurance",
-        developers: ["Уважна Ольга", "Працелюбна Оксана"],
-      },
-      {
-        title: "Full Stack",
-        developers: [
-          "Непоседючий Максим",
-          "Зорепад Остап",
-          "Круглий Сергій",
-          "Непитущий Віктор",
-        ],
-      },
-    ],
-    img: balacun,
   },
   {
     id: "4",
@@ -167,50 +169,10 @@ export const projects = [
         ],
       },
     ],
-    img: clown,
+    img: dev,
   },
   {
     id: "5",
-    status: "В розробці",
-    title: "Книжка їде за кордон - портал гуманітарної допомоги",
-    web: "https://www.openbookhands.site/",
-    start: "26 липня 2023",
-    duration: "5 тижнів",
-    difficult: "3",
-    team: [
-      { title: "Project Manager", developers: ["Зоря Ілля"] },
-      { title: "Design UX/UI", developers: ["Калинка Марія", "Творча Аліна"] },
-      {
-        title: "Front-end",
-        developers: [
-          "Спокійний Іван",
-          "Кмітлива Настя",
-          "Роботящий Андрій",
-          "Розумна Олена",
-        ],
-      },
-      {
-        title: "Back-end",
-        developers: ["Веселий Олександр", "Розважливий Василь"],
-      },
-      {
-        title: "Quality Assurance",
-        developers: ["Уважна Ольга", "Працелюбна Оксана"],
-      },
-      {
-        title: "Full Stack",
-        developers: [
-          "Непоседючий Максим",
-          "Зорепад Остап",
-          "Круглий Сергій",
-          "Непитущий Віктор",
-        ],
-      },
-    ],
-    img: book,
-  },
-  {
-    id: "6",
     status: "В розробці",
     title: "Big Lapa - притулок для собак",
     web: "Тимчасово не доступний",
@@ -250,13 +212,13 @@ export const projects = [
     img: lapa,
   },
   {
-    id: "7",
-    status: "Формування команди",
-    title: "Читозаврик - додаток української дитячої книжки",
-    web: "https://chytozavryk.top/",
-    start: "24 липня 2023",
-    duration: "30 тижнів",
-    difficult: "5",
+    id: "6",
+    status: "Завершено",
+    title: "Книжка їде за кордон - портал гуманітарної допомоги",
+    web: "https://www.openbookhands.site/",
+    start: "26 липня 2023",
+    duration: "5 тижнів",
+    difficult: "3",
     team: [
       { title: "Project Manager", developers: ["Зоря Ілля"] },
       { title: "Design UX/UI", developers: ["Калинка Марія", "Творча Аліна"] },
@@ -287,11 +249,11 @@ export const projects = [
         ],
       },
     ],
-    img: zavr,
+    img: book,
   },
   {
-    id: "8",
-    status: "Формування команди",
+    id: "7",
+    status: "Завершено",
     title: "Колискові - платформа української колискової",
     web: "https://www.kolyskova.com",
     start: "3 вересня 2023",
@@ -330,8 +292,49 @@ export const projects = [
     img: lule,
   },
   {
+    id: "8",
+    status: "Завершено",
+    title: "Читозаврик - додаток української дитячої книжки",
+    web: "https://chytozavryk.top/",
+    start: "24 липня 2023",
+    duration: "30 тижнів",
+    difficult: "5",
+    team: [
+      { title: "Project Manager", developers: ["Зоря Ілля"] },
+      { title: "Design UX/UI", developers: ["Калинка Марія", "Творча Аліна"] },
+      {
+        title: "Front-end",
+        developers: [
+          "Спокійний Іван",
+          "Кмітлива Настя",
+          "Роботящий Андрій",
+          "Розумна Олена",
+        ],
+      },
+      {
+        title: "Back-end",
+        developers: ["Веселий Олександр", "Розважливий Василь"],
+      },
+      {
+        title: "Quality Assurance",
+        developers: ["Уважна Ольга", "Працелюбна Оксана"],
+      },
+      {
+        title: "Full Stack",
+        developers: [
+          "Непоседючий Максим",
+          "Зорепад Остап",
+          "Круглий Сергій",
+          "Непитущий Віктор",
+        ],
+      },
+    ],
+    img: zavr,
+  },
+
+  {
     id: "9",
-    status: "Формування команди",
+    status: "Завершено",
     title: "Murrfecto -притулок для котів",
     web: "https://murrfecto.site/",
     start: "29 травня 2023",
@@ -368,5 +371,67 @@ export const projects = [
       },
     ],
     img: murr,
+  },
+  {
+    id: "10",
+    status: "Завершено",
+    title: "Притулок для собак Хвостики Чернівці",
+    web: "https://martys-dogs.vercel.app/",
+    start: "15 грудня 2023",
+    duration: "11 тижнів",
+    difficult: "3",
+    team: [
+      { title: "Project Manager", developers: ["Зоря Ілля"] },
+      { title: "Design UX/UI", developers: ["Калинка Марія", "Творча Аліна"] },
+      {
+        title: "Front-end",
+        developers: [
+          "Спокійний Іван",
+          "Кмітлива Настя",
+          "Роботящий Андрій",
+          "Розумна Олена",
+        ],
+      },
+      {
+        title: "Back-end",
+        developers: ["Веселий Олександр", "Розважливий Василь"],
+      },
+      {
+        title: "Quality Assurance",
+        developers: ["Уважна Ольга", "Працелюбна Оксана"],
+      },
+      {
+        title: "Full Stack",
+        developers: [
+          "Непоседючий Максим",
+          "Зорепад Остап",
+          "Круглий Сергій",
+          "Непитущий Віктор",
+        ],
+      },
+    ],
+    img: hvost,
+  },
+  {
+    id: "11",
+    status: "Формування команди",
+    title: "Feeda - додаток для обробки даних",
+    web: "Тимчасово не доступний",
+    start: "1 лютого 2024",
+    duration: "22 тижні",
+    difficult: "4",
+    team: [],
+    img: team,
+  },
+  {
+    id: "12",
+    status: "Формування команди",
+    title: "Сталеві обійми - збір для 59-ї бригади",
+    web: "Тимчасово не доступний",
+    start: "17 липня 2024",
+    duration: "22 тижні",
+    difficult: "4",
+    team: [],
+    img: team,
   },
 ];

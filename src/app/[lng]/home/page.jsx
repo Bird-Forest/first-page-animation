@@ -8,8 +8,8 @@ import Press from "./_components/Press";
 import Partners from "./_components/Partners";
 import Reviews from "./_components/Reviews";
 import FormFeedback from "./_components/FormFeedback";
-import { Suspense } from "react";
-import Loading from "../_Helper/Loading";
+// import { Suspense } from "react";
+// import Loading from "../_Helper/Loading";
 import { languages, fallbackLng } from "../../i18n/settings";
 import { useTranslation } from "../../i18n/server";
 
@@ -32,18 +32,18 @@ export default async function Home({ params: { lng } }) {
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
-        <Hero lng={lng} />
-        <History lng={lng} />
-        <Structure lng={lng} />
-        <Counter lng={lng} />
-        <Questions lng={lng} />
-        <Press lng={lng} />
-        <Mentor lng={lng} />
-        <Partners lng={lng} />
-        <Reviews lng={lng} />
-        <FormFeedback lng={lng} />
-      </Suspense>
+      {/* <Suspense fallback={<Loading />}> */}
+      <Hero lng={lng} />
+      <History lng={lng} />
+      <Structure lng={lng} />
+      <Counter lng={lng} />
+      <Questions lng={lng} />
+      <Press lng={lng} />
+      <Mentor lng={lng} />
+      <Partners lng={lng} />
+      <Reviews lng={lng} />
+      <FormFeedback lng={lng} />
+      {/* </Suspense> */}
     </>
   );
 }

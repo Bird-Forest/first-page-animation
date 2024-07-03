@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import styles from "./Project.module.css";
 import { v4 as uuidv4 } from "uuid";
 import {
@@ -8,6 +10,7 @@ import {
   FaRegChartBar,
   FaRegCircle,
 } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 
 const colors = ["Формування команди", "В розробці", "Завершено"];
@@ -20,25 +23,34 @@ const arry = [
 ];
 
 export default function ProjectItem({ item }) {
+  const [showTeam, setShowTeam] = useState(false);
+  const openTeamList = () => {
+    setShowTeam(true);
+  };
+  const closeTeamList = () => {
+    setShowTeam(false);
+  };
+
   const getStatus = () => {
     if (item.status === colors[2]) return "rgb(27, 161, 97)";
-    if (item.status === colors[1]) return "rgb(255, 234, 0)";
+    if (item.status === colors[1]) return "rgb(255, 235, 59)";
     if (item.status === colors[0]) return "rgb(255, 23, 68)";
   };
   const color = getStatus();
 
   const complexity = item.difficult;
   const users = item.team;
+  const Arr = Array.isArray(users) && users.length > 0;
   return (
     <li className={styles.wrapItem}>
       <Image
         alt={item.title}
         src={item.img}
         quality={100}
-        width={394}
+        width={396}
         height={456}
         style={{
-          borderRadius: "10px",
+          borderRadius: "12px",
           objectFit: "cover",
         }}
         priority
@@ -48,7 +60,10 @@ export default function ProjectItem({ item }) {
           <FaCircle className={styles.statusIcon} style={{ fill: color }} />
           <p className={styles.statusText}>{item.status}</p>
         </div>
-        <h4 className={styles.itemTitle}>{item.title}</h4>
+        <div className={styles.wrapTitle}>
+          <h4 className={styles.itemTitle}>{item.title}</h4>
+        </div>
+
         <div className={styles.wrapElements}>
           <div className={styles.wrapLink}>
             <a
@@ -92,20 +107,40 @@ export default function ProjectItem({ item }) {
               ))}
             </ul>
           </div>
+          <button
+            type="button"
+            onClick={openTeamList}
+            className={styles.teamBtn}
+          >
+            Команда проєкту
+          </button>
         </div>
-        <div>
-          <h4 className={styles.itemTitle}>Команда проєкту</h4>
-          <ul>
-            {users.map((obj) => (
-              <li key={uuidv4()}>
-                <h5>{obj.title}</h5>
-                <ul>
-                  {obj.developers.map((el, i) => (
-                    <li key={i}>{el}</li>
-                  ))}
-                </ul>
-              </li>
-            ))}
+
+        <div className={`${styles.wrapTeam} ${showTeam ? styles.show : ""}`}>
+          <button
+            type="button"
+            onClick={closeTeamList}
+            className={styles.closeBtn}
+          >
+            <IoClose className={styles.close} />
+          </button>
+          <ul className={styles.teamList}>
+            {Arr ? (
+              users.map((obj) => (
+                <li key={uuidv4()} className={styles.objWrap}>
+                  <h5 className={styles.objTitle}>{obj.title}</h5>
+                  <ul className={styles.devList}>
+                    {obj.developers.map((el, i) => (
+                      <li key={i} className={styles.elDev}>
+                        {el}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))
+            ) : (
+              <p>Очікує свою команду</p>
+            )}
           </ul>
         </div>
       </div>

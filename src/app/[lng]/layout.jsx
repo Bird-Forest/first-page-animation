@@ -37,7 +37,6 @@ export default function RootLayout({ children, params: { lng } }) {
   return (
     <html
       lang={lng}
-      // dir={dir(lng)}
       className={` ${open_sans.variable} ${montserrat.variable}`}
     >
       <body>
