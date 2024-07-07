@@ -4,8 +4,25 @@ import ProjectItem from "./ProjectItem";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./Project.module.css";
 import { projects } from "./data/projects";
+// import clientPromise from "@/src/lib/mongodb";
+// import { getAllProjects } from "@/src/app/services/projects";
 
-export default function Projects() {
+// export const getServerSideProps = async () => {
+//   try {
+//     const client = await clientPromise;
+//     const db = client.db("baza");
+//     const projects = await db.collection("projects");
+
+//     return {
+//       props: { projects: JSON.parse(JSON.stringify(projects)) },
+//     };
+//   } catch (e) {
+//     console.error(e);
+//     return { props: { projects: [] } };
+//   }
+// };
+
+export default async function Projects() {
   return (
     <ul className={styles.wrapList}>
       {projects.map((item) => (

@@ -8,14 +8,6 @@
   padding: 32px 16px;
   background-color: rgb(138, 26, 102);
   margin: 0 auto;
-  /* background: linear-gradient(
-    138.78deg,
-    rgb(219, 151, 197) -13.723%,
-    rgb(204, 79, 163) 5.792%,
-    rgb(160, 58, 126) 31.964%,
-    rgb(109, 38, 86) 76.848%,
-    rgb(73, 7, 53) 101.654%
-  ); */
 }
 @media screen and (min-width: 768px) {
   .partners {

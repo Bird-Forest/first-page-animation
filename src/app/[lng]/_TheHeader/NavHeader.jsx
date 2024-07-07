@@ -26,6 +26,7 @@ export default function NavHeader({ lng }) {
       initial="hidden"
       animate="visible"
       variants={list}
+      viewport={{ once: true }}
     >
       <motion.li variants={item} transition={{ delay: 12, duration: 2 }}>
         <Link

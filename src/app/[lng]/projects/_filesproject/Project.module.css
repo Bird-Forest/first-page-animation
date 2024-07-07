@@ -1,12 +1,71 @@
+.project {
+  display: grid;
+  grid-template-columns: minmax(380px, 1280px);
+  grid-template-rows: auto 1fr;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding: 32px 16px;
+  margin: 0 auto;
+  background-color: rgb(67, 4, 78);
+  /* background-color: #43044e; */
+  border-top: 2px solid rgb(226, 49, 168);
+  border-bottom: 2px solid rgb(226, 49, 168);
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .project {
+    gap: 48px;
+    padding: 48px 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .project {
+    gap: 68px;
+    padding: 68px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .project {
+    gap: 68px;
+    padding: 68px 80px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .project {
+    padding: 68px 120px;
+  }
+}
+.projectTitle {
+  display: flex;
+  justify-content: center;
+  color: rgb(252, 252, 252);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .projectTitle {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .projectTitle {
+    font-size: 40px;
+  }
+}
+
 .wrapList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 20px;
-  padding: 20px;
+  padding: 0;
   margin: 0 auto;
-  background-color: rgb(67, 4, 78);
-  /* background-color: rgb(138, 26, 102); */
 }
 .wrapItem {
   position: relative;
@@ -15,9 +74,7 @@
   height: 460px;
   padding: 0;
   border-radius: 12px;
-  /* border: 2px solid rgb(226, 49, 168); */
   background-repeat: no-repeat;
-  /* background-size: 396px 460px; */
   background-position: center;
   object-fit: cover;
 }

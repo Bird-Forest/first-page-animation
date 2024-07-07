@@ -7,14 +7,6 @@
   padding: 20px;
   margin: 0 auto;
   background-color: rgb(138, 26, 102);
-  /* background: linear-gradient(
-    138.78deg,
-    rgb(219, 151, 197) -13.14%,
-    rgb(204, 79, 163) 6.053%,
-    rgb(160, 58, 126) 31.792%,
-    rgb(109, 38, 86) 75.935%,
-    rgb(73, 7, 53) 100.331%
-  ); */
 }
 @media screen and (min-width: 768px) {
   .feedback {

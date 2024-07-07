@@ -12,7 +12,7 @@ import team from "@/public/images/projects/team.webp";
 
 export const projects = [
   {
-    id: "1",
+    idx: "1",
     status: "Завершено",
     title: "Збір для 57-ї бригади 42 батальйону",
     web: "https://dokoopy-frontend.vercel.app/",
@@ -52,7 +52,7 @@ export const projects = [
     img: donate52,
   },
   {
-    id: "2",
+    idx: "2",
     status: "Завершено",
     title: "Платформа Balakun для комунікації англійською",
     web: "https://balakun-fia4.vercel.app/",
@@ -92,7 +92,7 @@ export const projects = [
     img: balakun,
   },
   {
-    id: "3",
+    idx: "3",
     status: "Завершено",
     title: "1000 і 1 пісня - платформа українського фольклору",
     web: "https://1000and1songs.com/",
@@ -132,7 +132,7 @@ export const projects = [
     img: songs,
   },
   {
-    id: "4",
+    idx: "4",
     status: "В розробці",
     title: "БУП - бюро лікарняних клоунів",
     web: "Тимчасово не доступний",
@@ -172,7 +172,7 @@ export const projects = [
     img: dev,
   },
   {
-    id: "5",
+    idx: "5",
     status: "В розробці",
     title: "Big Lapa - притулок для собак",
     web: "Тимчасово не доступний",
@@ -212,7 +212,7 @@ export const projects = [
     img: lapa,
   },
   {
-    id: "6",
+    idx: "6",
     status: "Завершено",
     title: "Книжка їде за кордон - портал гуманітарної допомоги",
     web: "https://www.openbookhands.site/",
@@ -252,7 +252,7 @@ export const projects = [
     img: book,
   },
   {
-    id: "7",
+    idx: "7",
     status: "Завершено",
     title: "Колискові - платформа української колискової",
     web: "https://www.kolyskova.com",
@@ -292,7 +292,7 @@ export const projects = [
     img: lule,
   },
   {
-    id: "8",
+    idx: "8",
     status: "Завершено",
     title: "Читозаврик - додаток української дитячої книжки",
     web: "https://chytozavryk.top/",
@@ -333,7 +333,7 @@ export const projects = [
   },
 
   {
-    id: "9",
+    idx: "9",
     status: "Завершено",
     title: "Murrfecto -притулок для котів",
     web: "https://murrfecto.site/",
@@ -373,7 +373,7 @@ export const projects = [
     img: murr,
   },
   {
-    id: "10",
+    idx: "10",
     status: "Завершено",
     title: "Притулок для собак Хвостики Чернівці",
     web: "https://martys-dogs.vercel.app/",
@@ -413,7 +413,7 @@ export const projects = [
     img: hvost,
   },
   {
-    id: "11",
+    idx: "11",
     status: "Формування команди",
     title: "Feeda - додаток для обробки даних",
     web: "Тимчасово не доступний",
@@ -424,7 +424,7 @@ export const projects = [
     img: team,
   },
   {
-    id: "12",
+    idx: "12",
     status: "Формування команди",
     title: "Сталеві обійми - збір для 59-ї бригади",
     web: "Тимчасово не доступний",
