@@ -291,6 +291,7 @@
   }
 }
 .wrapSub {
+  position: relative;
   display: grid;
   grid-template-columns: auto 28px;
   grid-template-rows: auto;
@@ -303,12 +304,30 @@
 .imgPost {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto;
   grid-template-rows: auto;
-  aspect-ratio: 1/0.6;
+  /* grid-template-columns: 360px;
+  grid-template-rows: 240px; */
+  gap: 60px;
+  aspect-ratio: 1/0.5;
   /* display: flex;
   width: 348px;
   height: 232px; */
+}
+/* @media screen and (min-width: 768px) {
+  .imgPost {
+    grid-template-columns: 600px;
+    grid-template-rows: 400px;
+  }
+} */
+.wrapLink {
+  display: grid;
+  grid-template-columns: 32px;
+  grid-template-rows: 32px;
+  background-color: transparent;
+  border: none;
+  outline: rgb(242, 238, 248);
+  cursor: pointer;
 }
 .iconLink {
   fill: rgb(226, 49, 168);

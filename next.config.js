@@ -1,4 +1,11 @@
 module.exports = {
+  experimental: {
+    // You may not need this, it's just to support moduleResolution: 'node16'
+    extensionAlias: {
+      ".js": [".tsx", ".ts", ".jsx", ".js"],
+    },
+    swcMinify: false,
+  },
   images: {
     remotePatterns: [
       {
@@ -15,11 +22,21 @@ module.exports = {
     ],
   },
 
-  webpack: (config) => {
-    config.resolve.alias.canvas = false;
+  // webpack: (config) => {
+  //   config.resolve.alias.canvas = false;
 
-    return config;
-  },
+  //   return config;
+  // },
+  // webpack: (config) => {
+  //   config.module.rules.push({
+  //     test: /\.node/,
+  //     use: "raw-loader",
+  //   });
+  //   return config;
+  // },
+  // experimental: {
+  //   serverComponentsExternalPackages: ["@react-pdf/renderer"],
+  // },
 };
 
 // // @ts-check

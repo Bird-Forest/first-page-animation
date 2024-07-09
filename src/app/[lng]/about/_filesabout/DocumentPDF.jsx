@@ -1,62 +1,81 @@
-"use client";
+// "use client";
 
-import React, { useState } from "react";
-import { Document, Page } from "react-pdf";
-import styles from "./Document.module.css";
-import Loading from "../../_Helper/Loading";
+// import { useCallback, useState } from "react";
+// import { useResizeObserver } from "@wojtekmaj/react-hooks";
+// import { pdfjs, Document, Page } from "react-pdf";
+// import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+// import "react-pdf/dist/esm/Page/TextLayer.css";
 
-const options = {
-  standardFontDataUrl: "/standard_fonts/",
-};
+// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+//   "pdfjs-dist/build/pdf.worker.min.mjs",
+//   import.meta.url
+// ).toString();
 
-export default function DocumentPDF(doc) {
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
+// const options = {
+//   cMapUrl: "/cmaps/",
+//   standardFontDataUrl: "/standard_fonts/",
+// };
 
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-    setPageNumber(1);
-  }
+// const resizeObserverOptions = {};
 
-  function changePage(offset) {
-    setPageNumber((prevPageNumber) => prevPageNumber + offset);
-  }
+// const maxWidth = 800;
 
-  function previousPage() {
-    changePage(-1);
-  }
+// export default function Sample() {
+//   const [file, setFile] = useState();
+//   const [numPages, setNumPages] = useState();
+//   const [containerRef, setContainerRef] = useState(null);
+//   const [containerWidth, setContainerWidth] = useState();
 
-  function nextPage() {
-    changePage(1);
-  }
+//   const onResize = useCallback((entries) => {
+//     const [entry] = entries;
 
-  return (
-    <div className={styles.wrap}>
-      <div className={styles.doc}>
-        <Document
-          options={options}
-          file={doc}
-          loading={<Loading />}
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-      </div>
-      <div>
-        <p>
-          Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
-        </p>
-        <button type="button" disabled={pageNumber <= 1} onClick={previousPage}>
-          Previous
-        </button>
-        <button
-          type="button"
-          disabled={pageNumber >= numPages}
-          onClick={nextPage}
-        >
-          Next
-        </button>
-      </div>
-    </div>
-  );
-}
+//     if (entry) {
+//       setContainerWidth(entry.contentRect.width);
+//     }
+//   }, []);
+
+//   useResizeObserver(containerRef, resizeObserverOptions, onResize);
+
+//   function onFileChange(event) {
+//     const { files } = event.target;
+//     console.log(files);
+
+//     const nextFile = files?.[0];
+//     console.log(nextFile);
+//     if (nextFile) {
+//       setFile(nextFile);
+//     }
+//   }
+
+//   function onDocumentLoadSuccess({ numPages: nextNumPages }) {
+//     setNumPages(nextNumPages);
+//   }
+
+//   return (
+//     <div className="Example">
+//       <div className="Example__container">
+//         <div className="Example__container__load">
+//           <label htmlFor="file">Load from file:</label>{" "}
+//           <input onChange={onFileChange} type="file" />
+//         </div>
+//         <div className="Example__container__document" ref={setContainerRef}>
+//           <Document
+//             file={file}
+//             onLoadSuccess={onDocumentLoadSuccess}
+//             options={options}
+//           >
+//             {Array.from(new Array(numPages), (el, index) => (
+//               <Page
+//                 key={`page_${index + 1}`}
+//                 pageNumber={index + 1}
+//                 width={
+//                   containerWidth ? Math.min(containerWidth, maxWidth) : maxWidth
+//                 }
+//               />
+//             ))}
+//           </Document>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
