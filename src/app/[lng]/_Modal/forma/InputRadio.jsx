@@ -21,7 +21,6 @@ export default function InputRadio({ children, ...props }) {
           name={props.id || props.name}
           {...field}
           {...props}
-          type="radio"
         />
         <label htmlFor={props.id || props.name} className={styles.checkText}>
           {children}

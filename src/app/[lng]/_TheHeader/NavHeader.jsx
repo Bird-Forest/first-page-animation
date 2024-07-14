@@ -49,7 +49,7 @@ export default function NavHeader({ lng }) {
           href={`/${lng}/projects`}
           className={page === "projects" ? styles.active : styles.link}
         >
-          Проекти
+          Проєкти
         </Link>
       </motion.li>
       <motion.li variants={item} transition={{ delay: 6, duration: 2 }}>

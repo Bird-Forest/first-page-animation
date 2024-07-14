@@ -142,7 +142,7 @@
   grid-template-rows: 20px;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.5;
   border-radius: 8px;
@@ -242,7 +242,7 @@
   grid-template-columns: 28px;
   grid-template-rows: 28px;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   background-color: rgb(46, 5, 53);
   border: none;
   outline: transparent;

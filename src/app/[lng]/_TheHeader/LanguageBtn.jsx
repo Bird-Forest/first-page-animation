@@ -1,8 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-// import { useTranslation } from "react-i18next";
-// import i18nConfig from "../../../i18nConfig";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import styles from "./Header.module.css";
 import { languages } from "../../i18n/settings";

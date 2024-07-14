@@ -59,10 +59,10 @@ export default function Partners({ lng }) {
             <Image
               alt="section partners"
               src={item.path}
-              width={360}
-              height={180}
-              quality={100}
-              style={{ borderRadius: "10px" }}
+              // width={360}
+              // height={180}
+              quality={80}
+              style={{ borderRadius: "10px", objectFit: "cover" }}
               priority
             />
           </motion.li>

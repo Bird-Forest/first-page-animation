@@ -66,8 +66,13 @@
 .partnerItem {
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 360px;
   height: 180px;
   border-radius: 10px;
+  object-fit: cover;
+  /* background-position: center; */
+  /* aspect-ratio: 1/0.5; */
   background-color: rgba(210, 210, 210, 0.5);
 }
