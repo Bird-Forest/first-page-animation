@@ -8,6 +8,7 @@ import { FaLink } from "react-icons/fa";
 import NotifCopy from "../../_Helper/NotifCopy";
 
 export default function PostId({ post }) {
+  // console.log("POST", post);
   const [copied, setCopied] = useState(false);
   const [showNotif, setShowNotif] = useState(false);
 
@@ -19,10 +20,13 @@ export default function PostId({ post }) {
       setShowNotif(true);
     }
   };
+  const date = new Date(post.date);
+  // console.log(date);
+  const format = date.toDateString();
   return (
     <div className={styles.wrapPost}>
       <div className={styles.wrapSub}>
-        <p className={styles.itemDate}>{post.date}</p>
+        <p className={styles.itemDate}>{format}</p>
         <button onClick={handleCopyClick} className={styles.wrapLink}>
           <FaLink className={styles.iconLink} />
         </button>

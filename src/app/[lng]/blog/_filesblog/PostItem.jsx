@@ -26,7 +26,7 @@ export default function PostItem({ item }) {
         <p className={styles.itemText}>{item.text1}</p>
       </div>
       <div className={styles.wrapBtn}>
-        <Link href={`/blog/${item.id}`} className={styles.itemBtn}>
+        <Link href={`/blog/${item._id}`} className={styles.itemBtn}>
           читати більше ...
         </Link>
       </div>

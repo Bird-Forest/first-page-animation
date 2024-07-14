@@ -1,33 +1,29 @@
 .project {
   display: grid;
   grid-template-columns: minmax(380px, 1280px);
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr;
   justify-content: center;
   align-items: start;
   gap: 20px;
   padding: 32px 16px;
   margin: 0 auto;
   background-color: rgb(67, 4, 78);
-  /* background-color: #43044e; */
   border-top: 2px solid rgb(226, 49, 168);
   border-bottom: 2px solid rgb(226, 49, 168);
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .project {
-    gap: 48px;
     padding: 48px 40px;
   }
 }
 @media screen and (min-width: 1280px) {
   .project {
-    gap: 68px;
     padding: 68px 60px;
   }
 }
 @media screen and (min-width: 1440px) {
   .project {
-    gap: 68px;
     padding: 68px 80px;
   }
 }
@@ -36,28 +32,73 @@
     padding: 68px 120px;
   }
 }
-.projectTitle {
+.wrapProjects {
   display: flex;
-  justify-content: center;
-  color: rgb(252, 252, 252);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.5;
-  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
-  .projectTitle {
-    font-size: 32px;
+  .wrapProjects {
+    gap: 48px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .projectTitle {
-    font-size: 40px;
+  .wrapProjects {
+    gap: 68px;
   }
 }
-
+.wrapOptions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 8px;
+  column-gap: 28px;
+}
+.wrapFilter {
+  display: flex;
+  gap: 8px;
+}
+.btnFilter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  outline: transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+.iconGreen {
+  fill: #099e56;
+  width: 32px;
+  height: 32px;
+}
+.iconYellow {
+  fill: #ffeb3b;
+  width: 32px;
+  height: 32px;
+}
+.iconRed {
+  fill: #ff1744;
+  width: 32px;
+  height: 32px;
+}
+.iconWhite {
+  fill: rgb(226, 49, 168);
+  width: 32px;
+  height: 32px;
+}
+.textFilter {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
 .wrapList {
   display: flex;
   flex-wrap: wrap;
@@ -70,31 +111,29 @@
 .wrapItem {
   position: relative;
   display: flex;
-  width: 400px;
-  height: 460px;
+  width: 388px;
+  height: 456px;
   padding: 0;
   border-radius: 12px;
+  background-image: url("../../../../../public/images/projects/lapa.webp");
   background-repeat: no-repeat;
   background-position: center;
-  object-fit: cover;
+  background-size: cover;
 }
 .wrapInfo {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 396px;
+  width: 388px;
   height: 456px;
   background-color: rgba(255, 255, 255, 0.5);
-  /* padding: 8px; */
   border-radius: 12px;
   padding: 20px;
 }
 .statusWrap {
   display: flex;
   gap: 16px;
-  /* backdrop-filter: blur(2px); */
-
   margin-bottom: 20px;
 }
 .statusIcon {
@@ -108,31 +147,16 @@
 }
 .wrapTitle {
   display: flex;
-  /* display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto; */
   justify-content: center;
   width: fit-content;
   height: auto;
-  /* backdrop-filter: blur(2px);
-  background-color: rgba(103, 100, 100, 0.5); */
-  /* padding: 8px;
-  border-radius: 20px; */
 }
 .itemTitle {
   display: grid;
-  /* justify-content: center; */
-
   font-size: 24px;
   color: rgb(46, 5, 53);
   font-weight: 700;
-  /* backdrop-filter: blur(2px);
-  background-color: rgba(103, 100, 100, 0.5);
-  padding: 8px;
-  border-radius: 20px; */
   text-align: center;
-  /* color: rgb(255, 255, 255); */
-  /* margin: 8px; */
 }
 .wrapElements {
   top: 260px;
@@ -140,39 +164,31 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 356px;
+  width: 348px;
   gap: 8px;
   margin-bottom: 0;
 }
 .wrapLink {
   display: flex;
-  /* padding: 8px; */
-  /* backdrop-filter: blur(2px); */
-  /* background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 20px; */
   width: fit-content;
 }
 .itemLink {
   display: flex;
   font-size: 16px;
   border-radius: 20px;
-  color: rgb(1, 87, 155);
-  font-weight: 400;
+  color: rgb(32, 5, 128);
+  font-weight: 700;
   cursor: pointer;
 }
 .wrapElem {
   display: flex;
   justify-content: space-between;
-  width: 356px;
+  width: 348px;
 }
 .elem {
   display: flex;
-
   gap: 8px;
-  /* backdrop-filter: blur(2px); */
-  /* background-color: rgba(255, 255, 255, 0.5);
-  padding: 8px;
-  border-radius: 20px; */
+  list-style: none;
 }
 .itemText {
   display: flex;
@@ -185,15 +201,11 @@
   font-size: 16px;
   color: rgb(67, 4, 78);
   font-weight: 700;
-  /* backdrop-filter: blur(2px); */
-  /* background-color: rgba(255, 255, 255, 0.5); */
-  /* padding: 8px;
-  border-radius: 20px; */
 }
 .itemIcon {
   width: 24px;
   height: 24px;
-  fill: rgb(67, 4, 78);
+  fill: rgb(226, 49, 168);
 }
 .diffIcon {
   width: 24px;
@@ -205,16 +217,16 @@
   background: rgb(67, 4, 78);
 }
 .teamBtn {
-  /* top: 420px;
-  position: absolute; */
   display: flex;
   width: fit-content;
-  /* background-color: rgba(255, 255, 255, 0.5); */
-  font-size: 16px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(67, 4, 78);
   border: none;
   outline: transparent;
-  padding: 10px;
-  /* border-radius: 20px; */
+  background-color: transparent;
+  padding: 4px;
   cursor: pointer;
 }
 .wrapTeam {
@@ -223,7 +235,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 396px;
+  width: 388px;
   height: 456px;
   opacity: 0;
   transform: translateY(500px);
@@ -282,7 +294,7 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 10px;
   border-right: 8px solid rgb(255, 255, 255);
-  background-color: rgb(155, 155, 150);
+  background-color: rgb(207, 202, 210);
 }
 .objWrap {
   display: flex;

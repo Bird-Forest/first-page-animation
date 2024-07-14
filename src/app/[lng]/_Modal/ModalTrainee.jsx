@@ -42,22 +42,22 @@ const initialValues = {
 
 // https://www.linkedin.com/in/maria-barvinok/
 
-const validationSchema = Yup.object({
-  name: Yup.string().required("Вкажіть ім’я"),
-  surname: Yup.string().required("Вкажіть прізвище"),
-  email: Yup.string().email("відсутній @").required("Вкажіть електронну пошту"),
-  city: Yup.string().required("Вкажіть місто"),
-  country: Yup.string().required("Вкажіть країну"),
-  nick: Yup.string().required("Вкажіть нік в Discord"),
-  link: Yup.string().url().required("Вкажіть профіль в Linkedin"),
-  course: Yup.string().required("Вкажіть назву курсу"),
-  experience: Yup.string().required("Зробіть вибір"),
-  motivation: Yup.string().required("Вкажіть мотивацію"),
-  resource: Yup.string().oneOf(resources).required("Зробіть вибір"),
-  agree: Yup.boolean().required("Надайте згоду"),
-  rule: Yup.boolean().required("Надайте згоду"),
-  speciality: Yup.array().of(Yup.string()).min(1, "Зробіть вибір"),
-});
+// const validationSchema = Yup.object({
+//   name: Yup.string().required("Вкажіть ім’я"),
+//   surname: Yup.string().required("Вкажіть прізвище"),
+//   email: Yup.string().email("відсутній @").required("Вкажіть електронну пошту"),
+//   city: Yup.string().required("Вкажіть місто"),
+//   country: Yup.string().required("Вкажіть країну"),
+//   nick: Yup.string().required("Вкажіть нік в Discord"),
+//   link: Yup.string().url().required("Вкажіть профіль в Linkedin"),
+//   course: Yup.string().required("Вкажіть назву курсу"),
+//   experience: Yup.string().required("Зробіть вибір"),
+//   motivation: Yup.string().required("Вкажіть мотивацію"),
+//   resource: Yup.string().oneOf(resources).required("Зробіть вибір"),
+//   agree: Yup.boolean().required("Надайте згоду"),
+//   rule: Yup.boolean().required("Надайте згоду"),
+//   speciality: Yup.array().of(Yup.string()).min(1, "Зробіть вибір"),
+// });
 
 export default function ModalTrainee({ closeModal, lng }) {
   const { t } = useTranslation(lng, "modal");

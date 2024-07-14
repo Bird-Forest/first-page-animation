@@ -1,33 +1,79 @@
-import React from "react";
-// import projects from "./data/projects.json";
+"use client";
+
+import React, { useState } from "react";
 import ProjectItem from "./ProjectItem";
-import { v4 as uuidv4 } from "uuid";
+import { FaCircle, FaBullseye } from "react-icons/fa";
 import styles from "./Project.module.css";
-import { projects } from "./data/projects";
-// import clientPromise from "@/src/lib/mongodb";
-// import { getAllProjects } from "@/src/app/services/projects";
 
-// export const getServerSideProps = async () => {
-//   try {
-//     const client = await clientPromise;
-//     const db = client.db("baza");
-//     const projects = await db.collection("projects");
+export default function Projects({ items }) {
+  const [projects, setProjects] = useState(items);
 
-//     return {
-//       props: { projects: JSON.parse(JSON.stringify(projects)) },
-//     };
-//   } catch (e) {
-//     console.error(e);
-//     return { props: { projects: [] } };
-//   }
-// };
+  const onСompleted = () => {
+    const arr = items.reduce((acc, item) => {
+      if (item.status.color === "#099e56") {
+        acc.push(item);
+      }
+      return acc;
+    }, []);
+    setProjects(arr);
+  };
 
-export default async function Projects() {
+  const inDeveloping = () => {
+    const arr = items.reduce((acc, item) => {
+      if (item.status.color === "#ffeb3b") {
+        acc.push(item);
+      }
+      return acc;
+    }, []);
+    setProjects(arr);
+  };
+
+  const onStart = () => {
+    const arr = items.reduce((acc, item) => {
+      if (item.status.color === "#ff1744") {
+        acc.push(item);
+      }
+      return acc;
+    }, []);
+    setProjects(arr);
+  };
+
+  const getAll = () => {
+    setProjects(items);
+  };
   return (
-    <ul className={styles.wrapList}>
-      {projects.map((item) => (
-        <ProjectItem key={uuidv4()} item={item} />
-      ))}
-    </ul>
+    <div className={styles.wrapProjects}>
+      <div className={styles.wrapOptions}>
+        <div className={styles.wrapFilter}>
+          <button onClick={onСompleted} className={styles.btnFilter}>
+            <FaCircle className={styles.iconGreen} />
+          </button>
+          <h4 className={styles.textFilter}>Завершено</h4>
+        </div>
+        <div className={styles.wrapFilter}>
+          <button onClick={inDeveloping} className={styles.btnFilter}>
+            <FaCircle className={styles.iconYellow} />
+          </button>
+          <h4 className={styles.textFilter}>В розробці</h4>
+        </div>
+        <div className={styles.wrapFilter}>
+          <button onClick={onStart} className={styles.btnFilter}>
+            <FaCircle className={styles.iconRed} />
+          </button>
+          <h4 className={styles.textFilter}>Формування команди</h4>
+        </div>
+        <div className={styles.wrapFilter}>
+          <button onClick={getAll} className={styles.btnFilter}>
+            <FaBullseye className={styles.iconWhite} />
+          </button>
+          <h4 className={styles.textFilter}>Всі наші проєкти</h4>
+        </div>
+      </div>
+      <ul className={styles.wrapList}>
+        {projects.map((item) => (
+          <ProjectItem key={item._id} item={item} />
+        ))}
+      </ul>
+    </div>
   );
 }

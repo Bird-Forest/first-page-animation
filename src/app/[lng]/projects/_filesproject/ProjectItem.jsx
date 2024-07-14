@@ -13,7 +13,6 @@ import {
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 
-const colors = ["Формування команди", "В розробці", "Завершено"];
 const arry = [
   <FaRegCircle key={1} />,
   <FaRegCircle key={2} />,
@@ -24,6 +23,7 @@ const arry = [
 
 export default function ProjectItem({ item }) {
   const [showTeam, setShowTeam] = useState(false);
+
   const openTeamList = () => {
     setShowTeam(true);
   };
@@ -31,21 +31,16 @@ export default function ProjectItem({ item }) {
     setShowTeam(false);
   };
 
-  const getStatus = () => {
-    if (item.status === colors[2]) return "rgb(27, 161, 97)";
-    if (item.status === colors[1]) return "rgb(255, 235, 59)";
-    if (item.status === colors[0]) return "rgb(255, 23, 68)";
-  };
-  const color = getStatus();
-
-  const complexity = item.difficult;
+  const state = item.status;
+  const date = new Date(item.start);
+  const start = date.toDateString();
   const users = item.team;
   const Arr = Array.isArray(users) && users.length > 0;
   return (
     <li className={styles.wrapItem}>
-      <Image
-        alt={item.title}
-        src={item.img}
+      {/* <Image
+        alt="Picture of project"
+        src={item.imageUrl}
         quality={100}
         width={396}
         height={456}
@@ -54,14 +49,17 @@ export default function ProjectItem({ item }) {
           objectFit: "cover",
         }}
         priority
-      />
+      /> */}
       <div className={styles.wrapInfo}>
         <div className={styles.statusWrap}>
-          <FaCircle className={styles.statusIcon} style={{ fill: color }} />
-          <p className={styles.statusText}>{item.status}</p>
+          <FaCircle
+            className={styles.statusIcon}
+            style={{ fill: state.color }}
+          />
+          <p className={styles.statusText}>{state.text}</p>
         </div>
         <div className={styles.wrapTitle}>
-          <h4 className={styles.itemTitle}>{item.title}</h4>
+          <h4 className={styles.itemTitle}>{item.name}</h4>
         </div>
 
         <div className={styles.wrapElements}>
@@ -80,7 +78,7 @@ export default function ProjectItem({ item }) {
               <FaRegCalendarAlt className={styles.itemIcon} />
               <p className={styles.itemText}>Старт проєкту</p>
             </div>
-            <p className={styles.wrapText}>{item.start}</p>
+            <p className={styles.wrapText}>{start}</p>
           </div>
           <div className={styles.wrapElem}>
             <div className={styles.elem}>
@@ -96,14 +94,15 @@ export default function ProjectItem({ item }) {
             </div>
             <ul className={styles.elem}>
               {arry.map((el) => (
-                <FaRegCircle
-                  key={el.key}
-                  className={
-                    el.key <= complexity
-                      ? styles.diffIcon + " " + styles.bg
-                      : styles.diffIcon + " " + " "
-                  }
-                />
+                <li key={el.key}>
+                  <FaRegCircle
+                    className={
+                      el.key <= item.difficult
+                        ? styles.diffIcon + " " + styles.bg
+                        : styles.diffIcon + " " + " "
+                    }
+                  />
+                </li>
               ))}
             </ul>
           </div>
@@ -139,7 +138,7 @@ export default function ProjectItem({ item }) {
                 </li>
               ))
             ) : (
-              <p>Очікує свою команду</p>
+              <p className={styles.objTitle}>Очікує свою команду</p>
             )}
           </ul>
         </div>
@@ -147,3 +146,5 @@ export default function ProjectItem({ item }) {
     </li>
   );
 }
+
+// imageUrl
