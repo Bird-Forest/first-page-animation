@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import styles from "../page.module.css";
+import styles from "../../page.module.css";
 import Image from "next/image";
-import logo from "../../../../public/baza/logoblack.svg";
+import logo from "@/public/baza/logoblack.svg";
 import { motion } from "framer-motion";
 
 export default function Loading() {

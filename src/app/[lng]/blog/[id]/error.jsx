@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import styles from "../page.module.css";
+import styles from "../../page.module.css";
 
 import { FaQuestion, FaRegFaceAngry } from "react-icons/fa6";
 
