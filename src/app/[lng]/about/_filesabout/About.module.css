@@ -1,7 +1,7 @@
 .about {
   display: grid;
   grid-template-columns: minmax(380px, 1280px);
-  grid-template-rows: 1fr;
+  grid-template-rows: auto auto auto;
   justify-content: center;
   align-items: start;
   gap: 20px;
@@ -36,28 +36,6 @@
     padding: 68px 120px;
   }
 }
-
-/* .aboutTitle {
-  display: flex;
-  justify-content: center;
-  color: rgb(252, 252, 252);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.5;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-@media screen and (min-width: 768px) {
-  .aboutTitle {
-    font-size: 32px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .aboutTitle {
-    font-size: 40px;
-  }
-} */
 .wrapAbout {
   display: grid;
   grid-template-columns: 1fr;
@@ -121,14 +99,14 @@
   }
 }
 
-.link {
+/* .link {
   color: rgb(252, 252, 252);
   text-decoration: none;
 }
 .active {
   text-decoration: none;
   color: rgb(226, 49, 168);
-}
+} */
 
 /* *** DOCUMENT *** */
 .docsWrap {
@@ -162,7 +140,39 @@
   text-decoration: none;
   padding: 0;
 }
-.active {
+/* .active {
   text-decoration: none;
   color: rgb(226, 49, 168);
+} */
+/* *** FORM REWIEW *** */
+.wrapReview {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  border-bottom: 2px solid rgb(226, 49, 168);
+  padding: 0 0 20px 0;
+}
+.formTitle {
+  display: flex;
+  justify-content: center;
+  color: rgb(252, 252, 252);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.wrapForm {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  border-radius: 12px;
+  background-color: rgba(210, 210, 210, 0.5);
+  padding: 16px;
+  margin: 0 auto;
 }
