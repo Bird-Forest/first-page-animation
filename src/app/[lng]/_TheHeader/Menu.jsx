@@ -5,7 +5,7 @@ import { TfiMenu } from "react-icons/tfi";
 import styles from "./Header.module.css";
 import NavHeader from "./NavHeader";
 
-export default function Menu({ links, lng }) {
+export default function Menu({ lng }) {
   const [isMenu, setIsMenu] = useState(false);
 
   const onMenu = () => {
@@ -24,7 +24,7 @@ export default function Menu({ links, lng }) {
           top: isMenu ? "80px" : "0",
         }}
       >
-        <NavHeader links={links} lng={lng} />
+        <NavHeader lng={lng} />
       </div>
     </div>
   );

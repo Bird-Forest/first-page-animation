@@ -7,8 +7,7 @@ import styles from "./Blog.module.css";
 import { FaLink } from "react-icons/fa";
 import NotifCopy from "../../_Helper/NotifCopy";
 
-export default function PostId({ post }) {
-  // console.log("POST", post);
+export default function PostId({ post, lng }) {
   const [copied, setCopied] = useState(false);
   const [showNotif, setShowNotif] = useState(false);
 
@@ -40,7 +39,7 @@ export default function PostId({ post }) {
       </div>
       <p className={styles.itemText}>{post.text2}</p>
       <div className={styles.wrapBtn}>
-        <Link href="/blog" className={styles.itemBtn}>
+        <Link href={`/${lng}/blog`} className={styles.itemBtn}>
           повернутись ...
         </Link>
       </div>

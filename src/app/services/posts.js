@@ -27,6 +27,33 @@ export const getPostById = async (req, res) => {
   }
 };
 
+// db.createUser({
+//   user: "Employeeadmin",
+
+//   pwd: "password",
+
+//   roles: [{ role: "userAdmin", db: "Employee" }],
+// });
+// db.createUser(
+// {
+// 	user: "Mohan",
+
+// 	pwd: "password",
+
+// 	roles:[
+// 	{
+// 		role: "read" , db:"Marketing"},
+//     {
+// 		role: "readWrite" , db:"Sales"}
+// 	}
+// 		  ]
+// })
+
+// использовать  admin
+// db.createUser ( { user : "siteUserAdmin" , pwd : "password" , roles : [ { role : " userAdminAnyDatabase" , db : " admin" } ] } )
+// использовать  записи
+// базы данных.createUser ( { user : "recordsUserAdmin" , pwd : "password" , roles : [ { role : "userAdmin" , db : " records" } ] } )
+
 export const createPosts = async () => {
   try {
     const docs = await Post.insertMany([

@@ -4,7 +4,7 @@ import blog from "@/public/baza/blog.png";
 import styles from "./Blog.module.css";
 import Link from "next/link";
 
-export default function PostItem({ item }) {
+export default function PostItem({ item, lng }) {
   return (
     <li className={styles.wrapItem}>
       <div className={styles.wrapElem}>
@@ -26,7 +26,7 @@ export default function PostItem({ item }) {
         <p className={styles.itemText}>{item.text1}</p>
       </div>
       <div className={styles.wrapBtn}>
-        <Link href={`/blog/${item._id}`} className={styles.itemBtn}>
+        <Link href={`/${lng}/blog/${item._id}`} className={styles.itemBtn}>
           читати більше ...
         </Link>
       </div>

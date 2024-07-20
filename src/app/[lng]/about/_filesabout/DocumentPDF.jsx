@@ -1,3 +1,19 @@
+"use client";
+
+// import Image from "next/image";
+import React from "react";
+import styles from "../_filesabout/About.module.css";
+
+export default function DocumentPDF({ doc }) {
+  //   console.log(doc);
+  return (
+    <div className={styles.about}>
+      <h3 className={styles.itemTitle}>{doc.title}</h3>
+      {/* <Image alt="Policy" src={doc.path} /> */}
+    </div>
+  );
+}
+
 // "use client";
 
 // import { useCallback, useState } from "react";

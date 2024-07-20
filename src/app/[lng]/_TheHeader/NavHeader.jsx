@@ -28,7 +28,7 @@ export default function NavHeader({ lng }) {
       variants={list}
       viewport={{ once: true }}
     >
-      <motion.li variants={item} transition={{ delay: 12, duration: 2 }}>
+      <motion.li variants={item} transition={{ delay: 6, duration: 1 }}>
         <Link
           href={`/${lng}/home`}
           className={page === "home" ? styles.active : styles.link}
@@ -36,7 +36,7 @@ export default function NavHeader({ lng }) {
           Головна
         </Link>
       </motion.li>
-      <motion.li variants={item} transition={{ delay: 10, duration: 2 }}>
+      <motion.li variants={item} transition={{ delay: 5, duration: 1 }}>
         <Link
           href={`/${lng}/trainees`}
           className={page === "trainees" ? styles.active : styles.link}
@@ -44,7 +44,7 @@ export default function NavHeader({ lng }) {
           Стажування
         </Link>
       </motion.li>
-      <motion.li variants={item} transition={{ delay: 8, duration: 2 }}>
+      <motion.li variants={item} transition={{ delay: 4, duration: 1 }}>
         <Link
           href={`/${lng}/projects`}
           className={page === "projects" ? styles.active : styles.link}
@@ -52,7 +52,7 @@ export default function NavHeader({ lng }) {
           Проєкти
         </Link>
       </motion.li>
-      <motion.li variants={item} transition={{ delay: 6, duration: 2 }}>
+      <motion.li variants={item} transition={{ delay: 3, duration: 1 }}>
         <Link
           href={`/${lng}/blog`}
           className={page === "blog" ? styles.active : styles.link}
@@ -60,7 +60,7 @@ export default function NavHeader({ lng }) {
           Блог
         </Link>
       </motion.li>
-      <motion.li variants={item} transition={{ delay: 4, duration: 2 }}>
+      <motion.li variants={item} transition={{ delay: 2, duration: 1 }}>
         <Link
           href={`/${lng}/about`}
           className={page === "about" ? styles.active : styles.link}

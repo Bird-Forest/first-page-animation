@@ -6,9 +6,9 @@ import Advantages from "./_filestrainee/Advantages";
 // import Loading from "../_Helper/Loading";
 import { useTranslation } from "../../i18n/server";
 
-export function generateStaticParams() {
-  return languages.map((lng) => ({ lng }));
-}
+// export function generateStaticParams() {
+//   return languages.map((lng) => ({ lng }));
+// }
 
 export default async function TraineesPage({ params: { lng } }) {
   if (languages.indexOf(lng) < 0) lng = fallbackLng;

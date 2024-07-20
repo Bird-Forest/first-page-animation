@@ -7,7 +7,7 @@ import styles from "./Blog.module.css";
 import { FaCircleCheck, FaCircleXmark } from "react-icons/fa6";
 import EmptyPage from "../../_Helper/EmptyPage";
 
-export default function Posts({ posts }) {
+export default function Posts({ posts, lng }) {
   const [selected, setSelected] = useState(posts);
   const [word, setWord] = useState("");
 
@@ -21,7 +21,7 @@ export default function Posts({ posts }) {
         arr.push(post);
       }
     });
-    console.log(arr);
+    // console.log(arr);
     setSelected(arr);
   };
   const onClear = () => {
@@ -49,7 +49,7 @@ export default function Posts({ posts }) {
       {Arr ? (
         <ul className={styles.wrapList}>
           {selected.map((item) => (
-            <PostItem key={uuidv4()} item={item} />
+            <PostItem key={uuidv4()} item={item} lng={lng} />
           ))}
         </ul>
       ) : (

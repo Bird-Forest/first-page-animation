@@ -9,13 +9,14 @@
   margin: 0;
 }
 .mainBtn {
-  display: grid;
+  display: flex;
   width: 300px;
   height: 60px;
   justify-content: center;
   align-items: center;
   border: none;
-  padding: 14px 24px 14px 24px;
+  /* padding: 14px 24px 14px 24px; */
+  padding: 8px;
   border-radius: 8px;
   color: rgb(252, 252, 252);
   font-size: 18px;

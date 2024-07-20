@@ -34,7 +34,7 @@ export default function AidButton() {
         className={styles.button}
         initial={"hidden"}
         animate={"visible"}
-        transition={{ delay: 2.5, duration: 2 }}
+        transition={{ delay: 1, duration: 1 }}
         variants={btnVariants}
         onClick={openModal}
       >

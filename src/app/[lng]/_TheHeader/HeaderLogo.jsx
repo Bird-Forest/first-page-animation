@@ -11,7 +11,7 @@ export default function HeaderLogo() {
     <motion.div
       className={styles.logo}
       animate={{ rotate: 360 }}
-      transition={{ delay: 3, duration: 2, repeat: 5 }}
+      transition={{ delay: 1.1, duration: 1, repeat: 5 }}
     >
       <Image src={logo} alt="logo" width={60} height={60} priority />
     </motion.div>

@@ -13,6 +13,18 @@ module.exports = {
         hostname: "cdn.pixabay.com",
         port: "",
       },
+      {
+        protocol: "http",
+        hostname: "**",
+        port: "",
+        pathname: "**",
+      },
+      // {
+      //   protocol: "http",
+      //   hostname: "localhost:3000",
+      //   port: "",
+      //   pathname: "/public/images/**",
+      // },
     ],
   },
 
