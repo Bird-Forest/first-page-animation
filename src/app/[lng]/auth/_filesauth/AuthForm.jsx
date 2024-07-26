@@ -2,6 +2,8 @@ import styles from "./Auth.module.css";
 import { loginAdmin } from "@/src/app/services/users";
 import AuthBtn from "./AuthBtn";
 
+// *** Функція запиту адміна - серверний варіант
+
 export default function AuthForm() {
   return (
     <form action={loginAdmin} className={styles.wrapSignin}>

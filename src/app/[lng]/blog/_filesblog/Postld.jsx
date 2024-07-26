@@ -5,7 +5,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import styles from "./Blog.module.css";
 import { FaLink } from "react-icons/fa";
-import NotifCopy from "../../_Helper/NotifCopy";
+import NotifMess from "../../_Helper/NotifMess";
+import { format } from "date-fns";
 
 export default function PostId({ post, lng }) {
   const [copied, setCopied] = useState(false);
@@ -19,18 +20,20 @@ export default function PostId({ post, lng }) {
       setShowNotif(true);
     }
   };
-  const date = new Date(post.date);
-  // console.log(date);
-  const format = date.toDateString();
+
+  const date = format(new Date(post.date), "yyyy-MM-dd");
   return (
     <div className={styles.wrapPost}>
       <div className={styles.wrapSub}>
-        <p className={styles.itemDate}>{format}</p>
+        <p className={styles.itemDate}>{date}</p>
         <button onClick={handleCopyClick} className={styles.wrapLink}>
           <FaLink className={styles.iconLink} />
         </button>
         {showNotif && (
-          <NotifCopy message="Copy" onClose={() => setShowNotif(false)} />
+          <NotifMess
+            message="Успішно скопійовано"
+            onClose={() => setShowNotif(false)}
+          />
         )}
       </div>
       <p className={styles.itemText}>{post.text1}</p>

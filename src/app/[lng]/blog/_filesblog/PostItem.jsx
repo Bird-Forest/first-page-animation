@@ -3,8 +3,11 @@ import React from "react";
 import blog from "@/public/baza/blog.png";
 import styles from "./Blog.module.css";
 import Link from "next/link";
+import { format } from "date-fns";
 
 export default function PostItem({ item, lng }) {
+  const date = format(new Date(item.date), "yyyy-MM-dd");
+
   return (
     <li className={styles.wrapItem}>
       <div className={styles.wrapElem}>
@@ -18,7 +21,7 @@ export default function PostItem({ item, lng }) {
           />
         </div>
         <div className={styles.wrapInfo}>
-          <p className={styles.itemDate}>{item.date}</p>
+          <p className={styles.itemDate}>{date}</p>
           <h4 className={styles.itemTitle}>{item.title}</h4>
         </div>
       </div>

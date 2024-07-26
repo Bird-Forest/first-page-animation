@@ -3,11 +3,11 @@
 import React, { useEffect } from "react";
 import styles from "./Helper.module.css";
 
-export default function NotifCopy({ message, onClose }) {
+export default function NotifMess({ message, onClose }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-    }, 2000);
+    }, 5000);
 
     return () => {
       clearTimeout(timer);

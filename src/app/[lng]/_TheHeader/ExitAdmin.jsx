@@ -1,15 +1,19 @@
 "use client";
 
 import { signOut } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { RxExit } from "react-icons/rx";
+import styles from "./Header.module.css";
 
 export function ExitAdmin({ lng }) {
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl");
-  console.log("Exit", callbackUrl);
+  const router = useRouter();
+
   return (
-    <button onClick={() => signOut({ redirectTo: `/${lng}/home` })}>
-      Exit
+    <button
+      onClick={() => signOut(router.push(`/${lng}/home`))}
+      className={styles.btnExit}
+    >
+      <RxExit className={styles.iconExit} />
     </button>
   );
 }

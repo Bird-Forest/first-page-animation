@@ -1,7 +1,7 @@
 .admin {
-  display: grid;
-  grid-template-columns: minmax(380px, 1280px);
-  grid-template-rows: 1fr;
+  display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -10,7 +10,6 @@
   background-color: rgb(67, 4, 78);
   border-top: 2px solid rgb(226, 49, 168);
   border-bottom: 2px solid rgb(226, 49, 168);
-  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .admin {
@@ -35,9 +34,11 @@
 .wrapNav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 20px;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   list-style: none;
 }
 .wrapLink {
@@ -63,8 +64,181 @@
   line-height: 1.3;
   text-align: left;
 }
+/* *** PAGE in ADMIN*/
 .wrapPage {
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: auto 1fr;
+  justify-content: center;
+  align-items: start;
+  padding: 0;
+  margin: 0 auto;
+  background-color: rgb(67, 4, 78);
+  border-top: 2px solid rgb(226, 49, 168);
+  border-bottom: 2px solid rgb(226, 49, 168);
+}
+/* *** SettingPanel */
+.wrapNavPage {
+  display: grid;
+  grid-template-columns: minmax(380px, 1160px);
+  grid-template-rows: auto;
+  justify-content: center;
+  border-bottom: 2px solid rgb(226, 49, 168);
+  padding: 4px 16px;
+}
+@media screen and (min-width: 768px) {
+  .wrapNavPage {
+    padding: 8px 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wrapNavPage {
+    padding: 8px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .wrapNavPage {
+    padding: 16px 80px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .wrapNavPage {
+    padding: 16px 120px;
+  }
+}
+.wrapPanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 36px;
+  align-items: center;
+  justify-items: center;
+}
+.btnHome {
+  display: grid;
+  grid-template-columns: 36px;
+  grid-template-rows: 36px;
+  background-color: transparent;
+  border: none;
+  outline: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.linkPanel {
+  display: grid;
+  grid-template-columns: 36px;
+  grid-template-rows: 36px;
+}
+.iconPanel {
+  fill: rgb(226, 49, 168);
+  width: 36px;
+  height: 36px;
+}
+.titlePanel {
+  display: grid;
+  color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.8;
+  text-align: center;
+}
+/* *** Page */
+.wrapContent {
+  display: grid;
+  grid-template-columns: minmax(380px, 1160px);
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: start;
+  padding: 24px 8px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .wrapContent {
+    padding: 24px 40px 40px 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wrapContent {
+    padding: 24px 60px 60px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .wrapContent {
+    padding: 24px 80px 60px 80px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .wrapContent {
+    padding: 24px 120px 60px 120px;
+  }
+}
+/* *** Delete mess */
+.delWrap {
+  position: relative;
   display: flex;
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 300px;
+  height: 240px;
+  border-radius: 24px;
+  border: 2px solid rgb(226, 49, 168);
+  background-color: rgb(242, 238, 248);
+  padding: 28px;
+}
+.closeBtn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.close {
+  width: 40px;
+  height: 40px;
+  fill: rgb(3, 1, 16);
+}
+.delText {
+  color: rgb(3, 1, 16);
+  font-family: var(--font-montserrat);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.8;
+  text-align: center;
+}
+.delWrapBtn {
+  display: flex;
+  gap: 40px;
+}
+.delBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 60px;
+  color: rgb(242, 238, 248);
+  font-family: var(--font-montserrat);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.8;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  box-shadow: inset 3px 3px 4px 0px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    135deg,
+    rgb(227, 124, 193),
+    rgb(226, 49, 168) 43.573%,
+    rgb(157, 47, 121) 90.728%,
+    rgb(133, 26, 98) 119.379%
+  );
+  cursor: pointer;
 }

@@ -1,4 +1,17 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  max-height: 75vh;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+  background-color: rgb(67, 4, 78);
+  overflow-x: hidden;
+}
+
+/* .container {
   display: grid;
   grid-template-columns: minmax(420px, 1920px);
   grid-template-rows: 1fr;
@@ -7,7 +20,7 @@
   padding: 0;
   margin: 0 auto;
   overflow: auto;
-}
+} */
 /* .container {
   display: flex;
   width: 100%;
@@ -80,7 +93,7 @@
   }
 }
 
-.wrapLoading {
+/* .wrapLoading {
   position: fixed;
   z-index: 2;
   top: 0;
@@ -90,15 +103,13 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  /* backdrop-filter: blur(2px); */
-  /* background-color: rgba(255, 255, 255, 0.4); */
   background-color: rgba(255, 255, 255);
 }
 
 .wrapLogo {
   position: relative;
   display: flex;
-}
+} */
 /* *** BTN ANCHOR *** */
 .anchor {
   position: fixed;
@@ -118,7 +129,7 @@
   height: 60px;
   fill: rgba(255, 255, 255, 0.5);
 }
-/* **** ERROR ***** */
+/* **** ERROR  DELETE***** */
 .wrapError {
   display: flex;
   width: 100vw;

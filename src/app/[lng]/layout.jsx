@@ -6,12 +6,7 @@ import { languages } from "../i18n/settings";
 import "../globals.css";
 import BazaFooter from "./_TheFooter/BazaFooter";
 import { IoMdRocket } from "react-icons/io";
-
-// const inter = Inter({
-//   subsets: ["latin"],
-//   variable: "--font-inter",
-//   display: "swap",
-// });
+import { Providers } from "./_Helper/Providers";
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
@@ -40,12 +35,14 @@ export default function RootLayout({ children, params: { lng } }) {
       className={` ${open_sans.variable} ${montserrat.variable}`}
     >
       <body>
-        <BazaHeader lng={lng} id="search-form" />
-        <main>{children}</main>
-        <a href="#top" className={styles.anchor}>
-          <IoMdRocket className={styles.iconTop} />
-        </a>
-        <BazaFooter />
+        <Providers>
+          <BazaHeader lng={lng} id="search-form" />
+          <main>{children}</main>
+          <a href="#top" className={styles.anchor}>
+            <IoMdRocket className={styles.iconTop} />
+          </a>
+          <BazaFooter />
+        </Providers>
       </body>
     </html>
   );
