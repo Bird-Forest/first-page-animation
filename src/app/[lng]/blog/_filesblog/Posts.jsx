@@ -21,7 +21,6 @@ export default function Posts({ posts, lng }) {
         arr.push(post);
       }
     });
-    // console.log(arr);
     setSelected(arr);
   };
   const onClear = () => {

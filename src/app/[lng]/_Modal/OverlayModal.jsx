@@ -2,8 +2,9 @@
 
 import React, { useEffect } from "react";
 import styles from "./Modal.module.css";
+import { IoClose } from "react-icons/io5";
 
-export default function OverlayModal({ closeModal, content }) {
+export default function OverlayModal({ closeModal, content, title }) {
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
@@ -20,7 +21,16 @@ export default function OverlayModal({ closeModal, content }) {
   }, [closeModal]);
   return (
     <div onClick={closeModal} className={styles.overlay}>
-      {content}
+      <div
+        className={styles.wrapModalForm}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button type="button" onClick={closeModal} className={styles.closeBtn}>
+          <IoClose className={styles.close} />
+        </button>
+        <h4 className={styles.titleModal}>{title}</h4>
+        {content}
+      </div>
     </div>
   );
 }

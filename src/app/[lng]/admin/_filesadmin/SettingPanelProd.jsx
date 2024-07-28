@@ -6,13 +6,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaHouseUser, FaFolderPlus, FaFolderTree } from "react-icons/fa6";
 
-export default function SettingPanel({ lng, title }) {
+export default function SettingPanelProd({ lng, title }) {
   const path = usePathname();
   const segments = path.split("/");
   const page = segments[3];
 
   return (
-    <div className={styles.wrapPanel}>
+    <div className={styles.wrapPanelProd}>
       <Link href={`/${lng}/admin`} className={styles.linkPanel}>
         <FaHouseUser className={styles.iconPanel} />
       </Link>

@@ -25,8 +25,8 @@
   display: flex;
   width: 380px;
   border-radius: 16px;
-  background-color: rgb(24, 5, 48);
-  border: 2px solid rgb(255, 98, 206);
+  background-color: rgb(46, 5, 53);
+  border: 2px solid rgb(226, 49, 168);
   padding: 44px 18px 32px 18px;
   margin: 0;
 }
@@ -61,7 +61,7 @@
   width: 380px;
   border-radius: 16px;
   background-color: rgb(46, 5, 53);
-  border: 2px solid rgb(255, 98, 206);
+  border: 2px solid rgb(226, 49, 168);
   padding: 44px 18px 32px 18px;
   margin: 100px auto;
 }
@@ -287,7 +287,7 @@
   width: 380px;
   border-radius: 16px;
   background-color: rgb(46, 5, 53);
-  border: 2px solid rgb(255, 98, 206);
+  border: 2px solid rgb(226, 49, 168);
   padding: 44px 16px 24px 16px;
   margin: 20px;
 }
@@ -572,7 +572,6 @@
     width: 456px;
   }
 }
-
 .errorMess {
   display: flex;
   color: rgb(249, 73, 73);

@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 
 import MainButton from "../../_Helper/MainButton";
 import { useTranslation } from "@/src/app/i18n/client";
+import { createMentor } from "@/src/app/services/mentors";
 
 export default function Mentor({ lng }) {
   const { t } = useTranslation(lng);
@@ -96,7 +97,7 @@ export default function Mentor({ lng }) {
         createPortal(
           <OverlayModal
             closeModal={closeModal}
-            content={<ModalMentor closeModal={closeModal} lng={lng} />}
+            content={<ModalMentor formAction={createMentor} lng={lng} />}
           />,
           document.body
         )}

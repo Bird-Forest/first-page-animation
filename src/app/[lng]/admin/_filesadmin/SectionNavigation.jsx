@@ -11,7 +11,7 @@ import { TbMessageHeart } from "react-icons/tb";
 import styles from "./Admin.module.css";
 import Link from "next/link";
 
-export default function NavSections({ lng }) {
+export default function SectionNavigation({ lng }) {
   return (
     <ul className={styles.wrapNav}>
       <li className={styles.wrapLink}>

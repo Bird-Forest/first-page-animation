@@ -1,7 +1,6 @@
 "use server";
 
 import { Post } from "../models/post";
-const { connectDB } = require("../lib/mongodb");
 
 export const getPosts = async (req, res) => {
   try {

@@ -142,6 +142,12 @@
   outline: none;
   padding: 4px;
 }
+@media screen and (min-width: 560px) {
+  .inputSearch {
+    padding: 4px 4px 4px 16px;
+    font-size: 20px;
+  }
+}
 /* **** CREATE POST */
 .wrapCreatePost {
   display: grid;
@@ -281,6 +287,7 @@
   aspect-ratio: 1/0.5;
 }
 /* *** POST ID PAGE */
+/* ****************************** */
 .wrapLayout {
   display: grid;
   grid-template-columns: 100vw;
@@ -331,6 +338,8 @@
   width: 32px;
   height: 32px;
 }
+
+/* ************************8 */
 .wrapRemov {
   display: grid;
   grid-template-columns: 1fr;

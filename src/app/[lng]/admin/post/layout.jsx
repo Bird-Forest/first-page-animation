@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "../_filesadmin/Admin.module.css";
-import SettingPanel from "../_filesadmin/SettingPanel";
+import SettingPanelProd from "../_filesadmin/SettingPanelProd";
 
 export default function PostsLayout({ children, params: { lng } }) {
   const title = "Posts";
@@ -10,7 +10,7 @@ export default function PostsLayout({ children, params: { lng } }) {
   return (
     <section className={styles.wrapPage}>
       <div className={styles.wrapNavPage}>
-        <SettingPanel lng={lng} title={title} />
+        <SettingPanelProd lng={lng} title={title} />
       </div>
       {children}
     </section>

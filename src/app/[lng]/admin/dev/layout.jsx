@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../_filesadmin/Admin.module.css";
-import SettingPanel from "../_filesadmin/SettingPanel";
+import SettingPanelUser from "../_filesadmin/SettingPanelUser";
 
 export default function DevelopersLayout({ children, params: { lng } }) {
   const title = "Developers";
@@ -8,7 +8,7 @@ export default function DevelopersLayout({ children, params: { lng } }) {
   return (
     <section className={styles.wrapPage}>
       <div className={styles.wrapNavPage}>
-        <SettingPanel lng={lng} title={title} />
+        <SettingPanelUser lng={lng} title={title} />
       </div>
       {children}
     </section>

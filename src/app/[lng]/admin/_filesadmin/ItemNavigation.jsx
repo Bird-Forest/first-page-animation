@@ -3,17 +3,20 @@
 import Link from "next/link";
 import React from "react";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
-import styles from "../_filesadminpost/Post.module.css";
+import styles from "./Admin.module.css";
 import { usePathname } from "next/navigation";
 
-export default function PostNav({ lng, id }) {
+export default function ItemNavigation({ lng, id }) {
+  console.log("ItemNavigation", id);
   const pathname = usePathname();
   const segments = pathname.split("/");
+  console.log(segments);
+  const page = segments[3];
   const path = segments[5];
   return (
-    <div className={styles.wrapNavIdPost}>
+    <div className={styles.wrapNavIdItem}>
       <Link
-        href={`/${lng}/admin/post/${id}`}
+        href={`/${lng}/admin/${page}/${id}`}
         className={path !== "remove" ? styles.linkNavIdAct : styles.linkNavId}
       >
         <BsPencilSquare
@@ -21,7 +24,7 @@ export default function PostNav({ lng, id }) {
         />
       </Link>
       <Link
-        href={`/${lng}/admin/post/${id}/remove`}
+        href={`/${lng}/admin/${page}/${id}/remove`}
         className={path === "remove" ? styles.linkNavIdAct : styles.linkNavId}
       >
         <BsTrash

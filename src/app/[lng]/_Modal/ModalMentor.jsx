@@ -37,13 +37,17 @@ const initialValues = {
   time: [],
 };
 
-export default function ModalMentor({ closeModal, lng }) {
+export default function ModalMentor({ formAction, item, lng }) {
   const { t } = useTranslation(lng, "modal");
   const [mess, setMess] = useState(" ");
 
   const validationSchema = Yup.object({
-    first: Yup.string().required(`${t("error_name")}`),
-    last: Yup.string().required(`${t("error_surname")}`),
+    first: Yup.string()
+      .trim()
+      .required(`${t("error_name")}`),
+    last: Yup.string()
+      .trim()
+      .required(`${t("error_surname")}`),
     email: Yup.string()
       .email("відсутній @")
       .required(`${t("error_email")}`),
@@ -53,6 +57,7 @@ export default function ModalMentor({ closeModal, lng }) {
     nick: Yup.string().required(`${t("error_nick")}`),
     link: Yup.string()
       .url()
+      .trim()
       .required(`${t("error_link")}`),
     agree: Yup.boolean().required(`${t("error_agree")}`),
     speciality: Yup.array()
@@ -63,125 +68,138 @@ export default function ModalMentor({ closeModal, lng }) {
       .min(1, `${t("error_select")}`),
   });
   return (
-    <div className={styles.wrapModalForm} onClick={(e) => e.stopPropagation()}>
-      <button type="button" onClick={closeModal} className={styles.closeBtn}>
-        <IoClose className={styles.close} />
-      </button>
-      <div className={styles.modalForm}>
-        <h4 className={styles.titleModal}>{t("mentor_title")}</h4>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={async (values, { setSubmitting, resetForm }) => {
-            const message = await createMentor(values);
-            setSubmitting(true);
-            setMess(message);
-            console.log(values);
-            resetForm();
-          }}
-        >
-          {(props) => (
-            <Form className={styles.wrapForm} autoComplete="off">
-              <div className={styles.wrapData}>
-                <InputUserData
-                  label={t("first")}
-                  name="first"
-                  type="text"
-                  // placeholder="Iм’я"
-                />
-                <InputUserData
-                  label={t("last")}
-                  name="last"
-                  type="text"
-                  // placeholder="Прізвище"
-                />
-                <h4 className={styles.subtitle}>
-                  {t("special_title")}
-                  <span className={styles.red}>{" *"}</span>
-                </h4>
-                <ul
-                  className={styles.wrapCheck}
-                  role="group"
-                  aria-labelledby="checkbox-group"
-                >
-                  {specialties.map((item, i) => (
-                    <InputCheckbox
-                      name="speciality"
-                      key={i}
-                      value={item}
-                      type="checkbox"
-                      multiple={true}
-                      checked={false}
-                    >
-                      {item}
-                    </InputCheckbox>
-                  ))}
-                </ul>
-                <InputUserData
-                  label={t("email")}
-                  name="email"
-                  type="email"
-                  placeholder="email@gmail.com"
-                />
-                <InputUserData
-                  label={t("phone")}
-                  name="tel"
-                  type="tel"
-                  placeholder="+38 XXX XXX XX XX"
-                />
-                <InputUserData
-                  label={t("discord")}
-                  name="nick"
-                  type="text"
-                  // placeholder="Discord"
-                />
-                <InputUserData
-                  label={t("linkedin")}
-                  name="link"
-                  type="url"
-                  // placeholder="Лінк на профіль"
-                />
-                <h4 className={styles.subtitle}>
-                  {t("time_title")}
-                  <span className={styles.red}>{" *"}</span>
-                </h4>
-                <ul
-                  className={styles.wrapCheck}
-                  role="group"
-                  aria-labelledby="checkbox-group"
-                >
-                  {works.map((item, i) => (
-                    <InputCheckbox
-                      name="time"
-                      key={i}
-                      value={item}
-                      type="checkbox"
-                      multiple={true}
-                      checked={false}
-                    >
-                      {t(item)}
-                    </InputCheckbox>
-                  ))}
-                </ul>
-              </div>
-              <div className={styles.wrapAgree}>
-                <InputCheckAgree name="agree" type="checkbox" checked={false}>
-                  {t("agree")}
-                </InputCheckAgree>
-              </div>
-              <div className={styles.wrapBtnForm}>
-                <button
-                  type="submit"
-                  className={`${styles.btnPay} ${styles.active}`}
-                >
-                  {props.isSubmitting ? <Spinner /> : `${t("btn_send")}`}
-                </button>
-              </div>
-            </Form>
-          )}
-        </Formik>
-      </div>
+    // <div className={styles.wrapModalForm} onClick={(e) => e.stopPropagation()}>
+    //   <button type="button" onClick={closeModal} className={styles.closeBtn}>
+    //     <IoClose className={styles.close} />
+    //   </button>
+    <div className={styles.modalForm}>
+      <h4 className={styles.titleModal}>{t("mentor_title")}</h4>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
+          const message = await formAction(values);
+          setSubmitting(true);
+          setMess(message);
+          console.log(values);
+          resetForm();
+        }}
+      >
+        {(props) => (
+          <Form className={styles.wrapForm} autoComplete="off">
+            <div className={styles.wrapData}>
+              <InputUserData
+                label={t("first")}
+                name="first"
+                type="text"
+                defaultValue={!item ? null : item.first}
+                // placeholder="Iм’я"
+              />
+              <InputUserData
+                label={t("last")}
+                name="last"
+                type="text"
+                defaultValue={!item ? null : item.last}
+                // placeholder="Прізвище"
+              />
+              <h4 className={styles.subtitle}>
+                {t("special_title")}
+                <span className={styles.red}>{" *"}</span>
+              </h4>
+              <ul
+                className={styles.wrapCheck}
+                role="group"
+                aria-labelledby="checkbox-group"
+              >
+                {specialties.map((el, i) => (
+                  <InputCheckbox
+                    name="speciality"
+                    key={i}
+                    value={el}
+                    defaultValue={!item ? null : item.speciality[i]}
+                    type="checkbox"
+                    multiple={true}
+                    checked={false}
+                  >
+                    {el}
+                  </InputCheckbox>
+                ))}
+              </ul>
+              <InputUserData
+                label={t("email")}
+                name="email"
+                type="email"
+                defaultValue={!item ? null : item.email}
+                placeholder="email@gmail.com"
+              />
+              <InputUserData
+                label={t("phone")}
+                name="tel"
+                type="tel"
+                defaultValue={!item ? null : item.tel}
+                placeholder="+38 XXX XXX XX XX"
+              />
+              <InputUserData
+                label={t("discord")}
+                name="nick"
+                type="text"
+                defaultValue={!item ? null : item.nick}
+                // placeholder="Discord"
+              />
+              <InputUserData
+                label={t("linkedin")}
+                name="link"
+                type="url"
+                defaultValue={!item ? null : item.link}
+                // placeholder="Лінк на профіль"
+              />
+              <h4 className={styles.subtitle}>
+                {t("time_title")}
+                <span className={styles.red}>{" *"}</span>
+              </h4>
+              <ul
+                className={styles.wrapCheck}
+                role="group"
+                aria-labelledby="checkbox-group"
+              >
+                {works.map((el, i) => (
+                  <InputCheckbox
+                    name="time"
+                    key={i}
+                    value={el}
+                    type="checkbox"
+                    defaultValue={!item ? null : item.time[i]}
+                    multiple={true}
+                    checked={false}
+                  >
+                    {t(el)}
+                  </InputCheckbox>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.wrapAgree}>
+              <InputCheckAgree
+                name="agree"
+                type="checkbox"
+                checked={false}
+                defaultValue={!item ? null : item.agree}
+              >
+                {t("agree")}
+              </InputCheckAgree>
+            </div>
+            <div className={styles.wrapBtnForm}>
+              <button
+                type="submit"
+                className={`${styles.btnPay} ${styles.active}`}
+              >
+                {props.isSubmitting ? <Spinner /> : `${t("btn_send")}`}
+              </button>
+            </div>
+          </Form>
+        )}
+      </Formik>
       <p className={styles.formMess}>{mess.message}</p>
     </div>
+    // </div>
   );
 }

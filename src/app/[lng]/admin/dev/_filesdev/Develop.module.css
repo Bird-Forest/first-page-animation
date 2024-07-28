@@ -5,9 +5,6 @@
   background-color: rgb(226, 49, 168);
   border-radius: 4px;
   gap: 2px;
-
-  /* row-gap: 2px;
-  column-gap: 2px; */
   padding: 0;
 }
 .wrapList {
@@ -41,13 +38,13 @@
   font-family: var(--font-montserrat);
   font-size: 16px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.5;
   text-align: left;
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
   .devName {
     font-size: 20px;
   }
@@ -74,21 +71,16 @@
   grid-template-columns: 1fr;
   grid-template-rows: 48px 48px;
   gap: 2px;
-  /* border-bottom: 4px solid rgb(67, 4, 78); */
   padding: 0;
 }
-/* @media screen and (min-width: 560px) {
-  .filter {
-    grid-template-columns: 52px 1fr 52px repeat(4, 52px);
-    grid-template-rows: 48px;
-  }
-} */
 .wrapSearch {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 52px 52px;
   grid-template-rows: auto;
   gap: 2px;
 }
+
 .filterBtn {
   display: grid;
   grid-template-columns: auto;
@@ -122,3 +114,162 @@
   outline: none;
   padding: 4px 4px 4px 16px;
 }
+.wrapOptions {
+  top: 50px;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 200px;
+  height: 200px;
+  list-style: none;
+  background-color: rgb(226, 49, 168);
+  border-radius: 4px;
+  padding: 16px;
+}
+.option {
+  color: rgb(242, 238, 248);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .inputSearch {
+    font-size: 20px;
+  }
+  .option {
+    font-size: 20px;
+  }
+}
+/* **** for FORM */
+.wrapContentForm {
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  background-color: rgb(138, 26, 102);
+  /* padding: 24px 8px; */
+  margin: 0 auto;
+}
+/* *** ITEM DEVELOPER */
+.wrapCardDev {
+  display: grid;
+  grid-template-columns: minmax(340px, 560px);
+  grid-template-rows: auto;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: rgb(242, 238, 248);
+  border-radius: 16px;
+}
+.cardDev {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 8px;
+  align-items: center;
+  padding: 0;
+}
+/* *** EDIT ITEM */
+.wrapInput {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 4px;
+  color: rgb(154, 154, 154);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+}
+.inputText {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 26px;
+  resize: vertical;
+  color: rgb(3, 1, 16);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  border-radius: 8px;
+  border: 1px solid rgb(252, 252, 252);
+  background: rgb(252, 252, 252);
+  outline: rgb(226, 49, 168);
+  padding: 10px;
+}
+@media screen and (min-width: 768px) {
+  .wrapInput {
+    font-size: 16px;
+  }
+  .inputText {
+    font-size: 20px;
+  }
+}
+.wrapBtnForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+}
+.btnSave {
+  display: flex;
+  width: 200px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgb(192, 164, 183);
+  border-radius: 8px;
+  box-shadow: inset 3px 3px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgb(187, 129, 169);
+  color: rgb(252, 252, 252);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+}
+.btnSave:hover,
+.btnSave:focus {
+  background-color: rgb(206, 138, 183);
+}
+.editLink {
+  color: rgb(226, 49, 168);
+  font-family: var(--font-montserrat);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+}
+/* .wrapElem {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 40px;
+  gap: 8px;
+}
+.cardLabel {
+  display: grid;
+  color: rgb(3, 1, 16);
+  background-color: rgb(242, 238, 248);
+  border-radius: 4px;
+  font-family: var(--font-montserrat);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
+}
+.cardText {
+  display: grid;
+  color: rgb(3, 1, 16);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
+} */

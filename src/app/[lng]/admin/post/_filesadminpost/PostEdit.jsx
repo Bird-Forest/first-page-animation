@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import styles from "../_filesadminpost/Post.module.css";
+import styles from "./Post.module.css";
 import { updatePost } from "@/src/app/services/posts";
 import Link from "next/link";
 

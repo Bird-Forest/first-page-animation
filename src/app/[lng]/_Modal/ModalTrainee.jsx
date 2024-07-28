@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { IoClose } from "react-icons/io5";
 import styles from "./Modal.module.css";
 import InputCheckbox from "./forma/InputCheckbox";
 import InputUserData from "./forma/InputUserData";
@@ -12,7 +11,6 @@ import Spinner from "../_Helper/Spinner";
 import { specialties } from "./ModalMentor";
 import InputRadio from "./forma/InputRadio";
 import { useTranslation } from "@/src/app/i18n/client";
-import { createDeveloper } from "../../services/developers";
 
 const resources = ["sourse1", "sourse2", "sourse3", "sourse4", "sourse5"];
 
@@ -33,9 +31,11 @@ const initialValues = {
   speciality: [],
 };
 
-export default function ModalTrainee({ closeModal, lng }) {
+export default function ModalTrainee({ item, lng, formAction }) {
   const { t } = useTranslation(lng, "modal");
   const [mess, setMess] = useState(" ");
+
+  // console.log("MODAL", item);
 
   const validationSchema = Yup.object({
     first: Yup.string()
@@ -52,6 +52,7 @@ export default function ModalTrainee({ closeModal, lng }) {
     nick: Yup.string().required(`${t("error_nick")}`),
     link: Yup.string()
       .url()
+      .trim()
       .required(`${t("error_link")}`),
     course: Yup.string().required(`${t("error_course")}`),
     experience: Yup.string().required(`${t("error_select")}`),
@@ -63,166 +64,186 @@ export default function ModalTrainee({ closeModal, lng }) {
       .of(Yup.string())
       .min(1, `${t("error_select")}`),
   });
+
   return (
-    <div className={styles.wrapModalForm} onClick={(e) => e.stopPropagation()}>
-      <button type="button" onClick={closeModal} className={styles.closeBtn}>
-        <IoClose className={styles.close} />
-      </button>
-      <div className={styles.modalForm}>
-        <h4 className={styles.titleModal}>{t("trainee_title")}</h4>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={async (values, { setSubmitting, resetForm }) => {
-            const message = await createDeveloper(values);
-            setSubmitting(true);
-            setMess(message);
-            resetForm();
-          }}
-        >
-          {(props) => (
-            <Form className={styles.wrapForm} autoComplete="off">
-              <div className={styles.wrapData}>
-                <InputUserData
-                  label={t("first")}
-                  name="first"
-                  type="text"
-                  // placeholder="Iм’я"
-                />
-                <InputUserData
-                  label={t("last")}
-                  name="last"
-                  type="text"
-                  // placeholder="Прізвище"
-                />
-                <h4 className={styles.subtitle}>
-                  {t("special_title")}
-                  <span className={styles.red}>{" *"}</span>
-                </h4>
-                <ul
-                  className={styles.wrapCheck}
-                  role="group"
-                  aria-labelledby="checkbox-group"
+    <div className={styles.modalForm}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
+          const message = await formAction(values);
+          setSubmitting(true);
+          console.log(values);
+          setMess(message);
+          resetForm();
+        }}
+      >
+        {(props) => (
+          <Form className={styles.wrapForm} autoComplete="off">
+            <div className={styles.wrapData}>
+              <InputUserData
+                label={t("first")}
+                name="first"
+                type="text"
+                value={!item ? null : item.first}
+              />
+              <InputUserData
+                label={t("last")}
+                name="last"
+                type="text"
+                value={!item ? null : item.last}
+              />
+              <h4 className={styles.subtitle}>
+                {t("special_title")}
+                <span className={styles.red}>{" *"}</span>
+              </h4>
+              <ul
+                className={styles.wrapCheck}
+                role="group"
+                aria-labelledby="checkbox-group"
+              >
+                {specialties.map((el, i) => (
+                  <InputCheckbox
+                    name="speciality"
+                    key={i}
+                    value={el}
+                    type="checkbox"
+                    multiple={true}
+                    checked={false}
+                  >
+                    {el}
+                  </InputCheckbox>
+                ))}
+              </ul>
+              <InputUserData
+                label={t("course")}
+                name="course"
+                type="text"
+                value={!item ? null : item.course}
+              />
+              <h4 className={styles.subtitle}>
+                {t("experience")}
+                <span className={styles.red}>{" *"}</span>
+              </h4>
+              <div
+                role="group"
+                aria-labelledby="radio-group"
+                className={styles.wrapRow}
+              >
+                <InputRadio
+                  label="experience"
+                  name="experience"
+                  type="radio"
+                  // value={!item ? `${t("yes")}` : item.experience}
+                  value={t("yes")}
+                  multiple={false}
+                  checked={false}
                 >
-                  {specialties.map((item, i) => (
-                    <InputCheckbox
-                      name="speciality"
-                      key={i}
-                      value={item}
-                      type="checkbox"
-                      multiple={true}
-                      checked={false}
-                    >
-                      {item}
-                    </InputCheckbox>
-                  ))}
-                </ul>
-                <InputUserData label={t("course")} name="course" type="text" />
-                <h4 className={styles.subtitle}>
-                  {t("experience")}
-                  <span className={styles.red}>{" *"}</span>
-                </h4>
-                <div
-                  role="group"
-                  aria-labelledby="radio-group"
-                  className={styles.wrapRow}
+                  {t("yes")}
+                </InputRadio>
+                <InputRadio
+                  label="experience"
+                  name="experience"
+                  type="radio"
+                  // value={!item ? `${t("no")}` : item.experience}
+                  value={t("no")}
+                  multiple={false}
+                  checked={false}
                 >
+                  {t("no")}
+                </InputRadio>
+              </div>
+              <InputUserData
+                label={t("email")}
+                name="email"
+                type="email"
+                value={!item ? null : item.email}
+              />
+              <InputUserData
+                label={t("city")}
+                name="city"
+                type="text"
+                value={!item ? null : item.city}
+              />
+              <InputUserData
+                label={t("country")}
+                name="country"
+                type="text"
+                value={!item ? null : item.country}
+              />
+              <InputUserData
+                label={t("discord")}
+                name="nick"
+                type="text"
+                value={!item ? null : item.nick}
+              />
+              <InputUserData
+                label={t("linkedin")}
+                name="link"
+                type="url"
+                value={!item ? null : item.link}
+              />
+              <InputUserData
+                label={t("motivation")}
+                name="motivation"
+                type="text"
+                value={!item ? null : item.motivation}
+              />
+              <h4 className={styles.subtitle}>
+                {t("resourse")}
+                <span className={styles.red}>{" *"}</span>
+              </h4>
+              <ul
+                className={styles.wrapColumn}
+                role="group"
+                aria-labelledby="radio-group"
+              >
+                {resources.map((el, i) => (
                   <InputRadio
-                    label="experience"
-                    name="experience"
+                    name="resource"
+                    key={i}
                     type="radio"
-                    value={t("yes")}
+                    // value={!item ? `${t(el)}` : item.resource}
+                    value={t(el)}
                     multiple={false}
                     checked={false}
                   >
-                    {t("yes")}
+                    {t(el)}
                   </InputRadio>
-                  <InputRadio
-                    label="experience"
-                    name="experience"
-                    type="radio"
-                    value={t("no")}
-                    multiple={false}
-                    checked={false}
-                  >
-                    {t("no")}
-                  </InputRadio>
-                </div>
-                <InputUserData
-                  label={t("email")}
-                  name="email"
-                  type="email"
-                  // placeholder="email@gmail.com"
-                />
-                <InputUserData label={t("city")} name="city" type="text" />
-                <InputUserData
-                  label={t("country")}
-                  name="country"
-                  type="text"
-                />
-                <InputUserData
-                  label={t("discord")}
-                  name="nick"
-                  type="text"
-                  // placeholder="Discord"
-                />
-                <InputUserData
-                  label={t("linkedin")}
-                  name="link"
-                  type="url"
-                  // placeholder="Лінк на профіль"
-                />
-                <InputUserData
-                  label={t("motivation")}
-                  name="motivation"
-                  type="text"
-                  //   placeholder="Discord"
-                />
-                <h4 className={styles.subtitle}>
-                  {t("resourse")}
-                  <span className={styles.red}>{" *"}</span>
-                </h4>
-                <ul
-                  className={styles.wrapColumn}
-                  role="group"
-                  aria-labelledby="radio-group"
-                >
-                  {resources.map((item, i) => (
-                    <InputRadio
-                      name="resource"
-                      key={i}
-                      value={t(item)}
-                      type="radio"
-                      multiple={false}
-                      checked={false}
-                    >
-                      {t(item)}
-                    </InputRadio>
-                  ))}
-                </ul>
-              </div>
-              <div className={styles.wrapAgree}>
-                <InputCheckAgree name="rule" type="checkbox" checked={false}>
-                  {t("rules")}
-                </InputCheckAgree>
-              </div>
-              <div className={styles.wrapAgree}>
-                <InputCheckAgree name="agree" type="checkbox" checked={false}>
-                  {t("agree")}
-                </InputCheckAgree>
-              </div>
-              <div className={styles.wrapBtnForm}>
-                <button
-                  type="submit"
-                  className={`${styles.btnPay} ${styles.active}`}
-                >
-                  {props.isSubmitting ? <Spinner /> : `${t("btn_send")}`}
-                </button>
-              </div>
-            </Form>
-          )}
-        </Formik>
-      </div>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.wrapAgree}>
+              <InputCheckAgree
+                name="rule"
+                type="checkbox"
+                checked={false}
+                // value={!item ? null : item.rule}
+              >
+                {t("rules")}
+              </InputCheckAgree>
+            </div>
+            <div className={styles.wrapAgree}>
+              <InputCheckAgree
+                name="agree"
+                type="checkbox"
+                checked={false}
+                // value={!item ? null : item.agree}
+              >
+                {t("agree")}
+              </InputCheckAgree>
+            </div>
+            <div className={styles.wrapBtnForm}>
+              <button
+                type="submit"
+                className={`${styles.btnPay} ${styles.active}`}
+              >
+                {props.isSubmitting ? <Spinner /> : `${t("btn_send")}`}
+              </button>
+            </div>
+          </Form>
+        )}
+      </Formik>
       <p className={styles.formMess}>{mess.message}</p>
     </div>
   );

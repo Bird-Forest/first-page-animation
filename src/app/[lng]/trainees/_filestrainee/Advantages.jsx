@@ -10,10 +10,10 @@ import { createPortal } from "react-dom";
 import { advantages } from "./data/advantages";
 import MainButton from "../../_Helper/MainButton";
 import { useTranslation } from "@/src/app/i18n/client";
+import { createDeveloper } from "@/src/app/services/developers";
 
 export default function Advantages({ lng }) {
   const { t } = useTranslation(lng, "trainees");
-
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
@@ -38,8 +38,9 @@ export default function Advantages({ lng }) {
       {showModal &&
         createPortal(
           <OverlayModal
+            title={t("trainee_title")}
             closeModal={closeModal}
-            content={<ModalTrainee closeModal={closeModal} lng={lng} />}
+            content={<ModalTrainee formAction={createDeveloper} lng={lng} />}
           />,
           document.body
         )}

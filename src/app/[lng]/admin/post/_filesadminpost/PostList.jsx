@@ -54,6 +54,7 @@ export default function PostList({ posts, lng }) {
           type="text"
           value={word}
           onChange={(e) => setWord(e.target.value)}
+          placeholder="пошук по слову ..."
           className={styles.inputSearch}
         />
         <button type="button" onClick={onSearch} className={styles.filterBtn}>
