@@ -30,7 +30,7 @@ export default function Contacts() {
       </div>
       <div className={styles.wrapNetwork}>
         <a
-          href="https://www.facebook.com/"
+          href="https://www.linkedin.com/company/baza-trainee-ukraine/"
           className={styles.wrapSocial}
           target="_blank"
           rel="noopener noreferrer"
@@ -38,7 +38,7 @@ export default function Contacts() {
           <FaLinkedinIn className={styles.socIcon} />
         </a>
         <a
-          href="https://www.facebook.com/"
+          href="https://www.facebook.com/BazaIT/"
           className={styles.wrapSocial}
           target="_blank"
           rel="noopener noreferrer"
@@ -46,7 +46,7 @@ export default function Contacts() {
           <FaFacebookF className={styles.socIcon} />
         </a>
         <a
-          href="https://www.facebook.com/"
+          href="https://t.me/+CBXkAJlsCy83ZDYy"
           className={styles.wrapSocial}
           target="_blank"
           rel="noopener noreferrer"
@@ -57,3 +57,7 @@ export default function Contacts() {
     </div>
   );
 }
+
+// const lind = "https://www.linkedin.com/company/baza-trainee-ukraine/";
+// const fase = "https://www.facebook.com/BazaIT/";
+// const telg = "https://t.me/+CBXkAJlsCy83ZDYy";

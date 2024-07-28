@@ -10,6 +10,10 @@ import zavr from "@/public/images/projects/zavr.webp";
 import hvost from "@/public/images/projects/hvost.webp";
 import team from "@/public/images/projects/team.webp";
 
+// const lind = "https://www.linkedin.com/company/baza-trainee-ukraine/";
+// const fase = "https://www.facebook.com/BazaIT/";
+// const telg = "https://t.me/+CBXkAJlsCy83ZDYy";
+
 export const projects = [
   {
     status: { color: "#099e56", text: "Завершено" },

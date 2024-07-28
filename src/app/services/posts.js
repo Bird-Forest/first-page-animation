@@ -7,7 +7,7 @@ export const getPosts = async (req, res) => {
   try {
     const posts = await Post.find().sort("field -date").lean();
     const data = JSON.parse(JSON.stringify(posts));
-    // const data = JSON.parse(posts);
+
     return data;
   } catch (e) {
     console.log(e);
@@ -16,7 +16,6 @@ export const getPosts = async (req, res) => {
 
 export const getPostById = async (req, res) => {
   const { id } = req;
-  // console.log("REQ", id);
 
   try {
     const post = await Post.findById(id).lean();

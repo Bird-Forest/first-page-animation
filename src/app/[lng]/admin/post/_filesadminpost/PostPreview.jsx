@@ -4,8 +4,6 @@ import styles from "./Post.module.css";
 import { format, formatISO } from "date-fns";
 
 export default function PostPreview({ item }) {
-  // { item.date === ' ' ? formatISO(new Date()) : format(item.date, "yyyy-MM-dd") };
-  console.log(item.date);
   return (
     <div className={styles.wrapNewPost}>
       <div className={styles.wrapTitleNP}>

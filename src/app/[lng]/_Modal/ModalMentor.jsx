@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { IoClose } from "react-icons/io5";
@@ -10,8 +10,7 @@ import InputUserData from "./forma/InputUserData";
 import InputCheckAgree from "./forma/InputCheckAgree";
 import Spinner from "../_Helper/Spinner";
 import { useTranslation } from "@/src/app/i18n/client";
-
-// import ListCheckBox from "./forma/ListCheckBox";
+import { createMentor } from "../../services/mentors";
 
 export const specialties = [
   "UI/UX designer",
@@ -21,14 +20,14 @@ export const specialties = [
   "QA Manual engineer",
   "Project Manager",
 ];
-
+// https://www.linkedin.com/company/baza-trainee-ukraine/
 const works = ["12.00-15.00", "15.00-18.00", "18.00-21.00", "anytime"];
 
 const regexp = /^(\\+38)?0[0-9]{9}$/;
 
 const initialValues = {
-  name: "",
-  surname: "",
+  first: "",
+  last: "",
   email: "",
   tel: "",
   nick: "",
@@ -38,28 +37,13 @@ const initialValues = {
   time: [],
 };
 
-// https://www.linkedin.com/in/maria-barvinok/
-
-// const validationSchema = Yup.object({
-//   name: Yup.string().required({t("error_name")}),
-//   surname: Yup.string().required("Вкажіть прізвище"),
-//   email: Yup.string().email("відсутній @").required("Вкажіть електронну пошту"),
-//   tel: Yup.string()
-//     .matches(regexp, "10 цифр, починаючи з 0")
-//     .required("Вкажіть номер телефону"),
-//   nick: Yup.string().required("Вкажіть нік в Discord"),
-//   link: Yup.string().url().required("Вкажіть профіль в Linkedin"),
-//   agree: Yup.boolean().required("Надайте згоду"),
-//   speciality: Yup.array().of(Yup.string()).min(1, "Зробіть вибір"),
-//   time: Yup.array().of(Yup.string()).min(1, "Зробіть вибір"),
-// });
-
 export default function ModalMentor({ closeModal, lng }) {
   const { t } = useTranslation(lng, "modal");
+  const [mess, setMess] = useState(" ");
 
   const validationSchema = Yup.object({
-    name: Yup.string().required(`${t("error_name")}`),
-    surname: Yup.string().required(`${t("error_surname")}`),
+    first: Yup.string().required(`${t("error_name")}`),
+    last: Yup.string().required(`${t("error_surname")}`),
     email: Yup.string()
       .email("відсутній @")
       .required(`${t("error_email")}`),
@@ -84,34 +68,30 @@ export default function ModalMentor({ closeModal, lng }) {
         <IoClose className={styles.close} />
       </button>
       <div className={styles.modalForm}>
-        <h4 className={styles.titleModal}>
-          {t("mentor_title")}
-          {/* Реєстрація ментора <br /> на Baza Trainee Ukraine */}
-        </h4>
+        <h4 className={styles.titleModal}>{t("mentor_title")}</h4>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={(values, { setSubmitting, resetForm }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(true);
-              console.log(values);
-              resetForm();
-            }, 400);
+          onSubmit={async (values, { setSubmitting, resetForm }) => {
+            const message = await createMentor(values);
+            setSubmitting(true);
+            setMess(message);
+            console.log(values);
+            resetForm();
           }}
         >
           {(props) => (
             <Form className={styles.wrapForm} autoComplete="off">
               <div className={styles.wrapData}>
                 <InputUserData
-                  label={t("name")}
-                  name="name"
+                  label={t("first")}
+                  name="first"
                   type="text"
                   // placeholder="Iм’я"
                 />
                 <InputUserData
-                  label={t("surname")}
-                  name="surname"
+                  label={t("last")}
+                  name="last"
                   type="text"
                   // placeholder="Прізвище"
                 />
@@ -201,6 +181,7 @@ export default function ModalMentor({ closeModal, lng }) {
           )}
         </Formik>
       </div>
+      <p className={styles.formMess}>{mess.message}</p>
     </div>
   );
 }

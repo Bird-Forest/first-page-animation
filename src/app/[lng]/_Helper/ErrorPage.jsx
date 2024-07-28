@@ -4,6 +4,8 @@ import React, { useEffect } from "react";
 import styles from "./Helper.module.css";
 
 import { FaQuestion, FaRegFaceAngry } from "react-icons/fa6";
+import { FaCogs } from "react-icons/fa";
+import MainButton from "./MainButton";
 
 export default function ErrorPage({ error, reset }) {
   useEffect(() => {
@@ -13,25 +15,21 @@ export default function ErrorPage({ error, reset }) {
 
   return (
     <div className={styles.wrapError}>
-      <h2 className={styles.errorTitle}>Something went wrong!</h2>
-      <div className={styles.wrapQuest}>
-        <FaQuestion className={styles.errorQuest} />
-        <FaQuestion className={styles.errorQuest} />
-        <FaQuestion className={styles.errorQuest} />
+      <div className={styles.errorTitle}>
+        <h2>Ми працюємо над усуненням проблем!</h2>
       </div>
-      <div className={styles.wrapIcon}>
-        <FaRegFaceAngry className={styles.errorIcon} />
+      <div className={styles.errorWrapIcon}>
+        <FaCogs className={styles.errorIcon} />
       </div>
       <div className={styles.wrapBtn}>
-        <button
-          className={styles.mainBtn}
+        <MainButton
           onClick={
             // Attempt to recover by trying to re-render the segment
             () => reset()
           }
         >
           Try again
-        </button>
+        </MainButton>
       </div>
     </div>
   );

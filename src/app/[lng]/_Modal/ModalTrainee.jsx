@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { IoClose } from "react-icons/io5";
@@ -12,20 +12,13 @@ import Spinner from "../_Helper/Spinner";
 import { specialties } from "./ModalMentor";
 import InputRadio from "./forma/InputRadio";
 import { useTranslation } from "@/src/app/i18n/client";
-
-// const resources = [
-//   "сайт Baza Trainee Ukraine",
-//   "сторінка Baza Educat в Instagram",
-//   "сторінка Baza Educat в Facebook",
-//   "канал Baza Go в Telegram",
-//   "пост на LinkedIn",
-// ];
+import { createDeveloper } from "../../services/developers";
 
 const resources = ["sourse1", "sourse2", "sourse3", "sourse4", "sourse5"];
 
 const initialValues = {
-  name: "",
-  surname: "",
+  first: "",
+  last: "",
   email: "",
   city: "",
   country: "",
@@ -40,14 +33,17 @@ const initialValues = {
   speciality: [],
 };
 
-// https://www.linkedin.com/in/maria-barvinok/
-
 export default function ModalTrainee({ closeModal, lng }) {
   const { t } = useTranslation(lng, "modal");
+  const [mess, setMess] = useState(" ");
 
   const validationSchema = Yup.object({
-    name: Yup.string().required(`${t("error_name")}`),
-    surname: Yup.string().required(`${t("error_surname")}`),
+    first: Yup.string()
+      .trim()
+      .required(`${t("error_name")}`),
+    last: Yup.string()
+      .trim()
+      .required(`${t("error_surname")}`),
     email: Yup.string()
       .email("відсутній @")
       .required(`${t("error_email")}`),
@@ -77,27 +73,25 @@ export default function ModalTrainee({ closeModal, lng }) {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={(values, { setSubmitting, resetForm }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(true);
-              console.log(values);
-              resetForm();
-            }, 400);
+          onSubmit={async (values, { setSubmitting, resetForm }) => {
+            const message = await createDeveloper(values);
+            setSubmitting(true);
+            setMess(message);
+            resetForm();
           }}
         >
           {(props) => (
             <Form className={styles.wrapForm} autoComplete="off">
               <div className={styles.wrapData}>
                 <InputUserData
-                  label={t("name")}
-                  name="name"
+                  label={t("first")}
+                  name="first"
                   type="text"
                   // placeholder="Iм’я"
                 />
                 <InputUserData
-                  label={t("surname")}
-                  name="surname"
+                  label={t("last")}
+                  name="last"
                   type="text"
                   // placeholder="Прізвище"
                 />
@@ -229,6 +223,7 @@ export default function ModalTrainee({ closeModal, lng }) {
           )}
         </Formik>
       </div>
+      <p className={styles.formMess}>{mess.message}</p>
     </div>
   );
 }

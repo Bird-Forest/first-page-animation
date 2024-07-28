@@ -6,7 +6,6 @@ import { revalidatePath } from "next/cache";
 
 export default async function PostPage({ params: { id, lng } }) {
   const post = await getPostById({ id });
-  // console.log("POST", post);
   revalidatePath(`/${lng}/blog/${id}`, "page");
   return (
     <section className={styles.blog}>
