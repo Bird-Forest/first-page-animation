@@ -7,10 +7,8 @@ import styles from "./Admin.module.css";
 import { usePathname } from "next/navigation";
 
 export default function ItemNavigation({ lng, id }) {
-  console.log("ItemNavigation", id);
   const pathname = usePathname();
   const segments = pathname.split("/");
-  console.log(segments);
   const page = segments[3];
   const path = segments[5];
   return (

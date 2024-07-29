@@ -5,18 +5,18 @@ import { format, formatISO } from "date-fns";
 
 export default function PostPreview({ item }) {
   return (
-    <div className={styles.wrapNewPost}>
+    <div className={styles.wrapPostNP}>
       <div className={styles.wrapTitleNP}>
-        <p className={styles.dateNewPost}>
+        <p className={styles.dateNP}>
           {!item.date ? formatISO(new Date()) : format(item.date, "yyyy-MM-dd")}
         </p>
-        <h4 className={styles.titleNewPost}>{item.title}</h4>
+        <h4 className={styles.titleNP}>{item.title}</h4>
       </div>
-      <p className={styles.textNewPost}>{item.text1}</p>
-      <div className={styles.imgNewPost}>
+      <p className={styles.textNP}>{item.text1}</p>
+      <div className={styles.imgNP}>
         <Image alt="any picture" src={item.url} fill quality={80} />
       </div>
-      <p className={styles.textNewPost}>{item.text2}</p>
+      <p className={styles.textNP}>{item.text2}</p>
     </div>
   );
 }

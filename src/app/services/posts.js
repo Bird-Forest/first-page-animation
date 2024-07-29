@@ -6,7 +6,6 @@ export const getPosts = async (req, res) => {
   try {
     const posts = await Post.find().sort("field -date").lean();
     const data = JSON.parse(JSON.stringify(posts));
-
     return data;
   } catch (e) {
     console.log(e);
@@ -26,28 +25,25 @@ export const getPostById = async (req, res) => {
 };
 
 export const createNewPost = async (item) => {
-  // console.log(item);
   try {
-    // await connectDB();
     const newPost = await Post.create(item);
-    const data = JSON.parse(JSON.stringify(newPost));
-    // console.log("CREATE", data);
-    return data;
+    // const data = JSON.parse(JSON.stringify(newPost));
+    return {
+      message: "Успішно додано",
+    };
   } catch (e) {
     console.log(e);
+    return {
+      message: "Відбулася помилка",
+    };
   }
 };
-export const updatePost = async (id, formData) => {
-  const { title, text1, text2, url } = Object.fromEntries(formData);
+export const updatePost = async (item, id) => {
   try {
-    const post = await Post.findByIdAndUpdate(
-      { _id: id },
-      { title: title, text1: text1, text2: text2, url: url },
-      {
-        new: true,
-      }
-    ).lean();
-    const data = JSON.parse(JSON.stringify(post));
+    const post = await Post.findByIdAndUpdate({ _id: id }, item, {
+      new: true,
+    }).lean();
+    // const data = JSON.parse(JSON.stringify(post));
     return {
       message: "Успішно оновленно",
     };
@@ -59,18 +55,10 @@ export const updatePost = async (id, formData) => {
   }
 };
 
-export const deletePost = async (prevState, formData) => {
-  // const { message } = prevState;
-  const { id } = Object.fromEntries(formData);
-
-  console.log("REQ", id);
-
+export const deletePost = async (id) => {
   try {
     const post = await Post.findOneAndDelete({ _id: id });
     // const data = JSON.parse(JSON.stringify(post));
-    // return data;
-    console.log(post);
-
     return {
       message: "Успішно видалено",
     };
@@ -81,11 +69,11 @@ export const deletePost = async (prevState, formData) => {
     };
   }
 };
+
 export const getPostSortBy19 = async (req, res) => {
   try {
     const posts = await Post.find().sort("field date").lean();
     const data = JSON.parse(JSON.stringify(posts));
-    // console.log("19", data);
     return data;
   } catch (e) {
     console.log(e);
@@ -95,7 +83,6 @@ export const getPostSortBy91 = async (req, res) => {
   try {
     const posts = await Post.find().sort("field -date").lean();
     const data = JSON.parse(JSON.stringify(posts));
-    // console.log("91", data);
     return data;
   } catch (e) {
     console.log(e);
@@ -105,7 +92,6 @@ export const getPostSortByAZ = async (req, res) => {
   try {
     const posts = await Post.find().sort("field title").lean();
     const data = JSON.parse(JSON.stringify(posts));
-    // console.log("19", data);
     return data;
   } catch (e) {
     console.log(e);
@@ -115,7 +101,6 @@ export const getPostSortByZA = async (req, res) => {
   try {
     const posts = await Post.find().sort("field -title").lean();
     const data = JSON.parse(JSON.stringify(posts));
-    // console.log("19", data);
     return data;
   } catch (e) {
     console.log(e);

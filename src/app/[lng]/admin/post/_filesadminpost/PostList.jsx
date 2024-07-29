@@ -24,6 +24,7 @@ import Loading from "../../../_Helper/Loading";
 export default function PostList({ posts, lng }) {
   const [items, setItems] = useState(posts);
   const [word, setWord] = useState("");
+  const [sortDate, setSortDate] = useState(false);
   const { pending } = useFormStatus();
 
   const onSearch = () => {
@@ -54,7 +55,7 @@ export default function PostList({ posts, lng }) {
           type="text"
           value={word}
           onChange={(e) => setWord(e.target.value)}
-          placeholder="пошук по слову ..."
+          placeholder="пошук ..."
           className={styles.inputSearch}
         />
         <button type="button" onClick={onSearch} className={styles.filterBtn}>

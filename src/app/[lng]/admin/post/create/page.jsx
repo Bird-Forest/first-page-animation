@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "../../_filesadmin/Admin.module.css";
-import PostCreate from "../_filesadminpost/PostCreate";
+import PostForm from "../_filesadminpost/PostForm";
+import { createNewPost } from "@/src/app/services/posts";
 
-export default async function CreatePostPage({ params: { lng } }) {
+export default function CreatePostPage({ params: { lng } }) {
   return (
     <div className={styles.wrapContent}>
-      <PostCreate lng={lng} />
+      <PostForm lng={lng} formAction={createNewPost} />
     </div>
   );
 }

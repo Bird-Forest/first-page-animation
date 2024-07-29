@@ -148,11 +148,12 @@
     font-size: 20px;
   }
 }
-/* **** CREATE POST */
-.wrapCreatePost {
+/* **** FORM POST */
+.wrapAdmPost {
   display: grid;
   grid-template-columns: minmax(340px, 820px);
-  grid-template-rows: auto;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
   background-color: rgb(242, 238, 248);
   border-radius: 24px;
   padding: 20px 20px 40px 20px;
@@ -203,11 +204,12 @@
 .wrapBtnForm {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: auto auto;
+  gap: 20px;
   justify-items: center;
   align-items: center;
 }
-.btnSave {
+.btnForm {
   display: flex;
   width: 200px;
   height: 60px;
@@ -224,13 +226,13 @@
   text-align: center;
   cursor: pointer;
 }
-.btnSave:hover,
-.btnSave:focus {
+.btnForm:hover,
+.btnForm:focus {
   background-color: rgb(206, 138, 183);
 }
 
-/* **** NEW POST */
-.wrapNewPost {
+/* **** PREVIEW POST */
+.wrapPostNP {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto;
@@ -250,7 +252,7 @@
   gap: 8px;
   padding: 0;
 }
-.dateNewPost {
+.dateNP {
   color: rgb(3, 1, 16);
   font-family: var(--font-montserrat);
   font-size: 16px;
@@ -258,7 +260,7 @@
   line-height: 1.5;
   text-align: left;
 }
-.titleNewPost {
+.titleNP {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -270,7 +272,7 @@
   line-height: 1.5;
   text-align: left;
 }
-.textNewPost {
+.textNP {
   text-indent: 20px;
   color: rgb(3, 1, 16);
   font-family: var(--font-montserrat);
@@ -279,87 +281,31 @@
   line-height: 1.5;
   text-align: left;
 }
-.imgNewPost {
+.imgNP {
   position: relative;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
   aspect-ratio: 1/0.5;
 }
-/* *** POST ID PAGE */
-/* ****************************** */
-.wrapLayout {
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: auto 1fr;
-  justify-content: center;
-  align-items: start;
-  padding: 0;
-  margin: 0 auto;
-}
-.wrapNavIdPost {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 52px;
-  align-items: center;
-  justify-items: center;
-}
-.linkNavIdAct {
-  display: grid;
-  width: 52px;
-  height: 48px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  background-color: rgb(226, 49, 168);
-  border: none;
-  outline: transparent;
-  cursor: pointer;
-}
-.linkNavId {
-  display: grid;
-  width: 52px;
-  height: 48px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  background-color: rgb(242, 238, 248);
-  border: none;
-  outline: transparent;
-  cursor: pointer;
-}
-.iconNavIdAct {
-  fill: rgb(242, 238, 248);
-  width: 32px;
-  height: 32px;
-}
-.iconNavId {
-  fill: rgb(226, 49, 168);
-  width: 32px;
-  height: 32px;
-}
-
-/* ************************8 */
-.wrapRemov {
+/* *** MESSAGE */
+.wrapMessage {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto;
   gap: 20px;
   padding: 0;
   margin: 0 auto;
 }
-.wrapMess {
+.textMess {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
-}
-.textMess {
   font-size: 20px;
   font-family: var(--font-montserrat);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.5;
   text-align: center;
   color: rgb(226, 49, 168);
