@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import styles from "./Modal.module.css";
-import InputCheckbox from "./forma/InputCheckbox";
 import InputUserData from "./forma/InputUserData";
 import InputCheckAgree from "./forma/InputCheckAgree";
 import Spinner from "../_Helper/Spinner";
@@ -28,14 +27,12 @@ const initialValues = {
   resource: "",
   rule: "",
   agree: "",
-  speciality: [],
+  speciality: "",
 };
 
 export default function ModalTrainee({ item, lng, formAction }) {
   const { t } = useTranslation(lng, "modal");
   const [mess, setMess] = useState(" ");
-
-  // console.log("MODAL", item);
 
   const validationSchema = Yup.object({
     first: Yup.string()
@@ -60,9 +57,7 @@ export default function ModalTrainee({ item, lng, formAction }) {
     resource: Yup.string().required(`${t("error_select")}`),
     agree: Yup.boolean().required(`${t("error_agree")}`),
     rule: Yup.boolean().required(`${t("error_agree")}`),
-    speciality: Yup.array()
-      .of(Yup.string())
-      .min(1, `${t("error_select")}`),
+    speciality: Yup.string().required(`${t("error_select")}`),
   });
 
   return (
@@ -100,19 +95,19 @@ export default function ModalTrainee({ item, lng, formAction }) {
               <ul
                 className={styles.wrapCheck}
                 role="group"
-                aria-labelledby="checkbox-group"
+                aria-labelledby="radio-group"
               >
                 {specialties.map((el, i) => (
-                  <InputCheckbox
+                  <InputRadio
                     name="speciality"
                     key={i}
+                    type="radio"
                     value={el}
-                    type="checkbox"
-                    multiple={true}
+                    multiple={false}
                     checked={false}
                   >
                     {el}
-                  </InputCheckbox>
+                  </InputRadio>
                 ))}
               </ul>
               <InputUserData
@@ -134,7 +129,6 @@ export default function ModalTrainee({ item, lng, formAction }) {
                   label="experience"
                   name="experience"
                   type="radio"
-                  // value={!item ? `${t("yes")}` : item.experience}
                   value={t("yes")}
                   multiple={false}
                   checked={false}
@@ -145,7 +139,6 @@ export default function ModalTrainee({ item, lng, formAction }) {
                   label="experience"
                   name="experience"
                   type="radio"
-                  // value={!item ? `${t("no")}` : item.experience}
                   value={t("no")}
                   multiple={false}
                   checked={false}
@@ -203,7 +196,6 @@ export default function ModalTrainee({ item, lng, formAction }) {
                     name="resource"
                     key={i}
                     type="radio"
-                    // value={!item ? `${t(el)}` : item.resource}
                     value={t(el)}
                     multiple={false}
                     checked={false}
@@ -214,22 +206,12 @@ export default function ModalTrainee({ item, lng, formAction }) {
               </ul>
             </div>
             <div className={styles.wrapAgree}>
-              <InputCheckAgree
-                name="rule"
-                type="checkbox"
-                checked={false}
-                // value={!item ? null : item.rule}
-              >
+              <InputCheckAgree name="rule" type="checkbox" checked={false}>
                 {t("rules")}
               </InputCheckAgree>
             </div>
             <div className={styles.wrapAgree}>
-              <InputCheckAgree
-                name="agree"
-                type="checkbox"
-                checked={false}
-                // value={!item ? null : item.agree}
-              >
+              <InputCheckAgree name="agree" type="checkbox" checked={false}>
                 {t("agree")}
               </InputCheckAgree>
             </div>

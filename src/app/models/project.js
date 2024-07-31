@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 import { uri } from "../lib/mongodb";
 
-const specList = [
-  "Project Manager",
-  "Design UX/UI",
-  "Front-end",
-  "Back-end",
-  "Quality Assurance",
+export const specList = [
+  "UI/UX designer",
+  "Backend",
+  "Frontend",
   "Full Stack",
+  "QA Manual",
+  "Project Manager",
 ];
 
 const projectSchema = new mongoose.Schema(
@@ -26,17 +26,60 @@ const projectSchema = new mongoose.Schema(
     },
     duration: String,
     difficult: Number,
-    team: [
+    designer: [
       {
-        title: { type: String, enum: specList },
-        developers: {
-          type: [String],
-          default: undefined,
-        },
+        type: mongoose.ObjectId,
+        ref: "Developer",
       },
     ],
+    backend: [
+      {
+        type: mongoose.ObjectId,
+        ref: "Developer",
+      },
+    ],
+    frontend: [
+      {
+        type: mongoose.ObjectId,
+        ref: "Developer",
+      },
+    ],
+    fullstack: [
+      {
+        type: mongoose.ObjectId,
+        ref: "Developer",
+      },
+    ],
+    manual: [
+      {
+        type: mongoose.ObjectId,
+        ref: "Developer",
+      },
+    ],
+    project: [
+      {
+        type: mongoose.ObjectId,
+        ref: "Developer",
+      },
+    ],
+    // team: [
+    //   {
+    //     title: { type: String, enum: specList },
+    //     developers: [{ type: mongoose.Types.ObjectId, ref: "Developer" }],
+    //   },
+    // ],
+    // team: [
+    //   {
+    //     title: { type: String, enum: specList },
+    //     developers: {
+    //       type: [String],
+    //       default: undefined,
+    //     },
+    //   },
+    // ],
     imageUrl: String,
   },
+
   { versionKey: false, timestamps: true }
 );
 

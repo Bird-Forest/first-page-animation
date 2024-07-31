@@ -1,42 +1,56 @@
 import React from "react";
 import styles from "./Develop.module.css";
+import {
+  BsFillGeoFill,
+  BsDiscord,
+  BsEnvelopeAtFill,
+  BsPersonRolodex,
+  BsPinMapFill,
+} from "react-icons/bs";
+import { MdImportantDevices } from "react-icons/md";
+import { FaUserGraduate, FaBroadcastTower, FaLinkedinIn } from "react-icons/fa";
 
 export default function DevelopItem({ item }) {
   return (
-    <div className={styles.wrapCardDev}>
-      <div className={styles.cardDev}>
-        <h4>{`${item.last + " " + item.first}`}</h4>
-        <p>
-          <span>Speciality:</span> {item.speciality}
-        </p>
-        <p>
-          <span>Email:</span> {item.email}
-        </p>
-        <p>
-          <span>Discord nick:</span> {item.nick}
-        </p>
-        <p>
-          <span>Linkendin link:</span> {item.link}
-        </p>
-        <p>
-          <span>About finishing the course:</span>
-          {item.cours}
-        </p>
-        <p>
-          <span>About having experience:</span>
-          {item.experience}
-        </p>
-        <p>
-          <span>Аbout the motivation:</span>
-          {item.motivation}
-        </p>
-        <p>
-          <span>Аbout the resource:</span> {item.resource}
-        </p>
-        <p>
-          <span>Country and city</span>
-          {`${item.country + " " + item.city}`}
-        </p>
+    <div className={styles.wrapItem}>
+      <div className={styles.wrapTitle}>
+        <FaUserGraduate className={styles.iconDev} />
+        <p className={styles.titleDev}>{`${item.last + " " + item.first}`}</p>
+      </div>
+      <div className={styles.wrapInfo}>
+        <MdImportantDevices className={styles.iconDev} />
+        <p className={styles.textDev}>{item.speciality}</p>
+      </div>
+      <div className={styles.wrapInfo}>
+        <BsEnvelopeAtFill className={styles.iconDev} />
+        <p className={styles.textDev}>{item.email}</p>
+      </div>
+      <div className={styles.wrapInfo}>
+        <BsPinMapFill className={styles.iconDev} />
+        <p className={styles.textDev}>{`${item.country + " " + item.city}`}</p>
+      </div>
+      <div className={styles.wrapInfo}>
+        <BsDiscord className={styles.iconDev} />
+        <p className={styles.textDev}>{item.nick}</p>
+      </div>
+      <div className={styles.wrapInfo}>
+        <FaLinkedinIn className={styles.iconDev} />
+        <a
+          href="https://www.linkedin.com/company/baza-trainee-ukraine/"
+          className={styles.linkDev}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {item.link}
+        </a>
+      </div>
+      <div className={styles.wrapInfo}>
+        <FaBroadcastTower className={styles.iconDev} />
+        <p className={styles.textDev}>{item.resource}</p>
+      </div>
+      <div className={styles.wrapInfo}>
+        <BsPersonRolodex className={styles.iconDev} />
+        <p className={styles.textDev}>Projects</p>
       </div>
     </div>
   );

@@ -11,13 +11,14 @@ import InputCheckAgree from "./forma/InputCheckAgree";
 import Spinner from "../_Helper/Spinner";
 import { useTranslation } from "@/src/app/i18n/client";
 import { createMentor } from "../../services/mentors";
+import InputRadio from "./forma/InputRadio";
 
 export const specialties = [
   "UI/UX designer",
   "Backend",
   "Frontend",
-  "Fullstack engineer",
-  "QA Manual engineer",
+  "Full Stack",
+  "QA Manual",
   "Project Manager",
 ];
 // https://www.linkedin.com/company/baza-trainee-ukraine/
@@ -109,20 +110,19 @@ export default function ModalMentor({ formAction, item, lng }) {
               <ul
                 className={styles.wrapCheck}
                 role="group"
-                aria-labelledby="checkbox-group"
+                aria-labelledby="radio-group"
               >
                 {specialties.map((el, i) => (
-                  <InputCheckbox
+                  <InputRadio
                     name="speciality"
                     key={i}
+                    type="radio"
                     value={el}
-                    defaultValue={!item ? null : item.speciality[i]}
-                    type="checkbox"
-                    multiple={true}
+                    multiple={false}
                     checked={false}
                   >
                     {el}
-                  </InputCheckbox>
+                  </InputRadio>
                 ))}
               </ul>
               <InputUserData

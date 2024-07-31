@@ -3,7 +3,7 @@
 // import { connectDB } from "../lib/mongodb";
 
 // import { cache } from "react";
-import { connectDB } from "../lib/mongodb";
+// import { connectDB } from "../lib/mongodb";
 import { Project } from "../models/project";
 
 export const getProjects = async (req, res) => {
@@ -21,10 +21,45 @@ export const getProjects = async (req, res) => {
     console.log("Action", e);
   }
 };
+export const createProject = async () => {
+  try {
+    const newProject = await Project.create({
+      status: { color: "#ff1744", text: "Формування команди" },
+      name: "Сталеві обійми - збір для 59-ї бригади",
+      web: "Тимчасово не доступний",
+      start: new Date(),
+      duration: "22 тижні",
+      difficult: 4,
+      imageUrl: "http://localhost:3000/public/images/projects/team.webp",
+    });
+    const data = JSON.parse(JSON.stringify(newProject));
+    console.log("PROJECT", data);
+    // return {
+    //   message: "Успішно додано",
+    // };
+  } catch (e) {
+    console.log(e);
+    return {
+      message: "Відбулася помилка",
+    };
+  }
+};
+export const getProjectById = async (req, res) => {
+  const { id } = req;
+
+  try {
+    const post = await Project.findById(id).lean();
+    const data = JSON.parse(JSON.stringify(post));
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 // *** Функція, яка відправляє масив обєктів в базу даних, створює коллекцію
 export const createProjects = async () => {
   try {
-    await connectDB();
+    // await connectDB();
     const docs = await Project.insertMany([
       {
         status: { color: "#099e56", text: "Завершено" },

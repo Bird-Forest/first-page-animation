@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { uri } from "../lib/mongodb";
+import { specList } from "./project";
 
 const developerSchema = new mongoose.Schema(
   {
@@ -10,13 +11,11 @@ const developerSchema = new mongoose.Schema(
     country: String,
     nick: String,
     link: String,
-    course: String,
-    experience: String,
-    motivation: String,
     resource: String,
     rule: Boolean,
     agree: Boolean,
-    speciality: [String],
+    speciality: { type: String, enum: specList },
+    projects: [{ type: mongoose.ObjectId, ref: "Project" }],
   },
   { versionKey: false, timestamps: true }
 );
@@ -40,3 +39,24 @@ export const Developer = connection.model("Developer", developerSchema);
 //   {
 //     toJSON: { virtuals: true }, // <-- include virtuals in `JSON.stringify()`
 //   }
+
+// const developerSchema = new mongoose.Schema(
+//   {
+//     first: String,
+//     last: String,
+//     email: String,
+//     city: String,
+//     country: String,
+//     nick: String,
+//     link: String,
+//     course: String,
+//     experience: String,
+//     motivation: String,
+//     resource: String,
+//     rule: Boolean,
+//     agree: Boolean,
+//     speciality: { type: String, enum: specList },
+//     projects: [{ type: Schema.Types.ObjectId, ref: "Project" }],
+//   },
+//   { versionKey: false, timestamps: true }
+// );

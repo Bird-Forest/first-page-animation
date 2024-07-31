@@ -29,6 +29,7 @@ export default function DevelopList({ lng, devs }) {
   const onClear = () => {
     setItems(devs);
     setLastName("");
+    setSpecial("");
   };
 
   return (
@@ -45,6 +46,7 @@ export default function DevelopList({ lng, devs }) {
             placeholder="пошук за спеціальніст’ю ..."
           />
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
             className={styles.filterBtn}
           >

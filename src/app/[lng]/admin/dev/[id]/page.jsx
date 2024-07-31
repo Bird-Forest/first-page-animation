@@ -12,10 +12,10 @@ export default async function EditDeveloperPage({ params: { lng, id } }) {
   // console.log(data);
   return (
     <div className={styles.wrapContent}>
-      {/* <DeveloperEdit item={data} lng={lng} /> */}
-      <div className={styles.wrapForm}>
+      <DeveloperEdit item={data} lng={lng} />
+      {/* <div className={styles.wrapForm}>
         <ModalTrainee formAction={updateDeveloper} item={data} lng={lng} />
-      </div>
+      </div> */}
     </div>
   );
 }
