@@ -201,7 +201,7 @@
     font-size: 20px;
   }
 }
-.wrapBtnForm {
+/* .wrapBtnForm {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
@@ -229,7 +229,7 @@
 .btnForm:hover,
 .btnForm:focus {
   background-color: rgb(206, 138, 183);
-}
+} */
 
 /* **** PREVIEW POST */
 .wrapPostNP {
@@ -289,7 +289,7 @@
   aspect-ratio: 1/0.5;
 }
 /* *** MESSAGE */
-.wrapMessage {
+/* .wrapMessage {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
@@ -317,4 +317,4 @@
   font-weight: 700;
   line-height: 1.3;
   text-align: left;
-}
+} */

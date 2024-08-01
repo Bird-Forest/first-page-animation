@@ -5,26 +5,40 @@ import styles from "./ProjectAdm.module.css";
 import { v4 as uuidv4 } from "uuid";
 import { BsChevronUp, BsChevronDown, BsCircleFill } from "react-icons/bs";
 import { formatISO } from "date-fns";
+import ProjectCover from "../../../projects/_filesproject/ProjectCover";
+import BtnAction from "../../_filesadmin/BtnAction";
+import BtnSave from "../../_filesadmin/BtnSave";
 
 const start = { color: "#ff1744", text: "Формування команди" };
 const inital = { color: "#ffeb3b", text: "В розробці" };
 const finish = { color: "#099e56", text: "Завершено" };
 export const arrStatus = [start, inital, finish];
 
-export default function ProjectForm({ project, lng }) {
-  const [item, setItem] = useState({});
+export default function ProjectForm({ project, lng, formAction }) {
+  const [item, setItem] = useState(null);
   const [show, setShow] = useState(false);
   const [status, setStatus] = useState(!project ? start : project.status);
-  // console.log(show);
-  console.log(project);
-  // const id = !item ? null : item._id;
   const id = !project ? null : project._id;
   const date = !project ? formatISO(new Date()) : project.start;
-  console.log(date);
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const formData = new FormData(evt.currentTarget);
+    const newItem = {
+      status: status,
+      start: date,
+      name: formData.get("name"),
+      web: formData.get("web"),
+      duration: formData.get("duration"),
+      difficult: formData.get("difficult"),
+      imageUrl: formData.get("imageUrl"),
+    };
+    setItem(newItem);
+  };
 
   return (
     <div className={styles.wrapAdmProject}>
-      <form className={styles.wrapForm}>
+      <form onSubmit={handleSubmit} className={styles.wrapForm}>
         <label htmlFor="name" className={styles.wrapInput}>
           Додати заголовок
           <input
@@ -36,30 +50,8 @@ export default function ProjectForm({ project, lng }) {
           />
         </label>
         <div className={styles.wrapElemOptions}>
-          <div
-            style={{
-              display: !show ? "none" : "block",
-              position: "absolute",
-              top: "72px",
-            }}
-          >
-            <ul className={styles.wrapOptions}>
-              {arrStatus.map((item) => (
-                <li
-                  key={uuidv4()}
-                  value={item}
-                  onClick={() => setStatus(item)}
-                  className={styles.textOption}
-                >
-                  {item.text}
-                </li>
-              ))}
-            </ul>
-          </div>
           <div className={styles.wrapIconBtn}>
-            <BsCircleFill
-              style={{ fill: status.color, width: "24px", height: "24px" }}
-            />
+            <BsCircleFill style={{ fill: status.color }} />
           </div>
           <label htmlFor="status" className={styles.wrapInput}>
             Статус проєкту
@@ -83,8 +75,27 @@ export default function ProjectForm({ project, lng }) {
               <BsChevronUp className={styles.iconBtn} />
             )}
           </button>
+          <div
+            style={{
+              display: !show ? "none" : "block",
+              position: "absolute",
+              top: "72px",
+            }}
+          >
+            <ul className={styles.wrapOptions}>
+              {arrStatus.map((item) => (
+                <li
+                  key={uuidv4()}
+                  value={item}
+                  onClick={() => setStatus(item)}
+                  className={styles.textOption}
+                >
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-
         <label htmlFor="start" className={styles.wrapInput}>
           Початок проєкту
           <input
@@ -101,7 +112,7 @@ export default function ProjectForm({ project, lng }) {
             type="text"
             name="web"
             id="web"
-            defaultValue={project.web}
+            defaultValue={!project ? "Тимчасово недоступний" : project.web}
             className={styles.inputText}
           />
         </label>
@@ -111,7 +122,7 @@ export default function ProjectForm({ project, lng }) {
             type="text"
             name="duration"
             id="duration"
-            defaultValue={project.duration}
+            defaultValue={!project ? null : project.duration}
             className={styles.inputText}
           />
         </label>
@@ -121,11 +132,28 @@ export default function ProjectForm({ project, lng }) {
             type="text"
             name="difficult"
             id="difficult"
-            defaultValue={project.difficult}
+            defaultValue={!project ? null : project.difficult}
             className={styles.inputText}
           />
         </label>
+        <label htmlFor="imageUrl" className={styles.wrapInput}>
+          Фон для проєкту
+          <input
+            type="url"
+            name="imageUrl"
+            id="imageUrl"
+            defaultValue={!project ? null : project.imageUrl}
+            className={styles.inputText}
+          />
+        </label>
+        <BtnSave>Зберегти</BtnSave>
       </form>
+      <div>
+        {!item ? <p>Попередній перегляд</p> : <ProjectCover item={item} />}
+      </div>
+      <BtnAction item={item} lng={lng} id={id} formAction={formAction}>
+        Опублікувати
+      </BtnAction>
     </div>
   );
 }

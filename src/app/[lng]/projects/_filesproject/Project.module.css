@@ -111,6 +111,7 @@
 .wrapItem {
   position: relative;
   display: flex;
+  flex-direction: column;
   width: 388px;
   height: 456px;
   padding: 0;
@@ -120,6 +121,26 @@
   background-position: center;
   background-size: cover;
 }
+.wrapCover {
+  /* top: 0;
+  left: 0; */
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 388px;
+  height: 456px;
+  padding: 0;
+  border-radius: 12px;
+}
+/* .wrapImg {
+  position: relative;
+  display: flex;
+  width: 388px;
+  height: 456px;
+  padding: 0;
+  border-radius: 12px;
+} */
 .wrapInfo {
   position: absolute;
   display: flex;
@@ -150,6 +171,7 @@
   justify-content: center;
   width: fit-content;
   height: auto;
+  padding: 0 0 120px 0;
 }
 .itemTitle {
   display: grid;
@@ -158,19 +180,10 @@
   font-weight: 700;
   text-align: center;
 }
-.wrapElements {
-  top: 260px;
-  left: 20px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  width: 348px;
-  gap: 8px;
-  margin-bottom: 0;
-}
 .wrapLink {
   display: flex;
   width: fit-content;
+  height: 40px;
 }
 .itemLink {
   display: flex;
@@ -180,13 +193,32 @@
   font-weight: 700;
   cursor: pointer;
 }
+/* .wrapElements {
+  top: 260px;
+  left: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 348px;
+  gap: 8px;
+  margin-bottom: 0;
+} */
+
 .wrapElem {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 348px;
+  height: 32px;
 }
 .elem {
   display: flex;
+  gap: 8px;
+}
+.wrapDiffic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
   list-style: none;
 }
@@ -215,6 +247,14 @@
 }
 .bg {
   background: rgb(67, 4, 78);
+}
+.wrapTeamBtn {
+  bottom: 28px;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0 0 20px;
 }
 .teamBtn {
   display: flex;

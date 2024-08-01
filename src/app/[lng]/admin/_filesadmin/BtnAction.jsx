@@ -2,9 +2,16 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
+import styles from "./Admin.module.css";
+import { usePathname } from "next/navigation";
 
-export default function BtnAction({ item, formAction, children, lng, page }) {
+export default function BtnAction({ item, id, formAction, children, lng }) {
   const [mess, setMess] = useState("");
+
+  const path = usePathname();
+  const segments = path.split("/");
+  const page = segments[3];
+
   return (
     <div className={styles.wrapBtnForm}>
       <form
