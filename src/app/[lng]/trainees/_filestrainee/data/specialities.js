@@ -1,9 +1,9 @@
 import bg1 from "../../../../../../public/images/speciality/bg-1.webp";
 import bg2 from "../../../../../../public/images/speciality/bg-2.webp";
 import bg3 from "../../../../../../public/images/speciality/bg-3.webp";
-import bg4 from "../../../../../../public/images/speciality/bg-4.webp";
-import bg5 from "../../../../../../public/images/speciality/bg-5.webp";
-import bg6 from "../../../../../../public/images/speciality/bg-6.webp";
+import bg4 from "@/public/images/speciality/bg-4.webp";
+import bg5 from "@/public/images/speciality/bg-5.webp";
+import bg6 from "@/public/images/speciality/bg-6.webp";
 
 export const specialities = [
   {

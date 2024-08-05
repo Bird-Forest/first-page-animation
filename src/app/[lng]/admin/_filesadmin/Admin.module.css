@@ -191,15 +191,15 @@
 }
 .wrapNavIdItem {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 52px;
+  grid-auto-flow: column;
+  grid-template-rows: auto;
   align-items: center;
   justify-items: center;
 }
 .linkNavIdAct {
   display: grid;
-  width: 52px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
@@ -210,8 +210,8 @@
 }
 .linkNavId {
   display: grid;
-  width: 52px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   justify-content: center;
   align-items: center;
   border-radius: 4px;

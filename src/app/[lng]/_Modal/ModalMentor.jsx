@@ -12,15 +12,8 @@ import Spinner from "../_Helper/Spinner";
 import { useTranslation } from "@/src/app/i18n/client";
 import { createMentor } from "../../services/mentors";
 import InputRadio from "./forma/InputRadio";
+import { specialties } from "../../constant/constant";
 
-export const specialties = [
-  "UI/UX designer",
-  "Backend",
-  "Frontend",
-  "Full Stack",
-  "QA Manual",
-  "Project Manager",
-];
 // https://www.linkedin.com/company/baza-trainee-ukraine/
 const works = ["12.00-15.00", "15.00-18.00", "18.00-21.00", "anytime"];
 

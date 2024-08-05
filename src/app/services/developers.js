@@ -40,25 +40,30 @@ export const getDeveloperById = async (req, res) => {
   }
 };
 
-export const updateDeveloper = async (id, formData) => {
-  const { first, last, speciality, email, nick, link } =
-    Object.fromEntries(formData);
+export const getDevelopersForTeam = async (specDev, lastName) => {
+  // const { id } = req;
   try {
-    const developer = await Developer.findByIdAndUpdate(
-      { _id: id },
-      {
-        first: first,
-        last: last,
-        speciality: speciality,
-        email: email,
-        nick: nick,
-        link: link,
-      },
-      {
-        new: true,
-      }
-    ).lean();
-    const data = JSON.parse(JSON.stringify(developer));
+    const dev = await Developer.find({
+      speciality: specDev,
+      last: { $regex: lastName, $options: "i" },
+    }).lean();
+
+    const data = JSON.parse(JSON.stringify(dev));
+    // console.log(data);
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const updateDeveloper = async (item, id) => {
+  // const { first, last, speciality, email, nick, link } =
+  //   Object.fromEntries(formData);
+  try {
+    const developer = await Developer.findByIdAndUpdate({ _id: id }, item, {
+      new: true,
+    }).lean();
+    // const data = JSON.parse(JSON.stringify(developer));
     return {
       message: "Успішно оновленно",
     };
@@ -97,6 +102,28 @@ export const getDevelopersByLastName = async (lastName) => {
     throw error;
   }
 };
+
+// export const getProjectsOfDeveloper = async (req, res) => {
+//   const { id } = req;
+//   console.log("ID", id);
+//   try {
+//     const developer = await Developer.findById(id).lean();
+
+//     console.log("DEV", developer);
+
+//     // .populate("project", "name")
+//     // .exec();
+//     // const projects = await developer.populate("project");
+//     // const data = JSON.parse(JSON.stringify(projects));
+//     // console.log(data);
+//     // return data;
+//   } catch (e) {
+//     console.log("Error fetching developers:", e);
+//     throw error;
+//   }
+// };
+
+// await Story.find().populate("fans").exec();
 
 // export const createDeveloperCollection = async () => {
 //   try {

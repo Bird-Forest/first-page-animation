@@ -4,13 +4,11 @@ import React, { useState } from "react";
 import styles from "./Post.module.css";
 import { formatISO } from "date-fns";
 import PostPreview from "./PostPreview";
-// import Link from "next/link";
 import BtnSave from "../../_filesadmin/BtnSave";
 import BtnAction from "../../_filesadmin/BtnAction";
 
 export default function PostForm({ post, lng, formAction }) {
   const [item, setItem] = useState({});
-  // const [mess, setMess] = useState("");
 
   const id = !post ? null : post._id;
   const date = !post ? formatISO(new Date()) : post.date;
@@ -75,32 +73,16 @@ export default function PostForm({ post, lng, formAction }) {
           </button>
         </div> */}
       </form>
-      <div>
-        {!item ? <p>Попередній перегляд</p> : <PostPreview item={item} />}
+      <div className={styles.wrapPreview}>
+        {!item ? (
+          <p className={styles.messPreview}>Попередній перегляд</p>
+        ) : (
+          <PostPreview item={item} />
+        )}
       </div>
       <BtnAction item={item} lng={lng} id={id} formAction={formAction}>
         Опублікувати
       </BtnAction>
-
-      {/* <div className={styles.wrapBtnForm}>
-        <form
-          action={async () => {
-            const message = await formAction(item, id);
-
-            setMess(message.message);
-          }}
-        >
-          <button type="submit" className={styles.btnForm}>
-            Опублікувати
-          </button>
-        </form>
-        <div className={styles.wrapMessage}>
-          <p className={styles.textMess}>{mess}</p>
-          <Link href={`/${lng}/admin/post`} className={styles.textMess}>
-            Перейти до списку постів
-          </Link>
-        </div>
-      </div> */}
     </div>
   );
 }

@@ -59,7 +59,7 @@ export default function ProjectForm({ project, lng, formAction }) {
               type="text"
               name="status"
               id="status"
-              defaultValue={status.text}
+              value={status.text}
               readOnly={status.text}
               className={styles.inputText}
             />

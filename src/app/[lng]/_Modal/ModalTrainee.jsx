@@ -7,9 +7,9 @@ import styles from "./Modal.module.css";
 import InputUserData from "./forma/InputUserData";
 import InputCheckAgree from "./forma/InputCheckAgree";
 import Spinner from "../_Helper/Spinner";
-import { specialties } from "./ModalMentor";
 import InputRadio from "./forma/InputRadio";
 import { useTranslation } from "@/src/app/i18n/client";
+import { specialties } from "../../constant/constant";
 
 const resources = ["sourse1", "sourse2", "sourse3", "sourse4", "sourse5"];
 
@@ -21,9 +21,6 @@ const initialValues = {
   country: "",
   nick: "",
   link: "",
-  course: "",
-  experience: "",
-  motivation: "",
   resource: "",
   rule: "",
   agree: "",
@@ -51,9 +48,6 @@ export default function ModalTrainee({ item, lng, formAction }) {
       .url()
       .trim()
       .required(`${t("error_link")}`),
-    course: Yup.string().required(`${t("error_course")}`),
-    experience: Yup.string().required(`${t("error_select")}`),
-    motivation: Yup.string().required(`${t("error_motivation")}`),
     resource: Yup.string().required(`${t("error_select")}`),
     agree: Yup.boolean().required(`${t("error_agree")}`),
     rule: Yup.boolean().required(`${t("error_agree")}`),
@@ -111,42 +105,6 @@ export default function ModalTrainee({ item, lng, formAction }) {
                 ))}
               </ul>
               <InputUserData
-                label={t("course")}
-                name="course"
-                type="text"
-                value={!item ? null : item.course}
-              />
-              <h4 className={styles.subtitle}>
-                {t("experience")}
-                <span className={styles.red}>{" *"}</span>
-              </h4>
-              <div
-                role="group"
-                aria-labelledby="radio-group"
-                className={styles.wrapRow}
-              >
-                <InputRadio
-                  label="experience"
-                  name="experience"
-                  type="radio"
-                  value={t("yes")}
-                  multiple={false}
-                  checked={false}
-                >
-                  {t("yes")}
-                </InputRadio>
-                <InputRadio
-                  label="experience"
-                  name="experience"
-                  type="radio"
-                  value={t("no")}
-                  multiple={false}
-                  checked={false}
-                >
-                  {t("no")}
-                </InputRadio>
-              </div>
-              <InputUserData
                 label={t("email")}
                 name="email"
                 type="email"
@@ -175,12 +133,6 @@ export default function ModalTrainee({ item, lng, formAction }) {
                 name="link"
                 type="url"
                 value={!item ? null : item.link}
-              />
-              <InputUserData
-                label={t("motivation")}
-                name="motivation"
-                type="text"
-                value={!item ? null : item.motivation}
               />
               <h4 className={styles.subtitle}>
                 {t("resourse")}

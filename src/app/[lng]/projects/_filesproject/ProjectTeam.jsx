@@ -1,5 +1,15 @@
 import React from "react";
 import styles from "./Project.module.css";
+import { v4 as uuidv4 } from "uuid";
+
+export const specList = [
+  "UI/UX designer",
+  "Backend",
+  "Frontend",
+  "Full Stack",
+  "QA Manual",
+  "Project Manager",
+];
 
 export default function ProjectTeam({ item }) {
   const devDesigner = item.designer;
@@ -20,91 +30,133 @@ export default function ProjectTeam({ item }) {
   const devProject = item.project;
   const ArrProject = Array.isArray(devProject) && devProject.length;
   return (
-    <div className={styles.teamList}>
-      <div className={styles.objWrap}>
+    <ul className={styles.teamList}>
+      <li key={uuidv4()} className={styles.objWrap}>
         <h4 className={styles.objTitle}>UI/UX designer</h4>
         <ul className={styles.devList}>
           {ArrDesigner ? (
             devDesigner.map((el, i) => (
-              <li key={i} className={styles.elDev}>
-                {el}
+              <li key={uuidv4()}>
+                <a
+                  href={el.link}
+                  className={styles.elDev}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {el.last + " " + el.first}
+                </a>
               </li>
             ))
           ) : (
-            <p className={styles.objTitle}>Очікує свою команду</p>
+            <p className={styles.elDev}>Очікує свою команду</p>
           )}
         </ul>
-      </div>
-      <div className={styles.objWrap}>
+      </li>
+      <li key={uuidv4()} className={styles.objWrap}>
         <h4 className={styles.objTitle}>Frontend</h4>
         <ul className={styles.devList}>
           {ArrFrontend ? (
             devFrontend.map((el, i) => (
-              <li key={i} className={styles.elDev}>
-                {el}
+              <li key={uuidv4()}>
+                <a
+                  href={el.link}
+                  className={styles.elDev}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {el.last + " " + el.first}
+                </a>
               </li>
             ))
           ) : (
-            <p className={styles.objTitle}>Очікує свою команду</p>
+            <p className={styles.elDev}>Очікує свою команду</p>
           )}
         </ul>
-      </div>
-      <div className={styles.objWrap}>
+      </li>
+      <li key={uuidv4()} className={styles.objWrap}>
         <h4 className={styles.objTitle}>Backend</h4>
         <ul className={styles.devList}>
           {ArrBackend ? (
             devBackend.map((el, i) => (
-              <li key={i} className={styles.elDev}>
-                {el}
+              <li key={uuidv4()}>
+                <a
+                  href={el.link}
+                  className={styles.elDev}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {el.last + " " + el.first}
+                </a>
               </li>
             ))
           ) : (
-            <p className={styles.objTitle}>Очікує свою команду</p>
+            <p className={styles.elDev}>Очікує свою команду</p>
           )}
         </ul>
-      </div>
-      <div className={styles.objWrap}>
+      </li>
+      <li key={uuidv4()} className={styles.objWrap}>
         <h4 className={styles.objTitle}>Full Stack</h4>
         <ul className={styles.devList}>
           {ArrFullstack ? (
             devFullstack.map((el, i) => (
-              <li key={i} className={styles.elDev}>
-                {el}
+              <li key={uuidv4()}>
+                <a
+                  href={el.link}
+                  className={styles.elDev}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {el.last + " " + el.first}
+                </a>
               </li>
             ))
           ) : (
-            <p className={styles.objTitle}>Очікує свою команду</p>
+            <p className={styles.elDev}>Очікує свою команду</p>
           )}
         </ul>
-      </div>
-      <div className={styles.objWrap}>
+      </li>
+      <li key={uuidv4()} className={styles.objWrap}>
         <h4 className={styles.objTitle}>QA Manual</h4>
         <ul className={styles.devList}>
           {ArrManual ? (
             devManual.map((el, i) => (
-              <li key={i} className={styles.elDev}>
-                {el}
+              <li key={uuidv4()}>
+                <a
+                  href={el.link}
+                  className={styles.elDev}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {el.last + " " + el.first}
+                </a>
               </li>
             ))
           ) : (
-            <p className={styles.objTitle}>Очікує свою команду</p>
+            <p className={styles.elDev}>Очікує свою команду</p>
           )}
         </ul>
-      </div>
-      <div className={styles.objWrap}>
+      </li>
+      <li key={uuidv4()} className={styles.objWrap}>
         <h4 className={styles.objTitle}>Project Manager</h4>
         <ul className={styles.devList}>
           {ArrProject ? (
             devProject.map((el, i) => (
-              <li key={i} className={styles.elDev}>
-                {el}
+              <li key={uuidv4()}>
+                <a
+                  href={el.link}
+                  className={styles.elDev}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {el.last + " " + el.first}
+                </a>
               </li>
             ))
           ) : (
-            <p className={styles.objTitle}>Очікує свою команду</p>
+            <p className={styles.elDev}>Очікує свою команду</p>
           )}
         </ul>
-      </div>
-    </div>
+      </li>
+    </ul>
   );
 }

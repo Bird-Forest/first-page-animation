@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Develop.module.css";
+import { v4 as uuidv4 } from "uuid";
 import {
   BsFillGeoFill,
   BsDiscord,
@@ -50,7 +51,13 @@ export default function DevelopItem({ item }) {
       </div>
       <div className={styles.wrapInfo}>
         <BsPersonRolodex className={styles.iconDev} />
-        <p className={styles.textDev}>Projects</p>
+        <ul className={styles.wrapProjects}>
+          {item.projects.map((el) => (
+            <li key={uuidv4()} className={styles.textDev}>
+              {el}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

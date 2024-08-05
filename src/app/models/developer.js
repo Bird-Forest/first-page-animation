@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { uri } from "../lib/mongodb";
-import { specList } from "./project";
+import { specialties } from "../constant/constant";
 
 const developerSchema = new mongoose.Schema(
   {
@@ -14,8 +14,8 @@ const developerSchema = new mongoose.Schema(
     resource: String,
     rule: Boolean,
     agree: Boolean,
-    speciality: { type: String, enum: specList },
-    projects: [{ type: mongoose.ObjectId, ref: "Project" }],
+    speciality: { type: String, enum: specialties },
+    projects: [],
   },
   { versionKey: false, timestamps: true }
 );

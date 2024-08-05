@@ -13,11 +13,13 @@ import {
   BsPersonFillCheck,
   BsPersonFillX,
 } from "react-icons/bs";
-import { specialties } from "../../../_Modal/ModalMentor";
+// import { specialties } from "../../../_Modal/ModalMentor";
 import {
   getDevelopersByLastName,
   getDevelopersBySpeciality,
 } from "@/src/app/services/developers";
+import { specialties } from "@/src/app/constant/constant";
+// import { specList } from "@/src/app/models/developer";
 
 export default function DevelopList({ lng, devs }) {
   const [items, setItems] = useState(devs);
@@ -65,7 +67,7 @@ export default function DevelopList({ lng, devs }) {
             }}
             className={styles.filterBtn}
           >
-            <BsPeopleFill className={styles.iconBtn} />
+            <BsPersonFillCheck className={styles.iconBtn} />
           </button>
           <ul
             style={{
@@ -106,8 +108,8 @@ export default function DevelopList({ lng, devs }) {
           >
             <BsPersonFillCheck className={styles.iconBtn} />
           </button>
-          <button className={styles.filterBtn}>
-            <BsPersonFillX onClick={onClear} className={styles.iconBtn} />
+          <button type="button" onClick={onClear} className={styles.filterBtn}>
+            <BsPersonFillX className={styles.iconBtn} />
           </button>
         </div>
       </div>

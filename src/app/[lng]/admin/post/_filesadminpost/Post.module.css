@@ -97,14 +97,14 @@
 }
 .filter {
   display: grid;
-  grid-template-columns: 30px 1fr 30px repeat(4, 30px);
-  grid-template-rows: 36px;
+  grid-template-columns: 40px 1fr 40px repeat(2, 40px);
+  grid-template-rows: 40px;
   gap: 2px;
   padding: 0;
 }
 @media screen and (min-width: 560px) {
   .filter {
-    grid-template-columns: 52px 1fr 52px repeat(4, 52px);
+    grid-template-columns: 52px 1fr 52px repeat(2, 52px);
     grid-template-rows: 48px;
   }
 }
@@ -151,7 +151,7 @@
 /* **** FORM POST */
 .wrapAdmPost {
   display: grid;
-  grid-template-columns: minmax(340px, 820px);
+  grid-template-columns: minmax(340px, 600px);
   grid-auto-rows: auto;
   gap: 20px;
   background-color: rgb(242, 238, 248);
@@ -161,7 +161,7 @@
 }
 .wrapForm {
   display: grid;
-  grid-template-columns: minmax(340px, 820px);
+  grid-template-columns: minmax(340px, 600px);
   grid-template-rows: repeat(7, auto);
   gap: 20px;
 }
@@ -201,35 +201,20 @@
     font-size: 20px;
   }
 }
-/* .wrapBtnForm {
+
+.wrapPreview {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: 20px;
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: fr;
+  grid-template-rows: auto;
 }
-.btnForm {
-  display: flex;
-  width: 200px;
-  height: 60px;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid rgb(192, 164, 183);
-  border-radius: 8px;
-  box-shadow: inset 3px 3px 4px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgb(187, 129, 169);
-  color: rgb(252, 252, 252);
-  font-size: 18px;
-  font-weight: 600;
+.messPreview {
+  color: rgb(3, 1, 16);
+  font-family: var(--font-montserrat);
+  font-size: 24px;
+  font-weight: 400;
   line-height: 1.5;
   text-align: center;
-  cursor: pointer;
 }
-.btnForm:hover,
-.btnForm:focus {
-  background-color: rgb(206, 138, 183);
-} */
 
 /* **** PREVIEW POST */
 .wrapPostNP {
@@ -288,33 +273,3 @@
   grid-template-rows: auto;
   aspect-ratio: 1/0.5;
 }
-/* *** MESSAGE */
-/* .wrapMessage {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: 20px;
-  padding: 0;
-  margin: 0 auto;
-}
-.textMess {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  font-family: var(--font-montserrat);
-  font-weight: 700;
-  line-height: 1.5;
-  text-align: center;
-  color: rgb(226, 49, 168);
-}
-.editLink {
-  color: rgb(226, 49, 168);
-  font-family: var(--font-montserrat);
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.3;
-  text-align: left;
-} */

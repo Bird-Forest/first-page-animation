@@ -6,25 +6,17 @@ import { v4 as uuidv4 } from "uuid";
 import styles from "./Post.module.css";
 import { useFormStatus } from "react-dom";
 import {
-  BsSortNumericDown,
-  BsSortNumericUpAlt,
   BsSortAlphaDown,
   BsSortAlphaUpAlt,
   BsZoomIn,
   BsZoomOut,
 } from "react-icons/bs";
-import {
-  getPostSortBy19,
-  getPostSortBy91,
-  getPostSortByAZ,
-  getPostSortByZA,
-} from "@/src/app/services/posts";
+import { getPostSortByAZ, getPostSortByZA } from "@/src/app/services/posts";
 import Loading from "../../../_Helper/Loading";
 
 export default function PostList({ posts, lng }) {
   const [items, setItems] = useState(posts);
   const [word, setWord] = useState("");
-  const [sortDate, setSortDate] = useState(false);
   const { pending } = useFormStatus();
 
   const onSearch = () => {
@@ -61,28 +53,6 @@ export default function PostList({ posts, lng }) {
         <button type="button" onClick={onSearch} className={styles.filterBtn}>
           <BsZoomIn className={styles.iconSearch} />
         </button>
-        <button
-          type="button"
-          onClick={async () => {
-            const sort19 = await getPostSortBy19();
-            setItems(sort19);
-          }}
-          className={styles.filterBtn}
-        >
-          <BsSortNumericDown className={styles.iconBtn} />
-        </button>
-
-        <button
-          type="button"
-          onClick={async () => {
-            const sort91 = await getPostSortBy91();
-            setItems(sort91);
-          }}
-          className={styles.filterBtn}
-        >
-          <BsSortNumericUpAlt className={styles.iconBtn} />
-        </button>
-
         <button
           type="button"
           onClick={async () => {
