@@ -49,8 +49,8 @@ export default function ProjectForm({ project, lng, formAction }) {
             className={styles.inputText}
           />
         </label>
-        <div className={styles.wrapElemOptions}>
-          <div className={styles.wrapIconBtn}>
+        <div className={styles.statusOptions}>
+          <div className={styles.wrapIconStat}>
             <BsCircleFill style={{ fill: status.color }} />
           </div>
           <label htmlFor="status" className={styles.wrapInput}>
@@ -67,7 +67,7 @@ export default function ProjectForm({ project, lng, formAction }) {
           <button
             type="button"
             onClick={() => setShow(!show)}
-            className={styles.wrapIconBtn}
+            className={styles.btnShow}
           >
             {show ? (
               <BsChevronDown className={styles.iconBtn} />

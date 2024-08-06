@@ -67,19 +67,8 @@ export default function PostForm({ post, lng, formAction }) {
           ></textarea>
         </label>
         <BtnSave>Зберегти</BtnSave>
-        {/* <div className={styles.wrapBtnForm}>
-          <button type="submit" className={styles.btnForm}>
-            Зберегти
-          </button>
-        </div> */}
       </form>
-      <div className={styles.wrapPreview}>
-        {!item ? (
-          <p className={styles.messPreview}>Попередній перегляд</p>
-        ) : (
-          <PostPreview item={item} />
-        )}
-      </div>
+      {!item ? null : <PostPreview item={item} />}
       <BtnAction item={item} lng={lng} id={id} formAction={formAction}>
         Опублікувати
       </BtnAction>

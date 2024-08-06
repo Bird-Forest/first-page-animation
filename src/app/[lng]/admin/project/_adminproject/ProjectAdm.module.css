@@ -3,10 +3,11 @@
   display: grid;
   grid-template-columns: minmax(380px, 1160px);
   grid-template-rows: auto auto;
-  background-color: rgb(226, 49, 168);
-  border-radius: 4px;
-  row-gap: 2px;
-  column-gap: 2px;
+  /* background-color: rgb(226, 49, 168);
+  border-radius: 4px; */
+  /* row-gap: 2px;
+  column-gap: 2px; */
+  gap: 16px;
   padding: 0;
 }
 .wrapList {
@@ -40,6 +41,12 @@
   width: 24px;
   height: 24px;
 }
+@media screen and (min-width: 768px) {
+  .statusIcon {
+    width: 28px;
+    height: 28px;
+  }
+}
 .itemTitle {
   color: rgb(3, 1, 16);
   font-family: var(--font-montserrat);
@@ -51,28 +58,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
   .itemTitle {
     font-size: 20px;
   }
 }
-.itemBtn {
-  display: grid;
-  width: 52px;
-  height: 48px;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(242, 238, 248);
-  border-radius: 4px;
-  border: none;
-  outline: transparent;
-  cursor: pointer;
-}
-.iconBtn {
-  fill: rgb(226, 49, 168);
-  width: 32px;
-  height: 32px;
-}
+
+/* *** FILTER */
 .filter {
   display: grid;
   grid-template-columns: 30px 1fr 30px repeat(4, 30px);
@@ -86,11 +78,10 @@
     grid-template-rows: 48px;
   }
 }
-
 .filterBtn {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
+  grid-template-columns: 52px;
+  grid-template-rows: 48px;
   justify-items: center;
   align-items: center;
   background-color: rgb(242, 238, 248);
@@ -98,6 +89,11 @@
   border: none;
   outline: transparent;
   cursor: pointer;
+}
+.iconBtn {
+  fill: rgb(226, 49, 168);
+  width: 32px;
+  height: 32px;
 }
 .iconSearch {
   fill: rgb(226, 49, 168);
@@ -169,7 +165,7 @@
   border-radius: 8px;
   border: 1px solid rgb(252, 252, 252);
   background: rgb(252, 252, 252);
-  outline: rgb(226, 49, 168);
+  outline: rgb(252, 252, 252);
   padding: 10px;
 }
 @media screen and (min-width: 1280px) {
@@ -180,8 +176,8 @@
     font-size: 20px;
   }
 }
-/* *** OPTIONS */
-.wrapElemOptions {
+/* *** OPTIONS STATUS*/
+.statusOptions {
   position: relative;
   display: grid;
   grid-template-columns: 44px 1fr 44px;
@@ -189,7 +185,7 @@
   align-items: center;
   gap: 8px;
 }
-.wrapIconBtn {
+.wrapIconStat {
   display: grid;
   grid-template-columns: 44px;
   grid-template-rows: 44px;
@@ -199,8 +195,16 @@
   border-color: transparent;
   padding: 0;
 }
-.iconBtn {
-  fill: rgb(226, 49, 168);
+.btnShow {
+  display: grid;
+  grid-template-columns: 44px;
+  grid-template-rows: 44px;
+  align-items: end;
+  justify-items: center;
+  border: none;
+  border-color: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 .wrapOptions {
   display: flex;
@@ -231,9 +235,9 @@
   justify-items: center;
   padding: 0 0 40px 0;
   margin: 0 auto;
-  gap: 20px;
+  gap: 16px;
 }
-/* *** FILTER */
+/* *** FILTER TEAM*/
 .filterTeam {
   display: grid;
   grid-template-columns: minmax(340px, 600px);
@@ -241,26 +245,25 @@
   gap: 2px;
   padding: 0;
 }
-.wrapSearchSpec {
+.searchSpec {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 52px;
   grid-template-rows: auto;
   gap: 2px;
 }
-.wrapSearch {
-  position: relative;
+.searchLast {
   display: grid;
   grid-template-columns: 1fr 52px 52px;
   grid-template-rows: auto;
   gap: 2px;
 }
-.iconBtn {
+/* .iconBtn {
   fill: rgb(226, 49, 168);
   width: 32px;
   height: 32px;
-}
-.filterBtn {
+} */
+/* .filterBtn {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
@@ -271,8 +274,8 @@
   border: none;
   outline: transparent;
   cursor: pointer;
-}
-.inputSearch {
+} */
+/* .inputSearch {
   display: grid;
   grid-template-columns: minmax(40px, 1fr);
   grid-template-rows: auto;
@@ -287,11 +290,8 @@
   border: none;
   outline: none;
   padding: 4px 4px 4px 16px;
-}
-.wrapOptions {
-  top: 50px;
-  z-index: 1;
-  position: absolute;
+} */
+.specOptions {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -312,15 +312,15 @@
   cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-  .inputSearch {
-    font-size: 20px;
+  .specOptions {
+    height: 256px;
   }
   .option {
     font-size: 20px;
   }
 }
 /* *** LIST DEVS STRING */
-.wrapList {
+.wrapListDev {
   display: grid;
   grid-template-columns: minmax(340px, 600px);
   grid-auto-rows: auto;

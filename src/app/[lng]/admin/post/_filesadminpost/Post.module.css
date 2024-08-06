@@ -3,10 +3,11 @@
   display: grid;
   grid-template-columns: minmax(380px, 1160px);
   grid-template-rows: auto auto;
-  background-color: rgb(226, 49, 168);
-  border-radius: 4px;
-  row-gap: 2px;
-  column-gap: 2px;
+  /* background-color: rgb(226, 49, 168);
+  border-radius: 4px; */
+  /* row-gap: 2px;
+  column-gap: 2px; */
+  gap: 16px;
   padding: 0;
 }
 .wrapList {
@@ -162,7 +163,7 @@
 .wrapForm {
   display: grid;
   grid-template-columns: minmax(340px, 600px);
-  grid-template-rows: repeat(7, auto);
+  grid-auto-rows: auto;
   gap: 20px;
 }
 .wrapInput {

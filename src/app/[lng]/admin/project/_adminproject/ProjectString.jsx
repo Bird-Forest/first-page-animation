@@ -14,7 +14,7 @@ export default function ProjectString({ item, lng }) {
       </div>
       <Link
         href={`/${lng}/admin/project/${item._id}`}
-        className={styles.itemBtn}
+        className={styles.filterBtn}
       >
         <BsGear className={styles.iconBtn} />
       </Link>

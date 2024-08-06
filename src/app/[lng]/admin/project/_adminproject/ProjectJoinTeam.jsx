@@ -88,7 +88,7 @@ export default function ProjectJoinTeam({ data, lng }) {
   return (
     <div className={styles.wrapTeamPage}>
       <div className={styles.filterTeam}>
-        <div className={styles.wrapSearchSpec}>
+        <div className={styles.searchSpec}>
           <input
             type="text"
             id="specDev"
@@ -109,26 +109,29 @@ export default function ProjectJoinTeam({ data, lng }) {
               <BsChevronUp className={styles.iconBtn} />
             )}
           </button>
-          <ul
+          <div
             style={{
               display: !isOpen ? "none" : "block",
+              position: "absolute",
+              top: "50px",
             }}
-            className={styles.wrapOptions}
           >
-            {specialties.map((el) => (
-              <li
-                key={el}
-                name="special"
-                value={el}
-                className={styles.option}
-                onClick={() => setSpecDev(el)}
-              >
-                {el}
-              </li>
-            ))}
-          </ul>
+            <ul className={styles.specOptions}>
+              {specialties.map((el) => (
+                <li
+                  key={el}
+                  name="special"
+                  value={el}
+                  className={styles.option}
+                  onClick={() => setSpecDev(el)}
+                >
+                  {el}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className={styles.wrapSearch}>
+        <div className={styles.searchLast}>
           <input
             type="text"
             id="lastName"
@@ -153,7 +156,7 @@ export default function ProjectJoinTeam({ data, lng }) {
           </button>
         </div>
       </div>
-      <ul className={styles.wrapList}>
+      <ul className={styles.wrapListDev}>
         {Arr
           ? arrDevs.map((dev) => (
               <li key={uuidv4()} className={styles.wrapStrDev}>
