@@ -310,6 +310,7 @@
 .teamList {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 4px;
   background-color: rgb(255, 255, 255);
   list-style: none;

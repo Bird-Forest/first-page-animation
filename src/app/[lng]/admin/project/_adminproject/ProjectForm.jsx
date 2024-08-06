@@ -148,9 +148,7 @@ export default function ProjectForm({ project, lng, formAction }) {
         </label>
         <BtnSave>Зберегти</BtnSave>
       </form>
-      <div>
-        {!item ? <p>Попередній перегляд</p> : <ProjectCover item={item} />}
-      </div>
+      {!item ? null : <ProjectCover item={item} />}
       <BtnAction item={item} lng={lng} id={id} formAction={formAction}>
         Опублікувати
       </BtnAction>

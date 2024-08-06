@@ -13,10 +13,11 @@ export default function DeveloperEdit({ item, lng, formAction, projects }) {
   const [dev, setDev] = useState(item);
   const [show, setShow] = useState(false);
   const [speciality, setSpeciality] = useState(dev.speciality);
-  const [projectDev, setProjectDev] = useState([]);
+  const [projectDev, setProjectDev] = useState(
+    !item.projects ? [] : item.projects
+  );
   const id = item._id;
-  // const editDeveloper = updateDeveloper.bind(null, id);
-  // console.log(item);
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const formData = new FormData(evt.currentTarget);
@@ -35,11 +36,8 @@ export default function DeveloperEdit({ item, lng, formAction, projects }) {
     setDev(updateDev);
   };
 
-  console.log(projects);
-
   const addProjectToDev = () => {
     const projectsOfDeveloper = projects.reduce((acc, project) => {
-      console.log(id);
       if (project.designer.filter((dev) => dev._id === id)) {
         acc.push(project.name);
       } else if (project.backend.filter((dev) => dev._id === id)) {
@@ -58,11 +56,8 @@ export default function DeveloperEdit({ item, lng, formAction, projects }) {
     setProjectDev(projectsOfDeveloper);
   };
 
-  // const arr = projectsOfDeveloper();
-  console.log(projectDev);
-
   return (
-    <div className={styles.wrapItem}>
+    <div className={styles.wrapEdit}>
       <form onSubmit={handleSubmit} className={styles.wrapForm}>
         <label htmlFor="first" className={styles.wrapInput}>
           First name
@@ -108,19 +103,18 @@ export default function DeveloperEdit({ item, lng, formAction, projects }) {
             )}
           </button>
           <div
+            className={styles.wrapBlock}
             style={{
               display: !show ? "none" : "block",
-              position: "absolute",
-              top: "32px",
             }}
           >
-            <ul className={styles.wrapOptions}>
+            <ul className={styles.wrapOptionsForm}>
               {specialties.map((el) => (
                 <li
                   key={uuidv4()}
                   value={el}
                   onClick={() => setSpeciality(el)}
-                  className={styles.textOption}
+                  className={styles.textOptionForm}
                 >
                   {el}
                 </li>
@@ -208,20 +202,8 @@ export default function DeveloperEdit({ item, lng, formAction, projects }) {
           />
         </label>
         <BtnSave>Зберегти</BtnSave>
-        {/* <div className={styles.wrapBtnForm}>
-          <button type="submit" className={styles.btnSave}>
-            Опублікувати
-          </button>
-        </div>
-        <div className={styles.wrapBtnForm}>
-          <Link href={`/${lng}/admin/dev`} className={styles.editLink}>
-            Перейти до списку розробників
-          </Link>
-        </div> */}
       </form>
-      <div>
-        {!item ? <p>Попередній перегляд</p> : <DevelopItem item={dev} />}
-      </div>
+      {!item ? null : <DevelopItem item={dev} />}
       <BtnAction item={dev} lng={lng} id={id} formAction={formAction}>
         Опублікувати
       </BtnAction>

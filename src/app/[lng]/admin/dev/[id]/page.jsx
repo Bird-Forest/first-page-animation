@@ -1,6 +1,5 @@
 import {
   getDeveloperById,
-  getProjectsOfDeveloper,
   updateDeveloper,
 } from "@/src/app/services/developers";
 import React from "react";
@@ -10,8 +9,6 @@ import { getProjects } from "@/src/app/services/projects";
 
 export default async function EditDeveloperPage({ params: { lng, id } }) {
   const data = await getDeveloperById({ id });
-  // const dev = await getProjectsOfDeveloper({ id });
-  // console.log(dev);
   const projects = await getProjects();
 
   return (
@@ -22,9 +19,6 @@ export default async function EditDeveloperPage({ params: { lng, id } }) {
         projects={projects}
         formAction={updateDeveloper}
       />
-      {/* <div className={styles.wrapForm}>
-        <ModalTrainee formAction={updateDeveloper} item={data} lng={lng} />
-      </div> */}
     </div>
   );
 }

@@ -2,14 +2,16 @@ import React from "react";
 import styles from "./Develop.module.css";
 import { v4 as uuidv4 } from "uuid";
 import {
-  BsFillGeoFill,
   BsDiscord,
   BsEnvelopeAtFill,
   BsPersonRolodex,
   BsPinMapFill,
+  BsStarFill,
+  BsCalendar2Check,
 } from "react-icons/bs";
 import { MdImportantDevices } from "react-icons/md";
 import { FaUserGraduate, FaBroadcastTower, FaLinkedinIn } from "react-icons/fa";
+import { format } from "date-fns";
 
 export default function DevelopItem({ item }) {
   return (
@@ -17,6 +19,10 @@ export default function DevelopItem({ item }) {
       <div className={styles.wrapTitle}>
         <FaUserGraduate className={styles.iconDev} />
         <p className={styles.titleDev}>{`${item.last + " " + item.first}`}</p>
+      </div>
+      <div className={styles.wrapInfo}>
+        <BsCalendar2Check className={styles.iconDev} />
+        <p className={styles.textDev}>{format(item.createdAt, "yyyy-MM-dd")}</p>
       </div>
       <div className={styles.wrapInfo}>
         <MdImportantDevices className={styles.iconDev} />
@@ -53,7 +59,8 @@ export default function DevelopItem({ item }) {
         <BsPersonRolodex className={styles.iconDev} />
         <ul className={styles.wrapProjects}>
           {item.projects.map((el) => (
-            <li key={uuidv4()} className={styles.textDev}>
+            <li key={uuidv4()} className={styles.elemProject}>
+              <BsStarFill className={styles.iconDevProj} />
               {el}
             </li>
           ))}

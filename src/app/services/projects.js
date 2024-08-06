@@ -76,26 +76,26 @@ export const deleteProject = async (id) => {
   }
 };
 
-export const addDeveloperToProject = async (item, id) => {
-  console.log("idx", id);
-  console.log("field", item);
-  // console.log("dev", dev);
-  try {
-    const project = await Project.findByIdAndUpdate({ _id: id }, item, {
-      new: true,
-    });
-    const data = JSON.parse(JSON.stringify(project));
-    console.log("DEV", data);
-    return {
-      message: "Успішно оновленно",
-    };
-  } catch (e) {
-    console.log(e);
-    return {
-      message: "Відбулася помилка",
-    };
-  }
-};
+// export const addDeveloperToProject = async (item, id) => {
+//   console.log("idx", id);
+//   console.log("field", item);
+//   // console.log("dev", dev);
+//   try {
+//     const project = await Project.findByIdAndUpdate({ _id: id }, item, {
+//       new: true,
+//     });
+//     const data = JSON.parse(JSON.stringify(project));
+//     console.log("DEV", data);
+//     return {
+//       message: "Успішно оновленно",
+//     };
+//   } catch (e) {
+//     console.log(e);
+//     return {
+//       message: "Відбулася помилка",
+//     };
+//   }
+// };
 // export const createProject = async () => {
 //   try {
 //     const newProject = await Project.create({

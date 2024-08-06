@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./ProjectAdm.module.css";
 import ProjectTeam from "../../../projects/_filesproject/ProjectTeam";
 import {
@@ -14,9 +14,9 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { specialties } from "@/src/app/constant/constant";
 import { getDevelopersForTeam } from "@/src/app/services/developers";
-import ProjectDevString from "./ProjectDevString";
-import { addDeveloperToProject } from "@/src/app/services/projects";
+import { updateProject } from "@/src/app/services/projects";
 import BtnAction from "../../_filesadmin/BtnAction";
+import BtnSave from "../../_filesadmin/BtnSave";
 
 export default function ProjectJoinTeam({ data, lng }) {
   const [item, setItem] = useState(data);
@@ -26,43 +26,51 @@ export default function ProjectJoinTeam({ data, lng }) {
   const [lastName, setLastName] = useState("");
   const [arrDevs, setArrDevs] = useState([]);
 
-  // useEffect(() => {
-  //   if (specDev === "UI/UX designer") setField({ designer: [] });
-  //   if (specDev === "Backend") setField("backend");
-  //   if (specDev === "Frontend") setField("frontend");
-  //   if (specDev === "Full Stack") setField("fullstack");
-  //   if (specDev === "QA Manual") setField("manual");
-  //   if (specDev === "Project Manager") setField("project");
-  //   return () => {};
-  // }, [specDev, data]);
-
   function addDeveloper(value) {
     if (!value) return;
     let arr;
     if (specDev === "UI/UX designer") {
-      arr = item.designer;
-      arr.push(value);
+      arr = item.designer.push(value);
       setField({ designer: arr });
     } else if (specDev === "Backend") {
-      arr = item.backend;
+      arr = item.backend.push(value);
       setField({ backend: arr });
-      arr.push(value);
     } else if (specDev === "Frontend") {
-      arr = item.frontend;
+      arr = item.frontend.push(value);
       setField({ frontend: arr });
-      arr.push(value);
     } else if (specDev === "Full Stack") {
-      arr = item.fullstack;
+      arr = item.fullstack.push(value);
       setField({ fullstack: arr });
-      arr.push(value);
     } else if (specDev === "QA Manual") {
-      arr = item.manual;
+      arr = item.manual.push(value);
       setField({ manual: arr });
-      arr.push(value);
     } else if (specDev === "Project Manager") {
-      arr = item.project;
+      arr = item.project.push(value);
       setField({ project: arr });
-      arr.push(value);
+    }
+  }
+
+  function deleteDeveloper(value) {
+    if (!value) return;
+    let arr;
+    if (specDev === "UI/UX designer") {
+      arr = item.designer.filter((el) => el._id !== value._id);
+      setField({ designer: arr });
+    } else if (specDev === "Backend") {
+      arr = item.backend.filter((el) => el._id !== value._id);
+      setField({ backend: arr });
+    } else if (specDev === "Frontend") {
+      arr = item.frontend.filter((el) => el._id !== value._id);
+      setField({ frontend: arr });
+    } else if (specDev === "Full Stack") {
+      arr = item.fullstack.filter((el) => el._id !== value._id);
+      setField({ fullstack: arr });
+    } else if (specDev === "QA Manual") {
+      arr = item.manual.filter((el) => el._id !== value._id);
+      setField({ manual: arr });
+    } else if (specDev === "Project Manager") {
+      arr = item.project.filter((el) => el._id !== value._id);
+      setField({ project: arr });
     }
   }
 
@@ -73,15 +81,13 @@ export default function ProjectJoinTeam({ data, lng }) {
   };
 
   const id = data._id;
-
   const Arr = Array.isArray(arrDevs) && arrDevs.length > 0;
-  // const arr = item.designer;
-  console.log("FIELD", field);
+  // console.log(item);
+  // console.log(field);
 
-  console.log(item);
   return (
     <div className={styles.wrapTeamPage}>
-      <div className={styles.filter}>
+      <div className={styles.filterTeam}>
         <div className={styles.wrapSearchSpec}>
           <input
             type="text"
@@ -166,23 +172,18 @@ export default function ProjectJoinTeam({ data, lng }) {
 
                 <button
                   type="button"
-                  // onClick={() => fieldProject.findIndex(i).splice(i, 1)}
+                  onClick={() => deleteDeveloper(dev)}
                   className={styles.itemBtn}
                 >
                   <BsPersonDashFill className={styles.iconBtn} />
                 </button>
               </li>
-              // <ProjectDevString
-              //   key={uuidv4()}
-              //   dev={dev}
-              //   field={fieldProject}
-              //   idx={idx}
-              // />
             ))
           : null}
       </ul>
+      <BtnSave onClick={() => setItem(item)}>Зберегти</BtnSave>
       <ProjectTeam item={item} />
-      <BtnAction item={item} id={id} formAction={addDeveloperToProject}>
+      <BtnAction item={item} id={id} formAction={updateProject}>
         Опублікувати
       </BtnAction>
     </div>

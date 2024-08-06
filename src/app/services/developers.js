@@ -5,7 +5,6 @@ import { Developer } from "../models/developer";
 export const createDeveloper = async (values) => {
   try {
     const newDev = await Developer.create(values);
-    // console.log("Action", newDev);
     return {
       message: "Успішно додано",
     };
@@ -41,7 +40,6 @@ export const getDeveloperById = async (req, res) => {
 };
 
 export const getDevelopersForTeam = async (specDev, lastName) => {
-  // const { id } = req;
   try {
     const dev = await Developer.find({
       speciality: specDev,
@@ -49,7 +47,7 @@ export const getDevelopersForTeam = async (specDev, lastName) => {
     }).lean();
 
     const data = JSON.parse(JSON.stringify(dev));
-    // console.log(data);
+
     return data;
   } catch (e) {
     console.log(e);
@@ -57,8 +55,6 @@ export const getDevelopersForTeam = async (specDev, lastName) => {
 };
 
 export const updateDeveloper = async (item, id) => {
-  // const { first, last, speciality, email, nick, link } =
-  //   Object.fromEntries(formData);
   try {
     const developer = await Developer.findByIdAndUpdate({ _id: id }, item, {
       new: true,
@@ -81,7 +77,6 @@ export const getDevelopersBySpeciality = async (special) => {
       speciality: special,
     });
     const data = JSON.parse(JSON.stringify(filteredDevelopers));
-
     return data;
   } catch (e) {
     console.log("Error fetching developers:", e);
@@ -95,7 +90,6 @@ export const getDevelopersByLastName = async (lastName) => {
       last: { $regex: lastName, $options: "i" },
     });
     const data = JSON.parse(JSON.stringify(filteredDevelopers));
-
     return data;
   } catch (e) {
     console.log("Error fetching developers:", e);
@@ -103,27 +97,20 @@ export const getDevelopersByLastName = async (lastName) => {
   }
 };
 
-// export const getProjectsOfDeveloper = async (req, res) => {
-//   const { id } = req;
-//   console.log("ID", id);
-//   try {
-//     const developer = await Developer.findById(id).lean();
-
-//     console.log("DEV", developer);
-
-//     // .populate("project", "name")
-//     // .exec();
-//     // const projects = await developer.populate("project");
-//     // const data = JSON.parse(JSON.stringify(projects));
-//     // console.log(data);
-//     // return data;
-//   } catch (e) {
-//     console.log("Error fetching developers:", e);
-//     throw error;
-//   }
-// };
-
-// await Story.find().populate("fans").exec();
+export const deleteDeveloper = async (id) => {
+  try {
+    const develper = await Developer.findOneAndDelete({ _id: id });
+    // const data = JSON.parse(JSON.stringify(develper));
+    return {
+      message: "Успішно видалено",
+    };
+  } catch (e) {
+    console.log(e);
+    return {
+      message: "Сталась помилка",
+    };
+  }
+};
 
 // export const createDeveloperCollection = async () => {
 //   try {

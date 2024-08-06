@@ -129,20 +129,21 @@
 /* *** PROJECT FORM */
 .wrapAdmProject {
   display: grid;
-  grid-template-columns: minmax(340px, 820px);
+  grid-template-columns: minmax(340px, 600px);
   grid-auto-rows: auto;
   justify-items: center;
   gap: 20px;
   background-color: rgb(242, 238, 248);
   border-radius: 24px;
-  padding: 20px 20px 40px 20px;
+  padding: 0 0 40px 0;
   margin: 0 auto;
 }
 .wrapForm {
   display: grid;
-  grid-template-columns: minmax(340px, 820px);
-  grid-template-rows: repeat(7, auto);
+  grid-template-columns: minmax(340px, 560px);
+  grid-auto-rows: auto;
   gap: 20px;
+  padding: 40px 20px 0 20px;
 }
 .wrapInput {
   display: grid;
@@ -222,17 +223,20 @@
   text-align: left;
   cursor: pointer;
 }
-/* *** TEAM */
+/* *** TEAM PAGE */
 .wrapTeamPage {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(340px, 600px);
   grid-auto-rows: auto;
+  justify-items: center;
+  padding: 0 0 40px 0;
+  margin: 0 auto;
   gap: 20px;
 }
 /* *** FILTER */
-.filter {
+.filterTeam {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(340px, 600px);
   grid-template-rows: 48px 48px;
   gap: 2px;
   padding: 0;
@@ -268,11 +272,6 @@
   outline: transparent;
   cursor: pointer;
 }
-/* .iconSearch {
-  fill: rgb(226, 49, 168);
-  width: 28px;
-  height: 28px;
-} */
 .inputSearch {
   display: grid;
   grid-template-columns: minmax(40px, 1fr);
@@ -323,7 +322,7 @@
 /* *** LIST DEVS STRING */
 .wrapList {
   display: grid;
-  grid-template-columns: minmax(380px, 1160px);
+  grid-template-columns: minmax(340px, 600px);
   grid-auto-rows: auto;
   padding: 0;
   margin: 0 auto;
