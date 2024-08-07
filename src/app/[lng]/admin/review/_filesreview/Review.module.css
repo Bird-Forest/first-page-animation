@@ -1,4 +1,4 @@
-/* *** POST LIST */
+/* *** REVIEW LIST */
 .wrapFilterList {
   display: grid;
   grid-template-columns: minmax(380px, 1160px);
@@ -19,15 +19,19 @@
   list-style: none;
   row-gap: 2px;
 }
-.wrapStrPost {
+.wrapStrReview {
   display: grid;
-  grid-template-columns: auto 1fr 52px;
+  grid-template-columns: auto 52px 1fr 52px 52px;
   grid-template-rows: 48px;
   gap: 2px;
   align-items: center;
   padding: 0;
 }
-.itemDate {
+.revIvonStatus {
+  width: 24px;
+  height: 24px;
+}
+.reviewDate {
   display: grid;
   grid-template-columns: 32px;
   grid-template-rows: 40px;
@@ -43,18 +47,18 @@
   padding: 4px;
 }
 @media screen and (min-width: 768px) {
-  .itemDate {
+  .reviewDate {
     justify-items: center;
     grid-template-columns: 80px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .itemDate {
+  .reviewDate {
     font-size: 16px;
     grid-template-columns: 100px;
   }
 }
-.wrapTitle {
+.wrapRevName {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 40px;
@@ -63,7 +67,7 @@
   border-radius: 4px;
   padding: 4px;
 }
-.itemTitle {
+.revName {
   color: rgb(3, 1, 16);
   font-family: var(--font-montserrat);
   font-size: 16px;
@@ -75,11 +79,11 @@
   text-overflow: ellipsis;
 }
 @media screen and (min-width: 1280px) {
-  .itemTitle {
+  .revName {
     font-size: 20px;
   }
 }
-.itemBtn {
+.revBtn {
   display: grid;
   width: 52px;
   height: 48px;
@@ -91,10 +95,24 @@
   outline: transparent;
   cursor: pointer;
 }
-.iconBtn {
+.iconRev {
+  stroke: rgb(226, 49, 168);
+  width: 40px;
+  height: 40px;
+}
+.iconSetting {
   fill: rgb(226, 49, 168);
   width: 32px;
   height: 32px;
+}
+.wrapOverlay {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  background-color: rgb(46, 5, 53);
+  border-radius: 24px;
+  border: 2px solid rgb(226, 49, 168);
+  padding: 40px;
 }
 /* *** FILTER */
 .filter {
@@ -110,47 +128,8 @@
     grid-template-rows: 48px;
   }
 }
-.filterBtn {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  justify-items: center;
-  align-items: center;
-  background-color: rgb(242, 238, 248);
-  border-radius: 4px;
-  border: none;
-  outline: transparent;
-  cursor: pointer;
-}
-.iconSearch {
-  fill: rgb(226, 49, 168);
-  width: 28px;
-  height: 28px;
-}
-.inputSearch {
-  display: grid;
-  grid-template-columns: minmax(40px, 1fr);
-  grid-template-rows: auto;
-  background-color: rgb(242, 238, 248);
-  border-radius: 4px;
-  color: rgb(3, 1, 16);
-  font-family: var(--font-montserrat);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
-  border: none;
-  outline: none;
-  padding: 4px;
-}
-@media screen and (min-width: 560px) {
-  .inputSearch {
-    padding: 4px 4px 4px 16px;
-    font-size: 20px;
-  }
-}
-/* **** FORM POST */
-.wrapAdmPost {
+/* **** FORM REVIEW */
+.wrapAdmRev {
   display: grid;
   grid-template-columns: minmax(340px, 600px);
   grid-auto-rows: auto;
@@ -202,75 +181,32 @@
     font-size: 20px;
   }
 }
-
-.wrapPreview {
+.wrapStatus {
   display: grid;
-  grid-template-columns: fr;
+  grid-template-columns: 1fr 52px;
   grid-template-rows: auto;
-}
-.messPreview {
-  color: rgb(3, 1, 16);
-  font-family: var(--font-montserrat);
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: center;
-}
-
-/* **** PREVIEW POST */
-.wrapPostNP {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border: 2px solid rgb(242, 238, 248);
-  border-radius: 16px;
-  background-color: rgb(242, 238, 248);
+  align-items: end;
   gap: 16px;
-  padding: 20px;
-  margin: 0 auto;
 }
-.wrapTitleNP {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: 8px;
-  padding: 0;
-}
-.dateNP {
-  color: rgb(3, 1, 16);
-  font-family: var(--font-montserrat);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
-}
-.titleNP {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
+.btnStatus {
+  display: flex;
+  width: 52px;
+  height: 46px;
   justify-content: center;
-  color: rgb(3, 1, 16);
-  font-family: var(--font-montserrat);
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.5;
-  text-align: left;
+  align-items: center;
+  border-radius: 8px;
+  background-color: rgb(252, 252, 252);
+  border: none;
+  outline: rgb(252, 252, 252);
+  cursor: pointer;
 }
-.textNP {
-  text-indent: 20px;
-  color: rgb(3, 1, 16);
-  font-family: var(--font-montserrat);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
+.iconAngry {
+  fill: #ff1744;
+  width: 32px;
+  height: 32px;
 }
-.imgNP {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  aspect-ratio: 1/0.5;
+.iconSmile {
+  fill: #099e56;
+  width: 32px;
+  height: 32px;
 }

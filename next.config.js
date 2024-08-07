@@ -14,6 +14,11 @@ module.exports = {
         port: "",
       },
       {
+        protocol: "https",
+        hostname: "media.licdn.com",
+        port: "",
+      },
+      {
         protocol: "http",
         hostname: "**",
         port: "",

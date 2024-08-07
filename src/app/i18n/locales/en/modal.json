@@ -16,6 +16,7 @@
   "anytime": "anytime",
 
   "TRAINEE": "",
+  "foto": "Link to photo in LinkedIn",
   "city": "City",
   "country": "Country",
   "course": "The end date of the course, if the course is ongoing, indicate the current one",
@@ -32,6 +33,7 @@
   "rules": "Familiarized with the conditions of participation in the project",
 
   "ERROR": "",
+  "error_foto": "Enter a link to the photo",
   "error_name": "Enter a name",
   "error_surname": "Enter the last name",
   "error_email": "Enter your e-mail address",

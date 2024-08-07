@@ -78,12 +78,13 @@
 
   "FORMA": "",
 
-  "form_title": "Feedback form",
+  "form_title": "Feedback form for participants",
   "form_name": "Name",
-  "form_email": "Email",
+  "form_foto": "LinkedIn photo link",
+  "form_link": "LinkedIn page link",
   "form_mess": "Message",
   "form_btn": "Send",
   "form_error1": "Enter your name",
-  "form_error2": "Enter your email",
+  "form_error2": "Enter the link",
   "form_error3": "Enter your message"
 }

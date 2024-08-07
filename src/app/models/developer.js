@@ -14,11 +14,14 @@ const developerSchema = new mongoose.Schema(
     resource: String,
     rule: Boolean,
     agree: Boolean,
+    foto: String,
     speciality: { type: String, enum: specialties },
     projects: [],
   },
   { versionKey: false, timestamps: true }
 );
+
+developerSchema.add({ foto: String });
 
 const connection = mongoose.createConnection(uri);
 export const Developer = connection.model("Developer", developerSchema);

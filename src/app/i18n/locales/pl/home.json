@@ -78,12 +78,13 @@
 
   "FORMA": "",
 
-  "form_title": "Formularz zwrotny",
+  "form_title": "Formularz opinii dla uczestników",
   "form_name": "Imię",
-  "form_email": "E-mail",
+  "form_foto": "Link do zdjęcia na LinkedIn",
+  "form_link": "Link do strony LinkedIn",
   "form_mess": "Wiadomość",
   "form_btn": "Wyślać",
   "form_error1": "Wpisz swoje imię",
-  "form_error2": "Wprowadź swój email",
+  "form_error2": "Wprowadź link",
   "form_error3": "Wpisz swoją wiadomość"
 }

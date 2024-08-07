@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import styles from "./Form.module.css";
@@ -8,21 +8,23 @@ import FormInputInfo from "./FormInputInfo";
 import FormInputMess from "./FormInputMess";
 import Spinner from "../../_Helper/Spinner";
 import { useTranslation } from "@/src/app/i18n/client";
+import { createReview } from "@/src/app/services/reviews";
 
 const initialValues = {
   name: "",
-  email: "",
+  foto: "",
+  link: "",
   message: "",
 };
 
 export default function FormFeedback({ lng }) {
+  const [mess, setMess] = useState(" ");
   const { t } = useTranslation(lng);
 
   const validationSchema = Yup.object({
     name: Yup.string().required(`${t("form_error1")}`),
-    email: Yup.string()
-      .email("відсутній @")
-      .required(`${t("form_error2")}`),
+    foto: Yup.string().required(`${t("form_error2")}`),
+    link: Yup.string().required(`${t("form_error2")}`),
     message: Yup.string().required(`${t("form_error3")}`),
   });
 
@@ -33,13 +35,18 @@ export default function FormFeedback({ lng }) {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={(values, { setSubmitting, resetForm }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(true);
-              console.log(values);
-              resetForm();
-            }, 400);
+          onSubmit={async (values, { setSubmitting, resetForm }) => {
+            // setTimeout(() => {
+            //   alert(JSON.stringify(values, null, 2));
+            //   setSubmitting(true);
+            //   console.log(values);
+
+            // }, 400);
+            const message = await createReview(values);
+            setSubmitting(true);
+            // console.log(values);
+            setMess(message);
+            resetForm();
           }}
         >
           {(props) => (
@@ -51,15 +58,23 @@ export default function FormFeedback({ lng }) {
                 placeholder={t("form_name")}
               />
               <FormInputInfo
-                label={t("form_email")}
-                name="email"
-                type="email"
-                placeholder="email@gmail.com"
+                label={t("form_foto")}
+                name="foto"
+                type="url"
+                placeholder="https://media.licdn.com/dms/image/..."
+              />
+              <FormInputInfo
+                label={t("form_link")}
+                name="link"
+                type="url"
+                placeholder="https://www.linkedin.com/..."
               />
               <FormInputMess
                 label={t("form_mess")}
                 name="message"
                 type="text"
+                maxlength="300"
+                placeholder="maximum 300 characters"
               />
               <div className={styles.wrapBtn}>
                 <button type="submit" className={styles.formBtn}>
@@ -69,6 +84,7 @@ export default function FormFeedback({ lng }) {
             </Form>
           )}
         </Formik>
+        <p className={styles.dataMess}>{mess.message}</p>
       </div>
     </section>
   );

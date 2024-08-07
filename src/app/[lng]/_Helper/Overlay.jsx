@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import styles from "../_Modal/Modal.module.css";
+import styles from "./Helper.module.css";
 
 export default function Overlay({ closeModal, content }) {
   useEffect(() => {

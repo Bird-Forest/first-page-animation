@@ -7,7 +7,7 @@
   "email": "E-mail",
   "special_title": "Specjalizacja",
   "discord": "Nick na Discordzie",
-  "linkedin": "Profil na Linkedinie",
+  "linkedin": "Profil na LinkedIn",
   "agree": "Wyrażam zgodę na przetwarzanie danych osobowych",
   "btn_send": "Wysłać",
 
@@ -17,6 +17,7 @@
   "anytime": "kiedykolwiek",
 
   "TRAINEE": "",
+  "foto": "Link do zdjęcia na LinkedIn",
   "city": "Miasto",
   "country": "Kraj",
   "course": "Datę zakończenia kursu, jeśli kurs jest w toku, należy podać aktualną",
@@ -33,6 +34,7 @@
   "rules": "Zapoznano się z warunkami udziału w projekcie",
 
   "ERROR": "",
+  "error_foto": "Wpisz link do zdjęcia",
   "error_name": "Wpisz imię",
   "error_surname": "Wpisz nazwisko",
   "error_email": "Wpisz adres e-mail",

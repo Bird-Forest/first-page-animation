@@ -142,6 +142,16 @@ export default function DeveloperEdit({ item, lng, formAction, projects }) {
             className={styles.inputText}
           />
         </label>
+        <label htmlFor="foto" className={styles.wrapInput}>
+          Foto in Linkendin link
+          <input
+            type="text"
+            name="foto"
+            id="foto"
+            defaultValue={item.foto}
+            className={styles.inputText}
+          />
+        </label>
         <label htmlFor="link" className={styles.wrapInput}>
           Linkendin link
           <input

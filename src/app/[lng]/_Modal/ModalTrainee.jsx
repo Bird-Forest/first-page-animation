@@ -25,6 +25,7 @@ const initialValues = {
   rule: "",
   agree: "",
   speciality: "",
+  foto: "",
 };
 
 export default function ModalTrainee({ item, lng, formAction }) {
@@ -41,6 +42,9 @@ export default function ModalTrainee({ item, lng, formAction }) {
     email: Yup.string()
       .email("відсутній @")
       .required(`${t("error_email")}`),
+    foto: Yup.string()
+      .trim()
+      .required(`${t("error_foto")}`),
     city: Yup.string().required(`${t("error_city")}`),
     country: Yup.string().required(`${t("error_country")}`),
     nick: Yup.string().required(`${t("error_nick")}`),
@@ -62,7 +66,7 @@ export default function ModalTrainee({ item, lng, formAction }) {
         onSubmit={async (values, { setSubmitting, resetForm }) => {
           const message = await formAction(values);
           setSubmitting(true);
-          console.log(values);
+          // console.log(values);
           setMess(message);
           resetForm();
         }}
@@ -131,6 +135,12 @@ export default function ModalTrainee({ item, lng, formAction }) {
               <InputUserData
                 label={t("linkedin")}
                 name="link"
+                type="url"
+                value={!item ? null : item.link}
+              />
+              <InputUserData
+                label={t("foto")}
+                name="foto"
                 type="url"
                 value={!item ? null : item.link}
               />

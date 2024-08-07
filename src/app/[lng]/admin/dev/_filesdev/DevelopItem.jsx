@@ -12,12 +12,22 @@ import {
 import { MdImportantDevices } from "react-icons/md";
 import { FaUserGraduate, FaBroadcastTower, FaLinkedinIn } from "react-icons/fa";
 import { format } from "date-fns";
+import Image from "next/image";
 
 export default function DevelopItem({ item }) {
   return (
     <div className={styles.wrapItem}>
       <div className={styles.wrapTitle}>
-        <FaUserGraduate className={styles.iconDev} />
+        <div className={styles.fotoDev}>
+          <Image
+            alt="foto of developer"
+            src={item.foto}
+            width={80}
+            height={80}
+            style={{ borderRadius: "12px" }}
+          />
+        </div>
+        {/* <FaUserGraduate className={styles.iconDev} /> */}
         <p className={styles.titleDev}>{`${item.last + " " + item.first}`}</p>
       </div>
       <div className={styles.wrapInfo}>

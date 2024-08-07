@@ -8,20 +8,11 @@ import Press from "./_components/Press";
 import Partners from "./_components/Partners";
 import Reviews from "./_components/Reviews";
 import FormFeedback from "./_components/FormFeedback";
-// import { Suspense } from "react";
-// import Loading from "../_Helper/Loading";
 import { languages, fallbackLng } from "../../i18n/settings";
 import { useTranslation } from "../../i18n/server";
+import { getReviews } from "../../services/reviews";
+import { revalidatePath } from "next/cache";
 
-// import initTranslations from "../i18n";
-// import TranslationsProvider from "../components/TranslationsProvider";
-
-// const i18nNamespaces = "home";
-// console.log("18", i18nNamespaces);
-
-// export function generateStaticParams() {
-//   return i18nConfig.locales.map((locale) => ({ locale }));
-// }
 export function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
@@ -29,6 +20,10 @@ export function generateStaticParams() {
 export default async function Home({ params: { lng } }) {
   if (languages.indexOf(lng) < 0) lng = fallbackLng;
   const { t } = await useTranslation(lng, "home");
+  const reviews = await getReviews();
+  // const reviews = data.filter(item => item.status === true)
+
+  revalidatePath(`/${lng}/home`, "page");
 
   return (
     <>
@@ -41,7 +36,7 @@ export default async function Home({ params: { lng } }) {
       <Press lng={lng} />
       <Mentor lng={lng} />
       <Partners lng={lng} />
-      <Reviews lng={lng} />
+      <Reviews reviews={reviews} lng={lng} />
       <FormFeedback lng={lng} />
       {/* </Suspense> */}
     </>

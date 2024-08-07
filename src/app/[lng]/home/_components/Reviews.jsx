@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "./Reviews.module.css";
 import { v4 as uuidv4 } from "uuid";
-import { reviews } from "./data/reviews";
+// import { reviews } from "./data/reviews";
 import ReviewItem from "./ReviewItem";
 import { useState } from "react";
 import { motion, AnimatePresence, wrap } from "framer-motion";
@@ -35,7 +35,7 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-export default function Reviews({ lng }) {
+export default function Reviews({ reviews, lng }) {
   const { t } = useTranslation(lng);
   const [[page, direction], setPage] = useState([0, 0]);
   const item = wrap(0, reviews.length, page);
