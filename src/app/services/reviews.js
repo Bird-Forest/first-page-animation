@@ -123,11 +123,10 @@ export const getReviewsFalse = async (req, res) => {
 
 export const getReviewByName = async (word) => {
   try {
-    const filterReview = await Review.find({
+    const reviews = await Review.find({
       name: { $regex: word, $options: "i" },
-    });
-    const data = JSON.parse(JSON.stringify(filterReview));
-
+    }).exec();
+    const data = JSON.parse(JSON.stringify(reviews));
     return data;
   } catch (e) {
     console.log("Error fetching developers:", e);

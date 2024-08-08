@@ -264,7 +264,7 @@
 }
 .btnForm:hover,
 .btnForm:focus {
-  background-color: rgb(206, 138, 183);
+  background-color: rgb(192, 80, 154);
 }
 .wrapMessage {
   display: grid;

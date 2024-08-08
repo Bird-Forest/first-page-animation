@@ -39,7 +39,7 @@ export default function Mentor({ lng }) {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ amount: 0.3 }}
+      viewport={{ amount: 0.3, once: true }}
       className={styles.mentor}
     >
       <h2 className={styles.mentTitle}>{t("mentor_title")}</h2>
@@ -97,7 +97,13 @@ export default function Mentor({ lng }) {
         createPortal(
           <OverlayModal
             closeModal={closeModal}
-            content={<ModalMentor formAction={createMentor} lng={lng} />}
+            content={
+              <ModalMentor
+                formAction={createMentor}
+                closeModal={closeModal}
+                lng={lng}
+              />
+            }
           />,
           document.body
         )}

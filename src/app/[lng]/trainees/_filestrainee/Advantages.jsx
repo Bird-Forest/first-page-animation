@@ -38,9 +38,15 @@ export default function Advantages({ lng }) {
       {showModal &&
         createPortal(
           <OverlayModal
-            title={t("trainee_title")}
+            // title={t("trainee_title")}
             closeModal={closeModal}
-            content={<ModalTrainee formAction={createDeveloper} lng={lng} />}
+            content={
+              <ModalTrainee
+                closeModal={closeModal}
+                formAction={createDeveloper}
+                lng={lng}
+              />
+            }
           />,
           document.body
         )}
