@@ -33,7 +33,7 @@
 }
 .reviewDate {
   display: grid;
-  grid-template-columns: 32px;
+  grid-template-columns: 44px;
   grid-template-rows: 40px;
   align-items: center;
   color: rgb(3, 1, 16);
@@ -74,9 +74,6 @@
   font-weight: 600;
   line-height: 1.3;
   text-align: left;
-  text-wrap: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 @media screen and (min-width: 1280px) {
   .revName {
@@ -105,6 +102,7 @@
   width: 32px;
   height: 32px;
 }
+/* * *** OVERLAY ITEM */
 .wrapOverlay {
   display: grid;
   grid-template-columns: auto;
@@ -114,20 +112,131 @@
   border: 2px solid rgb(226, 49, 168);
   padding: 40px;
 }
-/* *** FILTER */
-.filter {
+.wrapItem {
+  position: relative;
   display: grid;
-  grid-template-columns: 40px 1fr 40px repeat(2, 40px);
-  grid-template-rows: 40px;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 20px;
+}
+.wrapProfile {
+  position: relative;
+  display: grid;
+  grid-template-columns: 320px;
+  grid-template-rows: 220px;
+}
+.wrapImg {
+  position: relative;
+  display: flex;
+  width: 174px;
+  height: 174px;
+  border-radius: 12px;
+}
+.wrapInfo {
+  position: absolute;
+  top: 120px;
+  left: 132px;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 160px;
+  grid-template-rows: repeat(3, 24px);
+  gap: 4px;
+  border-radius: 12px;
+  box-shadow: inset 0px 2px 16px 0px rgba(154, 149, 153, 0.6);
+  background: rgba(210, 210, 210, 0.5);
+  padding: 10px 12px;
+}
+.textName {
+  display: grid;
+  font-family: var(--font-montserrat);
+  color: rgb(3, 1, 16);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: left;
+}
+.linkIn {
+  color: rgb(3, 1, 16);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+}
+.text {
+  display: grid;
+  color: rgb(3, 1, 16);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+}
+.wrapReview {
+  display: grid;
+  grid-template-columns: minmax(320px, 600px);
+  grid-template-rows: auto;
+  align-items: center;
+  color: rgb(252, 252, 252);
+  font-family: var(--font-montserrat);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+/* *** FILTER */
+.wrapFilter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
   gap: 2px;
   padding: 0;
 }
-@media screen and (min-width: 560px) {
-  .filter {
-    grid-template-columns: 52px 1fr 52px repeat(2, 52px);
+@media screen and (min-width: 768px) {
+  .wrapFilter {
+    grid-template-columns: 1fr auto;
     grid-template-rows: 48px;
   }
 }
+.wrapFilterBtn {
+  display: grid;
+  grid-template-columns: repeat(5, 52px);
+  grid-template-rows: 48px;
+  gap: 2px;
+  padding: 0;
+}
+.wrapFilterSearch {
+  display: grid;
+  grid-template-columns: 1fr 52px;
+  grid-template-rows: 48px;
+  gap: 2px;
+  padding: 0;
+}
+.inputSearch {
+  display: grid;
+  grid-template-columns: minmax(40px, 1fr);
+  grid-template-rows: auto;
+  background-color: rgb(242, 238, 248);
+  border-radius: 4px;
+  color: rgb(3, 1, 16);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  border: none;
+  outline: none;
+  padding: 4px;
+}
+@media screen and (min-width: 768px) {
+  .inputSearch {
+    padding: 4px 4px 4px 16px;
+    font-size: 20px;
+  }
+}
+
 /* **** FORM REVIEW */
 .wrapAdmRev {
   display: grid;

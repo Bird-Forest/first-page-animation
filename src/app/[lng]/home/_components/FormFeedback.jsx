@@ -73,7 +73,6 @@ export default function FormFeedback({ lng }) {
                 label={t("form_mess")}
                 name="message"
                 type="text"
-                maxlength="300"
                 placeholder="maximum 300 characters"
               />
               <div className={styles.wrapBtn}>

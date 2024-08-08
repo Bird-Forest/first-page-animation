@@ -98,7 +98,7 @@
   border-radius: 8px;
   outline: transparent;
   font-family: var(--font-montserrat);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   color: rgb(3, 1, 16);
   padding: 10px;
@@ -131,7 +131,7 @@
   border-radius: 8px;
   outline: transparent;
   font-family: var(--font-montserrat);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   padding: 10px;
 }

@@ -10,7 +10,7 @@ import Reviews from "./_components/Reviews";
 import FormFeedback from "./_components/FormFeedback";
 import { languages, fallbackLng } from "../../i18n/settings";
 import { useTranslation } from "../../i18n/server";
-import { getReviews } from "../../services/reviews";
+import { getReviewsRender } from "../../services/reviews";
 import { revalidatePath } from "next/cache";
 
 export function generateStaticParams() {
@@ -20,14 +20,12 @@ export function generateStaticParams() {
 export default async function Home({ params: { lng } }) {
   if (languages.indexOf(lng) < 0) lng = fallbackLng;
   const { t } = await useTranslation(lng, "home");
-  const reviews = await getReviews();
-  // const reviews = data.filter(item => item.status === true)
+  const reviews = await getReviewsRender();
 
   revalidatePath(`/${lng}/home`, "page");
 
   return (
     <>
-      {/* <Suspense fallback={<Loading />}> */}
       <Hero lng={lng} />
       <History lng={lng} />
       <Structure lng={lng} />
@@ -38,7 +36,6 @@ export default async function Home({ params: { lng } }) {
       <Partners lng={lng} />
       <Reviews reviews={reviews} lng={lng} />
       <FormFeedback lng={lng} />
-      {/* </Suspense> */}
     </>
   );
 }

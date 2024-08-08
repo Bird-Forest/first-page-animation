@@ -28,6 +28,16 @@ export const getReviews = async (req, res) => {
   }
 };
 
+export const getReviewsRender = async (req, res) => {
+  try {
+    const reviews = await Review.find({ status: true }).lean();
+    const data = JSON.parse(JSON.stringify(reviews));
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 export const getReviewById = async (req, res) => {
   const { id } = req;
 
@@ -69,5 +79,58 @@ export const deleteReview = async (id) => {
     return {
       message: "Сталась помилка",
     };
+  }
+};
+
+export const getReviewSortBy19 = async (req, res) => {
+  try {
+    const reviews = await Review.find().sort("field createdAt").lean();
+    const data = JSON.parse(JSON.stringify(reviews));
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+export const getReviewSortBy91 = async (req, res) => {
+  try {
+    const reviews = await Review.find().sort("field -createdAt").lean();
+    const data = JSON.parse(JSON.stringify(reviews));
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getReviewsTrue = async (req, res) => {
+  try {
+    const reviews = await Review.find({ status: true }).lean();
+    const data = JSON.parse(JSON.stringify(reviews));
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getReviewsFalse = async (req, res) => {
+  try {
+    const reviews = await Review.find({ status: false }).lean();
+    const data = JSON.parse(JSON.stringify(reviews));
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getReviewByName = async (word) => {
+  try {
+    const filterReview = await Review.find({
+      name: { $regex: word, $options: "i" },
+    });
+    const data = JSON.parse(JSON.stringify(filterReview));
+
+    return data;
+  } catch (e) {
+    console.log("Error fetching developers:", e);
+    throw error;
   }
 };

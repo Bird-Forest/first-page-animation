@@ -36,7 +36,7 @@ export default function ReviewForm({ review, lng, formAction }) {
             type="text"
             name="name"
             id="name"
-            value={item.name}
+            defaultValue={item.name}
             className={styles.inputText}
           />
         </label>
@@ -94,9 +94,7 @@ export default function ReviewForm({ review, lng, formAction }) {
         </div>
         <BtnSave>Зберегти</BtnSave>
       </form>
-      {/* <div className={styles.wrapOverlay}> */}
       {!item ? null : <ReviewOverlay item={item} />}
-      {/* </div> */}
       <BtnAction item={item} lng={lng} id={id} formAction={formAction}>
         Опублікувати
       </BtnAction>
