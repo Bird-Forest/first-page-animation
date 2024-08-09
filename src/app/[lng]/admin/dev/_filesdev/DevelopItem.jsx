@@ -28,7 +28,6 @@ export default function DevelopItem({ item }) {
             style={{ borderRadius: "12px" }}
           />
         </div>
-        {/* <FaUserGraduate className={styles.iconDev} /> */}
         <p className={styles.titleDev}>{`${item.last + " " + item.first}`}</p>
       </div>
       <div className={styles.wrapInfo}>

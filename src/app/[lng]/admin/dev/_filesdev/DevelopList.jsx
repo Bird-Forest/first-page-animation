@@ -9,17 +9,14 @@ import { useFormStatus } from "react-dom";
 import {
   BsChevronUp,
   BsChevronDown,
-  BsPeopleFill,
   BsPersonFillCheck,
   BsPersonFillX,
 } from "react-icons/bs";
-// import { specialties } from "../../../_Modal/ModalMentor";
 import {
   getDevelopersByLastName,
   getDevelopersBySpeciality,
 } from "@/src/app/services/developers";
 import { specialties } from "@/src/app/constant/constant";
-// import { specList } from "@/src/app/models/developer";
 
 export default function DevelopList({ lng, devs }) {
   const [items, setItems] = useState(devs);

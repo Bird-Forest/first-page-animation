@@ -5,7 +5,6 @@ import styles from "./Review.module.css";
 import { format } from "date-fns";
 import { BsGear, BsCircleFill } from "react-icons/bs";
 import Link from "next/link";
-import { TbMessageSearch } from "react-icons/tb";
 import Overlay from "../../../_Helper/Overlay";
 import { createPortal } from "react-dom";
 import ReviewOverlay from "./ReviewOverlay";
@@ -34,9 +33,6 @@ export default function ReviewString({ item, lng }) {
       <div className={styles.wrapRevName}>
         <p className={styles.revName}>{item.name}</p>
       </div>
-      {/* <button type="button" onClick={openModal} className={styles.revBtn}>
-        <TbMessageSearch className={styles.iconRev} />
-      </button> */}
       {showModal &&
         createPortal(
           <Overlay

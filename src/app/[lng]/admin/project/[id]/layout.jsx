@@ -2,7 +2,6 @@
 
 import React from "react";
 import styles from "../../_filesadmin/Admin.module.css";
-import ItemNavigation from "../../_filesadmin/ItemNavigation";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsPencilSquare, BsTrash, BsPeople } from "react-icons/bs";
@@ -15,7 +14,6 @@ export default function DynamicProjectLayout({
   const segments = pathname.split("/");
   const page = segments[3];
   const path = segments[5];
-  // console.log(segments);
   return (
     <div className={styles.wrapLayout}>
       <div className={styles.wrapNavPage}>

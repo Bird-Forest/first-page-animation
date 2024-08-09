@@ -178,7 +178,6 @@ export default function ProjectJoinTeam({ data, lng }) {
                 >
                   <BsPersonPlusFill className={styles.iconBtn} />
                 </button>
-
                 <button
                   type="button"
                   onClick={() => deleteDeveloper(dev)}

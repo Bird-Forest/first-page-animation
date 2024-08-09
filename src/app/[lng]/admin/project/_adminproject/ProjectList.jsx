@@ -16,23 +16,12 @@ import {
 export default function ProjectList({ projects, lng }) {
   const [items, setItems] = useState(projects);
   const [word, setWord] = useState("");
-  // const [sortDate, setSortDate] = useState(false);
   const { pending } = useFormStatus();
 
   const start = { color: "#ff1744", text: "Формування команди" };
   const init = { color: "#ffeb3b", text: "В розробці" };
   const finish = { color: "#099e56", text: "Завершено" };
 
-  // const onSearch = () => {
-  //   let arr = [];
-  //   items.map((item) => {
-  //     const title = item.name.toLowerCase().includes(word.toLowerCase());
-  //     if (title === true) {
-  //       arr.push(item);
-  //     }
-  //   });
-  //   setItems(arr);
-  // };
   const onClear = () => {
     setItems(projects);
     setWord(" ");
