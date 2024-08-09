@@ -10,7 +10,7 @@ import {
   BsCalendar2Check,
 } from "react-icons/bs";
 import { MdImportantDevices } from "react-icons/md";
-import { FaUserGraduate, FaBroadcastTower, FaLinkedinIn } from "react-icons/fa";
+import { FaBroadcastTower, FaLinkedinIn } from "react-icons/fa";
 import { format } from "date-fns";
 import Image from "next/image";
 
@@ -22,8 +22,9 @@ export default function DevelopItem({ item }) {
           <Image
             alt="foto of developer"
             src={item.foto}
-            width={80}
-            height={80}
+            fill
+            // width={80}
+            // height={80}
             style={{ borderRadius: "12px" }}
           />
         </div>
@@ -67,9 +68,9 @@ export default function DevelopItem({ item }) {
       </div>
       <div className={styles.wrapInfo}>
         <BsPersonRolodex className={styles.iconDev} />
-        <ul className={styles.wrapProjects}>
+        <ul className={styles.wrapListElem}>
           {item.projects.map((el) => (
-            <li key={uuidv4()} className={styles.elemProject}>
+            <li key={uuidv4()} className={styles.wrapElem}>
               <BsStarFill className={styles.iconDevProj} />
               {el}
             </li>

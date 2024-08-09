@@ -22,10 +22,12 @@ export default function DeveloperEdit({ item, lng, formAction, projects }) {
     evt.preventDefault();
     const formData = new FormData(evt.currentTarget);
     const updateDev = {
+      createdAt: item.createdAt,
       first: formData.get("first"),
       last: formData.get("last"),
       email: formData.get("email"),
       nick: formData.get("nick"),
+      foto: formData.get("foto"),
       link: formData.get("link"),
       country: formData.get("country"),
       city: formData.get("city"),
@@ -145,7 +147,7 @@ export default function DeveloperEdit({ item, lng, formAction, projects }) {
         <label htmlFor="foto" className={styles.wrapInput}>
           Foto in Linkendin link
           <input
-            type="text"
+            type="url"
             name="foto"
             id="foto"
             defaultValue={item.foto}

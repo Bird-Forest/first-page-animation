@@ -17,7 +17,7 @@ export default function FormInputMess({ label, ...props }) {
           {...field}
           {...props}
           placeholder={props.placeholder}
-          maxlength="300"
+          // maxlength="300"
           className={
             meta.error
               ? styles.message + " " + styles.borderRed

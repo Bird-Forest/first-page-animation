@@ -19,9 +19,7 @@ const arry = [
   <FaRegCircle key={5} />,
 ];
 
-// const start = { color: "#ff1744", text: "Формування команди" };
-
-export default function ProjectCover({ item }) {
+export default function ProjectCover({ item, showTeam }) {
   const state = item.status;
 
   return (
@@ -66,7 +64,7 @@ export default function ProjectCover({ item }) {
             <FaRegCalendarAlt className={styles.itemIcon} />
             <p className={styles.itemText}>Старт проєкту</p>
           </div>
-          <p className={styles.wrapText}>
+          <p className={styles.textBold}>
             {!item.start
               ? formatISO(new Date())
               : format(item.start, "yyyy-MM-dd")}
@@ -77,7 +75,7 @@ export default function ProjectCover({ item }) {
             <FaRegClock className={styles.itemIcon} />
             <p className={styles.itemText}>Тривалість</p>
           </div>
-          <p className={styles.wrapText}>{item.duration}</p>
+          <p className={styles.textBold}>{item.duration}</p>
         </div>
         <div className={styles.wrapElem}>
           <div className={styles.elem}>
@@ -97,6 +95,11 @@ export default function ProjectCover({ item }) {
               </li>
             ))}
           </ul>
+        </div>
+        <div className={styles.wrapTeamBtn}>
+          <button type="button" onClick={showTeam} className={styles.teamBtn}>
+            Команда проєкту
+          </button>
         </div>
       </div>
     </div>

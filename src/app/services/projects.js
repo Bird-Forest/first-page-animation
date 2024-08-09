@@ -28,11 +28,11 @@ export const getProjectById = async (req, res) => {
 };
 
 export const createNewProject = async (item) => {
-  console.log("PROJECT NEW", item);
+  // console.log("PROJECT NEW", item);
   try {
-    const newProject = await Project.create(item);
+    const newProject = await Project.create(item).lean();
     const data = JSON.parse(JSON.stringify(newProject));
-    console.log("PROJECT", data);
+    // console.log("PROJECT", data);
     return {
       message: "Успішно додано",
     };
@@ -63,7 +63,7 @@ export const updateProject = async (item, id) => {
 
 export const deleteProject = async (id) => {
   try {
-    const project = await Project.findOneAndDelete({ _id: id });
+    const project = await Project.findOneAndDelete({ _id: id }).lean();
     // const data = JSON.parse(JSON.stringify(project));
     return {
       message: "Успішно видалено",
@@ -76,49 +76,38 @@ export const deleteProject = async (id) => {
   }
 };
 
-// export const addDeveloperToProject = async (item, id) => {
-//   console.log("idx", id);
-//   console.log("field", item);
-//   // console.log("dev", dev);
-//   try {
-//     const project = await Project.findByIdAndUpdate({ _id: id }, item, {
-//       new: true,
-//     });
-//     const data = JSON.parse(JSON.stringify(project));
-//     console.log("DEV", data);
-//     return {
-//       message: "Успішно оновленно",
-//     };
-//   } catch (e) {
-//     console.log(e);
-//     return {
-//       message: "Відбулася помилка",
-//     };
+export const getProjectsByTitle = async (word) => {
+  console.log("WORD PROJ", word);
+  const regex = new RegExp(word, "i");
+  try {
+    const projects = await Project.find({
+      name: regex,
+    }).lean();
+    const data = JSON.parse(JSON.stringify(projects));
+    return data;
+  } catch (e) {
+    console.log("Error fetching developers:", e);
+    throw error;
+  }
+};
+
+export const getProjectsByStatus = async (obj) => {
+  try {
+    const projects = await Project.find({ status: obj }).lean();
+    const data = JSON.parse(JSON.stringify(projects));
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+// MyModel.find({ name: regex }, (err, results) => {
+//   if (err) {
+//     console.error("Ошибка при поиске:", err);
+//   } else {
+//     console.log("Найденные объекты:", results);
 //   }
-// };
-// export const createProject = async () => {
-//   try {
-//     const newProject = await Project.create({
-//       status: { color: "#ff1744", text: "Формування команди" },
-//       name: "Сталеві обійми - збір для 59-ї бригади",
-//       web: "Тимчасово не доступний",
-//       start: new Date(),
-//       duration: "22 тижні",
-//       difficult: 4,
-//       imageUrl: "http://localhost:3000/public/images/projects/team.webp",
-//     });
-//     const data = JSON.parse(JSON.stringify(newProject));
-//     console.log("PROJECT", data);
-//     // return {
-//     //   message: "Успішно додано",
-//     // };
-//   } catch (e) {
-//     console.log(e);
-//     return {
-//       message: "Відбулася помилка",
-//     };
-//   }
-// };
+// });
 
 // *** Функція, яка відправляє масив обєктів в базу даних, створює коллекцію
 // export const createProjects = async () => {
@@ -207,7 +196,7 @@ export const deleteProject = async (id) => {
 //             ],
 //           },
 //         ],
-//         imageUrl: "/public/images/projects/balakun.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/balakun.webp",
 //       },
 //       {
 //         status: { color: "#099e56", text: "Завершено" },
@@ -249,7 +238,7 @@ export const deleteProject = async (id) => {
 //             ],
 //           },
 //         ],
-//         imageUrl: "/public/images/projects/1001songs.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/1001songs.webp",
 //       },
 //       {
 //         status: { color: "#ffeb3b", text: "В розробці" },
@@ -291,7 +280,7 @@ export const deleteProject = async (id) => {
 //             ],
 //           },
 //         ],
-//         imageUrl: "/public/images/projects/dev.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/dev.webp",
 //       },
 //       {
 //         status: { color: "#ffeb3b", text: "В розробці" },
@@ -333,7 +322,7 @@ export const deleteProject = async (id) => {
 //             ],
 //           },
 //         ],
-//         imageUrl: "/public/images/projects/lapa.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/lapa.webp",
 //       },
 //       {
 //         status: { color: "#099e56", text: "Завершено" },
@@ -375,7 +364,7 @@ export const deleteProject = async (id) => {
 //             ],
 //           },
 //         ],
-//         imageUrl: "/public/images/projects/book.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/book.webp",
 //       },
 //       {
 //         status: { color: "#099e56", text: "Завершено" },
@@ -417,7 +406,7 @@ export const deleteProject = async (id) => {
 //             ],
 //           },
 //         ],
-//         imageUrl: "/public/images/projects/lule.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/lule.webp",
 //       },
 //       {
 //         status: { color: "#099e56", text: "Завершено" },
@@ -459,7 +448,7 @@ export const deleteProject = async (id) => {
 //             ],
 //           },
 //         ],
-//         imageUrl: "/public/images/projects/zavr.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/zavr.webp",
 //       },
 //       {
 //         status: { color: "#099e56", text: "Завершено" },
@@ -501,7 +490,7 @@ export const deleteProject = async (id) => {
 //             ],
 //           },
 //         ],
-//         imageUrl: "/public/images/projects/murrfecto.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/murrfecto.webp",
 //       },
 //       {
 //         status: { color: "#099e56", text: "Завершено" },
@@ -543,7 +532,7 @@ export const deleteProject = async (id) => {
 //             ],
 //           },
 //         ],
-//         imageUrl: "/public/images/projects/hvost.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/hvost.webp",
 //       },
 //       {
 //         status: { color: "#ff1744", text: "Формування команди" },
@@ -553,7 +542,7 @@ export const deleteProject = async (id) => {
 //         duration: "22 тижні",
 //         difficult: 5,
 //         team: [],
-//         imageUrl: "/public/images/projects/team.webp",
+//         imageUrl: "http://localhost:3000/public/images/projects/team.webp",
 //       },
 //       {
 //         status: { color: "#ff1744", text: "Формування команди" },

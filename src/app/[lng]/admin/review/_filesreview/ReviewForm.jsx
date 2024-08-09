@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import BtnSave from "../../_filesadmin/BtnSave";
 import BtnAction from "../../_filesadmin/BtnAction";
-import ReviewItem from "../../../home/_components/ReviewItem";
 import styles from "./Review.module.css";
 import { BsEmojiAngry, BsEmojiSmile } from "react-icons/bs";
 import ReviewOverlay from "./ReviewOverlay";

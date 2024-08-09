@@ -21,9 +21,9 @@ import BtnSave from "../../_filesadmin/BtnSave";
 export default function ProjectJoinTeam({ data, lng }) {
   const [item, setItem] = useState(data);
   const [isOpen, setIsOpen] = useState(false);
-  const [specDev, setSpecDev] = useState("");
   const [field, setField] = useState(null);
   const [lastName, setLastName] = useState("");
+  const [specDev, setSpecDev] = useState("");
   const [arrDevs, setArrDevs] = useState([]);
 
   function addDeveloper(value) {
@@ -51,26 +51,34 @@ export default function ProjectJoinTeam({ data, lng }) {
   }
 
   function deleteDeveloper(value) {
-    if (!value) return;
     let arr;
-    if (specDev === "UI/UX designer") {
-      arr = item.designer.filter((el) => el._id !== value._id);
-      setField({ designer: arr });
-    } else if (specDev === "Backend") {
-      arr = item.backend.filter((el) => el._id !== value._id);
-      setField({ backend: arr });
-    } else if (specDev === "Frontend") {
-      arr = item.frontend.filter((el) => el._id !== value._id);
-      setField({ frontend: arr });
-    } else if (specDev === "Full Stack") {
-      arr = item.fullstack.filter((el) => el._id !== value._id);
-      setField({ fullstack: arr });
-    } else if (specDev === "QA Manual") {
-      arr = item.manual.filter((el) => el._id !== value._id);
-      setField({ manual: arr });
-    } else if (specDev === "Project Manager") {
-      arr = item.project.filter((el) => el._id !== value._id);
-      setField({ project: arr });
+    switch (specDev) {
+      case "UI/UX designer":
+        arr = item.designer.filter((el) => el._id !== value._id);
+        setField((item.designer = arr));
+        break;
+      case "Backend":
+        arr = item.backend.filter((el) => el._id !== value._id);
+        setField((item.backend = arr));
+        break;
+      case "Frontend":
+        arr = item.frontend.filter((el) => el._id !== value._id);
+        setField((item.frontend = arr));
+        break;
+      case "Full Stack":
+        arr = item.fullstack.filter((el) => el._id !== value._id);
+        setField((item.fullstack = arr));
+        break;
+      case "QA Manual":
+        arr = item.manual.filter((el) => el._id !== value._id);
+        setField((item.manual = arr));
+        break;
+      case "Project Manager":
+        arr = item.project.filter((el) => el._id !== value._id);
+        setField((item.project = arr));
+        break;
+      default:
+        console.log("Маємо надію, що ця сторінка виглядає добре!");
     }
   }
 
@@ -82,8 +90,6 @@ export default function ProjectJoinTeam({ data, lng }) {
 
   const id = data._id;
   const Arr = Array.isArray(arrDevs) && arrDevs.length > 0;
-  // console.log(item);
-  // console.log(field);
 
   return (
     <div className={styles.wrapTeamPage}>
@@ -186,7 +192,7 @@ export default function ProjectJoinTeam({ data, lng }) {
       </ul>
       <BtnSave onClick={() => setItem(item)}>Зберегти</BtnSave>
       <ProjectTeam item={item} />
-      <BtnAction item={item} id={id} formAction={updateProject}>
+      <BtnAction item={item} id={id} formAction={updateProject} lng={lng}>
         Опублікувати
       </BtnAction>
     </div>

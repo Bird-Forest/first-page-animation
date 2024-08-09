@@ -3,10 +3,6 @@
   display: grid;
   grid-template-columns: minmax(380px, 1160px);
   grid-template-rows: auto auto;
-  /* background-color: rgb(226, 49, 168);
-  border-radius: 4px; */
-  /* row-gap: 2px;
-  column-gap: 2px; */
   gap: 16px;
   padding: 0;
 }
@@ -21,7 +17,7 @@
 }
 .wrapStrReview {
   display: grid;
-  grid-template-columns: auto 52px 1fr 52px 52px;
+  grid-template-columns: auto 52px 1fr 52px;
   grid-template-rows: 48px;
   gap: 2px;
   align-items: center;

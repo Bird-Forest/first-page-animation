@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { uri } from "../lib/mongodb";
-import { developerSchema } from "./developer";
 
 const projectSchema = new mongoose.Schema(
   {

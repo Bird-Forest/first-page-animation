@@ -9,7 +9,9 @@ export default function BtnAction({ item, id, formAction, children, lng }) {
   const [mess, setMess] = useState("");
 
   const path = usePathname();
+
   const segments = path.split("/");
+
   const page = segments[3];
 
   return (

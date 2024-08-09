@@ -21,7 +21,7 @@
 }
 .wrapStrProject {
   display: grid;
-  grid-template-columns: 1fr 52px;
+  grid-template-columns: 52px 1fr 52px;
   grid-template-rows: 48px;
   gap: 2px;
   align-items: center;
@@ -29,7 +29,7 @@
 }
 .wrapTitle {
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 40px;
   align-items: center;
   background-color: rgb(242, 238, 248);
@@ -170,10 +170,10 @@
 }
 @media screen and (min-width: 1280px) {
   .wrapInput {
-    font-size: 16px;
+    font-size: 14px;
   }
   .inputText {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 /* *** OPTIONS STATUS*/
