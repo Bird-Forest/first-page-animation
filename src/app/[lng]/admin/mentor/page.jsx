@@ -1,5 +1,15 @@
 import React from "react";
+import styles from "../_filesadmin/Admin.module.css";
+import { revalidatePath } from "next/cache";
+import MentorList from "./filesmentor/MentorList";
+import { getMentors } from "@/src/app/services/mentors";
 
-export default function ListOfMentorsPage() {
-  return <div>List of mentors</div>;
+export default async function ListOfMentorsPage({ params: { lng } }) {
+  const data = await getMentors();
+  revalidatePath(`/${lng}/admin/mentor`, "page");
+  return (
+    <div className={styles.wrapContent}>
+      <MentorList lng={lng} mentors={data} />
+    </div>
+  );
 }

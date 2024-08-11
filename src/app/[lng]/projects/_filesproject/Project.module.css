@@ -116,10 +116,10 @@
   height: 456px;
   padding: 0;
   border-radius: 12px;
-  background-image: url("../../../../../public/images/projects/lapa.webp");
+  /* background-image: url("../../../../../public/images/projects/lapa.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
 }
 .wrapCover {
   /* top: 0;
@@ -379,7 +379,7 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 10px;
   border-right: 8px solid rgb(255, 255, 255);
-  background-color: rgb(207, 202, 210);
+  background-color: rgba(234, 213, 245, 0.5);
 }
 .objWrap {
   display: flex;

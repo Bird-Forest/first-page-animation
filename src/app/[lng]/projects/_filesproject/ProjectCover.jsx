@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "./Project.module.css";
 import {
@@ -8,7 +10,7 @@ import {
   FaRegCircle,
 } from "react-icons/fa";
 import Image from "next/image";
-import lulu from "@/public/images/projects/book.webp";
+import lulu from "@/public/images/projects/book.jpg";
 import { format, formatISO } from "date-fns";
 
 const arry = [
@@ -21,22 +23,32 @@ const arry = [
 
 export default function ProjectCover({ item, showTeam }) {
   const state = item.status;
+  const img = item.imageUrl;
+  console.log("IMG", img);
+  // console.log("LULU", lulu);
+  // const imageLoader = ({ src, width, quality }) => {
+  //   return `https://example.com/${src}?w=${width}&q=${quality || 75}`;
+  // };
+  const imageLoader = ({ src, width, quality }) => {
+    return `http://localhost:3000/public/${src}?w=${width}&q=${quality || 75}`;
+  };
 
+  const url = imageLoader(img, 388, 80);
+
+  console.log("URL", url);
   return (
     <div className={styles.wrapCover}>
-      {/* <Image
+      <Image
+        // loader={imageLoader}
         alt="Picture of project"
-        src={lulu}
-        quality={100}
+        src={url}
+        quality={80}
         width={388}
         height={456}
         style={{
           borderRadius: "12px",
-          objectFit: "cover",
         }}
-        priority
-        placeholder="blur"
-      /> */}
+      />
 
       <div className={styles.wrapInfo}>
         <div className={styles.statusWrap}>
@@ -113,3 +125,7 @@ export default function ProjectCover({ item, showTeam }) {
   }`}
 />; */
 }
+// style={{
+//   borderRadius: "12px",
+//   objectFit: "cover",
+// }}

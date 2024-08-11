@@ -14,7 +14,7 @@ export default async function ProjectsPage({ params: { lng } }) {
 
   return (
     <section className={styles.project}>
-      <Projects items={data} />
+      <Projects items={data} lng={lng} />
     </section>
   );
 }

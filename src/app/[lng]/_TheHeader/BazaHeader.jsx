@@ -12,9 +12,9 @@ export default async function BazaHeader({ lng }) {
   const session = await auth();
   // console.log(session);
 
-  const date = getTime(new Date());
-  const expires = session.expires;
-  const dateEnd = getTime(new Date(expires));
+  // const date = getTime(new Date());
+  // const expires = session.expires;
+  // const dateEnd = getTime(new Date(expires));
   // console.log(dateEnd);
 
   return (
@@ -23,7 +23,8 @@ export default async function BazaHeader({ lng }) {
         <div className={styles.wrap}>
           <HeaderLogo />
           <Menu lng={lng} />
-          {dateEnd >= date ? <NavAdmin lng={lng} /> : <AidButton lng={lng} />}
+          {session ? <NavAdmin lng={lng} /> : <AidButton lng={lng} />}
+          {/* <AidButton lng={lng} /> */}
           <LanguageBtn lng={lng} />
         </div>
       </div>

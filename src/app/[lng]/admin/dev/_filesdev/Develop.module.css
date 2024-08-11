@@ -78,7 +78,6 @@
   grid-template-rows: auto;
   gap: 2px;
 }
-
 .filterBtn {
   display: grid;
   grid-template-columns: auto;

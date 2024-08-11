@@ -10,7 +10,6 @@ import InputUserData from "./forma/InputUserData";
 import InputCheckAgree from "./forma/InputCheckAgree";
 import Spinner from "../_Helper/Spinner";
 import { useTranslation } from "@/src/app/i18n/client";
-import { createMentor } from "../../services/mentors";
 import InputRadio from "./forma/InputRadio";
 import { specialties } from "../../constant/constant";
 
@@ -27,7 +26,7 @@ const initialValues = {
   nick: "",
   link: "",
   agree: "",
-  speciality: [],
+  speciality: "",
   time: [],
 };
 
@@ -54,9 +53,7 @@ export default function ModalMentor({ formAction, item, lng, closeModal }) {
       .trim()
       .required(`${t("error_link")}`),
     agree: Yup.boolean().required(`${t("error_agree")}`),
-    speciality: Yup.array()
-      .of(Yup.string())
-      .min(1, `${t("error_select")}`),
+    speciality: Yup.string().required(`${t("error_select")}`),
     time: Yup.array()
       .of(Yup.string())
       .min(1, `${t("error_select")}`),
@@ -75,7 +72,7 @@ export default function ModalMentor({ formAction, item, lng, closeModal }) {
             const message = await formAction(values);
             setSubmitting(true);
             setMess(message);
-            console.log(values);
+            // console.log(values);
             resetForm();
           }}
         >
