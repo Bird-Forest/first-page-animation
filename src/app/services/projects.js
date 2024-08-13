@@ -1,6 +1,25 @@
 "use server";
 
 import { Project } from "../models/project";
+import { writeFile } from "fs/promises";
+import path from "path";
+
+export const uploadImage = async (formData) => {
+  const imgFile = formData.get("image");
+
+  const buffer = await imgFile.arrayBuffer();
+  const imgBuffer = Buffer.from(buffer);
+
+  const imagePath = path.join(
+    process.cwd(),
+    "public/images/projects",
+    imgFile.name
+  );
+
+  await writeFile(imagePath, imgBuffer);
+
+  // await writeFile(imgFile.name, imgBuffer);
+};
 
 export const getProjects = async (req, res) => {
   try {

@@ -8,7 +8,6 @@ import {
 } from "react-i18next";
 import { useCookies } from "react-cookie";
 import resourcesToBackend from "i18next-resources-to-backend";
-// import LocizeBackend from 'i18next-locize-backend'
 import LanguageDetector from "i18next-browser-languagedetector";
 import { getOptions, cookieName, languages } from "./settings";
 

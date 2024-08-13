@@ -2,6 +2,7 @@ import { getProjectById, updateProject } from "@/src/app/services/projects";
 import React from "react";
 import ProjectForm from "../_adminproject/ProjectForm";
 import styles from "../../_filesadmin/Admin.module.css";
+import { revalidatePath } from "next/cache";
 
 export default async function ProjectDyIdPage({ params: { lng, id } }) {
   const date = await getProjectById({ id });

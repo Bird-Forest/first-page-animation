@@ -5,9 +5,10 @@ import styles from "./ProjectAdm.module.css";
 import { v4 as uuidv4 } from "uuid";
 import { BsChevronUp, BsChevronDown, BsCircleFill } from "react-icons/bs";
 import { formatISO } from "date-fns";
-import ProjectCover from "../../../projects/_filesproject/ProjectCover";
+// import ProjectCover from "../../../projects/_filesproject/ProjectCover";
 import BtnAction from "../../_filesadmin/BtnAction";
 import BtnSave from "../../_filesadmin/BtnSave";
+import ProjectCover1 from "./ProjectCover1";
 
 const start = { color: "#ff1744", text: "Формування команди" };
 const inital = { color: "#ffeb3b", text: "В розробці" };
@@ -18,12 +19,23 @@ export default function ProjectForm({ project, lng, formAction }) {
   const [item, setItem] = useState(null);
   const [show, setShow] = useState(false);
   const [status, setStatus] = useState(!project ? start : project.status);
+  const [file, setFile] = useState(null);
+  const [fileName, setFileName] = useState(null);
   const id = !project ? null : project._id;
   const date = !project ? formatISO(new Date()) : project.start;
+
+  const handleFileChange = (event) => {
+    const newFile = event.target.files[0];
+    const url = newFile.name;
+    setFile(newFile);
+    setFileName(url);
+  };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const formData = new FormData(evt.currentTarget);
+    const imgFile = formData.get("image");
+    console.log(imgFile);
     const newItem = {
       status: status,
       start: date,
@@ -31,10 +43,12 @@ export default function ProjectForm({ project, lng, formAction }) {
       web: formData.get("web"),
       duration: formData.get("duration"),
       difficult: formData.get("difficult"),
-      imageUrl: formData.get("imageUrl"),
+      imageUrl: fileName,
     };
     setItem(newItem);
   };
+
+  console.log(item);
 
   return (
     <div className={styles.wrapAdmProject}>
@@ -136,7 +150,24 @@ export default function ProjectForm({ project, lng, formAction }) {
             className={styles.inputText}
           />
         </label>
-        <label htmlFor="imageUrl" className={styles.wrapInput}>
+        <div className={styles.wrapUpload}>
+          <label htmlFor="image" className={styles.wrapInput}>
+            Фон для проєкту
+            <input
+              accept="image/*, .png, .jpg, .webp,"
+              type="file"
+              name="image"
+              id="image"
+              // value={file}
+              onChange={handleFileChange}
+              className={styles.inputText}
+            />
+          </label>
+          <button type="submit" className={styles.filterBtn}>
+            Upload
+          </button>
+        </div>
+        {/* <label htmlFor="imageUrl" className={styles.wrapInput}>
           Фон для проєкту
           <input
             type="url"
@@ -145,10 +176,11 @@ export default function ProjectForm({ project, lng, formAction }) {
             defaultValue={!project ? null : project.imageUrl}
             className={styles.inputText}
           />
-        </label>
+        </label> */}
         <BtnSave>Зберегти</BtnSave>
       </form>
-      {!item ? null : <ProjectCover item={item} />}
+      {/* {!item ? null : <ProjectCover item={item} />} */}
+      <ProjectCover1 item={project} lng={lng} />
       <BtnAction item={item} lng={lng} id={id} formAction={formAction}>
         Опублікувати
       </BtnAction>

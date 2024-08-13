@@ -18,26 +18,27 @@ module.exports = {
         hostname: "media.licdn.com",
         port: "",
       },
-      // {
-      //   protocol: "http",
-      //   hostname: "localhost:3000",
-      //   port: "",
-      //   // pathname: "public/**",
-      // },
-      // {
-      //   protocol: "http",
-      //   hostname: "**",
-      //   port: "",
-      //   pathname: "**",
-      // },
-      // {
-      //   protocol: "http",
-      //   hostname: "**",
-      //   port: "",
-      //   pathname: "/public/**",
-      // },
     ],
   },
+
+  // {
+  //   protocol: "http",
+  //   hostname: "localhost:3000",
+  //   port: "",
+  //   // pathname: "public/**",
+  // },
+  // {
+  //   protocol: "http",
+  //   hostname: "**",
+  //   port: "",
+  //   pathname: "**",
+  // },
+  // {
+  //   protocol: "http",
+  //   hostname: "**",
+  //   port: "",
+  //   pathname: "public/**",
+  // },
 
   // webpack: (config) => {
   //   config.resolve.alias.canvas = false;
