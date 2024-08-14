@@ -19,12 +19,6 @@ export default function ProjectItem({ item }) {
   return (
     <li className={styles.wrapItem}>
       <ProjectCover item={item} showTeam={openTeamList} />
-      {/* <div className={styles.wrapTeamBtn}>
-        <button type="button" onClick={openTeamList} className={styles.teamBtn}>
-          Команда проєкту
-        </button>
-      </div> */}
-
       <div className={`${styles.wrapTeam} ${showTeam ? styles.show : ""}`}>
         <button
           type="button"

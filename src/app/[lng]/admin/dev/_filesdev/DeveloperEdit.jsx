@@ -38,26 +38,62 @@ export default function DeveloperEdit({ item, lng, formAction, projects }) {
     setDev(updateDev);
   };
 
-  const addProjectToDev = () => {
-    const projectsOfDeveloper = projects.reduce((acc, project) => {
-      if (project.designer.filter((dev) => dev._id === id)) {
-        acc.push(project.name);
-      } else if (project.backend.filter((dev) => dev._id === id)) {
-        acc.push(project.name);
-      } else if (project.frontend.filter((dev) => dev._id === id)) {
-        acc.push(project.name);
-      } else if (project.fullstack.filter((dev) => dev._id === id)) {
-        acc.push(project.name);
-      } else if (project.manual.filter((dev) => dev._id === id)) {
-        acc.push(project.name);
-      } else if (project.project.filter((dev) => dev._id === id)) {
-        acc.push(project.name);
-      }
-      return acc;
-    }, []);
-    setProjectDev(projectsOfDeveloper);
-  };
-
+  function addProjectToDev() {
+    let items = [];
+    let arr = [];
+    switch (item.speciality) {
+      case "UI/UX designer":
+        arr = projects.reduce((acc, project) => {
+          let designDev = project.designer.find((el) => el._id === id);
+          if (!designDev) return;
+          items.push(project.name);
+        }, []);
+        setProjectDev(items);
+        break;
+      case "Backend":
+        arr = projects.reduce((acc, project) => {
+          let backDev = project.backend.find((el) => el._id === id);
+          if (!backDev) return;
+          items.push(project.name);
+        }, []);
+        setProjectDev(items);
+        break;
+      case "Frontend":
+        arr = projects.reduce((acc, project) => {
+          let frontDev = project.frontend.find((el) => el._id === id);
+          if (!frontDev) return;
+          items.push(project.name);
+        }, []);
+        setProjectDev(items);
+        break;
+      case "Full Stack":
+        arr = projects.reduce((acc, project) => {
+          let fullDev = project.fullstack.find((el) => el._id === id);
+          if (!fullDev) return;
+          items.push(project.name);
+        }, []);
+        setProjectDev(items);
+        break;
+      case "QA Manual":
+        arr = projects.reduce((acc, project) => {
+          let manualDev = project.manual.find((el) => el._id === id);
+          if (!manualDev) return;
+          items.push(project.name);
+        }, []);
+        setProjectDev(items);
+        break;
+      case "Project Manager":
+        arr = projects.reduce((acc, project) => {
+          let projectDev = project.project.find((el) => el._id === id);
+          if (!projectDev) return;
+          items.push(project.name);
+        }, []);
+        setProjectDev(items);
+        break;
+      default:
+        console.log("Маємо надію, що ця сторінка виглядає добре!");
+    }
+  }
   return (
     <div className={styles.wrapEdit}>
       <form onSubmit={handleSubmit} className={styles.wrapForm}>

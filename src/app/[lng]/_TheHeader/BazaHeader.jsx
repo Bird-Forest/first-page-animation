@@ -9,7 +9,7 @@ import NavAdmin from "./NavAdmin";
 import { getTime } from "date-fns";
 
 export default async function BazaHeader({ lng }) {
-  const session = await auth();
+  // const session = await auth();
   // console.log(session);
 
   // const date = getTime(new Date());
@@ -23,8 +23,8 @@ export default async function BazaHeader({ lng }) {
         <div className={styles.wrap}>
           <HeaderLogo />
           <Menu lng={lng} />
-          {session ? <NavAdmin lng={lng} /> : <AidButton lng={lng} />}
-          {/* <AidButton lng={lng} /> */}
+          {/* {session ? <NavAdmin lng={lng} /> : <AidButton lng={lng} />} */}
+          <AidButton lng={lng} />
           <LanguageBtn lng={lng} />
         </div>
       </div>

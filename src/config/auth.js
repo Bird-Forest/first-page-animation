@@ -18,16 +18,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: {},
       },
       authorize: async (credentials) => {
-        console.log("Credentials", credentials);
+        // console.log("Credentials", credentials);
         if (!credentials.name || !credentials.password) return null;
 
         const userName = credentials.name;
-        console.log("Username", userName);
+        // console.log("Username", userName);
 
         let user = null;
 
         user = await User.findOne({ name: credentials.name }).exec();
-        console.log("AUTH-1", user);
+        // console.log("AUTH-1", user);
 
         // const saltRounds = 10;
         // const salt = bcrypt.genSaltSync(saltRounds);

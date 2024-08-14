@@ -116,57 +116,39 @@
   height: 456px;
   padding: 0;
   border-radius: 12px;
-  background-image: url("../../../../../public/images/projects/lapa.webp");
+  background-image: url("../../../../../public/images/projects/sky.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .wrapCover {
-  /* top: 0;
-  left: 0; */
   position: relative;
   display: grid;
   grid-template-columns: 388px;
   grid-template-rows: 456px;
-  /* flex-direction: column; */
-  /* width: 388px;
-  height: 456px; */
   padding: 0;
   border-radius: 12px;
 }
-/* .wrapImg {
-  position: relative;
-  display: flex;
-  width: 388px;
-  height: 456px;
-  padding: 0;
-  border-radius: 12px;
-} */
 .wrapInfo {
   position: absolute;
   display: grid;
-  grid-template-columns: 1fr;
-  /* grid-auto-rows: auto; */
+  grid-template-columns: 348px;
   grid-template-rows: 32px 1fr repeat(5, 32px);
-  /* align-items: start; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 388px;
-  height: 456px; */
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 12px;
   gap: 8px;
   padding: 20px;
 }
+.wrapInfo:hover,
+.wrapInfo:focus {
+  background-color: rgba(255, 255, 255, 0);
+}
 .statusWrap {
-  /* display: flex; */
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 32px;
   align-items: center;
   gap: 16px;
-  /* margin-bottom: 20px; */
 }
 .statusIcon {
   width: 24px;
@@ -182,11 +164,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 176px;
-  /* display: flex;
-  justify-content: center;
-  width: fit-content;
-  height: auto;
-  padding: 0 0 120px 0; */
 }
 .itemTitle {
   display: grid;
@@ -201,48 +178,25 @@
   grid-template-columns: 1fr;
   grid-template-rows: 32px;
   align-items: center;
-  /* display: flex;
-  width: fit-content;
-  height: 40px; */
 }
 .itemLink {
-  /* display: flex; */
   font-family: var(--font-montserrat);
   font-size: 18px;
-  /* border-radius: 20px; */
   color: rgb(27, 105, 213);
   font-weight: 700;
   cursor: pointer;
 }
-/* .wrapElements {
-  top: 260px;
-  left: 20px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  width: 348px;
-  gap: 8px;
-  margin-bottom: 0;
-} */
-
 .wrapElem {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 32px;
   align-items: center;
   justify-content: space-between;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
-  /* width: 348px;
-  height: 32px; */
 }
 .elem {
   display: grid;
   grid-template-columns: 24px auto;
   grid-template-rows: auto;
-
-  /* display: flex; */
   gap: 8px;
 }
 .itemIcon {
@@ -251,10 +205,8 @@
   fill: rgb(226, 49, 168);
 }
 .itemText {
-  /* display: flex; */
   display: grid;
   font-family: var(--font-montserrat);
-  /* justify-content: space-between; */
   font-size: 20px;
   color: rgb(67, 4, 78);
   font-weight: 600;
@@ -267,7 +219,6 @@
   font-weight: 700;
 }
 .wrapDiffic {
-  /* display: flex; */
   display: grid;
   grid-template-columns: repeat(5, 24px);
   grid-template-rows: auto;
@@ -292,12 +243,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 32px;
-  /* bottom: 28px;
-  position: absolute;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0 0 0 20px; */
 }
 .teamBtn {
   display: flex;
@@ -316,6 +261,7 @@
 .wrapTeam {
   top: 0;
   left: 0;
+  z-index: -1;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -327,6 +273,7 @@
 }
 .show {
   transform: translatey(0);
+  z-index: 0;
   opacity: 1;
   transition: opacity 500ms ease-out delay 100ms, transform 500ms ease;
 }

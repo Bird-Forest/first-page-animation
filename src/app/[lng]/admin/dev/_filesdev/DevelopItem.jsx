@@ -23,8 +23,6 @@ export default function DevelopItem({ item }) {
             alt="foto of developer"
             src={item.foto}
             fill
-            // width={80}
-            // height={80}
             style={{ borderRadius: "12px" }}
           />
         </div>
@@ -65,7 +63,7 @@ export default function DevelopItem({ item }) {
         <FaBroadcastTower className={styles.iconDev} />
         <p className={styles.textDev}>{item.resource}</p>
       </div>
-      <div className={styles.wrapInfo}>
+      <div className={styles.wrapProjects}>
         <BsPersonRolodex className={styles.iconDev} />
         <ul className={styles.wrapListElem}>
           {item.projects.map((el) => (

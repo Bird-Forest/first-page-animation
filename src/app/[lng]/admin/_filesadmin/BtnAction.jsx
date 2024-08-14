@@ -29,7 +29,7 @@ export default function BtnAction({ item, id, formAction, children, lng }) {
       </form>
       <div className={styles.wrapMessage}>
         <p className={styles.textMess}>{mess}</p>
-        <Link href={`/${lng}/admin/${page}`} className={styles.textMess}>
+        <Link href={`/${lng}/admin/${page}`} className={styles.editLink}>
           Перейти до списку
         </Link>
       </div>

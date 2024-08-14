@@ -4,36 +4,30 @@ import { Project } from "../models/project";
 import { writeFile } from "fs/promises";
 import path from "path";
 
-// export const getImages = async (request) => {
-//   const files = await readdir("./public/images/projects");
-//   console.log("SERVER", files);
-//   return files;
+// export const uploadImage = async (formData) => {
+//   console.log("PROJECT NEW", formData);
+//   try {
+//     const imgFile = await formData.get("image");
+
+//     const buffer = imgFile.arrayBuffer();
+//     const imgBuffer = Buffer.from(buffer);
+
+//     const imagePath = path.join(
+//       process.cwd(),
+//       `http://localhost:3000/public/images/projects`,
+//       imgFile.name
+//     );
+//     await writeFile(imagePath, imgBuffer);
+//     return {
+//       message: "Успішно додано",
+//     };
+//   } catch (e) {
+//     console.log(e);
+//     return {
+//       message: "Відбулася помилка",
+//     };
+//   }
 // };
-
-export const uploadImage = async (formData) => {
-  console.log("PROJECT NEW", formData);
-  try {
-    const imgFile = await formData.get("image");
-
-    const buffer = imgFile.arrayBuffer();
-    const imgBuffer = Buffer.from(buffer);
-
-    const imagePath = path.join(
-      process.cwd(),
-      `http://localhost:3000/public/images/projects`,
-      imgFile.name
-    );
-    await writeFile(imagePath, imgBuffer);
-    return {
-      message: "Успішно додано",
-    };
-  } catch (e) {
-    console.log(e);
-    return {
-      message: "Відбулася помилка",
-    };
-  }
-};
 
 export const getProjects = async (req, res) => {
   try {
@@ -64,9 +58,9 @@ export const getProjectById = async (req, res) => {
 };
 
 export const createNewProject = async (item) => {
-  // console.log("PROJECT NEW", item);
+  console.log("PROJECT NEW", item);
   try {
-    const newProject = await Project.create(item).lean();
+    const newProject = await Project.create(item);
     const data = JSON.parse(JSON.stringify(newProject));
     // console.log("PROJECT", data);
     return {
@@ -98,6 +92,7 @@ export const updateProject = async (item, id) => {
 };
 
 export const deleteProject = async (id) => {
+  console.log("DELETE", id);
   try {
     const project = await Project.findOneAndDelete({ _id: id }).lean();
     // const data = JSON.parse(JSON.stringify(project));

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styles from "./Review.module.css";
 import { format } from "date-fns";
-import { BsGear, BsCircleFill } from "react-icons/bs";
+import { BsPerson, BsGear, BsCircleFill } from "react-icons/bs";
 import Link from "next/link";
 import Overlay from "../../../_Helper/Overlay";
 import { createPortal } from "react-dom";
@@ -22,17 +22,18 @@ export default function ReviewString({ item, lng }) {
   return (
     <li className={styles.wrapStrReview}>
       <div className={styles.reviewDate}>{date}</div>
-      <button type="button" onClick={openModal} className={styles.revBtn}>
+      <div className={styles.wrapRevName}>
         <BsCircleFill
           className={styles.revIvonStatus}
           style={
             item.status === false ? { fill: "#ff1744" } : { fill: "#099e56" }
           }
         />
-      </button>
-      <div className={styles.wrapRevName}>
         <p className={styles.revName}>{item.name}</p>
       </div>
+      <button type="button" onClick={openModal} className={styles.revBtn}>
+        <BsPerson className={styles.iconSetting} />
+      </button>
       {showModal &&
         createPortal(
           <Overlay

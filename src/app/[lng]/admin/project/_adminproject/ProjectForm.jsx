@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import styles from "./ProjectAdm.module.css";
 import { v4 as uuidv4 } from "uuid";
 import { BsChevronUp, BsChevronDown, BsCircleFill } from "react-icons/bs";
-// import { formatISO } from "date-fns";
-// import ProjectCover from "../../../projects/_filesproject/ProjectCover";
+import ProjectCover from "../../../projects/_filesproject/ProjectCover";
 import BtnAction from "../../_filesadmin/BtnAction";
 import BtnSave from "../../_filesadmin/BtnSave";
 import ProjectImg from "./ProjectImg";
@@ -19,22 +18,17 @@ export default function ProjectForm({ project, lng, formAction }) {
   const [item, setItem] = useState(null);
   const [show, setShow] = useState(false);
   const [status, setStatus] = useState(!project ? start : project.status);
-  const [fileName, setFileName] = useState(null);
+  const [fileName, setFileName] = useState(!project ? null : project.imageUrl);
   const id = !project ? null : project._id;
   const dateNow = new Date();
   const date = !project ? dateNow.toISOString() : project.start.slice(0, 10);
 
-  // const dateSlice = !project
-  //   ? dateNow.toISOString().slice(0, 10)
-  //   : project.start.slice(0, 10);
-  // console.log(dateSlice);
+  // console.log(project);
 
-  const handleFileChange = (event) => {
-    const newFile = event.target.files[0];
-    const imgUrl = newFile.name;
-    setFileName(imgUrl);
+  const getFileName = (value) => {
+    setFileName(value);
   };
-  console.log(fileName);
+  // console.log(fileName);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -51,11 +45,11 @@ export default function ProjectForm({ project, lng, formAction }) {
     setItem(newItem);
   };
 
-  console.log(item);
+  // console.log(item);
 
   return (
     <div className={styles.wrapAdmProject}>
-      <ProjectImg getFileName={handleFileChange} />
+      <ProjectImg getFileName={getFileName} lng={lng} />
       <form onSubmit={handleSubmit} className={styles.wrapForm}>
         <label htmlFor="name" className={styles.wrapInput}>
           Додати заголовок
@@ -157,8 +151,8 @@ export default function ProjectForm({ project, lng, formAction }) {
         <BtnSave>Зберегти</BtnSave>
       </form>
 
-      {/* {!item ? null : <ProjectCover item={item} />} */}
-      {/* <ProjectCover1 item={project} lng={lng} /> */}
+      {!item ? null : <ProjectCover item={item} />}
+
       <BtnAction item={item} lng={lng} id={id} formAction={formAction}>
         Опублікувати
       </BtnAction>

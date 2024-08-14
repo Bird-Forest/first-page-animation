@@ -110,15 +110,3 @@ export default function ProjectCover({ item, showTeam }) {
     </div>
   );
 }
-
-{
-  /* <FaCircle
-  className={`${styles.statusIcon} ${
-    status === "red" ? styles["statusIcon--red"] : styles["statusIcon--green"]
-  }`}
-/>; */
-}
-// style={{
-//   borderRadius: "12px",
-//   objectFit: "cover",
-// }}
