@@ -4,21 +4,35 @@ import { Project } from "../models/project";
 import { writeFile } from "fs/promises";
 import path from "path";
 
+// export const getImages = async (request) => {
+//   const files = await readdir("./public/images/projects");
+//   console.log("SERVER", files);
+//   return files;
+// };
+
 export const uploadImage = async (formData) => {
-  const imgFile = formData.get("image");
+  console.log("PROJECT NEW", formData);
+  try {
+    const imgFile = await formData.get("image");
 
-  const buffer = await imgFile.arrayBuffer();
-  const imgBuffer = Buffer.from(buffer);
+    const buffer = imgFile.arrayBuffer();
+    const imgBuffer = Buffer.from(buffer);
 
-  const imagePath = path.join(
-    process.cwd(),
-    "public/images/projects",
-    imgFile.name
-  );
-
-  await writeFile(imagePath, imgBuffer);
-
-  // await writeFile(imgFile.name, imgBuffer);
+    const imagePath = path.join(
+      process.cwd(),
+      `http://localhost:3000/public/images/projects`,
+      imgFile.name
+    );
+    await writeFile(imagePath, imgBuffer);
+    return {
+      message: "Успішно додано",
+    };
+  } catch (e) {
+    console.log(e);
+    return {
+      message: "Відбулася помилка",
+    };
+  }
 };
 
 export const getProjects = async (req, res) => {
@@ -32,7 +46,10 @@ export const getProjects = async (req, res) => {
     const data = JSON.parse(JSON.stringify(projects));
     return data;
   } catch (e) {
-    console.log("Action", e);
+    console.log(e);
+    return {
+      message: "Відбулася помилка",
+    };
   }
 };
 export const getProjectById = async (req, res) => {

@@ -116,10 +116,10 @@
   height: 456px;
   padding: 0;
   border-radius: 12px;
-  /* background-image: url("../../../../../public/images/projects/lapa.jpg");
+  background-image: url("../../../../../public/images/projects/lapa.webp");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; */
+  background-size: cover;
 }
 .wrapCover {
   /* top: 0;

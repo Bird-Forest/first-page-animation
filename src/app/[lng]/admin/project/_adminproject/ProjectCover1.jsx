@@ -1,16 +1,16 @@
-"use client";
+// "use client";
 
 import React from "react";
 import styles from "../../../projects/_filesproject/Project.module.css";
 import Image from "next/image";
 
-export default function ProjectCover1({ item, lng }) {
+export default function ProjectCover1({ item }) {
   const imageLoader = ({ src, width, quality }) => {
-    return `/${lng}/public/images/projects/${src}?w=${width}&q=${
+    return `http://localhost:3000/public/images/projects/${src}?w=${width}&q=${
       quality || 75
     }`;
   };
-  console.log(item.imageUrl);
+  // console.log(imageLoader());
   return (
     <div className={styles.wrapCover}>
       <Image

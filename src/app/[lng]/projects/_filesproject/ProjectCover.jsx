@@ -9,7 +9,7 @@ import {
   FaRegChartBar,
   FaRegCircle,
 } from "react-icons/fa";
-// import Image from "next/image";
+import Image from "next/image";
 import { format, formatISO } from "date-fns";
 
 const arry = [
@@ -22,30 +22,26 @@ const arry = [
 
 export default function ProjectCover({ item, showTeam }) {
   const state = item.status;
-  // const img = item.imageUrl;
-  // console.log("IMG", img);
-  // console.log("LULU", lulu);
-  // const imageLoader = ({ src, width, quality }) => {
-  //   return `https://example.com/${src}?w=${width}&q=${quality || 75}`;
-  // };
-  // const imageLoader = ({ src, width, quality }) => {
-  //   return `http://localhost:3000/public/${src}?w=${width}&q=${quality || 75}`;
-  // };
 
-  console.log("URL", url);
+  const imageLoader = ({ src, width, quality }) => {
+    return `http://localhost:3000/public/images/projects/${src}?w=${width}&q=${
+      quality || 75
+    }`;
+  };
+
   return (
     <div className={styles.wrapCover}>
-      {/* <Image
-        // loader={imageLoader}
+      <Image
+        loader={imageLoader}
         alt="Picture of project"
-        src={img}
+        src={item.imageUrl}
         quality={80}
         width={388}
         height={456}
         style={{
           borderRadius: "12px",
         }}
-      /> */}
+      />
 
       <div className={styles.wrapInfo}>
         <div className={styles.statusWrap}>

@@ -16,7 +16,7 @@ export default async function RemoveProjectPage({ params: { lng, id } }) {
     <div className={styles.wrapContent}>
       <div className={styles.wrapRemoveItem}>
         {/* <ProjectFile /> */}
-        <ProjectImg />
+        <ProjectImg lng={lng} />
 
         {/* <ProjectItem item={data} /> */}
         {/* <BtnAction item={data} id={id} formAction={deleteProject} lng={lng}>

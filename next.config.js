@@ -18,6 +18,12 @@ module.exports = {
         hostname: "media.licdn.com",
         port: "",
       },
+      {
+        protocol: "http",
+        hostname: "localhost:3000",
+        port: "",
+        pathname: "public/**",
+      },
     ],
   },
 
