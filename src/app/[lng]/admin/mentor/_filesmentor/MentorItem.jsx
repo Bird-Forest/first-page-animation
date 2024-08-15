@@ -2,24 +2,21 @@ import React from "react";
 import {
   BsDiscord,
   BsEnvelopeAtFill,
-  BsPersonRolodex,
-  BsPinMapFill,
   BsStarFill,
-  BsCalendar2Check,
-  BsClock,
   BsTelephoneInboundFill,
   BsWatch,
   BsLinkedin,
 } from "react-icons/bs";
 import { MdImportantDevices } from "react-icons/md";
-import { FaBroadcastTower, FaLinkedinIn } from "react-icons/fa";
 import styles from "./MentorAdm.module.css";
 import { v4 as uuidv4 } from "uuid";
+import { GiOwl } from "react-icons/gi";
 
 export default function MentorItem({ item }) {
   return (
     <div className={styles.wrapItem}>
       <div className={styles.wrapName}>
+        <GiOwl className={styles.iconName} />
         <p className={styles.nameMentor}>{`${item.last + " " + item.first}`}</p>
       </div>
       <div className={styles.wrapInfo}>

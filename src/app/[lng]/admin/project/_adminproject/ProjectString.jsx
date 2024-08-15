@@ -8,6 +8,7 @@ import { FaCircle } from "react-icons/fa";
 import { createPortal } from "react-dom";
 import Overlay from "../../../_Helper/Overlay";
 import ProjectItem from "../../../projects/_filesproject/ProjectItem";
+import { BsFolder2Open } from "react-icons/bs";
 
 export default function ProjectString({ item, lng }) {
   const [showModal, setShowModal] = useState(false);
@@ -21,12 +22,13 @@ export default function ProjectString({ item, lng }) {
   const state = item.status;
   return (
     <li className={styles.wrapStrProject}>
-      <button type="button" onClick={openModal} className={styles.filterBtn}>
-        <FaCircle className={styles.statusIcon} style={{ fill: state.color }} />
-      </button>
       <div className={styles.wrapTitle}>
+        <FaCircle className={styles.statusIcon} style={{ fill: state.color }} />
         <p className={styles.itemTitle}>{item.name}</p>
       </div>
+      <button type="button" onClick={openModal} className={styles.filterBtn}>
+        <BsFolder2Open className={styles.iconBtn} />
+      </button>
       <Link
         href={`/${lng}/admin/project/${item._id}`}
         className={styles.filterBtn}

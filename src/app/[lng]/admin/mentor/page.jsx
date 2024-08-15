@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../_filesadmin/Admin.module.css";
 import { revalidatePath } from "next/cache";
-import MentorList from "./filesmentor/MentorList";
+import MentorList from "./_filesmentor/MentorList";
 import { getMentors } from "@/src/app/services/mentors";
 
 export default async function ListOfMentorsPage({ params: { lng } }) {

@@ -21,8 +21,6 @@ export default function MentorList({ mentors, lng }) {
   const [special, setSpecial] = useState("");
   const { pending } = useFormStatus();
 
-  // console.log(mentors);
-
   const onClear = () => {
     setItems(mentors);
     setSpecial("");

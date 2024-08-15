@@ -29,63 +29,76 @@ export default function ProjectList({ projects, lng }) {
   return (
     <div className={styles.wrapFilterList}>
       <div className={styles.filter}>
-        <button type="button" onClick={onClear} className={styles.filterBtn}>
-          <BsZoomOut className={styles.iconSearch} />
-        </button>
-        <input
-          autoFocus
-          type="text"
-          value={word}
-          onChange={(e) => setWord(e.target.value)}
-          placeholder="пошук ..."
-          className={styles.inputSearch}
-        />
-        <button
-          type="button"
-          onClick={async () => {
-            const sortTitle = await getProjectsByTitle(word);
-            setItems(sortTitle);
-          }}
-          className={styles.filterBtn}
-        >
-          <BsZoomIn className={styles.iconSearch} />
-        </button>
-        <button
-          type="button"
-          onClick={async () => {
-            const sortStatus = await getProjectsByStatus(start);
-            setItems(sortStatus);
-          }}
-          className={styles.filterBtn}
-        >
-          <FaCircle className={styles.statusIcon} style={{ fill: "#ff1744" }} />
-        </button>
-        <button
-          type="button"
-          onClick={async () => {
-            const sortStatus = await getProjectsByStatus(init);
-            setItems(sortStatus);
-          }}
-          className={styles.filterBtn}
-        >
-          <FaCircle className={styles.statusIcon} style={{ fill: "#ffeb3b" }} />
-        </button>
-        <button
-          type="button"
-          onClick={async () => {
-            const sortStatus = await getProjectsByStatus(finish);
-            setItems(sortStatus);
-          }}
-          className={styles.filterBtn}
-        >
-          <FaCircle className={styles.statusIcon} style={{ fill: "#099e56" }} />
-        </button>
-        <button type="button" onClick={onClear} className={styles.filterBtn}>
-          <FaBullseye
-            className={styles.statusIcon}
-            style={{ fill: "#e231a8" }}
+        <div className={styles.wrapFilterSearch}>
+          <button type="button" onClick={onClear} className={styles.filterBtn}>
+            <BsZoomOut className={styles.iconSearch} />
+          </button>
+          <input
+            autoFocus
+            type="text"
+            value={word}
+            onChange={(e) => setWord(e.target.value)}
+            placeholder="пошук ..."
+            className={styles.inputSearch}
           />
-        </button>
+          <button
+            type="button"
+            onClick={async () => {
+              const sortTitle = await getProjectsByTitle(word);
+              setItems(sortTitle);
+            }}
+            className={styles.filterBtn}
+          >
+            <BsZoomIn className={styles.iconSearch} />
+          </button>
+        </div>
+        <div className={styles.wrapFilnerSort}>
+          <button
+            type="button"
+            onClick={async () => {
+              const sortStatus = await getProjectsByStatus(start);
+              setItems(sortStatus);
+            }}
+            className={styles.filterBtn}
+          >
+            <FaCircle
+              className={styles.statusIcon}
+              style={{ fill: "#ff1744" }}
+            />
+          </button>
+          <button
+            type="button"
+            onClick={async () => {
+              const sortStatus = await getProjectsByStatus(init);
+              setItems(sortStatus);
+            }}
+            className={styles.filterBtn}
+          >
+            <FaCircle
+              className={styles.statusIcon}
+              style={{ fill: "#ffeb3b" }}
+            />
+          </button>
+          <button
+            type="button"
+            onClick={async () => {
+              const sortStatus = await getProjectsByStatus(finish);
+              setItems(sortStatus);
+            }}
+            className={styles.filterBtn}
+          >
+            <FaCircle
+              className={styles.statusIcon}
+              style={{ fill: "#099e56" }}
+            />
+          </button>
+          <button type="button" onClick={onClear} className={styles.filterBtn}>
+            <FaBullseye
+              className={styles.statusIcon}
+              style={{ fill: "#e231a8" }}
+            />
+          </button>
+        </div>
       </div>
 
       <ul className={styles.wrapList}>

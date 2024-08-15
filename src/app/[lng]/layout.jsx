@@ -34,14 +34,19 @@ export default function RootLayout({ children, params: { lng } }) {
       lang={lng}
       className={` ${open_sans.variable} ${montserrat.variable}`}
     >
-      <body>
+      <body className={styles.container}>
         <Providers>
-          <BazaHeader lng={lng} id="search-form" />
-          <main>{children}</main>
+          <div className={styles.top}>
+            <BazaHeader lng={lng} id="search-form" />
+          </div>
+
+          <main className={styles.page}>{children}</main>
           <a href="#top" className={styles.anchor}>
             <IoMdRocket className={styles.iconTop} />
           </a>
-          <BazaFooter />
+          <div className={styles.bottom}>
+            <BazaFooter />
+          </div>
         </Providers>
       </body>
     </html>

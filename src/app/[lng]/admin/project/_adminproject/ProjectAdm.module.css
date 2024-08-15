@@ -17,7 +17,7 @@
 }
 .wrapStrProject {
   display: grid;
-  grid-template-columns: 52px 1fr 52px;
+  grid-template-columns: 1fr 52px 52px;
   grid-template-rows: 48px;
   gap: 2px;
   align-items: center;
@@ -25,13 +25,13 @@
 }
 .wrapTitle {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 32px 1fr;
   grid-template-rows: 40px;
   align-items: center;
   background-color: rgb(242, 238, 248);
   gap: 8px;
   border-radius: 4px;
-  padding: 4px;
+  padding: 4px 4px 4px 16px;
 }
 .statusIcon {
   width: 24px;
@@ -59,20 +59,31 @@
     font-size: 20px;
   }
 }
-
 /* *** FILTER */
 .filter {
   display: grid;
-  grid-template-columns: 30px 1fr 30px repeat(4, 30px);
-  grid-template-rows: 36px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
   gap: 2px;
   padding: 0;
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 768px) {
   .filter {
-    grid-template-columns: 52px 1fr 52px repeat(4, 52px);
-    grid-template-rows: 48px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
   }
+}
+.wrapFilterSearch {
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  grid-template-rows: 48px;
+  gap: 2px;
+}
+.wrapFilnerSort {
+  display: grid;
+  grid-template-columns: repeat(4, 52px);
+  grid-template-rows: 48px;
+  gap: 2px;
 }
 .filterBtn {
   display: grid;
