@@ -56,7 +56,6 @@
   }
 }
 .wrapList {
-  /* position: relative; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -66,7 +65,6 @@
   margin: 0 auto;
 }
 .wrapItem {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

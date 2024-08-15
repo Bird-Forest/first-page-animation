@@ -36,15 +36,8 @@ export default function FormFeedback({ lng }) {
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={async (values, { setSubmitting, resetForm }) => {
-            // setTimeout(() => {
-            //   alert(JSON.stringify(values, null, 2));
-            //   setSubmitting(true);
-            //   console.log(values);
-
-            // }, 400);
             const message = await createReview(values);
             setSubmitting(true);
-            // console.log(values);
             setMess(message);
             resetForm();
           }}

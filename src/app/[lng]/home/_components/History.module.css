@@ -1,6 +1,6 @@
 .history {
   display: grid;
-  grid-template-columns: 100vw;
+  grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   justify-content: center;
   align-items: start;

@@ -24,7 +24,7 @@ export default function Press({ lng }) {
     <motion.section
       initial="start"
       whileInView="end"
-      viewport={{ margin: "-150px", amount: 0.05, once: true }}
+      viewport={{ amount: 0.3, once: true }}
       className={styles.press}
     >
       <h2 className={styles.pressTitle}>{t("press_title")}</h2>

@@ -1,12 +1,11 @@
 .counter {
   display: grid;
-  grid-template-columns: minmax(380px, 1680px);
+  grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 32px 16px;
-  margin: 0 auto;
   background-color: rgb(138, 26, 102);
 }
 @media screen and (min-width: 768px) {
@@ -19,6 +18,12 @@
   .counter {
     gap: 68px;
     padding: 68px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .counter {
+    grid-template-columns: minmax(1280px, 1320px);
+    padding: 68px 80px;
   }
 }
 @media screen and (min-width: 1920px) {

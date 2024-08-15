@@ -400,7 +400,7 @@
 .elemTime {
   display: grid;
   grid-template-columns: 24px 100px;
-  grid-template-rows: 28px;
+  grid-template-rows: 24px;
   gap: 8px;
 }
 .checkBox {
@@ -409,10 +409,10 @@
   grid-template-rows: 24px;
   justify-content: center;
   align-items: center;
-  /* appearance: none; */
+  appearance: none;
   border-radius: 2px;
   border: 1px solid rgb(3, 1, 16);
-  /* background-color: rgb(252, 252, 252); */
+  background-color: rgb(252, 252, 252);
   cursor: pointer;
 }
 .checkFalse {
@@ -421,8 +421,7 @@
 .checkTrue {
   background-position: center;
   background-size: 20px 20px;
-  color: rgb(3, 1, 16);
-  background-image: url("../../../../../../public/images/modal/check.svg");
+  background-image: url("../../../../../../public/images/modal/checkbl.svg");
   background-color: rgb(252, 252, 252);
 }
 .checkText {

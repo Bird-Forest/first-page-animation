@@ -30,6 +30,11 @@
     padding: 68px 80px;
   }
 }
+@media screen and (min-width: 1920px) {
+  .mentor {
+    padding: 68px 120px;
+  }
+}
 .mentTitle {
   display: grid;
   grid-template-columns: 1fr;

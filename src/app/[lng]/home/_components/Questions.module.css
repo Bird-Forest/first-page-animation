@@ -1,13 +1,14 @@
 .question {
   display: grid;
-  grid-template-columns: minmax(380px, 1320px);
+  /* grid-template-columns: minmax(380px, 1320px); */
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 32px 16px;
   background-color: rgb(46, 5, 53);
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 @media screen and (min-width: 768px) {
@@ -26,6 +27,11 @@
   .question {
     grid-template-columns: minmax(1280px, 1320px);
     padding: 68px 80px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .structure {
+    padding: 68px 120px;
   }
 }
 

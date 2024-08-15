@@ -1,27 +1,9 @@
 .bottom {
-  /* left: 0;
-  bottom: 0;
-  position: relative; */
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: auto auto;
-  /* justify-items: center;
-  gap: 16px; */
   background-color: rgb(46, 5, 53);
-  /* padding: 20px 40px;
-  margin: 0 auto; */
 }
-/* @media screen and (min-width: 768px) {
-  .bottom {
-    padding: 20px 40px 20px 40px;
-  }
-} */
-/* @media screen and (min-width: 1280px) {
-  .bottom {
-    padding: 24px 40px 24px 40px;
-  }
-} */
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -38,20 +20,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start; */
   gap: 16px;
   padding: 0;
   margin: 0 auto;
-  /* width: 240px;
-  height: 150px; */
 }
 @media screen and (min-width: 768px) {
   .wrapContact {
     align-items: center;
-
-    /* width: 1160px; */
   }
 }
 @media screen and (min-width: 1440px) {
@@ -73,59 +48,7 @@
   height: 60px;
   padding: 0;
 }
-/* *** NAVFOOTER */
-/* .wrapLink {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 120px;
-  height: 120px;
-  list-style: none;
-  font-size: clamp(16px, 0.839rem + 0.33vw, 18px);
-  font-weight: 600;
-  line-height: 1.5;
-  text-align: left;
-  padding: 0;
-  margin: 0 auto;
-}
-@media screen and (min-width: 1280px) {
-  .wrapLink {
-    height: 172px;
-  }
-}
-.link {
-  color: rgb(252, 252, 252);
-  text-decoration: none;
-}
-.active {
-  text-decoration: none;
-  color: rgb(226, 49, 168);
-} */
-/* *** DOCUMENT */
-/* .wrapDoc {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 260px;
-  height: 120px;
-  font-size: clamp(16px, 0.839rem + 0.33vw, 18px);
-  font-weight: 600;
-  line-height: 1.5;
-  text-align: left;
-  color: rgb(252, 252, 252);
-  padding: 0;
-  margin: 0 auto;
-}
-@media screen and (min-width: 1280px) {
-  .wrapDoc {
-    width: 300px;
-    height: 160px;
-  }
-} */
 /* *** CONTACTS */
-
 .contacts {
   display: flex;
   flex-direction: column;
@@ -201,7 +124,6 @@
 .socIcon {
   width: 24px;
   height: 24px;
-  /* fill: rgb(46, 5, 53); */
   fill: rgb(252, 252, 252);
 }
 .rull {

@@ -1,11 +1,9 @@
-import title1 from "../../../../../../public/images/stages/title-1.svg";
-import title3 from "../../../../../../public/images/stages/title-3.svg";
-import title4 from "../../../../../../public/images/stages/title-4.svg";
-import title2 from "../../../../../../public/images/stages/title-2.svg";
+import title1 from "@/public/images/stages/title-1.svg";
+import title3 from "@/public/images/stages/title-3.svg";
+import title4 from "@/public/images/stages/title-4.svg";
+import title2 from "@/public/images/stages/title-2.svg";
 
 import styles from "../Stages.module.css"; // Путь к вашему файлу стилей
-
-// console.log("BG-arr", bg1);
 
 export const stages = [
   {

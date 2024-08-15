@@ -1,13 +1,12 @@
 .press {
   display: grid;
-  grid-template-columns: minmax(380px, 1680px);
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 32px 16px;
   background-color: rgb(138, 26, 102);
-  margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   .press {
@@ -25,6 +24,11 @@
   .press {
     grid-template-columns: minmax(1280px, 1320px);
     padding: 68px 80px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .press {
+    padding: 68px 120px;
   }
 }
 
@@ -74,7 +78,7 @@
   align-items: center;
   width: 380px;
   height: 248px;
-  border: 2px solid rgb(255, 98, 206);
+  border: 2px solid rgb(226, 49, 168);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -92,7 +96,7 @@
   align-items: center;
   width: 380px;
   height: 248px;
-  border: 2px solid rgb(255, 98, 206);
+  border: 2px solid rgb(226, 49, 168);
   border-radius: 10px;
   background-color: rgb(46, 5, 53);
   overflow: hidden;

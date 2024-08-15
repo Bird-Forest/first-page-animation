@@ -16,7 +16,7 @@ const titlelAnimation = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { delay: 1 },
+    transition: { delay: 0.25 },
   },
 };
 

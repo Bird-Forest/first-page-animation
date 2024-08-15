@@ -16,20 +16,10 @@ export default function MentorForm({ item, lng, formAction }) {
   const [show, setShow] = useState(false);
   const [speciality, setSpeciality] = useState(item.speciality);
   const [workTime, setWorkTime] = useState([]);
-  const [isCheck, setIsCheck] = useState(false);
+  const [checkboxStates, setCheckboxStates] = useState(works.map(() => false));
 
   const id = item._id;
 
-  const handleCheckBox = (evt) => {
-    let check = evt.target.checked;
-    setIsCheck(!check);
-    // console.log(check);
-    let hours = evt.target.value;
-    console.log(hours);
-    setWorkTime((prevState) => prevState.concat(hours));
-  };
-  console.log(workTime);
-  console.log(isCheck);
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const formData = new FormData(evt.currentTarget);
@@ -155,33 +145,33 @@ export default function MentorForm({ item, lng, formAction }) {
         </label>
         <div className={styles.wrapTime}>
           <p className={styles.titleTime}>Time for consultation</p>
-          <ul
-            role="group"
-            aria-labelledby="checkbox-group"
-            className={styles.wrapTimeList}
-          >
+          <ul className={styles.wrapTimeList}>
             {works.map((el, i) => (
               <li key={uuidv4()} className={styles.elemTime}>
                 <input
                   name="time"
                   value={el}
                   type="checkbox"
-                  onChange={handleCheckBox}
-                  defaultValue={el}
-                  multiple={true}
-                  //   checked={isCheck}
-                  //   className={
-                  //     isCheck
-                  //       ? styles.checkBox + " " + styles.checkTrue
-                  //       : styles.checkBox + " " + styles.checkFalse
-                  //   }
+                  onChange={(e) => {
+                    const newCheckboxStates = [...checkboxStates];
+                    newCheckboxStates[i] = e.target.checked;
+                    setCheckboxStates(newCheckboxStates);
+                    setWorkTime((prevState) =>
+                      prevState.concat(e.target.value)
+                    );
+                  }}
+                  checked={checkboxStates[i]}
+                  className={
+                    checkboxStates[i]
+                      ? styles.checkBox + " " + styles.checkTrue
+                      : styles.checkBox + " " + styles.checkFalse
+                  }
                 />
                 <p className={styles.checkText}>{el}</p>
               </li>
             ))}
           </ul>
         </div>
-
         <BtnSave>Зберегти</BtnSave>
       </form>
       {!item ? null : <MentorItem item={mentor} />}

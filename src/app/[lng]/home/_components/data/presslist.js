@@ -1,6 +1,6 @@
-import press1 from "../../../../../../public/images/press/press1.jpg";
-import press2 from "../../../../../../public/images/press/press2.jpg";
-import press3 from "../../../../../../public/images/press/press3.jpg";
+import press1 from "@/public/images/press/press1.webp";
+import press2 from "@/public/images/press/press2.webp";
+import press3 from "@/public/images/press/press3.webp";
 
 export const presslist = [
   {

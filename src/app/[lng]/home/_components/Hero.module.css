@@ -5,6 +5,11 @@
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 1920px) {
+  .hero {
+    padding: 0 120px;
+  }
+}
 .wrap {
   position: relative;
   display: grid;

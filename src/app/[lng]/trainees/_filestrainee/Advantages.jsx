@@ -38,7 +38,6 @@ export default function Advantages({ lng }) {
       {showModal &&
         createPortal(
           <OverlayModal
-            // title={t("trainee_title")}
             closeModal={closeModal}
             content={
               <ModalTrainee

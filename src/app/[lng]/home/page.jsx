@@ -12,10 +12,7 @@ import { languages, fallbackLng } from "../../i18n/settings";
 import { useTranslation } from "../../i18n/server";
 import { getReviewsRender } from "../../services/reviews";
 import { revalidatePath } from "next/cache";
-
-export function generateStaticParams() {
-  return languages.map((lng) => ({ lng }));
-}
+import styles from "../page.module.css";
 
 export default async function Home({ params: { lng } }) {
   if (languages.indexOf(lng) < 0) lng = fallbackLng;
@@ -25,7 +22,7 @@ export default async function Home({ params: { lng } }) {
   revalidatePath(`/${lng}/home`, "page");
 
   return (
-    <>
+    <div className={styles.wrapHomePage}>
       <Hero lng={lng} />
       <History lng={lng} />
       <Structure lng={lng} />
@@ -36,6 +33,6 @@ export default async function Home({ params: { lng } }) {
       <Partners lng={lng} />
       <Reviews reviews={reviews} lng={lng} />
       <FormFeedback lng={lng} />
-    </>
+    </div>
   );
 }

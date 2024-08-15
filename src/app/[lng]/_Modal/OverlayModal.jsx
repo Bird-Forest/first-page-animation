@@ -21,16 +21,7 @@ export default function OverlayModal({ closeModal, content }) {
   }, [closeModal]);
   return (
     <div onClick={closeModal} className={styles.overlay}>
-      {/* <div
-        className={styles.wrapModalForm}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button type="button" onClick={closeModal} className={styles.closeBtn}>
-          <IoClose className={styles.close} />
-        </button>
-        <h4 className={styles.titleModal}>{title}</h4> */}
       {content}
-      {/* </div> */}
     </div>
   );
 }

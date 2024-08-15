@@ -15,7 +15,7 @@ const itemAnimation = {
   },
   visible: (custom) => ({
     opacity: 1,
-    transition: { delay: custom * 1, duration: 1 },
+    transition: { delay: custom * 0.5, duration: 1 },
   }),
 };
 

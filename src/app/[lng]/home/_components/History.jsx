@@ -35,7 +35,7 @@ const lineAnimation = {
   },
   visible: (custom) => ({
     opacity: 1,
-    transition: { duration: 2.5, delay: custom * 2 },
+    transition: { duration: 3, delay: custom * 2.5 },
   }),
 };
 

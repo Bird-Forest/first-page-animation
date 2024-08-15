@@ -5,13 +5,6 @@ import StagesItem from "./StagesItem";
 import { v4 as uuidv4 } from "uuid";
 import { useTranslation } from "@/src/app/i18n/server";
 
-// import { languages, fallbackLng } from "../../../i18n/settings";
-// import { useTranslation } from "@/app/i18n/client";
-
-// export function generateStaticParams() {
-//   return languages.map((lng) => ({ lng }));
-// }
-
 export default async function Stages({ lng }) {
   const { t } = await useTranslation(lng, "trainees");
 

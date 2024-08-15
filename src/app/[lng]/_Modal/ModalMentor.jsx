@@ -72,7 +72,6 @@ export default function ModalMentor({ formAction, item, lng, closeModal }) {
             const message = await formAction(values);
             setSubmitting(true);
             setMess(message);
-            // console.log(values);
             resetForm();
           }}
         >

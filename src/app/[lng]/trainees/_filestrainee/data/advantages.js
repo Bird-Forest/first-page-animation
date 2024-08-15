@@ -1,9 +1,9 @@
-import icon1 from "../../../../../../public/images/advant/icon1.svg";
-import icon2 from "../../../../../../public/images/advant/icon2.svg";
-import icon3 from "../../../../../../public/images/advant/icon3.svg";
-import icon4 from "../../../../../../public/images/advant/icon4.svg";
-import icon5 from "../../../../../../public/images/advant/icon5.svg";
-import icon6 from "../../../../../../public/images/advant/icon6.svg";
+import icon1 from "@/public/images/advant/icon1.svg";
+import icon2 from "@/public/images/advant/icon2.svg";
+import icon3 from "@/public/images/advant/icon3.svg";
+import icon4 from "@/public/images/advant/icon4.svg";
+import icon5 from "@/public/images/advant/icon5.svg";
+import icon6 from "@/public/images/advant/icon6.svg";
 
 export const advantages = [
   {
