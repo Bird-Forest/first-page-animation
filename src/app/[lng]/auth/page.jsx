@@ -4,10 +4,6 @@ import styles from "./_filesauth/Auth.module.css";
 import Loading from "../_Helper/Loading";
 import SignInForm from "./_filesauth/SignInForm";
 
-// export function generateStaticParams() {
-//   return languages.map((lng) => ({ lng }));
-// }
-
 export default async function AuthPage({ params: { lng } }) {
   return (
     <>

@@ -4,10 +4,6 @@ import styles from "../_filesabout/About.module.css";
 import DocumentPDF from "../_filesabout/DocumentPDF";
 import { documents } from "../_filesabout/data";
 
-// export function generateStaticParams() {
-//   return languages.map((lng) => ({ lng }));
-// }
-
 export default async function DocumentPage({ params: { slug, lng } }) {
   const docs = documents.filter((doc) => doc.slug === slug);
   const doc = docs[0];
