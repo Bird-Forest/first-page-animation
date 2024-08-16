@@ -20,7 +20,7 @@ const arry = [
   <FaRegCircle key={5} />,
 ];
 
-export default function ProjectCover({ item, showTeam }) {
+export default function ProjectCover({ item, showTeam, lng }) {
   const state = item.status;
   const dateNow = new Date();
   const date = !item ? dateNow.toISOString() : item.start.slice(0, 10);
@@ -105,7 +105,7 @@ export default function ProjectCover({ item, showTeam }) {
           </ul>
         </div>
         <div className={styles.wrapTeamBtn}>
-          <FaUsers className={styles.itemIcon} />
+          <FaUsers className={styles.iconTeam} />
           <button type="button" onClick={showTeam} className={styles.teamBtn}>
             Команда проєкту
           </button>

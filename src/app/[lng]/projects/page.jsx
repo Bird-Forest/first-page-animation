@@ -5,6 +5,7 @@ import { getProjects } from "../../services/projects";
 
 export default async function ProjectsPage({ params: { lng } }) {
   const data = await getProjects();
+
   return (
     <section className={styles.project}>
       <Projects items={data} lng={lng} />

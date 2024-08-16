@@ -5,9 +5,9 @@ import ProjectItem from "./ProjectItem";
 import { FaCircle, FaBullseye } from "react-icons/fa";
 import styles from "./Project.module.css";
 
-export default function Projects({ items }) {
+export default function Projects({ items, lng }) {
   const [projects, setProjects] = useState(items);
-
+  console.log(lng);
   const onСompleted = () => {
     const arr = items.reduce((acc, item) => {
       if (item.status.color === "#099e56") {
@@ -71,7 +71,7 @@ export default function Projects({ items }) {
       </div>
       <ul className={styles.wrapList}>
         {projects.map((item) => (
-          <ProjectItem key={item._id} item={item} />
+          <ProjectItem key={item._id} item={item} lng={lng} />
         ))}
       </ul>
     </div>

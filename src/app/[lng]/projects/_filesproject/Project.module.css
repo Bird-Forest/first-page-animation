@@ -237,10 +237,16 @@
 
 /* *** TEAM */
 .wrapTeamBtn {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  grid-template-rows: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
   border-bottom: 2px solid rgb(226, 49, 168);
+}
+.iconTeam {
+  fill: rgb(226, 49, 168);
+  width: 32px;
+  height: 28px;
 }
 .teamBtn {
   display: flex;

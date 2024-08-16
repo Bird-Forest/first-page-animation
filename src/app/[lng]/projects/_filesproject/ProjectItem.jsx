@@ -6,7 +6,7 @@ import { IoClose } from "react-icons/io5";
 import ProjectTeam from "./ProjectTeam";
 import ProjectCover from "./ProjectCover";
 
-export default function ProjectItem({ item }) {
+export default function ProjectItem({ item, lng }) {
   const [showTeam, setShowTeam] = useState(false);
 
   const openTeamList = () => {
@@ -18,7 +18,7 @@ export default function ProjectItem({ item }) {
 
   return (
     <li className={styles.wrapItem}>
-      <ProjectCover item={item} showTeam={openTeamList} />
+      <ProjectCover item={item} showTeam={openTeamList} lng={lng} />
       <div className={`${styles.wrapTeam} ${showTeam ? styles.show : ""}`}>
         <button
           type="button"
