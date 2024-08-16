@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import styles from "./Blog.module.css";
 import { FaLink } from "react-icons/fa";
 import NotifMess from "../../_Helper/NotifMess";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 export default function PostId({ post, lng }) {
   const [copied, setCopied] = useState(false);
@@ -21,7 +21,8 @@ export default function PostId({ post, lng }) {
     }
   };
 
-  const date = format(new Date(post.date), "yyyy-MM-dd");
+  const date = post.date.slice(0, 10);
+  // const date = format(new Date(post.date), "yyyy-MM-dd");
   return (
     <div className={styles.wrapPost}>
       <div className={styles.wrapSub}>

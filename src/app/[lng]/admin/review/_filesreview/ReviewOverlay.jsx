@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./Review.module.css";
 import Image from "next/image";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 export default function ReviewOverlay({ item }) {
-  const date = format(new Date(item.createdAt), "yyyy-MM-dd");
+  // const date = format(new Date(item.createdAt), "yyyy-MM-dd");
+  // const dateNow = new Date();
+  const date = item.createdAt.slice(0, 10);
+
   return (
     <div className={styles.wrapOverlay}>
       <div className={styles.wrapItem}>

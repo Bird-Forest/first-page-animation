@@ -46,12 +46,19 @@
   grid-template-columns: 1fr;
   grid-template-rows: 60px auto;
   gap: 10px;
+  padding: 20px 0;
+  border-bottom: 2px solid rgb(226, 49, 168);
+}
+@media screen and (min-width: 768px) {
+  .itemWrap {
+    padding: 40px 0;
+  }
 }
 .wrapTitle {
   display: grid;
   grid-template-columns: 60px 1fr;
   grid-template-rows: 60px;
-  align-items: start;
+  align-items: center;
   justify-items: start;
   gap: 20px;
 }
@@ -87,7 +94,6 @@
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
-  border-bottom: 2px solid rgb(226, 49, 168);
 }
 @media screen and (min-width: 768px) {
   .itemTitle {
@@ -97,16 +103,6 @@
     font-size: 20px;
   }
 }
-
-/* .link {
-  color: rgb(252, 252, 252);
-  text-decoration: none;
-}
-.active {
-  text-decoration: none;
-  color: rgb(226, 49, 168);
-} */
-
 /* *** DOCUMENT *** */
 .docsWrap {
   display: flex;
@@ -139,10 +135,6 @@
   text-decoration: none;
   padding: 0;
 }
-/* .active {
-  text-decoration: none;
-  color: rgb(226, 49, 168);
-} */
 /* *** FORM REWIEW *** */
 .wrapReview {
   display: grid;

@@ -11,7 +11,7 @@ import {
 } from "react-icons/bs";
 import { MdImportantDevices } from "react-icons/md";
 import { FaBroadcastTower, FaLinkedinIn } from "react-icons/fa";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import Image from "next/image";
 
 export default function DevelopItem({ item }) {
@@ -30,7 +30,8 @@ export default function DevelopItem({ item }) {
       </div>
       <div className={styles.wrapInfo}>
         <BsCalendar2Check className={styles.iconDev} />
-        <p className={styles.textDev}>{format(item.createdAt, "yyyy-MM-dd")}</p>
+        {/* <p className={styles.textDev}>{format(item.createdAt, "yyyy-MM-dd")}</p> */}
+        <p className={styles.textDev}>{item.createdAt.slice(0, 10)}</p>
       </div>
       <div className={styles.wrapInfo}>
         <MdImportantDevices className={styles.iconDev} />

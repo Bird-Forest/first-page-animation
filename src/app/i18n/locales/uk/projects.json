@@ -1,3 +1,7 @@
 {
-  "wellcome": "Вітаємо"
+  "FILTER": "",
+  "filter_green": "Завершено",
+  "filter_yellow": "В розробці",
+  "filter_red": "Формування команди",
+  "filter_all": "Всі наші проєкти"
 }

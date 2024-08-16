@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./Post.module.css";
-import { formatISO } from "date-fns";
+// import { formatISO } from "date-fns";
 import PostPreview from "./PostPreview";
 import BtnSave from "../../_filesadmin/BtnSave";
 import BtnAction from "../../_filesadmin/BtnAction";
@@ -11,13 +11,15 @@ export default function PostForm({ post, lng, formAction }) {
   const [item, setItem] = useState({});
 
   const id = !post ? null : post._id;
-  const date = !post ? formatISO(new Date()) : post.date;
+  // const date = !post ? formatISO(new Date()) : post.date;
+  const dateNow = new Date();
+  const datePost = !post ? dateNow.toISOString() : post.date.slice(0, 10);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const formData = new FormData(evt.currentTarget);
     const newItem = {
-      date: date,
+      date: datePost,
       title: formData.get("title"),
       text1: formData.get("text1"),
       text2: formData.get("text2"),

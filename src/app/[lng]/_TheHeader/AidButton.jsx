@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import OverlayModal from "../_Modal/OverlayModal";
 import ModalDonate from "../_Modal/ModalDonate";
 import { createPortal } from "react-dom";
+import { useTranslation } from "@/src/app/i18n/client";
 
-export default function AidButton() {
+export default function AidButton({ lng }) {
+  const { t } = useTranslation(lng, "header");
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
@@ -38,7 +40,7 @@ export default function AidButton() {
         variants={btnVariants}
         onClick={openModal}
       >
-        Підтримати проєкт
+        {t("support")}
       </motion.button>
       {showModal &&
         createPortal(

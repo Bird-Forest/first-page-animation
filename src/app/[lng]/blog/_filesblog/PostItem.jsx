@@ -3,10 +3,12 @@ import React from "react";
 import blog from "@/public/baza/blog.png";
 import styles from "./Blog.module.css";
 import Link from "next/link";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 export default function PostItem({ item, lng }) {
-  const date = format(new Date(item.date), "yyyy-MM-dd");
+  // const date = format(new Date(item.date), "yyyy-MM-dd");
+  // const dateNow = new Date();
+  const date = item.date.slice(0, 10);
 
   return (
     <li className={styles.wrapItem}>

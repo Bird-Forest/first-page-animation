@@ -3,10 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./Reviews.module.css";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 export default function ReviewItem({ item }) {
-  const date = format(new Date(item.createdAt), "yyyy-MM-dd");
+  // const date = format(new Date(item.createdAt), "yyyy-MM-dd");
+  const dateNow = new Date();
+  const date = dateNow.toISOString().slice(0, 10);
   return (
     <div className={styles.wrapItem}>
       <div className={styles.wrapProfile}>

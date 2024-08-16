@@ -1,3 +1,11 @@
 {
-  "wellcome": "Witamy"
+  "ABOUT": "",
+  "about_title1": "O nas",
+  "about_text1": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa powstaje w odpowiedzi na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022-2023 w zakresie zatrudnienia w branży technologii informatycznych i jest serwisem internetowym, który jednoczy, jako użytkowników, dwie grupy społeczne.",
+  "about_title2": "Nasza grupa docelowa",
+  "about_text2": "Ukraińcy, którzy niezależnie od wieku i doświadczenia specjalizują się w dziedzinie IT — z jednej strony stażyści, juniorzy, swetry, mentorzy, a z drugiej wspólnoty i wspólnoty Ukrainy w obszarze działalności charytatywnej, wolontariatu i inicjatyw publicznych.",
+  "about_title3": "Nasz cel",
+  "about_text3": "Połączyć te kategorie we wspólne działanie w taki sposób, aby obie strony na tym skorzystały. Dla pierwszej grupy jest to realne, praktyczne doświadczenie stworzenia projektu na żywo, dla drugiej to cyfrowy produkt, który działa i przyczynia się do rozwoju inicjatywy społecznej.",
+  "about_title4": "Zasada działania",
+  "about_text4": "Przeszkol uczestnika w oparciu o aktualnie posiadane technologie i ułatwij mu zatrudnienie. Tworząc projekt stosujemy technologie, które uczestnik chce rozwijać, nie ma mowy o przekwalifikowaniu. Aby zapewnić klientowi wysokiej jakości produkt cyfrowy."
 }

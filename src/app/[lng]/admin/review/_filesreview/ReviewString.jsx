@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./Review.module.css";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import { BsPerson, BsGear, BsCircleFill } from "react-icons/bs";
 import Link from "next/link";
 import Overlay from "../../../_Helper/Overlay";
@@ -11,7 +11,9 @@ import ReviewOverlay from "./ReviewOverlay";
 
 export default function ReviewString({ item, lng }) {
   const [showModal, setShowModal] = useState(false);
-  const date = format(new Date(item.createdAt), "yyyy-MM-dd");
+  // const date = format(new Date(item.createdAt), "yyyy-MM-dd");
+  // const dateNow = new Date();
+  const date = item.createdAt.slice(0, 10);
 
   const openModal = () => {
     setShowModal(true);

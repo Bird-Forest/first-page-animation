@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import ProjectItem from "./ProjectItem";
 import { FaCircle, FaBullseye } from "react-icons/fa";
 import styles from "./Project.module.css";
+import { useTranslation } from "@/src/app/i18n/client";
 
 export default function Projects({ items, lng }) {
   const [projects, setProjects] = useState(items);
+  const { t } = useTranslation(lng, "projects");
   // console.log(lng);
   const onСompleted = () => {
     const arr = items.reduce((acc, item) => {
@@ -48,25 +50,25 @@ export default function Projects({ items, lng }) {
           <button onClick={onСompleted} className={styles.btnFilter}>
             <FaCircle className={styles.iconGreen} />
           </button>
-          <h4 className={styles.textFilter}>Завершено</h4>
+          <h4 className={styles.textFilter}>{t("filter_green")}</h4>
         </div>
         <div className={styles.wrapFilter}>
           <button onClick={inDeveloping} className={styles.btnFilter}>
             <FaCircle className={styles.iconYellow} />
           </button>
-          <h4 className={styles.textFilter}>В розробці</h4>
+          <h4 className={styles.textFilter}>{t("filter_yellow")}</h4>
         </div>
         <div className={styles.wrapFilter}>
           <button onClick={onStart} className={styles.btnFilter}>
             <FaCircle className={styles.iconRed} />
           </button>
-          <h4 className={styles.textFilter}>Формування команди</h4>
+          <h4 className={styles.textFilter}>{t("filter_red")}</h4>
         </div>
         <div className={styles.wrapFilter}>
           <button onClick={getAll} className={styles.btnFilter}>
             <FaBullseye className={styles.iconWhite} />
           </button>
-          <h4 className={styles.textFilter}>Всі наші проєкти</h4>
+          <h4 className={styles.textFilter}>{t("filter_all")}</h4>
         </div>
       </div>
       <ul className={styles.wrapList}>

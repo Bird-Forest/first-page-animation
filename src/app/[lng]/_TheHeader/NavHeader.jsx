@@ -5,8 +5,10 @@ import styles from "./Header.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { delay, motion } from "framer-motion";
+import { useTranslation } from "@/src/app/i18n/client";
 
 export default function NavHeader({ lng }) {
+  const { t } = useTranslation(lng, "header");
   const pathname = usePathname();
   const segments = pathname.split("/");
   const page = segments[2];
@@ -33,7 +35,7 @@ export default function NavHeader({ lng }) {
           href={`/${lng}/home`}
           className={page === "home" ? styles.active : styles.link}
         >
-          Головна
+          {t("home")}
         </Link>
       </motion.li>
       <motion.li variants={item} transition={{ delay: 5, duration: 1 }}>
@@ -41,7 +43,7 @@ export default function NavHeader({ lng }) {
           href={`/${lng}/trainees`}
           className={page === "trainees" ? styles.active : styles.link}
         >
-          Стажування
+          {t("trainees")}
         </Link>
       </motion.li>
       <motion.li variants={item} transition={{ delay: 4, duration: 1 }}>
@@ -49,7 +51,7 @@ export default function NavHeader({ lng }) {
           href={`/${lng}/projects`}
           className={page === "projects" ? styles.active : styles.link}
         >
-          Проєкти
+          {t("projects")}
         </Link>
       </motion.li>
       <motion.li variants={item} transition={{ delay: 3, duration: 1 }}>
@@ -57,7 +59,7 @@ export default function NavHeader({ lng }) {
           href={`/${lng}/blog`}
           className={page === "blog" ? styles.active : styles.link}
         >
-          Блог
+          {t("blog")}
         </Link>
       </motion.li>
       <motion.li variants={item} transition={{ delay: 2, duration: 1 }}>
@@ -65,7 +67,7 @@ export default function NavHeader({ lng }) {
           href={`/${lng}/about`}
           className={page === "about" ? styles.active : styles.link}
         >
-          Про нас
+          {t("about")}
         </Link>
       </motion.li>
     </motion.ul>

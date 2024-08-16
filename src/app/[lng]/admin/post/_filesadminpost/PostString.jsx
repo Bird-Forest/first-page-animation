@@ -2,12 +2,14 @@
 
 import React from "react";
 import styles from "./Post.module.css";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import { BsGear } from "react-icons/bs";
 import Link from "next/link";
 
 export default function PostString({ item, lng }) {
-  const date = format(new Date(item.date), "yyyy-MM-dd");
+  // const date = format(new Date(item.date), "yyyy-MM-dd");
+  // const dateNow = new Date();
+  const date = item.date.slice(0, 10);
 
   return (
     <li className={styles.wrapStrPost}>

@@ -1,3 +1,7 @@
 {
-  "wellcome": "Welcome"
+  "FILTER": "",
+  "filter_green": "Completed",
+  "filter_yellow": "In development",
+  "filter_red": "Formation of the team",
+  "filter_all": "All our projects"
 }
