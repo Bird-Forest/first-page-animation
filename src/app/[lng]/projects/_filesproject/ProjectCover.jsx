@@ -23,6 +23,11 @@ const arry = [
 export default function ProjectCover({ item, showTeam }) {
   const state = item.status;
 
+  // const imageLoader = ({ src, width, quality }) => {
+  //   return `http://localhost:3000/public/images/projects/${src}?w=${width}&q=${
+  //     quality || 75
+  //   }`;
+  // };
   const imageLoader = ({ src, width, quality }) => {
     return `http://localhost:3000/public/images/projects/${src}?w=${width}&q=${
       quality || 75
