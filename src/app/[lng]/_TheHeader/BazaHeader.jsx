@@ -6,16 +6,10 @@ import LanguageBtn from "./LanguageBtn";
 import Menu from "./Menu";
 import { auth } from "@/src/config/auth";
 import NavAdmin from "./NavAdmin";
-import { getTime } from "date-fns";
 
 export default async function BazaHeader({ lng }) {
   const session = await auth();
-  // console.log(session);
-
-  // const date = getTime(new Date());
-  // const expires = session.expires;
-  // const dateEnd = getTime(new Date(expires));
-  // console.log(dateEnd);
+  console.log("SESSION", session);
 
   return (
     <header id="top" className={styles.topbg}>
@@ -23,8 +17,7 @@ export default async function BazaHeader({ lng }) {
         <div className={styles.wrap}>
           <HeaderLogo />
           <Menu lng={lng} />
-          {session ? <NavAdmin lng={lng} /> : <AidButton lng={lng} />}
-          {/* <AidButton lng={lng} /> */}
+          {session === null ? <AidButton lng={lng} /> : <NavAdmin lng={lng} />}
           <LanguageBtn lng={lng} />
         </div>
       </div>

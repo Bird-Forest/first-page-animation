@@ -38,7 +38,7 @@ export default function ProjectCover({ item, showTeam, lng }) {
         src={item.imageUrl}
         quality={80}
         width={388}
-        height={456}
+        height={464}
         style={{
           borderRadius: "12px",
         }}
