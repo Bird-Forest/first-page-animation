@@ -24,7 +24,7 @@ export default function ProjectCover({ item, showTeam, lng }) {
   const state = item.status;
   const dateNow = new Date();
   const date = !item ? dateNow.toISOString() : item.start.slice(0, 10);
-
+  console.log(ing);
   const imageLoader = ({ src, width, quality }) => {
     return `http://localhost:3000/public/images/projects/${src}?w=${width}&q=${
       quality || 75

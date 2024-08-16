@@ -4,7 +4,6 @@ import {
   FaChalkboardTeacher,
   FaLaptopCode,
   FaRegAddressCard,
-  FaShareAltSquare,
 } from "react-icons/fa";
 import { IoDocumentAttach } from "react-icons/io5";
 import { TbMessageHeart } from "react-icons/tb";
@@ -71,7 +70,7 @@ export default function SectionNavigation({ lng }) {
           Документи
         </Link>
       </li>
-      <li className={styles.wrapLink}>
+      {/* <li className={styles.wrapLink}>
         <FaShareAltSquare
           className={styles.iconLink}
           style={{ fill: " rgb(226, 49, 168)" }}
@@ -79,7 +78,7 @@ export default function SectionNavigation({ lng }) {
         <Link href={`/${lng}/admin/press`} className={styles.textLink}>
           Преса
         </Link>
-      </li>
+      </li> */}
     </ul>
   );
 }
