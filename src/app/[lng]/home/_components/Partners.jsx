@@ -28,7 +28,7 @@ const cardlAnimation = {
   visible: (custom) => ({
     y: 0,
     opacity: 1,
-    transition: { delay: custom * 1 },
+    transition: { delay: custom * 0.5 },
   }),
 };
 

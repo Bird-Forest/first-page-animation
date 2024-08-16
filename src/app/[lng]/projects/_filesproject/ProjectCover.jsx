@@ -8,9 +8,9 @@ import {
   FaRegClock,
   FaRegChartBar,
   FaRegCircle,
+  FaUsers,
 } from "react-icons/fa";
 import Image from "next/image";
-import { format, formatISO } from "date-fns";
 
 const arry = [
   <FaRegCircle key={1} />,
@@ -22,12 +22,9 @@ const arry = [
 
 export default function ProjectCover({ item, showTeam }) {
   const state = item.status;
+  const dateNow = new Date();
+  const date = !item ? dateNow.toISOString() : item.start.slice(0, 10);
 
-  // const imageLoader = ({ src, width, quality }) => {
-  //   return `http://localhost:3000/public/images/projects/${src}?w=${width}&q=${
-  //     quality || 75
-  //   }`;
-  // };
   const imageLoader = ({ src, width, quality }) => {
     return `http://localhost:3000/public/images/projects/${src}?w=${width}&q=${
       quality || 75
@@ -75,9 +72,10 @@ export default function ProjectCover({ item, showTeam }) {
             <p className={styles.itemText}>Старт проєкту</p>
           </div>
           <p className={styles.textBold}>
-            {!item.start
+            {date}
+            {/* {!item.start
               ? formatISO(new Date())
-              : format(item.start, "yyyy-MM-dd")}
+              : format(item.start, "yyyy-MM-dd")} */}
           </p>
         </div>
         <div className={styles.wrapElem}>
@@ -107,6 +105,7 @@ export default function ProjectCover({ item, showTeam }) {
           </ul>
         </div>
         <div className={styles.wrapTeamBtn}>
+          <FaUsers className={styles.itemIcon} />
           <button type="button" onClick={showTeam} className={styles.teamBtn}>
             Команда проєкту
           </button>

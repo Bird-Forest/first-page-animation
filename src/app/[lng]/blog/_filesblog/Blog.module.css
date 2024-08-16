@@ -1,7 +1,9 @@
 .blog {
-  display: grid;
-  grid-template-columns: minmax(380px, 1280px);
-  grid-template-rows: 1fr;
+  /* display: grid;
+  grid-template-columns: minmax(380px, 1fr);
+  grid-template-rows: 1fr; */
+  display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   gap: 20px;

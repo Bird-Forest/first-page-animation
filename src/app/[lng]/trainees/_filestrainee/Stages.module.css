@@ -1,9 +1,12 @@
 .stages {
-  display: grid;
-  grid-template-columns: minmax(380px, 1280px);
-  grid-template-rows: auto auto;
-  justify-content: center;
-  align-items: start;
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
   gap: 20px;
   padding: 32px 16px;
   margin: 0 auto;

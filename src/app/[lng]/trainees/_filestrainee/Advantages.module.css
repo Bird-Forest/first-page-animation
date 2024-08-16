@@ -1,6 +1,7 @@
 .advant {
   display: grid;
-  grid-template-columns: minmax(380px, 1280px);
+  /* grid-template-columns: minmax(380px, 1280px); */
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   justify-content: center;
   align-items: start;

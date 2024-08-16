@@ -1,13 +1,12 @@
 .about {
   display: grid;
-  grid-template-columns: minmax(380px, 1280px);
+  grid-template-columns: minmax(380px, 1fr);
   grid-template-rows: auto auto auto;
   justify-content: center;
   align-items: start;
   gap: 20px;
   padding: 32px 16px;
   margin: 0 auto;
-  /* background-color: #43044e; */
   background-color: rgb(46, 5, 53);
   border-top: 2px solid rgb(226, 49, 168);
   border-bottom: 2px solid rgb(226, 49, 168);

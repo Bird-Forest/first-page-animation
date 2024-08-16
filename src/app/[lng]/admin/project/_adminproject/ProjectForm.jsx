@@ -23,12 +23,9 @@ export default function ProjectForm({ project, lng, formAction }) {
   const dateNow = new Date();
   const date = !project ? dateNow.toISOString() : project.start.slice(0, 10);
 
-  // console.log(project);
-
   const getFileName = (value) => {
     setFileName(value);
   };
-  // console.log(fileName);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -44,8 +41,6 @@ export default function ProjectForm({ project, lng, formAction }) {
     };
     setItem(newItem);
   };
-
-  // console.log(item);
 
   return (
     <div className={styles.wrapAdmProject}>
