@@ -7,7 +7,7 @@ import styles from "./Project.module.css";
 
 export default function Projects({ items, lng }) {
   const [projects, setProjects] = useState(items);
-  console.log(lng);
+  // console.log(lng);
   const onСompleted = () => {
     const arr = items.reduce((acc, item) => {
       if (item.status.color === "#099e56") {
