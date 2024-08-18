@@ -114,10 +114,11 @@
   /* height: 456px; */
   padding: 0;
   border-radius: 12px;
-  background-image: url("../../../../../public/images/projects/sky.webp");
+  background-image: url("../assets/sky.webp");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  /* background-size: contain; */
+  object-fit: cover;
 }
 .wrapCover {
   position: relative;

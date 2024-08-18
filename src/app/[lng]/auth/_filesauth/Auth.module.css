@@ -1,7 +1,9 @@
 .auth {
-  display: grid;
-  grid-template-columns: minmax(380px, 1280px);
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto; */
   justify-items: center;
   align-items: center;
   gap: 20px;

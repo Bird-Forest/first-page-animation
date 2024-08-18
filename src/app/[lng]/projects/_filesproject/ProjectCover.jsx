@@ -11,6 +11,7 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import Image from "next/image";
+import { imgProjects } from "./data/projects";
 
 const arry = [
   <FaRegCircle key={1} />,
@@ -24,18 +25,34 @@ export default function ProjectCover({ item, showTeam, lng }) {
   const state = item.status;
   const dateNow = new Date();
   const date = !item ? dateNow.toISOString() : item.start.slice(0, 10);
-  const imageLoader = ({ src, width, quality }) => {
-    return `http://localhost:3000/public/images/projects/${src}?w=${width}&q=${
-      quality || 75
-    }`;
+
+  const myImg = item.imageUrl;
+  let img;
+
+  const getImg = () => {
+    for (let i = 0; i < imgProjects.length; i++) {
+      img = imgProjects[i];
+      const imgSrc = img.src.slice(20, 23);
+
+      const isImg = myImg.includes(imgSrc);
+
+      if (isImg === true) return img;
+    }
   };
+  const path = getImg();
+
+  // const imageLoader = ({ src, width, quality }) => {
+  //   return `localhost:3000/${lng}/public/imajes/projects/${src}?w=${width}&q=${
+  //     quality || 75
+  //   }`;
+  // };
 
   return (
     <div className={styles.wrapCover}>
       <Image
-        loader={imageLoader}
+        // loader={imageLoader}
         alt="Picture of project"
-        src={item.imageUrl}
+        src={path}
         quality={80}
         width={388}
         height={464}
