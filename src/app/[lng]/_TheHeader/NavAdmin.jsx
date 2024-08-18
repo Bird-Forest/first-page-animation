@@ -3,22 +3,23 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./Header.module.css";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import { ExitAdmin } from "./ExitAdmin";
 
 export default function NavAdmin({ lng }) {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   // console.log(pathname);
-  const segments = pathname.split("/");
+  // const segments = pathname.split("/");
   // console.log(segments);
-  const page = segments[2];
+  // const page = segments[2];
   // console.log(page);
 
   return (
     <div className={styles.wrapAdmin}>
       <Link
         href={`/${lng}/admin`}
-        className={page === "admin" ? styles.active : styles.link}
+        // className={page === "admin" ? styles.active : styles.link}
+        className={styles.link}
       >
         Admin
       </Link>
