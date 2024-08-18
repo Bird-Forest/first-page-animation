@@ -258,35 +258,3 @@
   height: 20px;
   fill: rgb(252, 252, 252);
 }
-/* *** MENU ADMIN */
-.wrapAdmin {
-  display: grid;
-  grid-template-columns: auto 40px;
-  grid-template-rows: 54px;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  font-size: clamp(16px, 0.839rem + 0.33vw, 18px);
-  font-weight: 600;
-  line-height: 1.5;
-  padding: 0;
-  margin: 0 auto;
-}
-.btnExit {
-  display: grid;
-  grid-template-columns: 40px;
-  grid-template-rows: 40px;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  outline: transparent;
-  background-color: transparent;
-  color: rgb(252, 252, 252);
-  cursor: pointer;
-  padding: 0;
-}
-.iconExit {
-  stroke: currentColor;
-  width: 32px;
-  height: 32px;
-}

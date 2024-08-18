@@ -29,32 +29,13 @@ export async function loginAdmin(prevState, formData) {
   }
 }
 
-// import { signIn } from "@/src/config/auth";
-
-// export async function loginAdmin(prevState, formData) {
-//   try {
-//     await signIn("credentials", formData);
-//   } catch (error) {
-//     if (error) {
-//       switch (error.type) {
-//         case "CredentialsSignin":
-//           return "Invalid credentials.";
-//         default:
-//           return "Something went wrong.";
-//       }
-//     }
-//     throw error;
-//   }
-//   redirect(`/${lng}/admin`);
-// }
-
 // export const createAdmin = async () => {
 //   try {
 //     await connectDB();
 //     const admin = await User.create([
 //       {
-//         name: "sara",
-//         email: "sara@gmail.com",
+//         name: "",
+//         email: "",
 //         pwd: hash,
 //         role: "admin",
 //       },

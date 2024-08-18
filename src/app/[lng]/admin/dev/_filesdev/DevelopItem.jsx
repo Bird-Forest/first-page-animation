@@ -62,7 +62,7 @@ export default function DevelopItem({ item }) {
       </div>
       <div className={styles.wrapInfo}>
         <FaBroadcastTower className={styles.iconDev} />
-        <p className={styles.textDev}>{item.resource}</p>
+        <p className={styles.linkDev}>{item.resource}</p>
       </div>
       <div className={styles.wrapProjects}>
         <BsPersonRolodex className={styles.iconDev} />

@@ -3,7 +3,6 @@
 import React from "react";
 import styles from "./Auth.module.css";
 import AuthBtn from "./AuthBtn";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
