@@ -6,15 +6,15 @@ import { redirect } from "next/navigation";
 import BtnOut from "./_filesadmin/BtnOut";
 
 export default async function AdminPage({ params: { lng } }) {
-  const session = await auth();
+  // const session = await auth();
 
-  console.log("SESSION", session);
+  // console.log("SESSION", session);
 
-  if (session === null) redirect(`/${lng}/auth`);
+  // if (session === null) redirect(`/${lng}/auth`);
   return (
     <section className={styles.admin}>
       <SectionNavigation lng={lng} />
-      <BtnOut />
+      <BtnOut lng={lng} />
     </section>
   );
 }

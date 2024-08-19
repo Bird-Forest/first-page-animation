@@ -2,10 +2,10 @@ import { Open_Sans, Montserrat } from "next/font/google";
 import BazaHeader from "./_TheHeader/BazaHeader";
 import styles from "./page.module.css";
 import { languages } from "../i18n/settings";
-// import { dir } from "i18next";
 import "../globals.css";
 import BazaFooter from "./_TheFooter/BazaFooter";
 import { IoMdRocket } from "react-icons/io";
+import { Providers } from "./_Helper/Providers";
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
@@ -34,6 +34,7 @@ export default function RootLayout({ children, params: { lng } }) {
       className={` ${open_sans.variable} ${montserrat.variable}`}
     >
       <body className={styles.container}>
+        {/* <Providers> */}
         <div className={styles.top}>
           <BazaHeader lng={lng} id="search-form" />
         </div>
@@ -44,6 +45,7 @@ export default function RootLayout({ children, params: { lng } }) {
         <div className={styles.bottom}>
           <BazaFooter />
         </div>
+        {/* </Providers> */}
       </body>
     </html>
   );

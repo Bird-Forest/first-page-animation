@@ -7,6 +7,7 @@ import { User } from "../app/models/user";
 // import { getUser } from "../app/services/users";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  secret: process.env.AUTH_SECRET,
   providers: [
     // Google({
     //   clientId: process.env.AUTH_GOOGLE_CLIENT_ID,
@@ -21,7 +22,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         // console.log("Credentials", credentials);
         if (!credentials.name || !credentials.password) return null;
 
-        const userName = credentials.name;
+        // const userName = credentials.name;
         // console.log("Username", userName);
 
         let user = null;
