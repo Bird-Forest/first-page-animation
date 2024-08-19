@@ -5,7 +5,6 @@ import { redirect } from "next/navigation";
 
 export default async function AdminLayout({ children, params: { lng } }) {
   const session = await auth();
-
   console.log("SESSION", session);
 
   if (session === null) redirect(`/${lng}/auth`);

@@ -87,12 +87,7 @@ export default function ProjectCover({ item, showTeam, lng }) {
             <FaRegCalendarAlt className={styles.itemIcon} />
             <p className={styles.itemText}>Старт проєкту</p>
           </div>
-          <p className={styles.textBold}>
-            {date}
-            {/* {!item.start
-              ? formatISO(new Date())
-              : format(item.start, "yyyy-MM-dd")} */}
-          </p>
+          <p className={styles.textBold}>{date}</p>
         </div>
         <div className={styles.wrapElem}>
           <div className={styles.elem}>

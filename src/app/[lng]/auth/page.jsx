@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import styles from "./_filesauth/Auth.module.css";
 import SignInForm from "./_filesauth/SignInForm";
 import Loading from "../_Helper/Loading";
@@ -12,9 +12,9 @@ export default async function AuthPage({ params: { lng } }) {
         <div className={styles.wrapRegister}>
           <SignInForm lng={lng} />
         </div>
-        <Link href={`/${lng}/about`} className={styles.authLink}>
+        {/* <Link href={`/${lng}/about`} className={styles.authLink}>
           Повернутись
-        </Link>
+        </Link> */}
       </section>
     </Suspense>
   );
