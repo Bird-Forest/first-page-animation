@@ -31,10 +31,7 @@ export default function NavHeader({ lng }) {
       viewport={{ once: true }}
     >
       <motion.li variants={item} transition={{ delay: 6, duration: 1 }}>
-        <Link
-          href={`/${lng}/home`}
-          className={page === "home" ? styles.active : styles.link}
-        >
+        <Link href={`/${lng}`} className={!page ? styles.active : styles.link}>
           {t("home")}
         </Link>
       </motion.li>

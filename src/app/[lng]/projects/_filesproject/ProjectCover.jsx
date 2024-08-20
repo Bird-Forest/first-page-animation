@@ -42,9 +42,7 @@ export default function ProjectCover({ item, showTeam, lng }) {
   const path = getImg();
 
   // const imageLoader = ({ src, width, quality }) => {
-  //   return `localhost:3000/${lng}/public/imajes/projects/${src}?w=${width}&q=${
-  //     quality || 75
-  //   }`;
+  //   return `${src}?w=${width}&q=${quality || 75}`;
   // };
 
   return (
@@ -53,6 +51,7 @@ export default function ProjectCover({ item, showTeam, lng }) {
         // loader={imageLoader}
         alt="Picture of project"
         src={path}
+        // src={item.imageUrl}
         quality={80}
         width={388}
         height={464}

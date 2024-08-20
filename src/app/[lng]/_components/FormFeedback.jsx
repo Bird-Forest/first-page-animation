@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import styles from "./Form.module.css";
 import FormInputInfo from "./FormInputInfo";
 import FormInputMess from "./FormInputMess";
-import Spinner from "../../_Helper/Spinner";
+import Spinner from "../_Helper/Spinner";
 import { useTranslation } from "@/src/app/i18n/client";
 import { createReview } from "@/src/app/services/reviews";
 

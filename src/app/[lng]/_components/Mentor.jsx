@@ -3,15 +3,14 @@
 import React, { useState } from "react";
 import styles from "./Mentor.module.css";
 import Image from "next/image";
-import ellipse from "../../../../../public/images/mentor/ellipse-svg.svg";
-import mentorMob from "../../../../../public/images/mentor/female-1w.webp";
-import mentorDeck from "../../../../../public/images/mentor/female-2w.webp";
-import OverlayModal from "../../_Modal/OverlayModal";
+import ellipse from "../../../../public/images/mentor/ellipse-svg.svg";
+import mentorMob from "../../../../public/images/mentor/female-1w.webp";
+import mentorDeck from "../../../../public/images/mentor/female-2w.webp";
+import OverlayModal from "../_Modal/OverlayModal";
 import { createPortal } from "react-dom";
-import ModalMentor from "../../_Modal/ModalMentor";
+import ModalMentor from "../_Modal/ModalMentor";
 import { motion } from "framer-motion";
-
-import MainButton from "../../_Helper/MainButton";
+import MainButton from "../_Helper/MainButton";
 import { useTranslation } from "@/src/app/i18n/client";
 import { createMentor } from "@/src/app/services/mentors";
 

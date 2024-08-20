@@ -5,7 +5,6 @@ import { languages } from "../i18n/settings";
 import "../globals.css";
 import BazaFooter from "./_TheFooter/BazaFooter";
 import { IoMdRocket } from "react-icons/io";
-import { Providers } from "./_Helper/Providers";
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
@@ -35,16 +34,20 @@ export default function RootLayout({ children, params: { lng } }) {
     >
       <body className={styles.container}>
         {/* <Providers> */}
+        {/* <Suspense fallback={<Loading />}> */}
         <div className={styles.top}>
           <BazaHeader lng={lng} id="search-form" />
         </div>
+
         <main className={styles.page}>{children}</main>
+
         <a href="#top" className={styles.anchor}>
           <IoMdRocket className={styles.iconTop} />
         </a>
         <div className={styles.bottom}>
           <BazaFooter />
         </div>
+        {/* </Suspense> */}
         {/* </Providers> */}
       </body>
     </html>

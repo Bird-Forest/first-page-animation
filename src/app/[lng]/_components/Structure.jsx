@@ -3,8 +3,8 @@
 import React from "react";
 import styles from "./Structure.module.css";
 import Image from "next/image";
-import logo from "../../../../../public/baza/logo.svg";
-import skill from "../../../../../public/baza/skill.svg";
+import logo from "../../../../public/baza/logo.svg";
+import skill from "../../../../public/baza/skill.svg";
 import educate from "@/public/baza/educate.svg";
 import { delay, motion } from "framer-motion";
 import { useTranslation } from "@/src/app/i18n/client";

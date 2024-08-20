@@ -6,11 +6,11 @@ import { v4 as uuidv4 } from "uuid";
 // import questions from "./data/questions";
 import QuestionItem from "./QuestionItem";
 import { createPortal } from "react-dom";
-import OverlayModal from "../../_Modal/OverlayModal";
-import ModalDonate from "../../_Modal/ModalDonate";
+import OverlayModal from "../_Modal/OverlayModal";
+import ModalDonate from "../_Modal/ModalDonate";
 
 import { questions } from "./data/questions";
-import MainButton from "../../_Helper/MainButton";
+import MainButton from "../_Helper/MainButton";
 import { useTranslation } from "@/src/app/i18n/client";
 
 export default function Questions({ lng }) {

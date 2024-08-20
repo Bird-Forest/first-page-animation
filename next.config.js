@@ -22,45 +22,10 @@ module.exports = {
         protocol: "http",
         hostname: "localhost",
         port: "3000",
-        pathname: "/**",
+        pathname: "public",
       },
     ],
   },
-
-  // {
-  //   protocol: "http",
-  //   hostname: "localhost:3000",
-  //   port: "",
-  //   // pathname: "public/**",
-  // },
-  // {
-  //   protocol: "http",
-  //   hostname: "**",
-  //   port: "",
-  //   pathname: "**",
-  // },
-  // {
-  //   protocol: "http",
-  //   hostname: "**",
-  //   port: "",
-  //   pathname: "public/**",
-  // },
-
-  // webpack: (config) => {
-  //   config.resolve.alias.canvas = false;
-
-  //   return config;
-  // },
-  // webpack: (config) => {
-  //   config.module.rules.push({
-  //     test: /\.node/,
-  //     use: "raw-loader",
-  //   });
-  //   return config;
-  // },
-  // experimental: {
-  //   serverComponentsExternalPackages: ["@react-pdf/renderer"],
-  // },
 };
 
 // // @ts-check
