@@ -2,11 +2,11 @@ import { getProjectById, updateProject } from "@/src/app/services/projects";
 import React from "react";
 import ProjectForm from "../_adminproject/ProjectForm";
 import styles from "../../_filesadmin/Admin.module.css";
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 
 export default async function ProjectDyIdPage({ params: { lng, id } }) {
   const date = await getProjectById({ id });
-  revalidatePath(`/${lng}/admin/project/${id}`, "page");
+  // revalidatePath(`/${lng}/admin/project/${id}`, "page");
   return (
     <div className={styles.wrapContent}>
       <ProjectForm project={date} lng={lng} formAction={updateProject} />

@@ -4,30 +4,30 @@ import { Project } from "../models/project";
 import { writeFile } from "fs/promises";
 import path from "path";
 
-// export const uploadImage = async (formData) => {
-//   console.log("PROJECT NEW", formData);
-//   try {
-//     const imgFile = await formData.get("image");
+export const uploadImage = async (formData) => {
+  // console.log("PROJECT NEW", formData);
+  try {
+    const imgFile = await formData.get("image");
 
-//     const buffer = imgFile.arrayBuffer();
-//     const imgBuffer = Buffer.from(buffer);
+    const buffer = imgFile.arrayBuffer();
+    const imgBuffer = Buffer.from(buffer);
 
-//     const imagePath = path.join(
-//       process.cwd(),
-//       `http://localhost:3000/public/images/projects`,
-//       imgFile.name
-//     );
-//     await writeFile(imagePath, imgBuffer);
-//     return {
-//       message: "Успішно додано",
-//     };
-//   } catch (e) {
-//     console.log(e);
-//     return {
-//       message: "Відбулася помилка",
-//     };
-//   }
-// };
+    const imagePath = path.join(
+      process.cwd(),
+      `http://localhost:3000/public/images/projects`,
+      imgFile.name
+    );
+    await writeFile(imagePath, imgBuffer);
+    return {
+      message: "Успішно додано",
+    };
+  } catch (e) {
+    console.log(e);
+    return {
+      message: "Відбулася помилка",
+    };
+  }
+};
 
 export const getProjects = async (req, res) => {
   try {
@@ -58,7 +58,6 @@ export const getProjectById = async (req, res) => {
 };
 
 export const createNewProject = async (item) => {
-  console.log("PROJECT NEW", item);
   try {
     const newProject = await Project.create(item);
     const data = JSON.parse(JSON.stringify(newProject));
@@ -92,7 +91,6 @@ export const updateProject = async (item, id) => {
 };
 
 export const deleteProject = async (id) => {
-  console.log("DELETE", id);
   try {
     const project = await Project.findOneAndDelete({ _id: id }).lean();
     // const data = JSON.parse(JSON.stringify(project));
@@ -108,7 +106,6 @@ export const deleteProject = async (id) => {
 };
 
 export const getProjectsByTitle = async (word) => {
-  console.log("WORD PROJ", word);
   const regex = new RegExp(word, "i");
   try {
     const projects = await Project.find({
@@ -131,14 +128,6 @@ export const getProjectsByStatus = async (obj) => {
     console.log(e);
   }
 };
-
-// MyModel.find({ name: regex }, (err, results) => {
-//   if (err) {
-//     console.error("Ошибка при поиске:", err);
-//   } else {
-//     console.log("Найденные объекты:", results);
-//   }
-// });
 
 // *** Функція, яка відправляє масив обєктів в базу даних, створює коллекцію
 // export const createProjects = async () => {

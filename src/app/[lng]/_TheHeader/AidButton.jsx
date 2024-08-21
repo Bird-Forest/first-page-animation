@@ -38,6 +38,7 @@ export default function AidButton({ lng }) {
         animate={"visible"}
         transition={{ delay: 1, duration: 1 }}
         variants={btnVariants}
+        viewport={{ once: true }}
         onClick={openModal}
       >
         {t("support")}

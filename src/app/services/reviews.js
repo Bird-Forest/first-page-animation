@@ -6,7 +6,7 @@ export const createReview = async (item) => {
   try {
     const newReview = await Review.create(item);
     const data = JSON.parse(JSON.stringify(newReview));
-    console.log(data);
+
     return {
       message: "Ваш відгук отриманий",
     };

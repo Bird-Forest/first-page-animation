@@ -27,9 +27,9 @@ export default function ProjectForm({ project, lng, formAction }) {
     setFileName(value);
   };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    const formData = new FormData(evt.currentTarget);
+  const handleSubmit = (formData) => {
+    // evt.preventDefault();
+    // const formData = new FormData(evt.currentTarget);
     const newItem = {
       status: status,
       start: date,
@@ -45,7 +45,7 @@ export default function ProjectForm({ project, lng, formAction }) {
   return (
     <div className={styles.wrapAdmProject}>
       <ProjectImg getFileName={getFileName} lng={lng} />
-      <form onSubmit={handleSubmit} className={styles.wrapForm}>
+      <form action={handleSubmit} className={styles.wrapForm}>
         <label htmlFor="name" className={styles.wrapInput}>
           Додати заголовок
           <input

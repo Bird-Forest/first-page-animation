@@ -11,7 +11,6 @@ import FormFeedback from "./_components/FormFeedback";
 import { languages, fallbackLng } from "../i18n/settings";
 import { useTranslation } from "../i18n/server";
 import { getReviewsRender } from "../services/reviews";
-import { revalidatePath } from "next/cache";
 import styles from "./page.module.css";
 
 export default async function Home({ params: { lng } }) {
@@ -19,7 +18,7 @@ export default async function Home({ params: { lng } }) {
   const { t } = await useTranslation(lng, "home");
   const reviews = await getReviewsRender();
 
-  revalidatePath(`/${lng}`, "page");
+  // revalidatePath(`/${lng}`, "page");
 
   return (
     <div className={styles.wrapHomePage}>

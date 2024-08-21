@@ -42,24 +42,3 @@ export const Developer = connection.model("Developer", developerSchema);
 //   {
 //     toJSON: { virtuals: true }, // <-- include virtuals in `JSON.stringify()`
 //   }
-
-// const developerSchema = new mongoose.Schema(
-//   {
-//     first: String,
-//     last: String,
-//     email: String,
-//     city: String,
-//     country: String,
-//     nick: String,
-//     link: String,
-//     course: String,
-//     experience: String,
-//     motivation: String,
-//     resource: String,
-//     rule: Boolean,
-//     agree: Boolean,
-//     speciality: { type: String, enum: specList },
-//     projects: [{ type: Schema.Types.ObjectId, ref: "Project" }],
-//   },
-//   { versionKey: false, timestamps: true }
-// );

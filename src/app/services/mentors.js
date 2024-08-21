@@ -3,10 +3,9 @@
 import { Mentor } from "../models/mentor";
 
 export const createMentor = async (values) => {
-  console.log("ACT VALUES", values);
   try {
-    const ment = await Mentor.create(values);
-    // console.log("Action", ment);
+    const mentor = await Mentor.create(values);
+
     return {
       message: "Успішно оновлено",
     };
@@ -20,9 +19,9 @@ export const createMentor = async (values) => {
 
 export const getMentors = async (req, res) => {
   try {
-    const devs = await Mentor.find().lean();
+    const mentor = await Mentor.find().lean();
 
-    const data = JSON.parse(JSON.stringify(devs));
+    const data = JSON.parse(JSON.stringify(mentor));
     return data;
   } catch (e) {
     console.log(e);
@@ -32,9 +31,9 @@ export const getMentors = async (req, res) => {
 export const getMentorById = async (req, res) => {
   const { id } = req;
   try {
-    const dev = await Mentor.findById(id).lean();
+    const mentor = await Mentor.findById(id).lean();
 
-    const data = JSON.parse(JSON.stringify(dev));
+    const data = JSON.parse(JSON.stringify(mentor));
     return data;
   } catch (e) {
     console.log(e);
@@ -43,10 +42,10 @@ export const getMentorById = async (req, res) => {
 
 export const updateMentor = async (item, id) => {
   try {
-    const developer = await Mentor.findByIdAndUpdate({ _id: id }, item, {
+    const mentor = await Mentor.findByIdAndUpdate({ _id: id }, item, {
       new: true,
     }).lean();
-    // const data = JSON.parse(JSON.stringify(developer));
+    // const data = JSON.parse(JSON.stringify(mentor));
     return {
       message: "Успішно оновленно",
     };
@@ -60,8 +59,8 @@ export const updateMentor = async (item, id) => {
 
 export const deleteMentor = async (id) => {
   try {
-    const develper = await Mentor.findOneAndDelete({ _id: id });
-    // const data = JSON.parse(JSON.stringify(develper));
+    const mentor = await Mentor.findOneAndDelete({ _id: id });
+    // const data = JSON.parse(JSON.stringify(mentor));
     return {
       message: "Успішно видалено",
     };

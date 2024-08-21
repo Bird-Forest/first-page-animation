@@ -12,14 +12,15 @@ export default function DynamicProjectLayout({
 }) {
   const pathname = usePathname();
   const segments = pathname.split("/");
-  const page = segments[3];
+
+  // const page = segments[3];
   const path = segments[5];
   return (
     <div className={styles.wrapLayout}>
       <div className={styles.wrapNavPage}>
         <div className={styles.wrapNavIdItem}>
           <Link
-            href={`/${lng}/admin/${page}/${id}`}
+            href={`/${lng}/admin/project/${id}`}
             className={
               path !== "remove" && path !== "team"
                 ? styles.linkNavIdAct
@@ -35,7 +36,7 @@ export default function DynamicProjectLayout({
             />
           </Link>
           <Link
-            href={`/${lng}/admin/${page}/${id}/team`}
+            href={`/${lng}/admin/project/${id}/team`}
             className={path === "team" ? styles.linkNavIdAct : styles.linkNavId}
           >
             <BsPeople
@@ -45,7 +46,7 @@ export default function DynamicProjectLayout({
             />
           </Link>
           <Link
-            href={`/${lng}/admin/${page}/${id}/remove`}
+            href={`/${lng}/admin/project/${id}/remove`}
             className={
               path === "remove" ? styles.linkNavIdAct : styles.linkNavId
             }

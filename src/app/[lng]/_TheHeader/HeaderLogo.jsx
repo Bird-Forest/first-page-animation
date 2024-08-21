@@ -12,6 +12,7 @@ export default function HeaderLogo() {
       className={styles.logo}
       animate={{ rotate: 360 }}
       transition={{ delay: 1.1, duration: 1, repeat: 5 }}
+      viewport={{ once: true }}
     >
       <Image src={logo} alt="logo" width={60} height={60} priority />
     </motion.div>

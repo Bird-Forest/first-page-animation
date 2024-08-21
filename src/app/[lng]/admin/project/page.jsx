@@ -7,8 +7,6 @@ import ProjectList from "./_adminproject/ProjectList";
 export default async function ListProjectsPage({ params: { lng } }) {
   const data = await getProjects();
   revalidatePath(`/${lng}/admin/project`, "page");
-  // const imajes = await getImages();
-  // console.log("PAGE", imajes);
   return (
     <div className={styles.wrapContent}>
       <ProjectList projects={data} lng={lng} />
