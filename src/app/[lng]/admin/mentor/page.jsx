@@ -8,8 +8,8 @@ export default async function ListOfMentorsPage({ params: { lng } }) {
   const data = await getMentors();
   revalidatePath(`/${lng}/admin/mentor`, "page");
   return (
-    <div className={styles.wrapContent}>
+    <section className={styles.wrapContent}>
       <MentorList lng={lng} mentors={data} />
-    </div>
+    </section>
   );
 }

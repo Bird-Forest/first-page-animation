@@ -32,7 +32,7 @@ export default function DevelopList({ lng, devs }) {
   };
 
   return (
-    <dev className={styles.wrapFilterList}>
+    <div className={styles.wrapFilterList}>
       <div className={styles.filter}>
         <div className={styles.wrapSearch}>
           <input
@@ -119,6 +119,6 @@ export default function DevelopList({ lng, devs }) {
           ))
         )}
       </ul>
-    </dev>
+    </div>
   );
 }

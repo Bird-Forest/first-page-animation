@@ -6,11 +6,11 @@ import Link from "next/link";
 
 export default function ListOfDocPage({ params: { lng } }) {
   return (
-    <div className={styles.admin}>
+    <section className={styles.wrapPage}>
       <EmptyPage />
       <Link href={`/${lng}/admin`} className={styles.wrapIconEmpty}>
         <FaHouseUser className={styles.iconEmpty} />
       </Link>
-    </div>
+    </section>
   );
 }

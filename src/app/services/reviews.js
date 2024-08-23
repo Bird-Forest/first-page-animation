@@ -122,9 +122,10 @@ export const getReviewsFalse = async (req, res) => {
 };
 
 export const getReviewByName = async (word) => {
+  const regex = new RegExp(word, "i");
   try {
     const reviews = await Review.find({
-      name: { $regex: word, $options: "i" },
+      name: regex,
     }).exec();
     const data = JSON.parse(JSON.stringify(reviews));
     return data;

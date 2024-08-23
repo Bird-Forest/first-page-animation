@@ -6,11 +6,11 @@ export default function DevelopersLayout({ children, params: { lng } }) {
   const title = "Developers";
 
   return (
-    <section className={styles.wrapPage}>
+    <div className={styles.wrapPage}>
       <div className={styles.wrapNavPage}>
         <SettingPanelUser lng={lng} title={title} />
       </div>
       {children}
-    </section>
+    </div>
   );
 }

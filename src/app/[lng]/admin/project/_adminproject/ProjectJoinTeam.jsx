@@ -166,11 +166,11 @@ export default function ProjectJoinTeam({ data, lng }) {
         {Arr
           ? arrDevs.map((dev) => (
               <li key={uuidv4()} className={styles.wrapStrDev}>
-                <dev className={styles.wrapDevName}>
+                <div className={styles.wrapDevName}>
                   <p className={styles.devName}>{`${
                     dev.last + " " + dev.first
                   }`}</p>
-                </dev>
+                </div>
                 <button
                   type="button"
                   onClick={() => addDeveloper(dev)}

@@ -8,11 +8,11 @@ export default function PostsLayout({ children, params: { lng } }) {
   const title = "Posts";
 
   return (
-    <section className={styles.wrapPage}>
+    <div className={styles.wrapPage}>
       <div className={styles.wrapNavPage}>
         <SettingPanelProd lng={lng} title={title} />
       </div>
       {children}
-    </section>
+    </div>
   );
 }

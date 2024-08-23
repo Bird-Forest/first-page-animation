@@ -8,8 +8,8 @@ export default async function ListPostsPage({ params: { lng } }) {
   const data = await getPosts();
   revalidatePath(`/${lng}/admin/post`, "page");
   return (
-    <div className={styles.wrapContent}>
+    <section className={styles.wrapContent}>
       <PostList posts={data} lng={lng} />
-    </div>
+    </section>
   );
 }

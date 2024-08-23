@@ -20,9 +20,9 @@ export default function MentorString({ item, lng }) {
   };
   return (
     <li className={styles.wrapStrMent}>
-      <dev className={styles.wrapMentName}>
+      <div className={styles.wrapMentName}>
         <p className={styles.mentName}>{`${item.last + " " + item.first}`}</p>
-      </dev>
+      </div>
       <button type="button" onClick={openModal} className={styles.itemBtn}>
         <BsPerson className={styles.iconBtn} />
       </button>

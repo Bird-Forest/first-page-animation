@@ -99,8 +99,6 @@
   margin: 0 auto;
 }
 .wrapItem {
-  /* display: flex;
-  flex-direction: column; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 40px;
@@ -117,7 +115,6 @@
   }
 }
 .wrapElem {
-  /* display: flex; */
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: start;
@@ -134,8 +131,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 28px auto;
-  /* display: flex;
-  flex-direction: column; */
 }
 .itemDate {
   display: grid;
@@ -156,9 +151,6 @@
   text-align: left;
 }
 .wrapText {
-  /* display: flex;
-  width: auto;
-  height: 120px; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 120px;
@@ -189,17 +181,12 @@
   }
 }
 .wrapBtn {
-  /* display: flex;
-  justify-content: flex-end; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   justify-items: end;
 }
 .itemBtn {
-  /* display: flex;
-  width: 210px;
-  height: 40px; */
   display: grid;
   grid-template-columns: 180px;
   grid-template-rows: 40px;
@@ -228,7 +215,7 @@
 }
 .wrapPost {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(340px, 852px);
   grid-template-rows: 40px auto auto auto 40px;
   justify-content: start;
   align-items: start;
@@ -241,8 +228,8 @@
 }
 @media screen and (min-width: 1280px) {
   .wrapPost {
-    grid-template-columns: 1152px;
-    padding: 24px;
+    grid-template-columns: 852px;
+    padding: 40px;
   }
 }
 .titlePost {

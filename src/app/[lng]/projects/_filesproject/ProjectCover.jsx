@@ -26,7 +26,7 @@ export default function ProjectCover({ item, showTeam, lng }) {
   const dateNow = new Date();
   const date = !item ? dateNow.toISOString() : item.start.slice(0, 10);
 
-  const myImg = item.imageUrl;
+  const bg = item.imageUrl;
   let img;
 
   const getImg = () => {
@@ -34,12 +34,26 @@ export default function ProjectCover({ item, showTeam, lng }) {
       img = imgProjects[i];
       const imgSrc = img.src.slice(20, 23);
 
-      const isImg = myImg.includes(imgSrc);
+      const isImg = bg.includes(imgSrc);
 
       if (isImg === true) return img;
     }
   };
   const path = getImg();
+
+  // function Cover({ bg }) {
+  //   return (
+  //     <Image
+  //       src={`/images/projects/${bg}`}
+  //       alt="Picture of project"
+  //       width="388"
+  //       height="464"
+  //       style={{
+  //         borderRadius: "12px",
+  //       }}
+  //     />
+  //   );
+  // }
 
   // const imageLoader = ({ src, width, quality }) => {
   //   return `http://localhost:3000/public/${src}?w=${width}&q=${quality || 75}`;
@@ -60,6 +74,7 @@ export default function ProjectCover({ item, showTeam, lng }) {
         }}
         property=""
       />
+      {/* <Cover bg={bg} /> */}
 
       <div className={styles.wrapInfo}>
         <div className={styles.statusWrap}>

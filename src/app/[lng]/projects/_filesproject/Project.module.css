@@ -342,7 +342,7 @@
   gap: 4px;
 }
 .objTitle {
-  font-size: 20px;
+  font-size: 18px;
   font-family: var(--font-montserrat);
   font-weight: 600;
   color: rgb(3, 1, 16);
@@ -355,11 +355,26 @@
   list-style: none;
 }
 .elDev {
-  font-size: 16px;
+  font-size: 18px;
   font-family: var(--font-montserrat);
   font-weight: 500;
   line-height: 1.5;
   color: rgb(3, 1, 16);
+  text-decoration: none;
+  text-align: left;
+}
+.elDev:hover,
+.elDev:focus {
+  color: rgb(27, 105, 213);
+  font-weight: 600;
+  border-bottom: 1px solid rgb(27, 105, 213);
+}
+.elDevRed {
+  font-size: 18px;
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgb(249, 73, 73);
   text-decoration: none;
   text-align: left;
 }

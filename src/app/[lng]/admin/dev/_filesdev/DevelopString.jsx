@@ -20,9 +20,9 @@ export default function DevelopString({ item, lng }) {
   };
   return (
     <li className={styles.wrapStrDev}>
-      <dev className={styles.wrapDevName}>
+      <div className={styles.wrapDevName}>
         <p className={styles.devName}>{`${item.last + " " + item.first}`}</p>
-      </dev>
+      </div>
       <button type="button" onClick={openModal} className={styles.itemBtn}>
         <BsPerson className={styles.iconBtn} />
       </button>

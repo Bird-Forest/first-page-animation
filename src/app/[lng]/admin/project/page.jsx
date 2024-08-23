@@ -8,8 +8,8 @@ export default async function ListProjectsPage({ params: { lng } }) {
   const data = await getProjects();
   revalidatePath(`/${lng}/admin/project`, "page");
   return (
-    <div className={styles.wrapContent}>
+    <section className={styles.wrapContent}>
       <ProjectList projects={data} lng={lng} />
-    </div>
+    </section>
   );
 }

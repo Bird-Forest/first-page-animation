@@ -50,7 +50,7 @@ export default function ProjectTeam({ item }) {
               </li>
             ))
           ) : (
-            <p className={styles.elDev}>Очікує свою команду</p>
+            <p className={styles.elDevRed}>Очікує свою команду</p>
           )}
         </ul>
       </li>
@@ -71,7 +71,7 @@ export default function ProjectTeam({ item }) {
               </li>
             ))
           ) : (
-            <p className={styles.elDev}>Очікує свою команду</p>
+            <p className={styles.elDevRed}>Очікує свою команду</p>
           )}
         </ul>
       </li>
@@ -92,7 +92,7 @@ export default function ProjectTeam({ item }) {
               </li>
             ))
           ) : (
-            <p className={styles.elDev}>Очікує свою команду</p>
+            <p className={styles.elDevRed}>Очікує свою команду</p>
           )}
         </ul>
       </li>
@@ -113,7 +113,7 @@ export default function ProjectTeam({ item }) {
               </li>
             ))
           ) : (
-            <p className={styles.elDev}>Очікує свою команду</p>
+            <p className={styles.elDevRed}>Очікує свою команду</p>
           )}
         </ul>
       </li>
@@ -134,7 +134,7 @@ export default function ProjectTeam({ item }) {
               </li>
             ))
           ) : (
-            <p className={styles.elDev}>Очікує свою команду</p>
+            <p className={styles.elDevRed}>Очікує свою команду</p>
           )}
         </ul>
       </li>
@@ -155,7 +155,7 @@ export default function ProjectTeam({ item }) {
               </li>
             ))
           ) : (
-            <p className={styles.elDev}>Очікує свою команду</p>
+            <p className={styles.elDevRed}>Очікує свою команду</p>
           )}
         </ul>
       </li>

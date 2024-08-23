@@ -9,8 +9,8 @@ export default async function ListDevelopersPage({ params: { lng } }) {
   revalidatePath(`/${lng}/admin/dev`, "page");
 
   return (
-    <div className={styles.wrapContent}>
+    <section className={styles.wrapContent}>
       <DevelopList lng={lng} devs={data} />
-    </div>
+    </section>
   );
 }

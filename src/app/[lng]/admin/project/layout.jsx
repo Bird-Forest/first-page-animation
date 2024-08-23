@@ -8,11 +8,11 @@ export default function ProjectLayout({ children, params: { lng } }) {
   const title = "Projects";
 
   return (
-    <section className={styles.wrapPage}>
+    <div className={styles.wrapPage}>
       <div className={styles.wrapNavPage}>
         <SettingPanelProd lng={lng} title={title} />
       </div>
       {children}
-    </section>
+    </div>
   );
 }
