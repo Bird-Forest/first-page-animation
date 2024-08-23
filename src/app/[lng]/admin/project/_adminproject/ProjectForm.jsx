@@ -7,7 +7,7 @@ import { BsChevronUp, BsChevronDown, BsCircleFill } from "react-icons/bs";
 import ProjectCover from "../../../projects/_filesproject/ProjectCover";
 import BtnAction from "../../_filesadmin/BtnAction";
 import BtnSave from "../../_filesadmin/BtnSave";
-import ProjectImg from "./ProjectImg";
+import ProjectUploadFile from "./ProjectUploadFile";
 
 const start = { color: "#ff1744", text: "Формування команди" };
 const inital = { color: "#ffeb3b", text: "В розробці" };
@@ -26,7 +26,7 @@ export default function ProjectForm({ project, lng, formAction }) {
   const getFileName = (value) => {
     setFileName(value);
   };
-
+  console.log(fileName);
   const handleSubmit = (formData) => {
     // evt.preventDefault();
     // const formData = new FormData(evt.currentTarget);
@@ -44,7 +44,7 @@ export default function ProjectForm({ project, lng, formAction }) {
 
   return (
     <div className={styles.wrapAdmProject}>
-      <ProjectImg getFileName={getFileName} lng={lng} />
+      <ProjectUploadFile getFileName={getFileName} lng={lng} />
       <form action={handleSubmit} className={styles.wrapForm}>
         <label htmlFor="name" className={styles.wrapInput}>
           Додати заголовок

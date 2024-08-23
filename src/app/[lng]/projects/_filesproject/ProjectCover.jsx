@@ -42,7 +42,7 @@ export default function ProjectCover({ item, showTeam, lng }) {
   const path = getImg();
 
   // const imageLoader = ({ src, width, quality }) => {
-  //   return `${src}?w=${width}&q=${quality || 75}`;
+  //   return `http://localhost:3000/public/${src}?w=${width}&q=${quality || 75}`;
   // };
 
   return (
@@ -58,6 +58,7 @@ export default function ProjectCover({ item, showTeam, lng }) {
         style={{
           borderRadius: "12px",
         }}
+        property=""
       />
 
       <div className={styles.wrapInfo}>

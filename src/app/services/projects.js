@@ -1,33 +1,6 @@
 "use server";
 
 import { Project } from "../models/project";
-import { writeFile } from "fs/promises";
-import path from "path";
-
-export const uploadImage = async (formData) => {
-  // console.log("PROJECT NEW", formData);
-  try {
-    const imgFile = await formData.get("image");
-
-    const buffer = imgFile.arrayBuffer();
-    const imgBuffer = Buffer.from(buffer);
-
-    const imagePath = path.join(
-      process.cwd(),
-      `http://localhost:3000/public/images/projects`,
-      imgFile.name
-    );
-    await writeFile(imagePath, imgBuffer);
-    return {
-      message: "Успішно додано",
-    };
-  } catch (e) {
-    console.log(e);
-    return {
-      message: "Відбулася помилка",
-    };
-  }
-};
 
 export const getProjects = async (req, res) => {
   try {

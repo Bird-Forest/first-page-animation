@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import styles from "./Blog.module.css";
 import { FaCircleCheck, FaCircleXmark } from "react-icons/fa6";
 import EmptyPage from "../../_Helper/EmptyPage";
+// import EmptyPage from "../../_Helper/EmptyPage";
 
 export default function Posts({ posts, lng }) {
   const [selected, setSelected] = useState(posts);
@@ -32,7 +33,7 @@ export default function Posts({ posts, lng }) {
   return (
     <div className={styles.wrapPosts}>
       <div className={styles.wrapFilter}>
-        <button on onClick={onClear} className={styles.btnFilter}>
+        <button type="button" onClick={onClear} className={styles.btnFilter}>
           <FaCircleXmark className={styles.iconBtn} />
         </button>
         <input
@@ -45,15 +46,17 @@ export default function Posts({ posts, lng }) {
           <FaCircleCheck className={styles.iconBtn} />
         </button>
       </div>
-      {Arr ? (
-        <ul className={styles.wrapList}>
-          {selected.map((item) => (
-            <PostItem key={uuidv4()} item={item} lng={lng} />
-          ))}
-        </ul>
-      ) : (
-        <EmptyPage />
-      )}
+      <div className={styles.wrapListPost}>
+        {Arr ? (
+          <ul className={styles.wrapList}>
+            {selected.map((item) => (
+              <PostItem key={uuidv4()} item={item} lng={lng} />
+            ))}
+          </ul>
+        ) : (
+          <EmptyPage />
+        )}
+      </div>
     </div>
   );
 }

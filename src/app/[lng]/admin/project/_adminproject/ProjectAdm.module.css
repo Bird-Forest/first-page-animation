@@ -265,6 +265,7 @@
   display: grid;
   grid-template-columns: 40px;
   grid-template-rows: 26px;
+  appearance: none;
   color: rgb(3, 1, 16);
   font-family: var(--font-montserrat);
   font-size: 14px;
@@ -279,9 +280,10 @@
 }
 .uploadBtn {
   display: grid;
-  grid-template-columns: 60px;
-  grid-template-rows: 26px;
+  grid-template-columns: 46px;
+  grid-template-rows: 46px;
   align-items: center;
+  justify-items: center;
   color: rgb(3, 1, 16);
   font-family: var(--font-montserrat);
   font-size: 14px;
@@ -289,10 +291,10 @@
   line-height: 1.5;
   text-align: center;
   border-radius: 8px;
-  border: 1px solid rgb(252, 252, 252);
-  background: rgb(252, 252, 252);
-  outline: rgb(252, 252, 252);
-  padding: 10px;
+  border: 1px solid rgb(242, 238, 248);
+  outline: rgb(242, 238, 248);
+  background-color: rgb(242, 238, 248);
+  padding: 0;
   cursor: pointer;
 }
 @media screen and (min-width: 768px) {
@@ -304,7 +306,8 @@
     font-size: 20px;
   }
   .uploadBtn {
-    grid-template-rows: 30px;
+    grid-template-columns: 48px;
+    grid-template-rows: 48px;
     font-size: 16px;
   }
 }

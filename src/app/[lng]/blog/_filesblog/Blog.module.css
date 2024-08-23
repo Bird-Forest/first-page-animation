@@ -1,7 +1,4 @@
 .blog {
-  /* display: grid;
-  grid-template-columns: minmax(380px, 1fr);
-  grid-template-rows: 1fr; */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -13,7 +10,7 @@
   background-color: rgb(67, 4, 78);
   border-top: 2px solid rgb(226, 49, 168);
   border-bottom: 2px solid rgb(226, 49, 168);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 @media screen and (min-width: 768px) {
   .blog {
@@ -90,16 +87,20 @@
   background-color: rgb(242, 238, 248);
   padding: 0 8px;
 }
+.wrapListPost {
+  display: flex;
+}
 .wrapList {
   display: grid;
   grid-template-columns: minmax(380px, 1152px);
-  grid-auto-flow: rows;
-  grid-template-rows: auto;
+  grid-auto-rows: auto;
   gap: 20px;
   padding: 0;
   margin: 0 auto;
 }
 .wrapItem {
+  /* display: flex;
+  flex-direction: column; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 40px;
@@ -116,6 +117,7 @@
   }
 }
 .wrapElem {
+  /* display: flex; */
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: start;
@@ -132,16 +134,20 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 28px auto;
+  /* display: flex;
+  flex-direction: column; */
 }
 .itemDate {
+  display: grid;
   color: rgb(3, 1, 16);
   font-family: var(--font-montserrat);
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.5;
   text-align: left;
 }
 .itemTitle {
+  display: grid;
   color: rgb(3, 1, 16);
   font-family: var(--font-montserrat);
   font-size: 20px;
@@ -150,23 +156,30 @@
   text-align: left;
 }
 .wrapText {
+  /* display: flex;
+  width: auto;
+  height: 120px; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 120px;
 }
 .itemText {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 120px;
   color: rgb(3, 1, 16);
   font-family: var(--font-montserrat);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  /* text-wrap: nowrap; */
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 @media screen and (min-width: 768px) {
   .itemDate {
-    font-size: 20px;
+    font-size: 16px;
   }
   .itemTitle {
     font-size: 24px;
@@ -176,12 +189,17 @@
   }
 }
 .wrapBtn {
+  /* display: flex;
+  justify-content: flex-end; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   justify-items: end;
 }
 .itemBtn {
+  /* display: flex;
+  width: 210px;
+  height: 40px; */
   display: grid;
   grid-template-columns: 180px;
   grid-template-rows: 40px;
@@ -212,8 +230,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 40px auto auto auto 40px;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: start;
+  align-items: start;
   border: 2px solid rgb(242, 238, 248);
   border-radius: 16px;
   background-color: rgb(242, 238, 248);
@@ -273,4 +291,20 @@
   width: 32px;
   height: 32px;
   stroke-width: 2px;
+}
+.textID {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  color: rgb(3, 1, 16);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .textID {
+    font-size: 20px;
+  }
 }

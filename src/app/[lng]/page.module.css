@@ -29,7 +29,6 @@
 .wrapHomePage {
   display: grid;
   grid-template-columns: minmax(420px, 1fr);
-
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;

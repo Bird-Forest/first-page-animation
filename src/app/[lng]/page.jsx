@@ -18,8 +18,6 @@ export default async function Home({ params: { lng } }) {
   const { t } = await useTranslation(lng, "home");
   const reviews = await getReviewsRender();
 
-  // revalidatePath(`/${lng}`, "page");
-
   return (
     <div className={styles.wrapHomePage}>
       <Hero lng={lng} />

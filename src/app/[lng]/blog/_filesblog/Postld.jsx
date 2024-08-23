@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import styles from "./Blog.module.css";
 import { FaLink } from "react-icons/fa";
 import NotifMess from "../../_Helper/NotifMess";
-// import { format } from "date-fns";
 
 export default function PostId({ post, lng }) {
   const [copied, setCopied] = useState(false);
@@ -22,7 +21,6 @@ export default function PostId({ post, lng }) {
   };
 
   const date = post.date.slice(0, 10);
-  // const date = format(new Date(post.date), "yyyy-MM-dd");
   return (
     <div className={styles.wrapPost}>
       <div className={styles.wrapSub}>
@@ -37,11 +35,11 @@ export default function PostId({ post, lng }) {
           />
         )}
       </div>
-      <p className={styles.itemText}>{post.text1}</p>
+      <p className={styles.textID}>{post.text1}</p>
       <div className={styles.imgPost}>
         <Image alt="any picture" src={post.url} fill quality={80} />
       </div>
-      <p className={styles.itemText}>{post.text2}</p>
+      <p className={styles.textID}>{post.text2}</p>
       <div className={styles.wrapBtn}>
         <Link href={`/${lng}/blog`} className={styles.itemBtn}>
           повернутись ...
