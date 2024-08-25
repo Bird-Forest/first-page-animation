@@ -23,12 +23,18 @@
 .wrapModal {
   position: relative;
   display: flex;
-  width: 380px;
+  width: 300px;
   border-radius: 16px;
   background-color: rgb(46, 5, 53);
   border: 2px solid rgb(226, 49, 168);
-  padding: 44px 18px 32px 18px;
+  padding: 36px 8px 32px 8px;
   margin: 0;
+}
+@media screen and (min-width: 420px) {
+  .wrapModal {
+    width: 380px;
+    padding: 44px 18px 32px 18px;
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapModal {
@@ -41,8 +47,8 @@
   top: 2px;
   right: 2px;
   display: flex;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -50,20 +56,37 @@
   margin: 0;
 }
 .close {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   fill: rgb(255, 255, 255);
+}
+@media screen and (min-width: 420px) {
+  .closeBtn {
+    width: 44px;
+    height: 44px;
+  }
+  .close {
+    width: 44px;
+    height: 44px;
+    fill: rgb(255, 255, 255);
+  }
 }
 /* ***   MODAL DONATE   *** */
 .wrapModalDonate {
   position: relative;
   display: flex;
-  width: 380px;
+  width: 300px;
   border-radius: 16px;
   background-color: rgb(46, 5, 53);
   border: 2px solid rgb(226, 49, 168);
-  padding: 44px 18px 32px 18px;
+  padding: 36px 8px 32px 8px;
   margin: 100px auto;
+}
+@media screen and (min-width: 420px) {
+  .wrapModalDonate {
+    width: 380px;
+    padding: 44px 18px 32px 18px;
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapModalDonate {
@@ -76,9 +99,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 340px;
+  width: 284px;
   gap: 16px;
   padding: 0;
+}
+@media screen and (min-width: 420px) {
+  .modalDonate {
+    width: 340px;
+  }
 }
 @media screen and (min-width: 768px) {
   .modalDonate {
@@ -103,13 +131,18 @@
 }
 .wrapSum {
   display: flex;
-  width: 340px;
+  width: 284px;
   height: 96px;
   justify-content: flex-start;
   align-items: center;
   padding: 0;
   margin: 0;
   gap: 8px;
+}
+@media screen and (min-width: 420px) {
+  .wrapSum {
+    width: 340px;
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapSum {
@@ -284,12 +317,19 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: 380px;
+  width: 300px;
   border-radius: 16px;
   background-color: rgb(46, 5, 53);
   border: 2px solid rgb(226, 49, 168);
-  padding: 44px 16px 24px 16px;
+  padding: 40px 8px 20px 8px;
   margin: 20px;
+}
+@media screen and (min-width: 420px) {
+  .wrapModalForm {
+    width: 380px;
+    gap: 20px;
+    padding: 44px 16px 24px 16px;
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapModalForm {
@@ -305,8 +345,13 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  width: 340px;
+  width: 284px;
   padding: 0;
+}
+@media screen and (min-width: 420px) {
+  .modalForm {
+    width: 340px;
+  }
 }
 @media screen and (min-width: 768px) {
   .modalForm {
@@ -317,10 +362,15 @@
   display: flex;
   color: rgb(252, 252, 252);
   font-family: var(--font-open-sans);
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 1.5;
   text-align: center;
+}
+@media screen and (min-width: 420px) {
+  .titleModal {
+    font-size: 24px;
+  }
 }
 .wrapForm {
   position: relative;
@@ -328,9 +378,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 340px;
+  width: 284px;
   gap: 24px;
   padding: 0;
+}
+@media screen and (min-width: 420px) {
+  .wrapForm {
+    width: 340px;
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapForm {
@@ -376,6 +431,7 @@
   width: 240px;
   padding: 0;
 }
+
 .wrapColumn {
   display: flex;
   flex-direction: column;
@@ -405,7 +461,7 @@
 }
 .inputData {
   display: flex;
-  width: 340px;
+  width: 284px;
   height: 40px;
   justify-content: flex-start;
   align-items: center;
@@ -428,6 +484,11 @@
   text-align: left;
   color: rgba(210, 210, 210, 0.5);
 }
+@media screen and (min-width: 420px) {
+  .inputData {
+    width: 340px;
+  }
+}
 @media screen and (min-width: 768px) {
   .inputData {
     width: 456px;
@@ -441,7 +502,7 @@
 }
 .labelData {
   display: flex;
-  width: 340px;
+  width: 284px;
   justify-content: flex-start;
   align-items: center;
   padding: 0px;
@@ -451,6 +512,11 @@
   line-height: 1.5;
   text-align: left;
   color: rgb(252, 252, 252);
+}
+@media screen and (min-width: 420px) {
+  .labelData {
+    width: 340px;
+  }
 }
 @media screen and (min-width: 768px) {
   .labelData {
@@ -512,19 +578,29 @@
 .checkText {
   color: rgb(252, 252, 252);
   font-family: var(--font-open-sans);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
   text-align: left;
+}
+@media screen and (min-width: 420px) {
+  .checkText {
+    font-size: 18px;
+  }
 }
 .wrapAgree {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 340px;
+  width: 284px;
   padding: 0;
   margin: 0;
+}
+@media screen and (min-width: 420px) {
+  .wrapAgree {
+    width: 340px;
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapAgree {
@@ -536,8 +612,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 340px;
+  width: 284px;
   gap: 12px;
+}
+@media screen and (min-width: 420px) {
+  .checkAgree {
+    width: 340px;
+  }
 }
 @media screen and (min-width: 768px) {
   .checkAgree {
@@ -549,10 +630,15 @@
   width: 300px;
   color: rgb(252, 252, 252);
   font-family: var(--font-open-sans);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
   text-align: left;
+}
+@media screen and (min-width: 420px) {
+  .agreeText {
+    font-size: 18px;
+  }
 }
 @media screen and (min-width: 768px) {
   .agreeText {
@@ -563,9 +649,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 340px;
-  padding: 16px 0;
+  width: 284px;
+  padding: 8px 0;
   margin: 0;
+}
+@media screen and (min-width: 420px) {
+  .wrapBtnForm {
+    width: 340px;
+    padding: 16px 0;
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapBtnForm {

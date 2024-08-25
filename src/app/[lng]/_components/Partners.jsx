@@ -38,11 +38,12 @@ export default function Partners({ lng }) {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ amount: 0.3, once: true }}
+      viewport={{ once: true }}
+      // viewport={{ amount: 0.3, once: true }}
       className={styles.partners}
     >
       <motion.h3
-        // custom={1}
+        custom={1}
         variants={titlelAnimation}
         className={styles.partnerTitle}
       >
@@ -59,10 +60,11 @@ export default function Partners({ lng }) {
             <Image
               alt="section partners"
               src={item.path}
-              // width={360}
+              // width={280}
               // height={180}
               quality={80}
-              style={{ borderRadius: "10px", objectFit: "cover" }}
+              // style={{ borderRadius: "10px", objectFit: "cover" }}
+              className={styles.partnerImg}
               // priority
             />
           </motion.li>
