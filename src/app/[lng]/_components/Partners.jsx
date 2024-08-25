@@ -38,7 +38,7 @@ export default function Partners({ lng }) {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ margin: "200px", amount: 0.3, once: true }}
+      viewport={{ amount: 0.3, once: true }}
       className={styles.partners}
     >
       <motion.h3
@@ -63,7 +63,7 @@ export default function Partners({ lng }) {
               // height={180}
               quality={80}
               style={{ borderRadius: "10px", objectFit: "cover" }}
-              priority
+              // priority
             />
           </motion.li>
         ))}

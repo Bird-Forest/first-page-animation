@@ -1,12 +1,18 @@
 .press {
   display: grid;
-  grid-template-columns: 1fr;
+  /* grid-template-columns: 1fr; */
+  grid-template-columns: minmax(300px, 1320px);
   grid-template-rows: auto 1fr;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 32px 16px;
+  padding: 20px 8px;
   background-color: rgb(138, 26, 102);
+}
+@media screen and (min-width: 420px) {
+  .press {
+    padding: 32px 16px;
+  }
 }
 @media screen and (min-width: 768px) {
   .press {
@@ -61,26 +67,39 @@
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
-  padding: 0 0 40px 0;
+  padding: 0;
+  /* padding: 0 0 40px 0; */
   margin: 0 auto;
 }
 .pressItem {
   position: relative;
   display: flex;
-  width: 380px;
+  width: 300px;
   height: 248px;
   gap: 32px;
+}
+@media screen and (min-width: 420px) {
+  .pressItem {
+    width: 380px;
+    height: 248px;
+  }
 }
 .front {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 380px;
+  width: 300px;
   height: 248px;
   border: 2px solid rgb(226, 49, 168);
   border-radius: 10px;
   overflow: hidden;
+}
+@media screen and (min-width: 420px) {
+  .front {
+    width: 380px;
+    height: 248px;
+  }
 }
 .imgWrap {
   position: relative;
@@ -94,13 +113,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 380px;
+  width: 300px;
   height: 248px;
   border: 2px solid rgb(226, 49, 168);
   border-radius: 10px;
   background-color: rgb(46, 5, 53);
   overflow: hidden;
   padding: 0;
+}
+@media screen and (min-width: 420px) {
+  .back {
+    width: 380px;
+    height: 248px;
+  }
 }
 .infoWrap {
   display: flex;

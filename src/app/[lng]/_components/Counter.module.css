@@ -5,8 +5,13 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 32px 16px;
+  padding: 20px 8px;
   background-color: rgb(138, 26, 102);
+}
+@media screen and (min-width: 420px) {
+  .counter {
+    padding: 32px 16px;
+  }
 }
 @media screen and (min-width: 768px) {
   .counter {
@@ -51,7 +56,8 @@
 }
 .wrapList {
   display: grid;
-  grid-template-columns: minmax(380px, 724px);
+  grid-template-columns: minmax(300px, 724px);
+  /* grid-template-columns: minmax(380px, 724px); */
   grid-template-rows: repeat(3, 80px);
   padding: 0;
   margin: 0 auto;

@@ -67,12 +67,14 @@ export default function ProjectCover({ item, showTeam, lng }) {
         src={path}
         // src={item.imageUrl}
         quality={80}
-        width={388}
-        height={464}
-        style={{
-          borderRadius: "12px",
-        }}
-        property=""
+        fill
+        // width={388}
+        // height={464}
+        // style={{
+        //   borderRadius: "12px",
+        // }}
+        // property=""
+        className={styles.imgCover}
       />
       {/* <Cover bg={bg} /> */}
 

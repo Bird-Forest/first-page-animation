@@ -1,6 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) -->
 
-## Getting Started
+# Getting Started
 
 First, run the development server:
 
@@ -34,3 +34,60 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+<!-- Title -->
+
+# Baza Trainee Ukraine
+
+## _Цей індивідуальний проект створено завдяки громадській організації Baza Trainee Ukraine, яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ._
+
+<!-- List -->
+
+- item 1
+- item 2
+  - item 2.1
+
+1. item 1
+1. item 2
+1. item 3
+
+<!-- Link -->
+
+[Baza Trainee Ukraine](https://baza-trainee.tech/ua)
+
+<!-- Code -->
+
+````export const createNewPost = async (item) => {
+  try {
+    const newPost = await Post.create(item);
+    // const data = JSON.parse(JSON.stringify(newPost));
+    return {
+      message: "Успішно додано",
+    };
+  } catch (e) {
+    console.log(e);
+    return {
+      message: "Відбулася помилка",
+    };
+  }
+}```
+````
+
+<!-- Image -->
+
+![alt text](image.png)
+
+<!-- Горизонтальний розрив -->
+
+---
+
+---
+
+---
+
+<!-- List to do -->
+
+<!-- - [x] Todo1 -->
+🥰
+
+![text](/public/images/projects/dev.webp)

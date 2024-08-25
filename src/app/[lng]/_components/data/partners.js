@@ -1,15 +1,15 @@
-import partner1 from "@/public/images/partners/deltahost.webp";
-import partner2 from "@/public/images/partners/patronbadge.webp";
-import partner3 from "@/public/images/partners/tucha.webp";
-import partner4 from "@/public/images/partners/hostIq1.webp";
-import partner5 from "@/public/images/partners/juniverse.webp";
-import partner6 from "@/public/images/partners/scsa.webp";
-import partner7 from "@/public/images/partners/songs.webp";
-import partner8 from "@/public/images/partners/status.webp";
-import partner9 from "@/public/images/partners/tails.webp";
-import partner10 from "@/public/images/partners/zerno.webp";
-import partner11 from "@/public/images/partners/mistodobra.webp";
-import partner12 from "@/public/images/partners/skill.webp";
+import partner1 from "../../../../../public/images/partners/deltahost.webp";
+import partner2 from "../../../../../public/images/partners/patronbadge.webp";
+import partner3 from "../../../../../public/images/partners/tucha.webp";
+import partner4 from "../../../../../public/images/partners/hostIq1.webp";
+import partner5 from "../../../../../public/images/partners/juniverse.webp";
+import partner6 from "../../../../../public/images/partners/scsa.webp";
+import partner7 from "../../../../../public/images/partners/songs.webp";
+import partner8 from "../../../../../public/images/partners/status.webp";
+import partner9 from "../../../../../public/images/partners/tails.webp";
+import partner10 from "../../../../../public/images/partners/zerno.webp";
+import partner11 from "../../../../../public/images/partners/mistodobra.webp";
+import partner12 from "../../../../../public/images/partners/skill.webp";
 
 export const partners = [
   { id: "1", path: partner1 },

@@ -16,14 +16,16 @@ export default function SpecialityItem({ item, lng }) {
         <Image
           alt="Picture with the name of the specialty"
           src={item.img}
-          width={376}
-          height={168}
-          quality={100}
-          style={{
-            borderTopLeftRadius: "8px",
-            borderTopRightRadius: "8px",
-          }}
-          priority
+          // width={376}
+          // height={168}
+          quality={75}
+          className={styles.img}
+          // style={{
+          //   borderTopLeftRadius: "8px",
+          //   borderTopRightRadius: "8px",
+          //   objectFit: "cover",
+          // }}
+          // priority
         />
       </div>
       <div className={`${styles.wrapInfo} ${more ? styles.show : ""}`}>

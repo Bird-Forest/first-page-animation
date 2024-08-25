@@ -31,6 +31,7 @@ export default function RootLayout({ children, params: { lng } }) {
   return (
     <html
       lang={lng}
+      suppressHydrationWarning={true}
       className={` ${open_sans.variable} ${montserrat.variable}`}
     >
       <body className={styles.container}>

@@ -26,11 +26,13 @@ export default function Speciality({ lng }) {
   return (
     <section className={styles.speciality}>
       <h2 className={styles.specialTitle}>{t("special_title")}</h2>
+
       <ul className={styles.wrapList}>
         {specialities.map((item) => (
           <SpecialityItem key={uuidv4()} item={item} lng={lng} />
         ))}
       </ul>
+
       <MainButton type="button" onClick={openModal}>
         {t("special_btn")}
       </MainButton>

@@ -1,13 +1,19 @@
 .partners {
   display: grid;
   grid-template-columns: 1fr;
+  /* grid-template-columns: minmax(300px, 1320px); */
   grid-template-rows: auto 1fr;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 32px 16px;
+  padding: 20px 8px;
   background-color: rgb(138, 26, 102);
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .partners {
+    padding: 32px 16px;
+  }
 }
 @media screen and (min-width: 768px) {
   .partners {
@@ -57,20 +63,27 @@
 .partnersList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   gap: 20px;
-  padding: 0 0 40px 0;
+  padding: 0;
+  /* padding: 0 0 40px 0; */
   margin: 0 auto;
 }
 .partnerItem {
-  position: relative;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 360px;
+  width: 300px;
   height: 180px;
   border-radius: 10px;
   object-fit: cover;
   background-color: rgba(210, 210, 210, 0.5);
+}
+@media screen and (min-width: 420px) {
+  .partnerItem {
+    width: 360px;
+    height: 180px;
+  }
 }

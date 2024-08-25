@@ -2,12 +2,17 @@
   display: flex;
   width: 100vw;
   gap: 20px;
-  padding: 32px 16px;
+  padding: 20px 8px;
   margin: 0;
   background-color: rgb(67, 4, 78);
   border-top: 2px solid rgb(226, 49, 168);
   border-bottom: 2px solid rgb(226, 49, 168);
   overflow: hidden;
+}
+@media screen and (min-width: 420px) {
+  .project {
+    padding: 32px 16px;
+  }
 }
 @media screen and (min-width: 768px) {
   .project {
@@ -109,7 +114,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 388px;
+  width: 300px;
   height: 464px;
   /* height: 456px; */
   padding: 0;
@@ -120,28 +125,56 @@
   /* background-size: contain; */
   object-fit: cover;
 }
+@media screen and (min-width: 420px) {
+  .wrapItem {
+    width: 388px;
+  }
+}
 .wrapCover {
   position: relative;
   display: grid;
-  grid-template-columns: 388px;
+  grid-template-columns: 300px;
   grid-template-rows: 464px;
   /* grid-template-rows: 456px; */
   padding: 0;
   border-radius: 12px;
+  background-position: center;
+  object-fit: cover;
+}
+.imgCover {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 464px;
+  border-radius: 12px;
+  padding: 0;
+}
+@media screen and (min-width: 420px) {
+  .wrapCover {
+    grid-template-columns: 388px;
+  }
+  .imgCover {
+    grid-template-columns: 388px;
+  }
 }
 .wrapInfo {
   position: absolute;
   display: grid;
-  grid-template-columns: 348px;
+  grid-template-columns: 280px;
   grid-template-rows: 32px 1fr repeat(5, 32px);
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 12px;
   gap: 8px;
-  padding: 20px 20px 28px 20px;
+  padding: 20px 10px 28px 10px;
 }
 .wrapInfo:hover,
 .wrapInfo:focus {
   background-color: rgba(255, 255, 255, 0);
+}
+@media screen and (min-width: 420px) {
+  .wrapInfo {
+    grid-template-columns: 348px;
+    padding: 20px 20px 28px 20px;
+  }
 }
 .statusWrap {
   display: grid;
@@ -156,9 +189,14 @@
 }
 .statusText {
   font-family: var(--font-montserrat);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   color: rgb(46, 5, 53);
+}
+@media screen and (min-width: 420px) {
+  .statusText {
+    font-size: 20px;
+  }
 }
 .wrapTitle {
   display: grid;
@@ -168,10 +206,15 @@
 .itemTitle {
   display: grid;
   font-family: var(--font-montserrat);
-  font-size: 24px;
+  font-size: 20px;
   color: rgb(46, 5, 53);
   font-weight: 700;
   text-align: center;
+}
+@media screen and (min-width: 420px) {
+  .itemTitle {
+    font-size: 24px;
+  }
 }
 .wrapLink {
   display: grid;
@@ -181,10 +224,15 @@
 }
 .itemLink {
   font-family: var(--font-montserrat);
-  font-size: 18px;
+  font-size: 14px;
   color: rgb(27, 105, 213);
   font-weight: 700;
   cursor: pointer;
+}
+@media screen and (min-width: 420px) {
+  .itemLink {
+    font-size: 18px;
+  }
 }
 .wrapElem {
   display: grid;
@@ -207,20 +255,30 @@
 .itemText {
   display: grid;
   font-family: var(--font-montserrat);
-  font-size: 20px;
+  font-size: 16px;
   color: rgb(67, 4, 78);
   font-weight: 600;
+}
+@media screen and (min-width: 420px) {
+  .itemText {
+    font-size: 20px;
+  }
 }
 .textBold {
   display: grid;
   font-family: var(--font-montserrat);
-  font-size: 20px;
+  font-size: 16px;
   color: rgb(67, 4, 78);
   font-weight: 700;
 }
+@media screen and (min-width: 420px) {
+  .textBold {
+    font-size: 20px;
+  }
+}
 .wrapDiffic {
   display: grid;
-  grid-template-columns: repeat(5, 24px);
+  grid-template-columns: repeat(5, 20px);
   grid-template-rows: auto;
   justify-content: center;
   align-items: center;
@@ -229,13 +287,22 @@
 }
 
 .diffIcon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   fill: rgb(67, 4, 78);
   border-radius: 50%;
 }
 .bg {
   background: rgb(67, 4, 78);
+}
+@media screen and (min-width: 420px) {
+  .wrapDiffic {
+    grid-template-columns: repeat(5, 24px);
+  }
+  .diffIcon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* *** TEAM */
@@ -272,12 +339,17 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 388px;
+  width: 300px;
   height: 464px;
   /* height: 456px; */
   opacity: 0;
   transform: translateY(500px);
   transition: opacity 500ms ease-out delay 100ms, transform 500ms ease;
+}
+@media screen and (min-width: 420px) {
+  .wrapTeam {
+    width: 388px;
+  }
 }
 .show {
   transform: translatey(0);
@@ -285,6 +357,7 @@
   opacity: 1;
   transition: opacity 500ms ease-out delay 100ms, transform 500ms ease;
 }
+
 .closeBtn {
   position: absolute;
   top: 2px;

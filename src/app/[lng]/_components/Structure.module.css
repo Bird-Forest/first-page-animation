@@ -5,10 +5,14 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 32px 16px;
+  padding: 20px 8px;
   background-color: rgb(46, 5, 53);
 }
-
+@media screen and (min-width: 420px) {
+  .structure {
+    padding: 32px 16px;
+  }
+}
 @media screen and (min-width: 768px) {
   .structure {
     gap: 48px;
@@ -58,9 +62,15 @@
 .structWrap {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+
   padding: 0;
   margin: 0;
+}
+@media screen and (min-width: 1280px) {
+  .structWrap {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }
 .wrapItem {
   display: grid;
@@ -84,7 +94,7 @@
   position: relative;
   z-index: 0;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 300px;
   grid-template-rows: 120px;
   padding: 0;
   margin: 0;

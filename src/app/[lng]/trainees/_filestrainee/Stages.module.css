@@ -1,16 +1,18 @@
 .stages {
-  /* display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto; */
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  padding: 32px 16px;
+  padding: 20px 8px;
   margin: 0 auto;
   background-color: rgb(138, 26, 102);
+}
+@media screen and (min-width: 420px) {
+  .stages {
+    padding: 32px 16px;
+  }
 }
 @media screen and (min-width: 768px) {
   .stages {
@@ -37,8 +39,6 @@
 }
 .stageTitle {
   display: flex;
-  /* grid-template-columns: 1fr;
-  grid-template-rows: auto; */
   justify-content: center;
   color: rgb(252, 252, 252);
   font-size: 24px;
@@ -77,17 +77,23 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 380px;
+  width: 300px;
   height: 360px;
   border-radius: 24px;
   box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
     inset -3px -3px 3px rgba(88, 4, 70, 0.532);
   background-color: rgb(46, 5, 53);
-  gap: 24px;
+  gap: 8px;
   padding: 32px 20px 20px 20px;
   background-repeat: no-repeat;
   background-size: 120px 240px;
   background-position: 16px center;
+}
+@media screen and (min-width: 420px) {
+  .wrapItem {
+    width: 380px;
+    gap: 24px;
+  }
 }
 .bg1 {
   background-image: url("../../../../../public/images/stages/num1.svg");
@@ -124,18 +130,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 8px;
   height: 52px;
-  padding: 14px;
+  padding: 0;
   border-bottom: 2px solid rgb(226, 49, 168);
 }
 .itemTitle {
   font-family: var(--font-montserrat);
   color: rgb(252, 252, 252);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
   text-align: center;
+}
+@media screen and (min-width: 420px) {
+  .wrapTitle {
+    gap: 16px;
+    padding: 8px;
+  }
+  .itemTitle {
+    font-size: 20px;
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapTitle {
@@ -160,7 +175,12 @@
 .wrapInfo {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
+}
+@media screen and (min-width: 420px) {
+  .wrapInfo {
+    gap: 16px;
+  }
 }
 @media screen and (min-width: 1280px) {
   .wrapInfo {
@@ -189,6 +209,11 @@
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
+}
+@media screen and (min-width: 420px) {
+  .itemText {
+    font-size: 16px;
+  }
 }
 @media screen and (min-width: 768px) {
   .itemText {
