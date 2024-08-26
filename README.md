@@ -1,8 +1,79 @@
-<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) -->
+# Baza Trainee Ukraine
 
-# Getting Started
+## _Проєкт створено завдяки громадської організації  [Baza Trainee Ukraine](https://baza-trainee.tech/ua), яка сприяє отриманню першого досвіду роботи тим, хто починає свій шлях в ІТ._
 
-First, run the development server:
+### Додаток створений за допомогою фреймворка [Next.js](https://nextjs.org/) та опублікований на [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+
+---
+---
+---
+
+### Застосовані
+
+- Анімація на головній сторінці - бібліотека [Framer Motion](https://www.framer.com/motion/)
+- Інтернаціоналізація [i18next](https://www.i18next.com/)
+- База даних [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register)
+- Інтерфейс до бази данних [Mongoose](https://mongoosejs.com/)
+- Авторизація користувача [Auth.js](https://authjs.dev/)
+- Для взаємодії з базою даних на стороні фронтенда  _formData_ та _actions_
+
+#### Проєкт складається з двох частин. Перша частина - це інтерфейс користувача, друга - інтерфейс адміністратора. Можливості Next.js дозволяють використовувати frontend та backend в одному додатку
+
+---
+---
+
+#### Приклад підключення
+
+``` import mongoose from "mongoose";
+export const uri = process.env.MONGODB_URI;
+
+const clientOptions = {
+  serverApi: { version: "1", strict: true, deprecationErrors: true },
+};
+
+export const connectDB = async () => {
+  try {
+    const { connection } = await mongoose.connect(uri, clientOptions);
+    if (connection.readyState === 1) {
+      console.log(
+        "Pinged your deployment. You successfully connected to MongoDB!"
+      );
+      return Promise.resolve(true);
+    }
+  } catch (error) {
+    console.error(error);
+    return Promise.reject(error);
+  }
+}; ```
+```
+
+---
+
+#### Приклади інтерфейсу адміністратора
+
+![Панель адміна](./public/baza/admin1.jpg)
+
+![Сторінка розробників](./public/baza/developer1.jpg)
+
+![Сторінка проєктів](./public/baza/project1.jpg)
+
+![Сторінка відгуків](./public/baza/review1.jpg)
+
+---
+
+#### В проєкті реалізовані пошук та фільтрація за словом, датою, статусом. Доступний перегляд компонента безпосередньо в частині адміністратора, також редагування та видалення
+
+---
+---
+---
+
+#### Getting Started
+
+```bash
+npm start
+```
+
+#### First, run the development server
 
 ```bash
 npm run dev
@@ -14,80 +85,10 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-<!-- Title -->
-
-# Baza Trainee Ukraine
-
-## _Цей індивідуальний проект створено завдяки громадській організації Baza Trainee Ukraine, яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ._
-
-<!-- List -->
-
-- item 1
-- item 2
-  - item 2.1
-
-1. item 1
-1. item 2
-1. item 3
-
-<!-- Link -->
-
-[Baza Trainee Ukraine](https://baza-trainee.tech/ua)
-
-<!-- Code -->
-
-````export const createNewPost = async (item) => {
-  try {
-    const newPost = await Post.create(item);
-    // const data = JSON.parse(JSON.stringify(newPost));
-    return {
-      message: "Успішно додано",
-    };
-  } catch (e) {
-    console.log(e);
-    return {
-      message: "Відбулася помилка",
-    };
-  }
-}```
-````
-
-<!-- Image -->
-
 ![alt text](image.png)
 
-<!-- Горизонтальний розрив -->
-
 ---
 
 ---
 
 ---
-
-<!-- List to do -->
-
-<!-- - [x] Todo1 -->
-🥰
-
-![text](/public/images/projects/dev.webp)
