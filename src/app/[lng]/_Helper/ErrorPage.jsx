@@ -2,8 +2,6 @@
 
 import React, { useEffect } from "react";
 import styles from "./Helper.module.css";
-
-import { FaQuestion, FaRegFaceAngry } from "react-icons/fa6";
 import { FaCogs } from "react-icons/fa";
 import MainButton from "./MainButton";
 

@@ -12,7 +12,6 @@ export default function MainButton({ children, ...props }) {
     <div className={styles.wrapBtn}>
       <button
         onClick={props.onClick}
-        // disabled={props.disabled}
         type={props.type}
         aria-label={props.ariaLabel}
         {...props}

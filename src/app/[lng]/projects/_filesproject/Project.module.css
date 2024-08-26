@@ -116,13 +116,11 @@
   flex-direction: column;
   width: 300px;
   height: 464px;
-  /* height: 456px; */
   padding: 0;
   border-radius: 12px;
   background-image: url("../../../../../public/images/projects/sky.webp");
   background-repeat: no-repeat;
   background-position: center;
-  /* background-size: contain; */
   object-fit: cover;
 }
 @media screen and (min-width: 420px) {
@@ -135,7 +133,6 @@
   display: grid;
   grid-template-columns: 300px;
   grid-template-rows: 464px;
-  /* grid-template-rows: 456px; */
   padding: 0;
   border-radius: 12px;
   background-position: center;
@@ -341,7 +338,6 @@
   flex-direction: column;
   width: 300px;
   height: 464px;
-  /* height: 456px; */
   opacity: 0;
   transform: translateY(500px);
   transition: opacity 500ms ease-out delay 100ms, transform 500ms ease;

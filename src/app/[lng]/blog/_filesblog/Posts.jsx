@@ -6,7 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 import styles from "./Blog.module.css";
 import { FaCircleCheck, FaCircleXmark } from "react-icons/fa6";
 import EmptyPage from "../../_Helper/EmptyPage";
-// import EmptyPage from "../../_Helper/EmptyPage";
 
 export default function Posts({ posts, lng }) {
   const [selected, setSelected] = useState(posts);

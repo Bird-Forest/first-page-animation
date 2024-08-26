@@ -131,13 +131,6 @@
     padding: 24px;
   }
 }
-/* .wrapTitlePost {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  float: left;
-} */
 .wrapElem {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -268,7 +261,6 @@
 }
 @media screen and (min-width: 1280px) {
   .wrapPost {
-    /* grid-template-columns: minmax(340px, 852px); */
     padding: 24px 16px;
     gap: 16px;
   }
