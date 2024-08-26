@@ -117,13 +117,12 @@
   border: 2px solid rgb(242, 238, 248);
   border-radius: 16px;
   background-color: rgb(242, 238, 248);
-  gap: 8px;
+  gap: 16px;
   padding: 12px 8px;
   margin: 0;
 }
 @media screen and (min-width: 420px) {
   .wrapItem {
-    gap: 16px;
     padding: 24px 16px;
   }
 }

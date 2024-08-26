@@ -84,6 +84,8 @@
 }
 .itemTitle {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   color: rgb(255, 255, 255);
   font-family: var(--font-montserrat);
   font-size: 18px;
@@ -92,6 +94,9 @@
   text-align: left;
 }
 .itemText {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   text-indent: 20px;
   color: rgb(255, 255, 255);
   font-family: var(--font-montserrat);
